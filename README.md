@@ -226,8 +226,6 @@ Application key set successfully.
 
 ブラウザで`http://localhost/`にアクセス
 
-![キャプチャ5](http://www.aska-ltd.jp/uploads/blogs/2004030655docker5.png)
-
 ---
 
 ## docker の操作
@@ -393,7 +391,6 @@ mix.browserSync({
 ```
 
 ### laravelのウェブルートを修正
-
 
 ```php:server/routes/web.php
 // API以外はindexを返すようにして、VueRouterで制御
