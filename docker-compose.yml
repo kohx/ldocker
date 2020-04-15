@@ -1,0 +1,71 @@
+# Docker Composeのバージョン
+version: "3"
+
+# 作成するコンテナを定義
+services:
+  ## phpサービス
+  php:
+    ### コンテナの名前
+    container_name: my_php
+    ### コンテナの元になるDockerfileがおいてあるパス
+    build: ./docker/php
+    ### ホストPC側のプログラムソースディレクトリをマウント
+    volumes:
+      - ./server:/var/www
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+
+  ## nginxサービス
+  nginx:
+    ### Nginxコンテナのもとになるイメージを指定
+    image: nginx
+    ### コンテナの名前
+    container_name: my_nginx
+    ### ホスト側の80番ポートとコンテナ側の80番ポートをつなげる
+    ports:
+      - 80:80
+    ### ホストPC側をnginxにマウント
+    volumes:
+      - ./server:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ### 依存関係
+    depends_on:
+      - php
+
+  ## dbサービス
+  db:
+    ### イメージを指定
+    image: mysql:5.7
+    ### コンテナの名前 -> これがホスト名になるので.envでは「DB_HOST=my_db」とする
+    container_name: my_db
+    ### db設定
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      #### .envで使うDB_DATABASEの値
+      MYSQL_DATABASE: database
+      #### .envで使うDB_USERNAMEの値
+      MYSQL_USER: docker
+      #### .envで使うDB_PASSWORDの値
+      MYSQL_PASSWORD: docker
+      TZ: "Asia/Tokyo"
+    ### コマンドで設定
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ### ホスト側のポートとコンテナ側のポートをつなげる
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
+    ### ホスト側のポートとコンテナ側のポートをつなげる
+    ports:
+      - 3306:3306
+
+  ## redisサービス
+  redis:
+    ### イメージを指定
+    image: redis:latest
+    ### コンテナの名前 -> これがホスト名になるので.envでは「REDIS_HOST=my_redis」とする
+    container_name: my_redis
+    ### ホスト側のポートとコンテナ側のポートをつなげる
+    ports:
+      - 6379:6379
