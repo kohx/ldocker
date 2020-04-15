@@ -1,43 +1,21 @@
 # ldocker
+
 laravel7 php7.4 nginx mysql redis in docker, and vue in Laravel Mix
 dockerでlaravel環境 (laradockを使わない)
 ​
+
 ## 要件
+
 - 64 bit Windows 10 Pro
 - docker -> php7.4, nginx, mysql, redis, nodejs
-- laravel7.3
+- laravel7
 ​
+
 ---
-​
-## windowsの設定とDocker Desktop for Windowsのインストール
-​
-Windowsの機能　->　Hyper-Vにチェック　-> PC再起動
-​
-![キャプチャ１](http://www.aska-ltd.jp/uploads/blogs/2004030629docker1.png)
-​
-### install docker desktop
-​
-Docker Desktop for Windows を以下のリンク「Get Docker Desktop for Windows (stable)」からダウンロードしてインストール
-​
-[Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
-​
-![キャプチャ２](http://www.aska-ltd.jp/uploads/blogs/2004030636docker2.png)
-​
-### Docker Desktop for Windows start
-​
-ショートカットをクリックするとタスクバーにアイコンが表示
-​
-![キャプチャ３](http://www.aska-ltd.jp/uploads/blogs/2004030642docker3.png)
-​
-アイコンをクリックするとメニューが表示
-​
-![キャプチャ４](http://www.aska-ltd.jp/uploads/blogs/2004030650docker4.png)
-​
----
-​
+
 ## フォルダ構成
-​
-```
+
+```text
 ├── server
 ├── docker-compose.yml <- １これ作る
 └─── docker
@@ -49,13 +27,13 @@ Docker Desktop for Windows を以下のリンク「Get Docker Desktop for Window
    └── db
 ​
 ```
-​
+
 ---
-​
+
 ## ファイルを用意する
-​
+
 ### １. docker-compose.ymlをつくる
-​
+
 ```yml:docker-compose.yml
 # Docker Composeのバージョン
 version: "3"
@@ -129,12 +107,12 @@ services:
     ports:
       - 6379:6379
 ```
-​
+
 ### 2. Dockerfileをつくる
-​
+
 ```Dockerfile:docker/php/Dockerfile
 FROM php:7.4-fpm
-​
+
 COPY php.ini /usr/local/etc/php/
 ​
 #time zone setting!
@@ -175,9 +153,9 @@ RUN apt-get install -y vim
 # workdir
 WORKDIR /var/www
 ```
-​
+
 ### 3. phpのphp.iniをつくる
-​
+
 ```ini:docker/php/php.ini
 [Date]
 date.timezone = "Asia/Tokyo"
@@ -185,9 +163,9 @@ date.timezone = "Asia/Tokyo"
 mbstring.internal_encoding = "UTF-8"
 mbstring.language = "Japanese"
 ```
-​
+
 ### 4. Nginxのdefault.conf
-​
+
 ```Nginx:docker/nginx/default.conf
 server {
     listen       80;
@@ -208,141 +186,141 @@ server {
     }
 }
 ```
-​
+
 ---
-​
+
 ## docker を動かす
-​
+
 `docker-compose.yml` ディレクトリで実行
-​
+
 ### docker start
-​
+
 ```bash:terminal
 docker-compose up -d
-​
+
 # 表示
 Creating my_redis ... done
 Creating my_php   ... done
 Creating my_db    ... done
 Creating my_nginx ... done
 ```
-​
+
 ### コンテナに入る
-​
+
 `docker-compose exec` + [ サービス名 ] + `bash`
-​
+
 ```bash:terminal
 docker-compose exec php bash
 ```
-​
+
 ### laravel プロジェクト作成
-​
+
 ```bash:terminal
 composer create-project --prefer-dist laravel/laravel .
-​
+
 # 以下が出ると成功
 Application key set successfully.
 ```
-​
+
 ### ブラウザで表示
-​
+
 ブラウザで`http://localhost/`にアクセス
-​
+
 ![キャプチャ5](http://www.aska-ltd.jp/uploads/blogs/2004030655docker5.png)
-​
+
 ---
-​
+
 ## docker の操作
-​
+
 コンテナから出る
-​
+
 ```bash:terminal
 exit
 ```
-​
+
 終了
-​
+
 ```bash:terminal
 docker-compose stop
 ```
-​
+
 スタート
-​
+
 ```bash:terminal
 docker-compose start
 ```
-​
+
 終了とコンテナ削除
-​
+
 ```bash:terminal
 docker-compose down
 ```
-​
+
 コンテナ確認
-​
+
 ```bash:terminal
 docker-compose ps
 ```
-​
+
 起動していないものも含めてコンテナ確認
-​
+
 ```bash:terminal
 docker ps -a
 ```
-​
+
 使ってないコンテナの削除
-​
+
 ```bash:terminal
 docker container prune
 ```
-​
+
 イメージ確認
-​
+
 ```bash:terminal
 docker images
 ```
-​
+
 使ってないイメージの削除
-​
+
 ```bash:terminal
 docker image prune
 ```
-​
+
 ネットワークの確認
-​
+
 ```bash:terminal
 docker network list
 ```
-​
+
 使ってないネットワークの削除
-​
+
 ```bash:terminal
 docker network prune
 ```
-​
+
 使ってないコンテナ、ボリューム、ネットワーク、イメージの削除
-​
+
 ```bash:terminal
 docker system prune
 ```
-​
+
 ---
-​
+
 ## laravel のセッティング
-​
+
 ### appコンフィグを修正
-​
+
 ```php:server/config/app.php
 ...
 ​
 'timezone' => 'Asia/Tokyo',
 ...
-​
+
 'locale' => 'ja',
 ```
-​
+
 ### .envを修正
-​
+
 ```text:.env
 APP_NAME=[project name]
 ...
@@ -359,23 +337,23 @@ REDIS_HOST=my_redis # コンテナの名前
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
-​
+
 ### キャッシュクリア
-​
+
 ```bash:terminal
 php artisan config:clear
 php artisan config:cache
 ```
-​
+
 ---
-​
+
 ## vue の準備
-​
+
 ### npmのインストール
-​
+
 npm-check-updatesでチェック
 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)
-​
+
 ```bash:terminal
 # npmのアップデート
 npm i -g npm
@@ -388,22 +366,22 @@ ncu -u
 # モジュールアップデート
 npm update
 ```
-​
+
 ### vueのインストール
-​
+
 後で使うので`vue-router`、 `vuex` も入れる
-​
+
 ```bash:terminal
 npm i -D vue
 npm i -D vue-router
 npm i -D vuex
 ```
-​
+
 ### webpack.mix.jsを修正
-​
+
 ```javascript:server\webpack.mix.js
 const mix = require('laravel-mix');
-​
+
 mix.js("resources/js/app.js", "public/js");
 ​
 mix.browserSync({
@@ -413,19 +391,19 @@ mix.browserSync({
   open: false
 });
 ```
-​
+
 ### laravelのウェブルートを修正
-​
-​
+
+
 ```php:server/routes/web.php
 // API以外はindexを返すようにして、VueRouterで制御
 Route::get('/{any?}', fn() => view('index'))->where('any', '.+');
 ```
-​
+
 ### index.blade.phpを作成
-​
+
 `welcome.blade.php`は削除
-​
+
 ```blade:server\resources\views\index.blade.php
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -440,9 +418,9 @@ Route::get('/{any?}', fn() => view('index'))->where('any', '.+');
 </body>
 </html>
 ```
-​
+
 ### vueのapp.jsを修正
-​
+
 ```javascript:server\resources/js/app.js
 import "./bootstrap";
 import Vue from "vue";
@@ -452,21 +430,21 @@ new Vue({
   template: "<h1>Hello world</h1>"
 });
 ```
-​
+
 ### 開発ビルド
-​
+
 ```bash
 npm run dev
 ```
-​
+
 ブラウザで`http://localhost/`にアクセス
-​
+
 ## ホットリロード
-​
+
 ```bash
 npm run watch
 ```
-​
+
 ブラウザで`http://localhost:3000/`にアクセス
 ​
 これで開発がらくになります。
