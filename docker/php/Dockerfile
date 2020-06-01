@@ -36,11 +36,5 @@ RUN docker-php-ext-install redis
 # vim
 RUN apt-get install -y vim
 
-RUN apt-get -y install cron
-COPY testcron /etc/cron.d/testcron
-RUN chmod 0644 /etc/cron.d/testcron
-RUN crontab /etc/cron.d/testcron
-RUN touch /var/log/cron.log
-
 # workdir
 WORKDIR /var/www
