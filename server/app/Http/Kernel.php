@@ -40,9 +40,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            // これはAPI数を制限、同一のIPアドレスとドメインから1分間に60回までのリクエスト数に制限している
-            // 制限数を超えると「429 Too Many Requests」が返る
-            'throttle:60,1',
+            //'throttle:60,1',
             // 'web'の内容をペースト
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
