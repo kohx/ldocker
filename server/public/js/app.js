@@ -2018,6 +2018,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 
 
+var _methods;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -2134,7 +2138,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
     };
   },
-  methods: {
+  // 算出プロパティでストアのステートを参照
+  computed: {
+    // authストアのapiStatus
+    apiStatus: function apiStatus() {
+      return this.$store.state.auth.apiStatus;
+    },
+    // authストアのloginErrorMessages
+    loginErrors: function loginErrors() {
+      return this.$store.state.auth.loginErrorMessages;
+    },
+    // authストアのregisterErrorMessages
+    registerErrors: function registerErrors() {
+      return this.$store.state.auth.registerErrorMessages;
+    }
+  },
+  methods: (_methods = {
     /*
      * login
      */
@@ -2146,11 +2165,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                alert("login");
-
-                _this.clearForm();
+                _context.next = 2;
+                return _this.$store.dispatch("auth/login", _this.loginForm);
 
               case 2:
+                // 通信成功
+                if (_this.apiStatus) {
+                  // トップページに移動
+                  _this.$router.push("/");
+                }
+
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -2170,59 +2195,103 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                alert("register");
-
-                _this2.clearForm();
+                _context2.next = 2;
+                return _this2.$store.dispatch("auth/register", _this2.registerForm);
 
               case 2:
+                // 通信成功
+                if (_this2.apiStatus) {
+                  // メッセージストアで表示
+                  _this2.$store.commit("message/setContent", {
+                    content: "登録しました。",
+                    timeout: 10000
+                  }); // AUTHストアのエラーメッセージをクリア
+
+
+                  _this2.clearError(); // フォームをクリア
+
+
+                  _this2.clearForm();
+                }
+
+              case 3:
               case "end":
                 return _context2.stop();
             }
           }
         }, _callee2);
       }))();
-    },
+    }
+  }, _defineProperty(_methods, "register", function register() {
+    var _this3 = this;
 
-    /*
-     * forgot
-     */
-    forgot: function forgot() {
-      var _this3 = this;
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return _this3.$store.dispatch("auth/register", _this3.registerForm);
 
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                alert("forgot");
+            case 2:
+              // 通信成功
+              if (_this3.apiStatus) {
+                // メッセージストアで表示
+                _this3.$store.commit("message/setContent", {
+                  content: "登録しました。",
+                  timeout: 10000
+                }); // AUTHストアのエラーメッセージをクリア
+
+
+                _this3.clearError(); // フォームをクリア
+
 
                 _this3.clearForm();
+              }
 
-              case 2:
-              case "end":
-                return _context3.stop();
-            }
+            case 3:
+            case "end":
+              return _context3.stop();
           }
-        }, _callee3);
-      }))();
-    },
+        }
+      }, _callee3);
+    }))();
+  }), _defineProperty(_methods, "forgot", function forgot() {
+    var _this4 = this;
 
-    /*
-     * clear form
-     */
-    clearForm: function clearForm() {
-      // login form
-      this.loginForm.email = "";
-      this.loginForm.password = ""; // register form
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              alert("forgot");
 
-      this.registerForm.name = "";
-      this.registerForm.email = "";
-      this.registerForm.password = "";
-      this.registerForm.password_confirmation = ""; // forgot form
+              _this4.clearForm();
 
-      this.forgot.email = "";
-    }
-  }
+            case 2:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }))();
+  }), _defineProperty(_methods, "clearError", function clearError() {
+    // AUTHストアのすべてのエラーメッセージをクリア
+    this.$store.commit("auth/setLoginErrorMessages", null);
+    this.$store.commit("auth/setRegisterErrorMessages", null);
+    this.$store.commit("auth/setForgotErrorMessages", null);
+  }), _defineProperty(_methods, "clearForm", function clearForm() {
+    // login form
+    this.loginForm.email = "";
+    this.loginForm.password = ""; // register form
+
+    this.registerForm.name = "";
+    this.registerForm.email = "";
+    this.registerForm.password = "";
+    this.registerForm.password_confirmation = ""; // forgot form
+
+    this.forgot.email = "";
+  }), _methods)
 });
 
 /***/ }),
@@ -2239,7 +2308,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.tab {\r\n  padding: 0;\r\n  display: flex;\r\n  list-style: none;\n}\n.tab__item {\r\n  border: 1px solid gray;\r\n  padding: 0 0.5rem;\r\n  margin-left: 0.1rem;\r\n  cursor: pointer;\n}\n.tab__item--active {\r\n  background-color: lightgray;\n}\r\n", ""]);
+exports.push([module.i, "\n.tab {\r\n    padding: 0;\r\n    display: flex;\r\n    list-style: none;\n}\n.tab__item {\r\n    border: 1px solid gray;\r\n    padding: 0 0.5rem;\r\n    margin-left: 0.1rem;\r\n    cursor: pointer;\n}\n.tab__item--active {\r\n    background-color: lightgray;\n}\r\n", ""]);
 
 // exports
 
@@ -38421,6 +38490,42 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/const.js":
+/*!*******************************!*\
+  !*** ./resources/js/const.js ***!
+  \*******************************/
+/*! exports provided: OK, CREATED, NOT_FOUND, UNAUTHORIZED, UNPROCESSABLE_ENTITY, TOO_MANY_REQUESTS, INTERNAL_SERVER_ERROR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OK", function() { return OK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATED", function() { return CREATED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NOT_FOUND", function() { return NOT_FOUND; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNAUTHORIZED", function() { return UNAUTHORIZED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNPROCESSABLE_ENTITY", function() { return UNPROCESSABLE_ENTITY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TOO_MANY_REQUESTS", function() { return TOO_MANY_REQUESTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INTERNAL_SERVER_ERROR", function() { return INTERNAL_SERVER_ERROR; });
+/*
+ * status cord
+ */
+// response OK
+var OK = 200; // data created
+
+var CREATED = 201; // not found
+
+var NOT_FOUND = 404; // 認証切れの場合のレスポンスコード
+
+var UNAUTHORIZED = 419; // バリデーションエラー
+
+var UNPROCESSABLE_ENTITY = 422; // 認証回数制限
+
+var TOO_MANY_REQUESTS = 429; // システムエラー
+
+var INTERNAL_SERVER_ERROR = 500;
+
+/***/ }),
+
 /***/ "./resources/js/pages/Home.vue":
 /*!*************************************!*\
   !*** ./resources/js/pages/Home.vue ***!
@@ -38739,7 +38844,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ "./resources/js/util.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -38824,7 +38929,7 @@ var actions = {
             case 3:
               response = _context.sent;
 
-              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+              if (!(response.status === _const__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
                 _context.next = 8;
                 break;
               }
@@ -38842,7 +38947,7 @@ var actions = {
               context.commit("setApiStatus", false); // 通信失敗のステータスが 422（バリデーションエラー）の場合
               // または、認証回数制限429;（認証回数制限）の場合
 
-              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"] || response.status === _util__WEBPACK_IMPORTED_MODULE_1__["TOO_MANY_REQUESTS"]) {
+              if (response.status === _const__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"] || response.status === _const__WEBPACK_IMPORTED_MODULE_1__["TOO_MANY_REQUESTS"]) {
                 // loginErrorMessages にエラーメッセージを登録
                 context.commit("setLoginErrorMessages", response.data.errors);
               } // 通信失敗のステータスがその他の場合
@@ -38882,7 +38987,7 @@ var actions = {
             case 3:
               response = _context2.sent;
 
-              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
+              if (!(response.status === _const__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
                 _context2.next = 8;
                 break;
               }
@@ -38899,7 +39004,7 @@ var actions = {
               // apiStatus を false に更新
               context.commit("setApiStatus", false); // 通信失敗のステータスが 422（バリデーションエラー）の場合
 
-              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+              if (response.status === _const__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
                 // registerErrorMessages にエラーメッセージを登録
                 context.commit("setRegisterErrorMessages", response.data.errors);
               } // 通信失敗のステータスがその他の場合
@@ -38939,7 +39044,7 @@ var actions = {
             case 3:
               response = _context3.sent;
 
-              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+              if (!(response.status === _const__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
                 _context3.next = 8;
                 break;
               }
@@ -38991,7 +39096,7 @@ var actions = {
               // ユーザをレスポンスから取得、なければnull
               user = response.data || null; // 通信成功の場合 200
 
-              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+              if (!(response.status === _const__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
                 _context4.next = 9;
                 break;
               }
@@ -39156,17 +39261,6 @@ var mutations = {
   state: state,
   mutations: mutations
 });
-
-/***/ }),
-
-/***/ "./resources/js/util.js":
-/*!******************************!*\
-  !*** ./resources/js/util.js ***!
-  \******************************/
-/*! exports provided: OK, CREATED, NOT_FOUND, UNAUTHORIZED, UNPROCESSABLE_ENTITY, TOO_MANY_REQUESTS, INTERNAL_SERVER_ERROR, getLang */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/var/www/resources/js/util.js'");
 
 /***/ }),
 
