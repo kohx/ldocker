@@ -25,5 +25,8 @@
         "vue-router": "^3.3.2",
         "vue-template-compiler": "^2.6.11",
         "vuex": "^3.4.0"
+    },
+    "dependencies": {
+        "js-cookie": "^2.2.1"
     }
 }
