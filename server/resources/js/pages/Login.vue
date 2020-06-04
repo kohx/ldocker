@@ -91,51 +91,111 @@
 
 <script>
 export default {
-  // vueで使うデータ
-  data() {
-    return {
-      tab: 1,
-        loginForm: {
-            email: "",
-            password: "",
-            remember: true
+    // vueで使うデータ
+    data() {
+        return {
+            tab: 1,
+            loginForm: {
+                email: "",
+                password: "",
+                remember: true
+            },
+            registerForm: {
+                name: "",
+                email: "",
+                password: "",
+                password_confirmation: ""
+            },
+            forgotForm: {
+                email: ""
+            }
+        };
+    },
+    // 算出プロパティでストアのステートを参照
+    computed: {
+        // authストアのapiStatus
+        apiStatus() {
+            return this.$store.state.auth.apiStatus;
         },
-        registerForm: {
-            name: "",
-            email: "",
-            password: "",
-            password_confirmation: ""
+        // authストアのloginErrorMessages
+        loginErrors() {
+            return this.$store.state.auth.loginErrorMessages;
         },
-        forgotForm: {
-            email: ""
-        },
-    };
-  },
-   methods: {
-       /*
-        * login
-        */
+        // authストアのregisterErrorMessages
+        registerErrors() {
+            return this.$store.state.auth.registerErrorMessages;
+        }
+    },
+    methods: {
+        /*
+         * login
+         */
         async login() {
-            alert("login");
-            this.clearForm();
+            // authストアのloginアクションを呼び出す
+            await this.$store.dispatch("auth/login", this.loginForm);
+            // 通信成功
+            if (this.apiStatus) {
+                // トップページに移動
+                this.$router.push("/");
+            }
         },
-       /*
-        * register
-        */
+        /*
+         * register
+         */
         async register() {
-            alert("register");
-            this.clearForm();
+            // authストアのregisterアクションを呼び出す
+            await this.$store.dispatch("auth/register", this.registerForm);
+            // 通信成功
+            if (this.apiStatus) {
+                // メッセージストアで表示
+                this.$store.commit("message/setContent", {
+                    content: "登録しました。",
+                    timeout: 10000
+                });
+                // AUTHストアのエラーメッセージをクリア
+                this.clearError();
+                // フォームをクリア
+                this.clearForm();
+            }
         },
-       /*
-        * forgot
-        */
+        /*
+         * register
+         */
+        async register() {
+            // authストアのregisterアクションを呼び出す
+            await this.$store.dispatch("auth/register", this.registerForm);
+            // 通信成功
+            if (this.apiStatus) {
+                // メッセージストアで表示
+                this.$store.commit("message/setContent", {
+                    content: "登録しました。",
+                    timeout: 10000
+                });
+                // AUTHストアのエラーメッセージをクリア
+                this.clearError();
+                // フォームをクリア
+                this.clearForm();
+            }
+        },
+        /*
+         * forgot
+         */
         async forgot() {
             alert("forgot");
             this.clearForm();
         },
-       /*
-        * clear form
-        */
+        /*
+         * clear error messages
+         */
+        clearError() {
+            // AUTHストアのすべてのエラーメッセージをクリア
+            this.$store.commit("auth/setLoginErrorMessages", null);
+            this.$store.commit("auth/setRegisterErrorMessages", null);
+            this.$store.commit("auth/setForgotErrorMessages", null);
+        },
+        /*
+         * clear form
+         */
         clearForm() {
             // login form
             this.loginForm.email = "";
@@ -147,23 +207,24 @@ export default {
             this.registerForm.password_confirmation = "";
             // forgot form
             this.forgot.email = "";
-        },
-   }
+        }
+    }
 };
 </script>
+
 <style>
 .tab {
-  padding: 0;
-  display: flex;
-  list-style: none;
+    padding: 0;
+    display: flex;
+    list-style: none;
 }
 .tab__item {
-  border: 1px solid gray;
-  padding: 0 0.5rem;
-  margin-left: 0.1rem;
-  cursor: pointer;
+    border: 1px solid gray;
+    padding: 0 0.5rem;
+    margin-left: 0.1rem;
+    cursor: pointer;
 }
 .tab__item--active {
-  background-color: lightgray;
+    background-color: lightgray;
 }
 </style>

@@ -1,7 +1,7 @@
 /*
  * status cord
  */
-import { OK, CREATED, UNPROCESSABLE_ENTITY, TOO_MANY_REQUESTS } from "../util";
+import { OK, CREATED, UNPROCESSABLE_ENTITY, TOO_MANY_REQUESTS } from "../const";
 
 /*
  * ステート（ データの入れ物）
