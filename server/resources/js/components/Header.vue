@@ -3,7 +3,8 @@
         <!-- リンクを設定 -->
         <RouterLink to="/">home</RouterLink>
         <RouterLink v-if="!isLogin" to="/login">login</RouterLink>
-
+        <!-- ログインしている場合はusernameを表示 -->
+        <span v-if="isLogin">{{username}}</span>
         <!-- クリックイベントにlogoutメソッドを登録 -->
         <span v-if="isLogin" @click="logout">logout</span>
     </header>

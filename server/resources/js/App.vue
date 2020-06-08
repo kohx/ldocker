@@ -19,6 +19,7 @@
 // Headerコンポーネントをインポート
 import Header from "./components/Header.vue";
 import Message from "./components/Message.vue";
+import { NOT_FOUND, UNAUTHORIZED, INTERNAL_SERVER_ERROR } from "./const";
 
 export default {
     // 使用するコンポーネントを宣言
@@ -59,7 +60,7 @@ export default {
             // createdでも呼び出すときはこれだけでOK
             immediate: true
         },
-        // パラメーター変更を検知
+        // 同じrouteの異なるパラメータで画面遷移しても、vue-routerは画面を再描画しないのでwatchで監視
         $route() {
             this.$store.commit("error/setCode", null);
         }

@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
     computed: {
         // Messageストアのcontentステートを取得

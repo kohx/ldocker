@@ -14,7 +14,7 @@ const state = {
     // ログインのエラーメッセージの保持
     loginErrorMessages: null,
     // 登録のエラーメッセージの保持
-    registerSErrorMessages: null
+    registerErrorMessages: null
 };
 
 /*
@@ -201,7 +201,8 @@ const actions = {
  * エクスポート
  */
 export default {
-    namespaced: true, // 名前をストア別に区別できるようにネームスペースを使う
+    // 名前をストア別に区別できるようにネームスペースを使う
+    namespaced: true,
     state,
     getters,
     mutations,
