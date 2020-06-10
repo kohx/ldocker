@@ -177,25 +177,6 @@ export default {
             }
         },
         /*
-         * register
-         */
-        async register() {
-            // authストアのregisterアクションを呼び出す
-            await this.$store.dispatch("auth/register", this.registerForm);
-            // 通信成功
-            if (this.apiStatus) {
-                // メッセージストアで表示
-                this.$store.commit("message/setContent", {
-                    content: "登録しました。",
-                    timeout: 10000
-                });
-                // AUTHストアのエラーメッセージをクリア
-                this.clearError();
-                // フォームをクリア
-                this.clearForm();
-            }
-        },
-        /*
          * forgot
          */
         async forgot() {
