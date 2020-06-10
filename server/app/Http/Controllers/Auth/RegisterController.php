@@ -3,47 +3,58 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+// 作成したものを使う
+use App\Models\RegisterUser;
+use App\Mail\VerificationMail;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
-    use RegistersUsers;
-
     /**
-     * Where to redirect users after registration.
+     * Send Register Link Email
+     * 送られてきた内容をテーブルに保存して認証メールを送信
      *
-     * @var string
+     * @param Request $request
+     * @return RegisterUser
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function sendMail(Request $request)
     {
-        $this->middleware('guest');
+        // validation
+        // 送られてきた内容のバリデーション
+        $this->validator($request->all())->validate();
+
+        // create token
+        // トークンを作成
+        $token = self::createToken();
+
+        // delete old data
+        // 同じメールアドレスが残っていればテーブルから削除
+        RegisterUser::destroy($request->email);
+
+        // insert
+        // 送られてきた内容をテーブルに保存
+        $passwordReset = new RegisterUser($request->all());
+        $passwordReset->token = $token;
+        // パスワードはハッシュ
+        $passwordReset->password = Hash::make($request->password);
+        $passwordReset->save();
+
+        // send email
+        // メールクラスでメールを送信
+        self::sendVerificationMail($passwordReset->email, $token);
+
+        // モデルを返す
+        return $passwordReset;
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * validator
+     * バリデーション
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
@@ -58,29 +69,26 @@ class RegisterController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
+     * create activation token
+     * 認証メールのトークンを作成する
+     * @return string
      */
-    protected function create(array $data)
+    private function createToken()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        return hash_hmac('sha256', Str::random(40), config('app.key'));
     }
 
     /**
-     * The user has been registered.
+     * send verification mail
+     * メールクラスでメールを送信
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
-     * @return mixed
+     * @param string $email
+     * @param string $token
+     * @return void
      */
-    protected function registered(Request $request, $user)
+    private function sendVerificationMail($email, $token)
     {
-        return $user;
+        Mail::to($email)
+            ->send(new VerificationMail($token));
     }
 }

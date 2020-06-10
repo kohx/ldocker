@@ -167,7 +167,7 @@ export default {
             if (this.apiStatus) {
                 // メッセージストアで表示
                 this.$store.commit("message/setContent", {
-                    content: "登録しました。",
+                    content: "認証メールを送りました。",
                     timeout: 10000
                 });
                 // AUTHストアのエラーメッセージをクリア
