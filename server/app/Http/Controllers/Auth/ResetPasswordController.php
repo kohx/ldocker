@@ -63,7 +63,7 @@ class ResetPasswordController extends Controller
         }
 
         // トークンをクッキーにつけてリセットページにリダイレクト
-        return $this->redirectVue('reset', 'RESETTOKEN', $message);
+        return $this->redirectVue('reset', 'RESETTOKEN', $token);
     }
 
     /**
