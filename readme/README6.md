@@ -436,13 +436,13 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
 +             // 通信失敗のステータスが 422（バリデーションエラー）の場合
 +             if (response.status === UNPROCESSABLE_ENTITY) {
 +                 // registerErrorMessages にエラーメッセージを登録
-+                 context.commit("setForgotErrorMessages", response.+data.errors);
++                 context.commit("setForgotErrorMessages", response.data.errors);
 +             }
 +             // 通信失敗のステータスがその他の場合
 +             else {
 +                 // エラーストアの code にステータスコードを登録
-+                 // 別ストアのミューテーションする場合は第三引数に { root: +true } を追加
-+                 context.commit("error/setCode", response.status, { +root: true });
++                 // 別ストアのミューテーションする場合は第三引数に { root: true } を追加
++                 context.commit("error/setCode", response.status, { root: true });
 +             }
 +         },
           /*
@@ -465,16 +465,19 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
 +                 return false;
 +             }
 +
-+             // if failed
++             // apiStatus を false に更新
 +             context.commit("setApiStatus", false);
 +
-+             // validator server error
++             // 通信失敗のステータスが 422（バリデーションエラー）の場合
 +             if (response.status === UNPROCESSABLE_ENTITY) {
 +                 // validation error then set message
-+                 context.commit("setResetErrorMessages", response.+data.errors);
-+             } else {
-+                 // [error] server error then set error code
-+                 context.commit("error/setCode", response.status, { +root: true });
++                 context.commit("setResetErrorMessages", response.data.errors);
++             }
++             // 通信失敗のステータスがその他の場合
++             else {
++                 // エラーストアの code にステータスコードを登録
++                 // 別ストアのミューテーションする場合は第三引数に { root: true } を追加
++                 context.commit("error/setCode", response.status, { root: true });
 +             }
 +         },
           /*
