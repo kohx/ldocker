@@ -93,6 +93,13 @@
         <!-- forgot -->
         <section class="forgot" v-show="tab === 3">
             <h2>forgot</h2>
+            <!-- errors -->
+            <div v-if="forgotErrors" class="errors">
+                <ul v-if="forgotErrors.email">
+                    <li v-for="msg in forgotErrors.email" :key="msg">{{ msg }}</li>
+                </ul>
+            </div>
+            <!--/ errors -->
             <form @submit.prevent="forgot">
                 <div>Email</div>
                 <div>
@@ -142,6 +149,10 @@ export default {
         // authストアのregisterErrorMessages
         registerErrors() {
             return this.$store.state.auth.registerErrorMessages;
+        },
+        // authストアのforgotErrorMessages
+        forgotErrors() {
+            return this.$store.state.auth.forgotErrorMessages;
         }
     },
     methods: {
@@ -180,8 +191,19 @@ export default {
          * forgot
          */
         async forgot() {
-            alert("forgot");
-            this.clearForm();
+            // authストアのforgotアクションを呼び出す
+            await this.$store.dispatch("auth/forgot", this.forgotForm);
+            if (this.apiStatus) {
+                // show message
+                this.$store.commit("message/setContent", {
+                    content: "パスワードリセットメールを送りました。",
+                    timeout: 10000
+                });
+                // AUTHストアのエラーメッセージをクリア
+                this.clearError();
+                // フォームをクリア
+                this.clearForm();
+            }
         },
         /*
          * clear error messages

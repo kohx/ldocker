@@ -7,6 +7,7 @@ import store from "./store";
 // ページをインポート
 import Home from "./pages/Home.vue";
 import Login from "./pages/Login.vue";
+import Reset from "./pages/Reset.vue";
 import SystemError from "./pages/errors/SystemError.vue";
 import NotFound from "./pages/errors/NotFound.vue";
 
@@ -40,6 +41,24 @@ const routes = [
                 next("/");
             } else {
                 // してない場合はそのまま
+                next();
+            }
+        }
+    },
+    // password reset
+    {
+        // urlのパス
+        path: "/reset",
+        // インポートしたページ
+        component: Reset,
+        // ページコンポーネントが切り替わる直前に呼び出される関数
+        // to はアクセスされようとしているルートのルートオブジェクト
+        // from はアクセス元のルート
+        // next はページの移動先
+        beforeEnter(to, from, next) {
+            if (store.getters["auth/check"]) {
+                next("/");
+            } else {
                 next();
             }
         }
