@@ -388,7 +388,7 @@ php artisan config:clear
 
           // トークンをクッキーにつけてリセットページにリダイレクト
 -         return $this->redirectWithToken($this->vueRouteReset, $token);
-+         return $this->redirectVue('reset', 'RESETTOKEN', $message);
++         return $this->redirectVue('reset', 'RESETTOKEN', $token);
       }
 
       ...
