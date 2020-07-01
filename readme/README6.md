@@ -6,7 +6,9 @@
 
 前回の記事は[Laravel mix vue5 - メール認証に変更](https://www.aska-ltd.jp/jp/blog/69)
 
-# パスワードを忘れた場合にメールでパスワードリセット
+# Api Resetting Passwords パスワードリセット
+
+パスワードを忘れた場合にメールでパスワードリセット
 
 ## サンプル
 - このセクションを始める前  
@@ -347,10 +349,6 @@ class ResetPasswordMail extends Mailable
     // forgot
 +   Route::post('/forgot', 'Auth\ForgotPasswordController@forgot')->name('forgot');
     ...
-
-    // reset
-    Route::post('/reset', 'Auth\ResetPasswordController@reset')
-    ->name('reset');
 
 ```
 
