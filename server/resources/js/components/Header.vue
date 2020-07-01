@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import Cookies from "js-cookie";
+import Helper from "../helper";
+
 export default {
     // 算出プロパティでストアのステートを参照
     computed: {
@@ -23,6 +26,13 @@ export default {
             return this.$store.getters["auth/username"];
         }
     },
+    // app.jsでVueLocalStorageの名前を変更したので「storage」で宣言
+    storage: {
+        language: {
+            type: String,
+            default: null
+        }
+    },
     methods: {
         // ログアウトメソッド
         async logout() {
@@ -32,6 +42,33 @@ export default {
             if (this.apiStatus) {
                 this.$router.push("/login");
             }
+        },
+        // 言語切替メソッド
+        changeLang() {
+            // ローカルストレージに「language」をセット
+            this.$storage.set("language", this.selectedLang);
+            // Apiリクエスト 言語を設定
+            axios.get(`/api/set-lang/${this.selectedLang}`);
+        }
+    },
+    created() {
+        // ローカルストレージから「language」を取得
+        this.selectedLang = this.$storage.get("language");
+
+        // サーバ側をクライアント側に合わせる
+
+        // storageLangがない場合
+        if (!this.selectedLang) {
+            // ブラウザーの言語を取得
+            const defaultLang = Helper.getLanguage();
+            // ローカルストレージに「language」をセット
+            this.$storage.set("language", defaultLang);
+            // Apiリクエスト 言語を設定
+            axios.get(`/api/set-lang/${defaultLang}`);
+        }
+        // ある場合はサーバ側をクライアント側に合わせる
+        else {
+            axios.get(`/api/set-lang/${this.selectedLang}`);
         }
     }
 };

@@ -152,11 +152,11 @@ class LoginController extends Controller
             // login with remember
             Auth::login($user, true);
             // メッセージをつけてリダイレクト
-            $message = Lang::get('socialite login success.');
+            $message = __('socialite login success.');
             return $this->redirectVue('', 'MESSAGE', $message);
         } catch (\Exception $e) {
             // メッセージをつけてリダイレクト
-            $message = Lang::get('authentication failed.');
+            $message = __('authentication failed.');
             return $this->redirectVue('login', 'MESSAGE', $message);
         }
     }

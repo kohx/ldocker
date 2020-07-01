@@ -30,7 +30,7 @@ class ResetPasswordMail extends Mailable
     public function build()
     {
         // 件名
-        $subject = 'Reset password mail';
+        $subject = __('reset password mail');
 
         // コールバックURLをルート名で取得
         // TODO: これだとホットリロードでホストがおかしくなる

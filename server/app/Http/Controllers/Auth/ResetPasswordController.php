@@ -58,7 +58,7 @@ class ResetPasswordController extends Controller
         // なかったとき
         if ($isNotFoundResetPassword) {
             // メッセージをクッキーにつけてリダイレクト
-            $message = Lang::get('password reset email has not been sent.');
+            $message = __('password reset email has not been sent.');
             return $this->redirectVue('login', 'MESSAGE', $message);
         }
 

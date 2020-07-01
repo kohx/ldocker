@@ -1,0 +1,18 @@
+{
+    "--- auth ---": "",
+    "authentication failed.": "authentication failed.",
+    "socialite login success.": "socialite login success.",
+    "password reset email has not been sent.": "password reset email has not been sent.",
+    "invalid token.": "invalid token.",
+    "expired token.": "expired token.",
+    "is not user.": "is not user.",
+    "not provisionally registered.": "not provisionally registered.",
+    "completion of registration.": "completion of registration.",
+    "--- mail template ---": "",
+    "verification mail": "Verification mail",
+    "registration certification": "registration certification.",
+    "please click this link to verify your email.": "please click this link to verify your email.",
+    "reset password mail": "Reset password mail",
+    "password reset": "password reset",
+    "click this link to go to password reset.": "click this link to go to password reset."
+}

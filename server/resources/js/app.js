@@ -7,6 +7,20 @@ import router from "./router";
 // ストアをインポート
 import store from "./store";
 
+/**
+ * vue-localstorage
+ * https://www.npmjs.com/package/vue-localstorage
+ */
+
+// vue-localstorageをインポート
+import VueLocalStorage from "vue-localstorage";
+// VueLocalStorage宣言
+// 「$this.storage.get()」のように使えるように名前を変更
+// この名前でプロパティを宣言する
+Vue.use(VueLocalStorage, {
+    name: 'storage'
+});
+
 // 非同期通信でAUTHストアのcurrentUserアクションを実行するので
 // asyncメソッドにして、awaitで通信をまつ
 const createApp = async () => {

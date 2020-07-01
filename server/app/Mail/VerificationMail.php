@@ -32,7 +32,7 @@ class VerificationMail extends Mailable
     public function build()
     {
         // 件名
-        $subject = 'Verification mail';
+        $subject = __('verification mail');
 
         // コールバックURLをルート名で取得
         //TODO: これだとホットリロードでホストがおかしくなる
