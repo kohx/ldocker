@@ -1,7 +1,7 @@
 <p style="padding-top: 3rem;">こんにちは、あすかのkoheiです。</p>
 
-今回はLaravel Socialateでtwitterで認証を追加しいます。  
-Laravel Socialateは他にもFacebook、Twitter、LinkedIn、Google、GitHub、GitLab、Bitbucketをサポートしています。  
+今回はLaravel Socialiteでtwitterで認証を追加しいます。  
+Laravel Socialiteは他にもFacebook、Twitter、LinkedIn、Google、GitHub、GitLab、Bitbucketをサポートしています。  
 他にもコミュニティによりたくさんのアダプタが作られているます。  
 [Socialiteプロバイダ一覧](https://socialiteproviders.netlify.app/about.html)  
   
@@ -781,7 +781,7 @@ socialiteのログインリンクを作るので`server\resources\js\pages\Login
 
             ...
 
-+           <h2>socialate</h2>
++           <h2>Socialite</h2>
 +           <a class="button" href="/login/twitter" title="twitter">twitter</a>
         </section>
         <!-- /login -->

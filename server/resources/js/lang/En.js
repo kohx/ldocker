@@ -12,7 +12,7 @@ const contents = {
             forgot_password: 'Forgot Password ?',
             email: 'Email',
             password: 'Password',
-            socialate: 'Socialate',
+            socialite: 'Socialite',
             name: 'Name',
             password_confirmation: 'Password Confirmation',
             send: 'Send',
@@ -26,7 +26,7 @@ const contents = {
             sent_password_reset_email: 'Sent password reset email.',
         }
     },
-    /*  
+    /*
         日付フォーマット
 
         以下の定義形式で日時をローカライズ

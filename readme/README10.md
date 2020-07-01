@@ -480,8 +480,8 @@ this.$i18n.tc('sentence.sentence.{msg} world!')；
                     </div>
                 </form>
 
--               <h2>socialate</h2>
-+               <h2>{{ $t('word.socialate') }}</h2>
+-               <h2>Socialite</h2>
++               <h2>{{ $t('word.Socialite') }}</h2>
                 <a class="button" href="/login/twitter" title="twitter">
                     twitter
                 </a>
@@ -692,7 +692,7 @@ this.$i18n.tc('sentence.sentence.{msg} world!')；
 +               forgot_password: 'Forgot Password ?',
 +               email: 'Email',
 +               password: 'Password',
-+               socialate: 'Socialate',
++               Socialite: 'Socialite',
 +               name: 'Name',
 +               password_confirmation: 'Password Confirmation',
 +               send: 'Send',
@@ -728,7 +728,7 @@ this.$i18n.tc('sentence.sentence.{msg} world!')；
 +               forgot_password: 'パスワードをわすれましたか?',
 +               email: 'メールアドレス',
 +               password: 'パスワード',
-+               socialate: 'ソーシャルログイン',
++               Socialite: 'ソーシャルログイン',
 +               name: '名前',
 +               password_confirmation: 'パスワード確認',
 +               send: '送信',

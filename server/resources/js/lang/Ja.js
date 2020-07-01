@@ -12,7 +12,7 @@ const contents = {
             forgot_password: 'パスワードをわすれましたか?',
             email: 'メールアドレス',
             password: 'パスワード',
-            socialate: 'ソーシャルログイン',
+            socialite: 'ソーシャルログイン',
             name: '名前',
             password_confirmation: 'パスワード確認',
             send: '送信',

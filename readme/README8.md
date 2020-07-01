@@ -2,16 +2,16 @@
 
 今回はLaravel側を多言語化します。
 
-前回の記事は[Laravel mix vue No.7 - Socialate](https://www.aska-ltd.jp/jp/blog/72)
+前回の記事は[Laravel mix vue No.7 - Socialite](https://www.aska-ltd.jp/jp/blog/72)
 
 # Laravel多言語化
 
-<!-- ## サンプル
+## サンプル
 - このセクションを始める前  
 [github ldocker 08](https://github.com/kohx/ldocker/tree/08)  
   
 - 完成  
-[github ldocker 09](https://github.com/kohx/ldocker/tree/09) -->
+[github ldocker 09](https://github.com/kohx/ldocker/tree/09)
 
 ------------------------------------------------------------------------------------------
 
@@ -74,19 +74,22 @@ npm run watch
 
 ### 言語の切り替えるApiを作成
 
-`server\routes\api.php`に言語切替用のルートを作成して、セッションに言語をセットするようにする。
-
-
+`server\routes\api.php`に言語切替用のルートを作成して、セッションに言語をセットするようにする
 
 ```php:server\routes\api.php
 
     ...
-
-    // set lang
-    Route::get('/set-lang/{lang}', function (Illuminate\Http\Request $request, $lang) {
-        $request->session()->put('language', $lang);
+    // トークンリフレッシュ
+    Route::get('/refresh-token', function (Illuminate\Http\Request $request) {
+        $request->session()->regenerateToken();
         return response()->json();
-    })->name('set-lang');
+    })->name('refresh-token');
+
++   // set lang
++   Route::get('/set-lang/{lang}', function (Illuminate\Http\Request $request, $lang) {
++       $request->session()->put('language', $lang);
++       return response()->json();
++   })->name('set-lang');
 
 ```
 
@@ -108,37 +111,36 @@ php artisan make:middleware Language
 
 namespace App\Http\Middleware;
 
-use Closure;
-use App;
+    use Closure;
++   use App;
 
-class Language
-{
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
-    public function handle($request, Closure $next)
+    class Language
     {
-        // 設定されているロケールを取得
-        $locale = App::getLocale();
+        /**
+         * Handle an incoming request.
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @param  \Closure  $next
+         * @return mixed
+         */
+        public function handle($request, Closure $next)
+        {
++           // 設定されているロケールを取得
++           $locale = App::getLocale();
++
++           // セッションのロケールを取得ないときはデフォルトロケール
++           $leng = $request->session()->get('language');
++
++           // ロケールがあって、言語が変わる場合
++           if ($leng && $locale !== $leng) {
++               // 言語をセット
++               // ない場合は「config/app.php」に設定した「fallback_locale」の値になる
++               App::setLocale($leng);
++           }
 
-        // セッションのロケールを取得ないときはデフォルトロケール
-        $leng = $request->session()->get('language');
-
-        // ロケールがあって、言語が変わる場合
-        if ($leng && $locale !== $leng) {
-
-            // 言語をセット
-            // ない場合は「config/app.php」に設定した「fallback_locale」の値になる
-            App::setLocale($leng);
+            return $next($request);
         }
-
-        return $next($request);
     }
-}
 
 ```
 
@@ -241,7 +243,7 @@ class Language
 
 ```bash:terminal
 
-  npm install vue-localstorage --save
+  npm i vue-localstorage
 
 ```
 
@@ -271,7 +273,7 @@ class Language
 
     ...
 
-    /*
+    /**
      * vue-localstorage
      * https://www.npmjs.com/package/vue-localstorage
      */
@@ -280,7 +282,10 @@ class Language
     // VueLocalStorage宣言
     // 「$this.storage.get()」のように使えるように名前を変更
     // この名前でプロパティを宣言する
-+   Vue.use(VueLocalStorage)
++   Vue.use(VueLocalStorage, {
++       name: 'storage'
++   });
+
     ...
 
 ```
@@ -315,14 +320,14 @@ export default class Helper {
 
 ### 言語を取得と設定
 
-ヘッダコンポネントで言語切り替えできるようにする
+`server\resources\js\components\Header.vue`を編集してヘッダコンポネントで言語切り替えできるようにする
 
 ```javascript:server\resources\js\components\Header.vue
 
     ...
 
 +   import Cookies from "js-cookie";
-+   import Helper from "./helper";
++   import Helper from "../helper";
 
     export default {
         computed: {
@@ -337,7 +342,7 @@ export default class Helper {
 +       },
         methods: {
             ...
-              // 言語切替
+              // 言語切替メソッド
 +             changeLang() {
 +                 // ローカルストレージに「language」をセット
 +                 this.$storage.set("language", this.selectedLang);
@@ -642,32 +647,50 @@ return [
 ```php:server\app\Http\Controllers\Auth\LoginController.php
 
     ...
-    $message = $message = __('authentication failed.');
+
+    // メッセージをつけてリダイレクト
+-   $message = Lang::get('socialite login success.');
++   $message = __('socialite login success.');
+
     ...
-    $message = __('socialite login success.');
+
+    // メッセージをつけてリダイレクト
+-   $message = Lang::get('authentication failed.');
++   $message = __('authentication failed.');
+
     ...
 
 ```
 
 `server\app\Http\Controllers\Auth\ResetPasswordController.php`を確認
 
-```php:server\app\Http\Controllers\Auth\LoginController.php
+```php:server\app\Http\Controllers\Auth\ResetPasswordController.php
 
     ...
-    $message = __('password reset email has not been sent.');
+
+    // メッセージをクッキーにつけてリダイレクト
+-   $message = Lang::get('password reset email has not been sent.');
++   $message = __('password reset email has not been sent.');
+
     ...
+
     $validator->errors()->add('token', __('invalid token.'));
+
     ...
+
     $validator->errors()->add('token', __('expired token.'));
+
     ...
+
     $validator->errors()->add('token', __('is not user.'));
+
     ...
 
 ```
 
-`server\app\Http\Controllers\Auth\LoginController.php`を確認
+`server\app\Http\Controllers\Auth\VerificationController.php`を確認
 
-```php:server\app\Http\Controllers\Auth\LoginController.php
+```php:server\app\Http\Controllers\Auth\VerificationController.php
 
     ...
     $message = __('not provisionally registered.');
@@ -764,6 +787,30 @@ Jsonファイルを使用する場合は翻訳文字列をキーとして利用
     }
 
 ```
+
+## apiで言語が変更されるかテスト
+
+http://localhost:3000/api/set-lang/ja
+
+### パスワードを忘れた場合とパスワード変更メールで変更完了をテスト
+
+1. パスワード変更メールを送信  
+
+![キャプチャ1](http://www.aska-ltd.jp/uploads/blogs/2006190130laravel-mix-6-1.png)  
+
+データベース  
+![キャプチャ2](	http://www.aska-ltd.jp/uploads/blogs/2006190151laravel-mix-6-2.png)  
+
+2. メールの確認  
+
+![キャプチャ3](http://www.aska-ltd.jp/uploads/blogs/2006190121laravel-mix-6-3.png)  
+
+3. 移動後  
+
+![キャプチャ4](http://www.aska-ltd.jp/uploads/blogs/2006190126laravel-mix-6-4.png)  
+
+4. 変更後
+![キャプチャ5](http://www.aska-ltd.jp/uploads/blogs/2006190137laravel-mix-6-5.png) 
 
 これでLaravelから送られてくるメッセージは多言語化できました。
 次はVueを多言語化してみます。

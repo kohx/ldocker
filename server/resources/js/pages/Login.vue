@@ -48,7 +48,7 @@
                 </div>
             </form>
 
-            <h2>{{ $t('word.socialate') }}</h2>
+            <h2>{{ $t('word.socialite') }}</h2>
             <a class="button" href="/login/twitter" title="twitter">
                 twitter
             </a>
