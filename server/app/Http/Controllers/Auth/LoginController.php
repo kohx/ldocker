@@ -156,7 +156,7 @@ class LoginController extends Controller
             return $this->redirectVue('', 'MESSAGE', $message);
         } catch (\Exception $e) {
             // メッセージをつけてリダイレクト
-            $message = $message = Lang::get('authentication failed.');
+            $message = Lang::get('authentication failed.');
             return $this->redirectVue('login', 'MESSAGE', $message);
         }
     }
