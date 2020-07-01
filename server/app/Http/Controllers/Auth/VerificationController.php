@@ -8,13 +8,13 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Models\RegisterUser;
+// Vueableトレイトを読み込む
+use App\Traits\Vueable;
 
 class VerificationController extends Controller
 {
-    // vueでアクセスするホームへのルート
-    protected $vueRouteHome = '';
-    // vueでアクセスするログインへのルート
-    protected $vueRouteLogin = 'login';
+    // Vueableトレイトをuse
+    use Vueable;
 
     /**
      * Create a new controller instance.
@@ -47,7 +47,7 @@ class VerificationController extends Controller
             $message = __('not provisionally registered.');
 
             // メッセージをつけてリダイレクト
-            return $this->redirectWithMessage($this->vueRouteLogin, $message);
+            return $this->redirectVue('login', $message);
         }
 
         // 仮登録のデータでユーザを作成
@@ -60,7 +60,7 @@ class VerificationController extends Controller
         $message = __('completion of registration.');
 
         // メッセージをつけてリダイレクト
-        return $this->redirectWithMessage($this->vueRouteHome, $message);
+        return $this->redirectVue('', $message);
     }
 
     /**
@@ -100,24 +100,5 @@ class VerificationController extends Controller
             'email_verified_at' => now(),
             'password' => $data['password'],
         ]);
-    }
-
-    /**
-     * redirect with message
-     * メッセージをクッキーに付けてリダイレクト
-     *
-     * @param  string  $vueRoute
-     * @param  string  $message
-     * @return Redirect
-     */
-    protected function redirectWithMessage($vueRoute, $message)
-    {
-        // vueでアクセスするルートを作る
-        $route = url($vueRoute);
-
-        return redirect($route)
-            // PHPネイティブのsetcookieメソッドに指定する引数同じ
-            // ->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly)
-            ->cookie('MESSAGE', $message, 0, '', '', false, false);
     }
 }

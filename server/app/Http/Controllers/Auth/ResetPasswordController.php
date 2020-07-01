@@ -17,15 +17,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\PasswordReset;
 use App\User;
 use App\Models\ResetPassword;
+// Vueableトレイトを読み込む
+use App\Traits\Vueable;
 
 class ResetPasswordController extends Controller
 {
-    use ResetsPasswords;
+    use ResetsPasswords, Vueable;
 
-    // vueでアクセスするログインへのルート
-    protected $vueRouteLogin = 'login';
-    // vueでアクセスするリセットへのルート
-    protected $vueRouteReset = 'reset';
     // server\config\auth.phpで設定していない場合のデフォルト
     protected $expires = 600 * 5;
 
@@ -61,11 +59,11 @@ class ResetPasswordController extends Controller
         if ($isNotFoundResetPassword) {
             // メッセージをクッキーにつけてリダイレクト
             $message = Lang::get('password reset email has not been sent.');
-            return $this->redirectWithMessage($this->vueRouteLogin, $message);
+            return $this->redirectVue('login', 'MESSAGE', $message);
         }
 
         // トークンをクッキーにつけてリセットページにリダイレクト
-        return $this->redirectWithToken($this->vueRouteReset, $token);
+        return $this->redirectVue('reset', 'RESETTOKEN', $message);
     }
 
     /**
@@ -170,51 +168,5 @@ class ResetPasswordController extends Controller
     protected function tokenExpired($createdAt)
     {
         return Carbon::parse($createdAt)->addSeconds($this->expires)->isPast();
-    }
-
-    /**
-     * redirect with message
-     *
-     * @param  string  $route
-     * @param  string  $message
-     * @return Redirect
-     */
-    protected function redirectWithMessage($vueRoute, $message)
-    {
-        // vueでアクセスするルートを作る
-        // コールバックURLをルート名で取得
-        // TODO: これだとホットリロードでポートがとれない
-        // $route = url($vueRoute);
-
-        // TODO: とりあえずこれで対応
-        // .envの「APP_URL」に設定したurlを取得
-        $baseUrl = config('app.url');
-        $route = "{$baseUrl}/{$vueRoute}";
-
-        return redirect($route)
-            // PHPネイティブのsetcookieメソッドに指定する引数同じ
-            // ->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly)
-            ->cookie('MESSAGE', $message, 0, '', '', false, false);
-    }
-
-    /**
-     * redirect with token
-     *
-     * @param  string  $route
-     * @param  string  $message
-     * @return Redirect
-     */
-    protected function redirectWithToken($vueRoute, $token)
-    {
-        // vueでアクセスするルートを作る
-        // コールバックURLをルート名で取得
-        // TODO: これだとホットリロードでポートがとれない
-        // $route = url($vueRoute);
-
-        // TODO: とりあえずこれで対応
-        // .envの「APP_URL」に設定したurlを取得
-        $baseUrl = config('app.url');
-        $route = "{$baseUrl}/{$vueRoute}";
-        return redirect($route)->cookie('RESETTOKEN', $token, 0, '', '', false, false);
     }
 }

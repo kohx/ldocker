@@ -2280,6 +2280,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // vueで使うデータ
   data: function data() {
@@ -2625,7 +2628,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.tab {\r\n    padding: 0;\r\n    display: flex;\r\n    list-style: none;\n}\n.tab__item {\r\n    border: 1px solid gray;\r\n    padding: 0 0.5rem;\r\n    margin-left: 0.1rem;\r\n    cursor: pointer;\n}\n.tab__item--active {\r\n    background-color: lightgray;\n}\r\n", ""]);
+exports.push([module.i, "\n.tab {\n    padding: 0;\n    display: flex;\n    list-style: none;\n}\n.tab__item {\n    border: 1px solid gray;\n    padding: 0 0.5rem;\n    margin-left: 0.1rem;\n    cursor: pointer;\n}\n.tab__item--active {\n    background-color: lightgray;\n}\n", ""]);
 
 // exports
 
@@ -22071,6 +22074,17 @@ var render = function() {
             _vm._v(" "),
             _vm._m(0)
           ]
+        ),
+        _vm._v(" "),
+        _c("h2", [_vm._v("socialate")]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "button",
+            attrs: { href: "/login/twitter", title: "twitter" }
+          },
+          [_vm._v("twitter")]
         )
       ]
     ),

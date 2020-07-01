@@ -47,6 +47,9 @@
                     <button type="submit">login</button>
                 </div>
             </form>
+
+            <h2>socialate</h2>
+            <a class="button" href="/login/twitter" title="twitter">twitter</a>
         </section>
         <!-- /login -->
 

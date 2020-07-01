@@ -10,5 +10,11 @@ Route::get('/verification/{token}', 'Auth\VerificationController@register')
 Route::get('/reset-password/{token}', 'Auth\ResetPasswordController@resetPassword')
     ->name('reset-password');
 
+// socialite 各プロバイダにリダイレクトするルート
+Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
+
+// socialite 各プロバイダからのコールバックを受けるルート
+Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
 // API以外はindexを返すようにして、VueRouterで制御
 Route::get('/{any?}', fn () => view('index'))->where('any', '.+');
