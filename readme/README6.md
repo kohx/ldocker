@@ -348,6 +348,9 @@ class ResetPasswordMail extends Mailable
 
     // forgot
 +   Route::post('/forgot', 'Auth\ForgotPasswordController@forgot')->name('forgot');
+
+    // reset
++   Route::post('/reset', 'Auth\ResetPasswordController@reset')->name('reset');
     ...
 
 ```
@@ -398,19 +401,19 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
     * アクション（非同期処理）
     */
     const actions = {
-        ...
+      ...
+          /*
+          * registerのアクション
+          */
+          async register(context, data) {
+            ...
+          }
           /*
            * logoutのアクション
            */
           async logout(context) {
             ...
           },
-          /*
-           * registerのアクション
-           */
-           async register(context, data) {
-             ...
-           }
           /*
            * forgotのアクション
            */
@@ -760,7 +763,9 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
 
 ### Vueルーターにあたらしいルートを追加
 
-```javascript:server\resources\js\pages\Reset.vue
+`server\resources\js\router.js`を編集
+
+```javascript:server\resources\js\router.js
 
     ...
     // ページをインポート
@@ -783,23 +788,23 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
             ...
         },
         // password reset
-        {
-            // urlのパス
-            path: "/reset",
-            // インポートしたページ
-            component: Reset,
-            // ページコンポーネントが切り替わる直前に呼び出される関数
-            // to はアクセスされようとしているルートのルートオブジェクト
-            // from はアクセス元のルート
-            // next はページの移動先
-            beforeEnter(to, from, next) {
-                if (store.getters["auth/check"]) {
-                    next("/");
-                } else {
-                    next();
-                }
-            }
-        },
++       {
++           // urlのパス
++           path: "/reset",
++           // インポートしたページ
++           component: Reset,
++           // ページコンポーネントが切り替わる直前に呼び出される関数
++           // to はアクセスされようとしているルートのルートオブジェクト
++           // from はアクセス元のルート
++           // next はページの移動先
++           beforeEnter(to, from, next) {
++               if (store.getters["auth/check"]) {
++                   next("/");
++               } else {
++                   next();
++               }
++           }
++       },
         // システムエラー
         {
             ...
