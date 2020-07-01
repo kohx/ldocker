@@ -48,7 +48,7 @@
                 </div>
             </form>
 
-            <h2>socialate</h2>
+            <h2>Socialite</h2>
             <a class="button" href="/login/twitter" title="twitter">twitter</a>
         </section>
         <!-- /login -->
