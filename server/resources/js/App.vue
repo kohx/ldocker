@@ -21,6 +21,9 @@ import Header from "./components/Header.vue";
 import Message from "./components/Message.vue";
 import { NOT_FOUND, UNAUTHORIZED, INTERNAL_SERVER_ERROR } from "./const";
 
+// js-cookieをインポート
+import Cookies from "js-cookie";
+
 export default {
     // 使用するコンポーネントを宣言
     components: {
@@ -63,6 +66,19 @@ export default {
         // 同じrouteの異なるパラメータで画面遷移しても、vue-routerは画面を再描画しないのでwatchで監視
         $route() {
             this.$store.commit("error/setCode", null);
+        }
+    },
+    created() {
+        // cookiesにMESSAGEがある場合
+        const message = Cookies.get("MESSAGE");
+        if (message) {
+            // cookieをクリア
+            Cookies.remove("MESSAGE");
+            // MESSAGEストアでメッセージを表示
+            this.$store.commit("message/setContent", {
+                content: message,
+                timeout: 6000
+            });
         }
     }
 };

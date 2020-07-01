@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 // register
-Route::post('/register', 'Auth\RegisterController@register')->name('register');
+Route::post('/register', 'Auth\RegisterController@sendMail')->name('register');
 // login
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 // logout

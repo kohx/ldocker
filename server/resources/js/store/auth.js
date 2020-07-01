@@ -109,8 +109,7 @@ const actions = {
         if (response.status === CREATED) {
             // apiStatus を true に更新
             context.commit("setApiStatus", true);
-            // user にデータを登録
-            context.commit("setUser", response.data);
+            // user にデータを登録 -> 仮認証の時点では実行しないようにする
             // ここで終了
             return false;
         }
