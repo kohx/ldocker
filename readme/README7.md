@@ -10,14 +10,14 @@ Laravel Socialateは他にもFacebook、Twitter、LinkedIn、Google、GitHub、G
 
 前回の記事は[Laravel mix vue No.6 - パスワードリセット](https://www.aska-ltd.jp/jp/blog/70)
 
-# Socialite
+# Socialite ソーシャルログイン
 
-<!-- ## サンプル
+## サンプル
 - このセクションを始める前  
 [github ldocker 07](https://github.com/kohx/ldocker/tree/07)  
   
 - 完成  
-[github ldocker 08](https://github.com/kohx/ldocker/tree/08) -->
+[github ldocker 08](https://github.com/kohx/ldocker/tree/08)
 
 ------------------------------------------------------------------------------------------
 
@@ -91,7 +91,8 @@ composer require laravel/socialite
 
 ### サービスプロバイダへの登録とエイリアスの作成
 
-これで`use Laravel\Socialite\Facades\Socialite;`が`use Socialite;`とかける
+`server\config\app.php`を編集して
+`use Laravel\Socialite\Facades\Socialite;`を`use Socialite;`とかけるようにする
 
 ```php:server\config\app.php
 
@@ -104,7 +105,7 @@ composer require laravel/socialite
             /*
             * Package Service Providers...
             */
-    +       Laravel\Socialite\SocialiteServiceProvider::class,
++           Laravel\Socialite\SocialiteServiceProvider::class,
             ...
           ],
 
@@ -246,7 +247,7 @@ php artisan config:clear
     class VerificationController extends Controller
     {
       // Vueableトレイトをuse
-      use Vueable
++     use Vueable
 
 -     // vueでアクセスするホームへのルート
 -     protected $vueRouteHome = '';
@@ -264,18 +265,18 @@ php artisan config:clear
        */
       public function register($token)
       {
-        // 仮登録のデータをトークンで取得
-        $registerUser = $this->getRegisterUser($token);
+          // 仮登録のデータをトークンで取得
+          $registerUser = $this->getRegisterUser($token);
 
-          // 取得できなかった場合
-          if (!$registerUser) {
+              // 取得できなかった場合
+              if (!$registerUser) {
 
-            // 失敗メッセージを作成
-            $message = __('not provisionally registered.');
+                // 失敗メッセージを作成
+                $message = __('not provisionally registered.');
 
-            // メッセージをつけてリダイレクト
--            return $this->redirectWithMessage($this->vueRouteLogin, $message);
-+            return $this->redirectVue('login', $message);
+                // メッセージをつけてリダイレクト
+    -           return $this->redirectWithMessage($this->vueRouteLogin, $message);
+    +           return $this->redirectVue('login', $message);
           }
 
           // 仮登録のデータでユーザを作成
@@ -351,7 +352,7 @@ php artisan config:clear
 
     class ResetPasswordController extends Controller
     {
-      // Vueableトレイトを読み込む
+      // Vueableトレイトをuse
 -     use ResetsPasswords;
 +     use ResetsPasswords, Vueable;
 
@@ -359,6 +360,8 @@ php artisan config:clear
 -     protected $vueRouteLogin = 'login';
 -     // vueでアクセスするリセットへのルート
 -     protected $vueRouteReset = 'reset';
+      // server\config\auth.phpで設定していない場合のデフォルト
+      protected $expires = 600 * 5;
 
       ...
 
@@ -390,52 +393,52 @@ php artisan config:clear
 
       ...
       
-+     /**
-+      * redirect with message
-+      *
-+      * @param  string  $route
-+      * @param  string  $message
-+      * @return Redirect
-+      */
-+     protected function redirectWithMessage($vueRoute, $message)
-+     {
-+         // vueでアクセスするルートを作る
-+         // コールバックURLをルート名で取得
-+         // TODO: これだとホットリロードでポートがとれない
-+         // $route = url($vueRoute);
-+
-+         // TODO: とりあえずこれで対応
-+         // .envの「APP_URL」に設定したurlを取得
-+         $baseUrl = config('app.url');
-+         $route = "{$baseUrl}/{$vueRoute}";
-+
-+         return redirect($route)
-+             // PHPネイティブのsetcookieメソッドに指定する引数同じ
-+             // ->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly)
-+             ->cookie('MESSAGE', $message, 0, '', '', false, false);
-+     }
-
-+     /**
-+      * redirect with token
-+      *
-+      * @param  string  $route
-+      * @param  string  $message
-+      * @return Redirect
-+      */
-+     protected function redirectWithToken($vueRoute, $token)
-+     {
-+         // vueでアクセスするルートを作る
-+         // コールバックURLをルート名で取得
-+         // TODO: これだとホットリロードでポートがとれない
-+         // $route = url($vueRoute);
-+
-+         // TODO: とりあえずこれで対応
-+         // .envの「APP_URL」に設定したurlを取得
-+         $baseUrl = config('app.url');
-+         $route = "{$baseUrl}/{$vueRoute}";
-+         return redirect($route)
-+             ->cookie('RESETTOKEN', $token, 0, '', '', false, false);
-+     }
+-     /**
+-      * redirect with message
+-      *
+-      * @param  string  $route
+-      * @param  string  $message
+-      * @return Redirect
+-      */
+-     protected function redirectWithMessage($vueRoute, $message)
+-     {
+-         // vueでアクセスするルートを作る
+-         // コールバックURLをルート名で取得
+-         // TODO: これだとホットリロードでポートがとれない
+-         // $route = url($vueRoute);
+-
+-         // TODO: とりあえずこれで対応
+-         // .envの「APP_URL」に設定したurlを取得
+-         $baseUrl = config('app.url');
+-         $route = "{$baseUrl}/{$vueRoute}";
+-
+-         return redirect($route)
+-             // PHPネイティブのsetcookieメソッドに指定する引数同じ
+-             // ->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly)
+-             ->cookie('MESSAGE', $message, 0, '', '', false, false);
+-     }
+-
+-     /**
+-      * redirect with token
+-      *
+-      * @param  string  $route
+-      * @param  string  $message
+-      * @return Redirect
+-      */
+-     protected function redirectWithToken($vueRoute, $token)
+-     {
+-         // vueでアクセスするルートを作る
+-         // コールバックURLをルート名で取得
+-         // TODO: これだとホットリロードでポートがとれない
+-         // $route = url($vueRoute);
+-
+-         // TODO: とりあえずこれで対応
+-         // .envの「APP_URL」に設定したurlを取得
+-         $baseUrl = config('app.url');
+-         $route = "{$baseUrl}/{$vueRoute}";
+-         return redirect($route)
+-             ->cookie('RESETTOKEN', $token, 0, '', '', false, false);
+-     }
     }
 
 ```
@@ -532,6 +535,8 @@ class ChangeUsersTable extends Migration
     // socialite 各プロバイダからのコールバックを受けるルート
 +   Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
+    // API以外はindexを返すようにして、VueRouterで制御
+    Route::get('/{any?}', fn () => view('index'))->where('any', '.+');
 ```
 
 ### Userモデルを修正
@@ -551,7 +556,7 @@ class ChangeUsersTable extends Migration
         */
         protected $fillable = [
             'name', 'email', 'password', 'email_verified_at',
-            'provider_id', 'provider_name', 'nickname', 'avatar',
++           'provider_id', 'provider_name', 'nickname', 'avatar',
         ];
     ...
 ```
@@ -582,7 +587,9 @@ class ChangeUsersTable extends Migration
 -       use AuthenticatesUsers;
 +       use AuthenticatesUsers, Vueable;
 
-        /*
+        /**
+         * ログイン制限が設定
+         *
          * laravel標準のLoginControllerを使う場合、ログイン失敗の数によってログイン制限が設定されている
          * 場所は上の「AuthenticatesUsersトレイト」でuseされている「ThrottlesLoginsトレイト」にある「maxAttemptsメソッド」と「decayMinutesメソッド」
          * $this->maxAttemptsがない場合は5がデフォルト
@@ -642,42 +649,42 @@ class ChangeUsersTable extends Migration
             return response()->json();
         }
 
-        /**
-         * 認証ページヘユーザーをリダイレクト
-         *
-         * @return \Illuminate\Http\Response
-         */
++       /**
++        * 認証ページヘユーザーをリダイレクト
++        *
++        * @return \Illuminate\Http\Response
++        */
 +       public function redirectToProvider($provider)
 +       {
 +           return Socialite::driver($provider)
-                // オプションパラメータを含めるには、withメソッドを呼び出し、連想配列を渡す
-                // ->with(['hd' => 'example.com'])
-                // scopesメソッドを使用し、リクエストへ「スコープ」を追加することもでる
-                // ->scopes(['read:user', 'public_repo'])
++               // オプションパラメータを含めるには、withメソッドを呼び出し、連想配列を渡す
++               // ->with(['hd' => 'example.com'])
++               // scopesメソッドを使用し、リクエストへ「スコープ」を追加することもでる
++               // ->scopes(['read:user', 'public_repo'])
 +               ->redirect();
 +       }
 
-        /**
-         * プロバイダからユーザー情報を取得
-         *
-         * @return \Illuminate\Http\Response
-         */
++       /**
++        * プロバイダからユーザー情報を取得
++        *
++        * @return \Illuminate\Http\Response
++        */
 +       public function handleProviderCallback($provider)
 +       {
-            try {
-                // プロバイダからのレスのの中からユーザ情報を取得
-                $providerUser = Socialite::with($provider)->user();
-
-                // メールを取得
++           try {
++               // プロバイダからのレスのの中からユーザ情報を取得
++               $providerUser = Socialite::with($provider)->user();
++
++               // メールを取得
 +               $email = $providerUser->getEmail() ?? null;
-
-                // プロバイダID
++
++               // プロバイダID
 +               $providerId = $providerUser->getId();
-
-                // メールがあるとき
++
++               // メールがあるとき
 +               if ($email) {
-
-                    // ユーザを作成または更新
++
++                   // ユーザを作成または更新
 +                   $user = User::firstOrCreate([
 +                       'email' => $email,
 +                   ], [
@@ -689,9 +696,9 @@ class ChangeUsersTable extends Migration
 +                       'avatar' => $providerUser->getAvatar() ?? '',
 +                   ]);
 +               }
-                // プロバイダIDがあるとき
-                elseif($providerId) {
-                     // ユーザを作成または更新
++               // プロバイダIDがあるとき
++               elseif($providerId) {
++                    // ユーザを作成または更新
 +                    $user = User::firstOrCreate([
 +                        'provider_id' => $providerId,
 +                        'provider_name' => $provider,
@@ -707,18 +714,18 @@ class ChangeUsersTable extends Migration
 +                else {
 +                    throw new \Exception();
 +                }
-
++
 +                // login with remember
 +                Auth::login($user, true);
-
-                 // メッセージをつけてリダイレクト
++
++                // メッセージをつけてリダイレクト
 +                $message = Lang::get('socialite login success.');
 +                return $this->redirectVue('', 'MESSAGE', $message);
-
++
 +           } catch(\Exception $e) {
-
-                // メッセージをつけてリダイレクト
-                $message = $message = Lang::get('authentication failed.');
++
++               // メッセージをつけてリダイレクト
++               $message = $message = Lang::get('authentication failed.');
 +               return $this->redirectVue('login', 'MESSAGE', $message);
 +           }
 +       }
@@ -737,20 +744,20 @@ class ChangeUsersTable extends Migration
 
       ...
     
-      /*
-      |--------------------------------------------------------------------------
-      | throttles logins
-      |--------------------------------------------------------------------------
-      |
-      | ログインロック機能
-      |
-      */
-      'throttles_logins' => [
-          // ログイン試行回数（回）
-          'maxAttempts' => 2,
-          // ログインロックタイム（分）
-          'decayMinutes' => 10,
-      ],
++     /*
++     |--------------------------------------------------------------------------
++     | throttles logins
++     |--------------------------------------------------------------------------
++     |
++     | ログインロック機能
++     |
++     */
++     'throttles_logins' => [
++         // ログイン試行回数（回）
++         'maxAttempts' => 2,
++         // ログインロックタイム（分）
++         'decayMinutes' => 10,
++     ],
     ];
 
 ```

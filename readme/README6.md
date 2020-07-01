@@ -1090,7 +1090,7 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
 ![キャプチャ5](http://www.aska-ltd.jp/uploads/blogs/2006190137laravel-mix-6-5.png)  
 
 
-次は残っているパスワード変更の部分を実装します。  
+次はソーシャルログインを追加します。
  
 [Laravel mix vue No.7 - socialite](https://www.aska-ltd.jp/jp/blog/72)
 
