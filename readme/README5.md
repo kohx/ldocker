@@ -331,7 +331,7 @@ php artisan make:model Models/RegisterUser
 
 laravelのartisanでクラス名を`VerificationMail`としてメールクラスを作成
 
-```bash
+```bash:terminal
 
 php artisan make:mail VerificationMail
 
@@ -462,7 +462,7 @@ php artisan make:mail VerificationMail
 
 ### 送信後の処理をVueに入れる
 
-メッセージを変更
+`server\resources\js\pages\Login.vue`のメッセージを変更
 
 ```javascript:server\resources\js\pages\Login.vue
 
@@ -554,7 +554,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Models\RegisterUser;
@@ -708,6 +707,8 @@ cookieは暗号化されているので「MESSAGE」を暗号化しないよう�
 ```
 
 ### cookieで送ったメッセージをMESSAGEストアで表示できるようにする
+
+`server\resources\js\App.vue`を編集
 
 ```javascript:server\resources\js\App.vue
 

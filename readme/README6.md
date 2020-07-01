@@ -46,13 +46,13 @@
 
 ```
 
----
+------------------------------------------------------------------------------------------
 
 ## dockerスタートとnpmモジュール追加
 
 gitからクローンした場合は`.env`の作成と設定を忘れないように！
 
-```bash
+```bash:terminal
 # コンテナスタート
 docker-compose start
 
@@ -72,7 +72,7 @@ php artisan key:generate
 npm run watch
 ```
 
----
+------------------------------------------------------------------------------------------
 
 
 ## ResetPasswordモデル
@@ -81,7 +81,7 @@ laravelのartisanでmodelを作成
 
 テーブル名は`Reset_password`なのでクラス名は`ResetPassword`として`Models`フォルダに作成
 
-```bash
+```bash:terminal
 
 php artisan make:model Models/ResetPassword
 
@@ -130,7 +130,7 @@ class ResetPassword extends Model
 
 ```
 
----
+------------------------------------------------------------------------------------------
 
 ## パスワードを忘れた場合の処理をしてパスワード変更メールを送る
 
@@ -237,7 +237,7 @@ class ForgotPasswordController extends Controller
 
 laravelのartisanでクラス名を`Mail`としてメールクラスを作成
 
-```bash
+```bash:terminal
 
 php artisan make:mail ResetPasswordMail
 
@@ -333,7 +333,6 @@ class ResetPasswordMail extends Mailable
     @endsection
 
 ```
-
 
 ### パスワードを忘れた場合で使用するルートの追加
 
@@ -758,9 +757,7 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
 
 ```
 
----
-
-#### Vueルーターにあたらしいルートを追加
+### Vueルーターにあたらしいルートを追加
 
 ```javascript:server\resources\js\pages\Reset.vue
 
@@ -814,6 +811,8 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
     ...
 
 ```
+
+------------------------------------------------------------------------------------------
 
 ## パスワード変更メールからのコールバックを処理してパスワード変更を完了する
 
@@ -1048,7 +1047,7 @@ AUTHストアにパスワードを忘れた場合の処理をいれるので`ser
 
 ### パスワード変更で使用するルートの追加
 
-パスワード変更メールからのコールバックを受けるルートを追加する
+パスワード変更メールからのコールバックを受けるルートを`server\routes\web.php`に追加する
 
 ```php:server\routes\web.php
 
