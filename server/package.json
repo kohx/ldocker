@@ -27,6 +27,8 @@
         "vuex": "^3.4.0"
     },
     "dependencies": {
-        "js-cookie": "^2.2.1"
+        "js-cookie": "^2.2.1",
+        "vue-i18n": "^8.18.2",
+        "vue-localstorage": "^0.6.2"
     }
 }

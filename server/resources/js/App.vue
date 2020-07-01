@@ -16,16 +16,23 @@
 </template>
 
 <script>
-// Headerコンポーネントをインポート
 import Header from "./components/Header.vue";
 import Message from "./components/Message.vue";
 import { NOT_FOUND, UNAUTHORIZED, INTERNAL_SERVER_ERROR } from "./const";
+import Cookies from "js-cookie";
 
 export default {
     // 使用するコンポーネントを宣言
     components: {
         Header,
         Message
+    },
+    // app.jsでVueLocalStorageの名前を変更したので「storage」で宣言
+    storage: {
+        language: {
+            type: String,
+            default: null
+        }
     },
     computed: {
         // ERRORストアのcodeステートを取得
@@ -63,6 +70,23 @@ export default {
         // 同じrouteの異なるパラメータで画面遷移しても、vue-routerは画面を再描画しないのでwatchで監視
         $route() {
             this.$store.commit("error/setCode", null);
+        }
+    },
+    async created() {
+        /*
+         * メッセージを表示
+         */
+
+        // cookiesにMESSAGEがある場合
+        const message = Cookies.get("MESSAGE");
+        if (message) {
+            // cookieをクリア
+            Cookies.remove("MESSAGE");
+            // MESSAGEストアでメッセージを表示
+            this.$store.commit("message/setContent", {
+                content: message,
+                timeout: 6000
+            });
         }
     }
 };

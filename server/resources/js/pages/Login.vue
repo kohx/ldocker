@@ -2,23 +2,23 @@
     <div class="container">
         <!-- tabs -->
         <ul class="tab">
-            <li class="tab__item" :class="{'tab__item--active': tab === 1 }" @click="tab = 1">Login</li>
+            <li class="tab__item" :class="{'tab__item--active': tab === 1 }" @click="tab = 1">{{ $t('word.login') }}</li>
             <li
                 class="tab__item"
                 :class="{'tab__item--active': tab === 2 }"
                 @click="tab = 2"
-            >Register</li>
+            >{{ $t('word.register') }}</li>
             <li
                 class="tab__item"
                 :class="{'tab__item--active': tab === 3 }"
                 @click="tab = 3"
-            >Forgot password ?</li>
+            >{{ $t('word.forgot_password') }}</li>
         </ul>
         <!-- /tabs -->
 
         <!-- login -->
         <section class="login" v-show="tab === 1">
-            <h2>Login</h2>
+            <h2>{{ $t('word.login') }}</h2>
 
             <!-- errors -->
             <div v-if="loginErrors" class="errors">
@@ -34,25 +34,39 @@
             <!-- @submitで login method を呼び出し -->
             <!-- @submitイベントリスナに prevent をつけるとsubmitイベントによってページがリロードさない -->
             <form @submit.prevent="login">
-                <div>Email</div>
+                <div>{{ $t('word.email') }}</div>
                 <div>
                     <!-- v-modelでdataをバインド -->
                     <input type="email" v-model="loginForm.email" />
                 </div>
-                <div>Password</div>
+                <div>{{ $t('word.password') }}</div>
                 <div>
                     <input type="password" v-model="loginForm.password" />
                 </div>
                 <div>
-                    <button type="submit">login</button>
+                    <button type="submit">{{ $t('word.login') }}</button>
                 </div>
             </form>
+
+            <h2>{{ $t('word.socialate') }}</h2>
+            <a class="button" href="/login/twitter" title="twitter">
+                twitter
+            </a>
+            <a class="button" href="/login/facebook" title="facebookfacebook">
+                facebook
+            </a>
+            <a class="button" href="/login/google" title="google">
+                google
+            </a>
+            <a class="button" href="/login/github" title="github">
+                github
+            </a>
         </section>
         <!-- /login -->
 
         <!-- register -->
         <section class="register" v-show="tab === 2">
-            <h2>register</h2>
+            <h2>{{ $t('word.register') }}</h2>
             <!-- errors -->
             <div v-if="registerErrors" class="errors">
                 <ul v-if="registerErrors.name">
@@ -67,24 +81,24 @@
             </div>
             <!--/ errors -->
             <form @submit.prevent="register">
-                <div>Name</div>
+                <div>{{ $t('word.name') }}</div>
                 <div>
                     <input type="text" v-model="registerForm.name" />
                 </div>
-                <div>Email</div>
+                <div>{{ $t('word.email') }}</div>
                 <div>
                     <input type="email" v-model="registerForm.email" />
                 </div>
-                <div>Password</div>
+                <div>{{ $t('word.password') }}</div>
                 <div>
                     <input type="password" v-model="registerForm.password" />
                 </div>
-                <div>Password confirmation</div>
+                <div>{{ $t('word.password_confirmation') }}</div>
                 <div>
                     <input type="password" v-model="registerForm.password_confirmation" />
                 </div>
                 <div>
-                    <button type="submit">register</button>
+                    <button type="submit">{{ $t('word.register') }}</button>
                 </div>
             </form>
         </section>
@@ -92,14 +106,21 @@
 
         <!-- forgot -->
         <section class="forgot" v-show="tab === 3">
-            <h2>forgot</h2>
+            <h2>{{ $t('word.forgot_password') }}</h2>
+            <!-- errors -->
+            <div v-if="forgotErrors" class="errors">
+                <ul v-if="forgotErrors.email">
+                    <li v-for="msg in forgotErrors.email" :key="msg">{{ msg }}</li>
+                </ul>
+            </div>
+            <!--/ errors -->
             <form @submit.prevent="forgot">
-                <div>Email</div>
+                <div>{{ $t('word.email') }}</div>
                 <div>
                     <input type="email" v-model="forgotForm.email" />
                 </div>
                 <div>
-                    <button type="submit">send</button>
+                    <button type="submit">{{ $t('word.send') }}</button>
                 </div>
             </form>
         </section>
@@ -114,18 +135,18 @@ export default {
         return {
             tab: 1,
             loginForm: {
-                email: "",
-                password: "",
+                email: "user6@user.com",
+                password: "aaa",
                 remember: true
             },
             registerForm: {
-                name: "",
-                email: "",
-                password: "",
-                password_confirmation: ""
+                name: "user6",
+                email: "user6@user.com",
+                password: "11111111",
+                password_confirmation: "11111111"
             },
             forgotForm: {
-                email: ""
+                email: "user6@user.com"
             }
         };
     },
@@ -142,6 +163,10 @@ export default {
         // authストアのregisterErrorMessages
         registerErrors() {
             return this.$store.state.auth.registerErrorMessages;
+        },
+        // authストアのforgotErrorMessages
+        forgotErrors() {
+            return this.$store.state.auth.forgotErrorMessages;
         }
     },
     methods: {
@@ -167,7 +192,8 @@ export default {
             if (this.apiStatus) {
                 // メッセージストアで表示
                 this.$store.commit("message/setContent", {
-                    content: "認証メールを送りました。",
+                    // メッセージストアはサーバからのメッセージもあるので「i18n.tc」でコード内で翻訳しておく
+                    content: this.$i18n.tc("sentence.sent_verification_email"),
                     timeout: 10000
                 });
                 // AUTHストアのエラーメッセージをクリア
@@ -180,8 +206,20 @@ export default {
          * forgot
          */
         async forgot() {
-            alert("forgot");
-            this.clearForm();
+            // authストアのforgotアクションを呼び出す
+            await this.$store.dispatch("auth/forgot", this.forgotForm);
+            if (this.apiStatus) {
+                // show message
+                this.$store.commit("message/setContent", {
+                    // メッセージストアはサーバからのメッセージもあるので「i18n.tc」でコード内で翻訳しておく
+                    content: this.$i18n.tc('sentence.sent_password_reset_email'),
+                    timeout: 10000
+                });
+                // AUTHストアのエラーメッセージをクリア
+                this.clearError();
+                // フォームをクリア
+                this.clearForm();
+            }
         },
         /*
          * clear error messages

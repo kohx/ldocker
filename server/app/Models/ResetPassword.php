@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RegisterUser extends Model
+class ResetPassword extends Model
 {
     // テーブル名を指定
-    protected $table = 'register_users';
+    protected $table = 'password_resets';
 
     // プライマリキーを「email」に変更
     // デフォルトは「id」
@@ -20,7 +20,7 @@ class RegisterUser extends Model
     // モデルが以下のフィールド以外を持たないようにする
     protected $fillable = [
         'email',
-        'name',
+        'token',
     ];
 
     // タイムスタンプは「created_at」のフィールドだけにしたいので、「false」を指定
@@ -29,7 +29,6 @@ class RegisterUser extends Model
     public static function boot()
     {
         parent::boot();
-
         static::creating(function ($model) {
             $model->created_at = $model->freshTimestamp();
         });

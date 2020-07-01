@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class VerificationMail extends Mailable
+class ResetPasswordMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,27 +30,26 @@ class VerificationMail extends Mailable
     public function build()
     {
         // 件名
-        $subject = __('verification mail');
+        $subject = __('reset password mail');
 
         // コールバックURLをルート名で取得
         // TODO: これだとホットリロードでホストがおかしくなる
-        // $url = route('verification', ['token' => $this->token]);
+        // $url = route('reset-password', ['token' => $this->token]);
 
         // TODO: とりあえずこれで対応
         // .envの「APP_URL」に設定したurlを取得
         $baseUrl = config('app.url');
         $token = $this->token;
-        $url = "{$baseUrl}/verification/{$token}";
+        $url = "{$baseUrl}/reset-password/{$token}";
 
         // 送信元のアドレス
         // .envの「MAIL_FROM_ADDRESS」に設定したアドレスを取得
         $from = config('mail.from.address');
 
-        // メール送信
         return $this->from($from)
             ->subject($subject)
             // 送信メールのビュー
-            ->view('mails.verification_mail')
+            ->view('mails.reset_password_mail')
             // ビューで使う変数を渡す
             ->with('url', $url);
     }

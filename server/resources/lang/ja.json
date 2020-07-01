@@ -1,0 +1,18 @@
+{
+    "--- auth ---": "",
+    "authentication failed.": "認証に失敗しました。",
+    "socialite login success.": "ソーシャルログインに成功しました。",
+    "password reset email has not been sent.": "パスワード再設定メールが送信されていません。",
+    "invalid token.": "無効なトークンです。",
+    "expired token.": "期限切れのトークンです。",
+    "is not user.": "ユーザーではありません。",
+    "not provisionally registered.": "仮登録されていません。",
+    "completion of registration.": "登録の完了しました。",
+    "--- mail template ---": "",
+    "verification mail": "登録認証メール",
+    "registration certification": "登録認証",
+    "please click this link to verify your email.": "こちらのリンクをクリックして、登録認証してください。",
+    "reset password mail": "パスワードリセットメール",
+    "password reset": "パスワードリセット",
+    "click this link to go to password reset.": "こちらのリンクをクリックして、パスワードリセットへ移動してください。"
+}

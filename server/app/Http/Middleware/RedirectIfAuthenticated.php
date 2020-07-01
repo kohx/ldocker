@@ -18,8 +18,18 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        // 認証済み（ログイン済み）の状態でログインページにアクセスした場合
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('user');
+            // 非同期通信の場合
+            if ($request->ajax()) {
+                // リダイレクトしてユーザ情報をを返す
+                return redirect()->route('user');
+            }
+            // 同期通信の場合
+            else {
+                // ルートにリダイレクト
+                return redirect('/');
+            }
         }
 
         return $next($request);

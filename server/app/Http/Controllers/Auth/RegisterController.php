@@ -30,7 +30,7 @@ class RegisterController extends Controller
 
         // create token
         // トークンを作成
-        $token = self::createToken();
+        $token = $this->createToken();
 
         // delete old data
         // 同じメールアドレスが残っていればテーブルから削除
@@ -46,7 +46,7 @@ class RegisterController extends Controller
 
         // send email
         // メールクラスでメールを送信
-        self::sendVerificationMail($passwordReset->email, $token);
+        $this->sendVerificationMail($passwordReset->email, $token);
 
         // モデルを返す
         return $passwordReset;
@@ -70,7 +70,7 @@ class RegisterController extends Controller
 
     /**
      * create activation token
-     * 認証メールのトークンを作成する
+     * トークンを作成する
      * @return string
      */
     private function createToken()
