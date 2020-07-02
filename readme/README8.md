@@ -4,7 +4,7 @@
 
 前回の記事は[Laravel mix vue No.7 - Socialite](https://www.aska-ltd.jp/jp/blog/72)
 
-# Laravel多言語化
+# Laravel mix vue No.8 - Laravel Internationalization 多言語化
 
 ## サンプル
 - このセクションを始める前  
@@ -150,6 +150,8 @@ namespace App\Http\Middleware;
 
 ```php:server\app\Http\Kernel.php
 
+    ...
+
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -162,8 +164,9 @@ namespace App\Http\Middleware;
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 +       'language' => \App\Http\Middleware\Language::class,
-        ];
-}
+    ];
+
+    ...
 
 ```
 
@@ -790,31 +793,22 @@ Jsonファイルを使用する場合は翻訳文字列をキーとして利用
 
 ## apiで言語が変更されるかテスト
 
-http://localhost:3000/api/set-lang/ja
+1. ログイン画面で間違ってみると、英語でバリデーションメッセージが出る  
 
-### パスワードを忘れた場合とパスワード変更メールで変更完了をテスト
+![キャプチャ1](http://www.aska-ltd.jp/uploads/blogs/200702121708-1.png)
 
-1. パスワード変更メールを送信  
+2. Apiで言語を日本語に変えてみる  
 
-![キャプチャ1](http://www.aska-ltd.jp/uploads/blogs/2006190130laravel-mix-6-1.png)  
+ブラウザで`http://localhost:3000/api/set-lang/ja`にアクセス
 
-データベース  
-![キャプチャ2](	http://www.aska-ltd.jp/uploads/blogs/2006190151laravel-mix-6-2.png)  
+3. もう一度ログイン画面で間違ってみると、日本語でバリデーションメッセージが出る  
 
-2. メールの確認  
+![キャプチャ4](http://www.aska-ltd.jp/uploads/blogs/200702123908-2.png)  
 
-![キャプチャ3](http://www.aska-ltd.jp/uploads/blogs/2006190121laravel-mix-6-3.png)  
-
-3. 移動後  
-
-![キャプチャ4](http://www.aska-ltd.jp/uploads/blogs/2006190126laravel-mix-6-4.png)  
-
-4. 変更後
-![キャプチャ5](http://www.aska-ltd.jp/uploads/blogs/2006190137laravel-mix-6-5.png) 
 
 これでLaravelから送られてくるメッセージは多言語化できました。
 次はVueを多言語化してみます。
- 
+
 [Laravel mix vue No.9 - Vue多言語化](https://www.aska-ltd.jp/jp/blog/73)
 
 
@@ -1753,6 +1747,9 @@ http://localhost:3000/api/set-lang/ja
   }
   
   /* over white */
+  .container {
+    width: 60em;
+  }
   .blog div#share {
     margin: 0;
   }
@@ -1761,7 +1758,21 @@ http://localhost:3000/api/set-lang/ja
     max-height: none;
     border-radius: 0;
   }
-  .blog li {
+  /* for main image */
+  .blog img:nth-child(2) {
+    border: none;
+  }
+  .blog ul, .blog ol {
+    padding: 0;
+    margin: 0;
+  }
+  .blog ul li, .blog ol li {
+    display: list-item;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+  }
+  .blog ul li {
     display: list-item;
     list-style: circle;
   }
@@ -1771,4 +1782,13 @@ http://localhost:3000/api/set-lang/ja
   .blog li:nth-child(2){
     color: inherit;
   }
+  .blog img {
+    border: 3px solid #ccc;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .blog .user {
+    border: none;
+    padding: 0;
+}
 </style>
