@@ -1,15 +1,19 @@
 <template>
     <header>
         <!-- リンクを設定 -->
-        <RouterLink to="/">home</RouterLink>
-        <RouterLink v-if="!isLogin" to="/login">login</RouterLink>
+        <RouterLink to="/">{{ $t('word.home') }}</RouterLink>
+        <RouterLink v-if="!isLogin" to="/login">{{ $t('word.login') }}</RouterLink>
         <!-- ログインしている場合はusernameを表示 -->
         <span v-if="isLogin">{{username}}</span>
         <!-- クリックイベントにlogoutメソッドを登録 -->
         <span v-if="isLogin" @click="logout">logout</span>
         <!-- 言語切替 -->
         <select v-model="selectedLang" @change="changeLang">
-            <option v-for="lang in langList" :value="lang.value" :key="lang.value">{{ lang.text }}</option>\
+            <option
+                v-for="lang in langList"
+                :value="lang.value"
+                :key="lang.value"
+            >{{ $t(`word.${lang.text}`) }}</option>
         </select>
     </header>
 </template>
@@ -64,6 +68,8 @@ export default {
             this.$storage.set("language", this.selectedLang);
             // Apiリクエスト 言語を設定
             axios.get(`/api/set-lang/${this.selectedLang}`);
+            // Vue i18n の言語を設定
+            this.$i18n.locale = this.selectedLang;
         }
     },
     created() {

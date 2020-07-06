@@ -1,6 +1,6 @@
  <template>
     <div class="container--small">
-        <h2>password reset</h2>
+        <h2>{{ $t('word.password_reset') }}</h2>
 
         <div class="panel">
             <!-- @submitで login method を呼び出し -->
@@ -24,7 +24,7 @@
                     <input type="password" v-model="resetForm.password_confirmation" />
                 </div>
                 <div>
-                    <button type="submit">reset</button>
+                    <button type="submit">{{ $t('word.reset') }}</button>
                 </div>
             </form>
         </div>

@@ -6,6 +6,8 @@ import App from "./App.vue";
 import router from "./router";
 // ストアをインポート
 import store from "./store";
+// ヘルパーをインポート
+import Helper from "./helper";
 
 /**
  * vue-localstorage
@@ -21,6 +23,35 @@ Vue.use(VueLocalStorage, {
     name: 'storage'
 });
 
+/**
+ * vue-i18n
+ * https://kazupon.github.io/vue-i18n/
+ */
+// モジュールのインポート
+import VueI18n from "vue-i18n";
+// 言語コンテンツのインポート
+import {
+    messages,
+    dateTimeFormats,
+    numberFormats
+} from "./lang/index";
+// 多言語化の宣言
+Vue.use(VueI18n);
+// ローカルストレージから「language」を取得してセット、ない場合はブラウザーの言語をセット
+const locale = Vue.storage.get("language", Helper.getLanguage());
+// VueI18nコンストラクタのオプションを指定
+const i18n = new VueI18n({
+    // 言語設定
+    locale: locale,
+    // 選択中の言語に対応する文字列が存在しない場合はこの言語の文字列を使用する
+    fallbackLocale: "en",
+    // インポートした言語コンテンツ
+    messages,
+    dateTimeFormats,
+    numberFormats
+});
+
+
 // 非同期通信でAUTHストアのcurrentUserアクションを実行するので
 // asyncメソッドにして、awaitで通信をまつ
 const createApp = async () => {
@@ -35,6 +66,8 @@ const createApp = async () => {
         router,
         // ストアを登録
         store,
+        // I18nを登録
+        i18n,
         // 使用するコンポーネントにルートコンポーネントの登録
         components: { App },
         // 描画するテンプレート

@@ -774,9 +774,9 @@ this.$i18n.tc('sentence.sentence.{msg} world!')；
 
 これでVue側でも多言語化が完了しました。
 
-次は、UIがしょぼいのでfontawesomeでアイコンを入れていこうと思います。
+次は、UIをもっと使いやすくしていこうと思います。
 
-<!-- [Laravel mix vue No.10 - fontawesome](https://www.aska-ltd.jp/jp/blog/73) -->
+<!-- [Laravel mix vue No.10 - fontawesome, ](https://www.aska-ltd.jp/jp/blog/73) -->
 
 <script src="https://www.aska-ltd.jp/js/blog.js"></script>
 <link href="https://www.aska-ltd.jp/css/blog.css" rel="stylesheet">
