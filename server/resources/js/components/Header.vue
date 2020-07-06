@@ -7,6 +7,10 @@
         <span v-if="isLogin">{{username}}</span>
         <!-- クリックイベントにlogoutメソッドを登録 -->
         <span v-if="isLogin" @click="logout">logout</span>
+        <!-- 言語切替 -->
+        <select v-model="selectedLang" @change="changeLang">
+            <option v-for="lang in langList" :value="lang.value" :key="lang.value">{{ lang.text }}</option>\
+        </select>
     </header>
 </template>
 
@@ -15,6 +19,17 @@ import Cookies from "js-cookie";
 import Helper from "../helper";
 
 export default {
+    data() {
+        return {
+            // 言語選択オプション
+            langList: [
+                { value: "en", text: "english" },
+                { value: "ja", text: "japanese" }
+            ],
+            // 選択された言語
+            selectedLang: "en"
+        };
+    },
     // 算出プロパティでストアのステートを参照
     computed: {
         // authストアのステートUserを参照

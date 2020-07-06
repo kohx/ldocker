@@ -394,17 +394,11 @@ this.$i18n.tc('sentence.sentence.{msg} world!')；
     import Helper from "../helper";
 
     export default {
-+       data() {
-+           return {
-+               // 言語選択オプション
-+               langList: [
-+                   { value: "en", text: "english" },
-+                   { value: "ja", text: "japanese" }
-+               ],
-+               // 選択された言語
-+               selectedLang: "en"
-+           };
-+       },
+        data() {
+            return {
+                ...
+            };
+        },
         computed: {
             ...
         },

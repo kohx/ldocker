@@ -361,6 +361,17 @@ export default class Helper {
 +   import Helper from "../helper";
 
     export default {
++       data() {
++           return {
++               // 言語選択オプション
++               langList: [
++                   { value: "en", text: "english" },
++                   { value: "ja", text: "japanese" }
++               ],
++               // 選択された言語
++               selectedLang: "en"
++           };
++       },
         computed: {
             ...
         },
