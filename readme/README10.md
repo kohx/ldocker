@@ -1,7 +1,7 @@
 
 <p style="padding-top: 3rem;">こんにちは、あすかのkoheiです。</p>
 
-今回はVue側を多言語化します。
+今回はUIを「Vue Font Awesome」、「Vue Formulate」を使ってもっと使いやすくします。
 
 > 連載記事
 
@@ -15,17 +15,17 @@
   <li><a href="https://www.aska-ltd.jp/jp/blog/72">Laravel mix vue No.7 - Socialite - ソーシャルログイン</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/73">Laravel mix vue No.8 - Laravel Internationalization - Laravel多言語化</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/76">Laravel mix vue No.9 - Vue Internationalization - Vue多言語化</li></a>
-  <!-- <li><a href="https://www.aska-ltd.jp/jp/blog/76">Laravel mix vue No.10 - Vue Font Awesome - フォントアイコン追加</a></li> -->
+  <li><a href="https://www.aska-ltd.jp/jp/blog/77">Laravel mix vue No.10 - Vue Font Awesome, Vue Formulate, etc - UIの作り込み</a></li>
 </ul>
 
-# Vue Internationalization - Vue多言語化
+# Vue Font Awesome, Vue Formulate, etc - UIの作り込み
 
 ## サンプル
 - このセクションを始める前  
-[github ldocker 09](https://github.com/kohx/ldocker/tree/08)  
+[github ldocker 10](https://github.com/kohx/ldocker/tree/10)  
   
 - 完成  
-[github ldocker 10](https://github.com/kohx/ldocker/tree/09)
+[github ldocker 11](https://github.com/kohx/ldocker/tree/11)
 
 ------------------------------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ npm run watch
 
 ------------------------------------------------------------------------------------------
 
-## 多言語化モジュールをインストール
+## フォントアイコンを使う
 
 今回は`vue-i18n`を使用する
 
@@ -88,256 +88,48 @@ npm run watch
 
 ```bash:terminal
 
-  npm i vue-i18n
+    npm i --save @fortawesome/fontawesome-svg-core
+    npm i --save @fortawesome/free-solid-svg-icons
+    npm i --save @fortawesome/free-regular-svg-icons
+    npm i --save @fortawesome/free-brands-svg-icons
+    npm i --save @fortawesome/vue-fontawesome
 
 ```
 
-------------------------------------------------------------------------------------------
-
-## 言語ファイルの準備
-
-### 言語ファイルの作成
-
-`server\resources\js\lang`を作成しその中に  
-`En.js`と`Ja.js`を準備する
-
-`server\resources\js\lang\En.js`を作成
-
-```javascript:server\resources\js\lang\En.js
-
-    const contents = {
-        messages: {
-            // 単語
-            word: {
-                hello: 'hello!',
-            },
-            // メッセージ
-            sentence: {
-                '{msg} world!': '{msg} world！',
-            }
-        },
-        /*  
-          日付フォーマット
-
-          以下の定義形式で日時をローカライズ
-          weekday         "narrow", "short", "long"
-          era             "narrow", "short", "long"
-          year            "2-digit", "numeric"
-          month           "2-digit", "numeric", "narrow", "short", "long"
-          day             "2-digit", "numeric"
-          hour            "2-digit", "numeric"
-          minute          "2-digit", "numeric"
-          second          "2-digit", "numeric"
-          timeZoneName    "short", "long"
-        */
-        dateTimeFormats: {
-            full: {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-                weekday: "short",
-                hour: "numeric",
-                minute: "numeric"
-            },
-            day: {
-                year: "numeric",
-                month: "short",
-                day: "numeric"
-            },
-            time: {
-                hour: "numeric",
-                minute: "numeric"
-            },
-            week: {
-                weekday: "long"
-            }
-        },
-        // ナンバーフォーマット
-        numberFormats: {
-            currency: {
-                style: 'currency',
-                currency: 'USD'
-            }
-        }
-    };
-
-    export {
-        contents
-    };
-
-```
-
-`server\resources\js\lang\Ja.js`を作成
-
-```javascript:server\resources\js\lang\Ja.js
-
-    const contents = {
-        messages: {
-            // 単語
-            word: {
-                hello: 'こんにちは!',
-            },
-            // メッセージ
-            sentence: {
-                '{msg} world!': '{msg} 世界！',
-            }
-        },
-        /*
-          日付フォーマット
-
-          以下の定義形式で日時をローカライズ
-          weekday         "narrow", "short", "long"
-          era             "narrow", "short", "long"
-          year            "2-digit", "numeric"
-          month           "2-digit", "numeric", "narrow", "short", "long"
-          day             "2-digit", "numeric"
-          hour            "2-digit", "numeric"
-          minute          "2-digit", "numeric"
-          second          "2-digit", "numeric"
-          timeZoneName    "short", "long"
-        */
-        dateTimeFormats: {
-            full: {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-                weekday: "short",
-                hour: "numeric",
-                minute: "numeric",
-                hour12: true
-            },
-            day: {
-                year: "numeric",
-                month: "short",
-                day: "numeric"
-            },
-            time: {
-                hour: "numeric",
-                minute: "numeric",
-                hour12: true
-            },
-            week: {
-                weekday: "short"
-            }
-        },
-        // ナンバーフォーマット
-        numberFormats: {
-            currency: {
-                style: 'currency',
-                currency: 'JPY',
-                currencyDisplay: 'symbol'
-            }
-        }
-    };
-
-    export { contents };
-
-```
-
-### 言語ファイルをまとめる
-
-各言語ファイルをまとめる`server\resources\js\lang\index.js`を作成
-
-```javascript:server\resources\js\lang\index.js
-
-    // 言語ファイルをインポート
-    import {contents as en} from "./En";
-    import {contents as ja} from "./Ja";
-
-    // 言語アイテムをマージ
-    const messages = {
-        en: en.messages,
-        ja: ja.messages
-    };
-
-    // 日付フォーマットをマージ
-    const dateTimeFormats = {
-        en: en.dateTimeFormats,
-        ja: ja.dateTimeFormats
-    };
-
-    // ナンバーフォーマットをマージ
-    const numberFormats = {
-        en: en.numberFormats,
-        ja: ja.numberFormats
-    };
-
-    // それぞれをエクスポート
-    export { messages };
-    export { dateTimeFormats };
-    export { numberFormats };
-
-```
-
-------------------------------------------------------------------------------------------
-
-## Vueで使う準備
-
-`server\resources\js\app.js`に追加
+### Vueで使う準備
 
 ```javascript:server\resources\js\app.js
 
     ...
 
-    // ストアをインポート
-    import store from "./store";
-    // ヘルパーをインポート
-+   import Helper from "./helper";
-
-    ...
-
-    /**
-     * vue-i18n
-     * https://kazupon.github.io/vue-i18n/
-     */
-    // モジュールのインポート
-+   import VueI18n from "vue-i18n";
-    // 言語コンテンツのインポート
-+   import { messages, dateTimeFormats, numberFormats } from "./lang/index";
-    // 多言語化の宣言
-+   Vue.use(VueI18n);
-    // ローカルストレージから「language」を取得してセット、ない場合はブラウザーの言語をセット
-+   const locale = Vue.storage.get("language", Helper.getLanguage());
-    // VueI18nコンストラクタのオプションを指定
-+   const i18n = new VueI18n({
-        // 言語設定
-+       locale: locale,
-        // 選択中の言語に対応する文字列が存在しない場合はこの言語の文字列を使用する
-+       fallbackLocale: "en",
-        // インポートした言語コンテンツ
-+       messages,
-+       dateTimeFormats,
-+       numberFormats
-+   });
-
-    // 非同期通信でAUTHストアのcurrentUserアクションを実行するので
-    // asyncメソッドにして、awaitで通信をまつ
-    const createApp = async () => {
-
-        // AUTHストアのcurrentUserアクションでユーザの認証状態をチェック
-        await store.dispatch("auth/currentUser");
-
-        new Vue({
-            // マウントする要素に「index.blade.php」の「<div id="app"></div>」のidを登録
-            el: "#app",
-            // ルーターの使用を宣言
-            router,
-            // ストアを登録
-            store,
-            // I18nを登録
-+           i18n,
-            // 使用するコンポーネントにルートコンポーネントの登録
-            components: { App },
-            // 描画するテンプレート
-            template: "<App />"
-        });
-};
++   /**
++    * fontawesome
++    * https://github.com/FortAwesome/vue-fontawesome
++    * http://l-lin.github.io/font-awesome-animation/
++    */
++
++   // コアのインポート
++   import { library } from "@fortawesome/fontawesome-svg-core";
++
++   // 無料で使えるフォントをインポート
++   import { fab } from "@fortawesome/free-brands-svg-icons";
++   import { far } from "@fortawesome/free-regular-svg-icons";
++   import { fas } from "@fortawesome/free-solid-svg-icons";
++
++   // コンポネントをインポート
++   import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from "@fortawesome/vue-fontawesome";
++
++   // ライブラリに追加
++   library.add(fas, far, fab);
++
++   // コンポーネントを名前を指定して追加
++   // 名前は自由にきめてOK
++   Vue.component("FAIcon", FontAwesomeIcon);
++   Vue.component('FALayers', FontAwesomeLayers);
++   Vue.component('FAText', FontAwesomeLayersText);
++   ...
 
 ```
-
-------------------------------------------------------------------------------------------
-
-## 埋め込み
 
 ### 使用例
 
@@ -362,6 +154,8 @@ npm run watch
 this.$i18n.tc('sentence.sentence.{msg} world!')；
 
 ```
+
+
 
 ### コンポネントに埋め込み
 
@@ -782,7 +576,7 @@ this.$i18n.tc('sentence.sentence.{msg} world!')；
 
 次は、UIがしょぼいのでfontawesomeでアイコンを入れていこうと思います。
 
-<!-- [Laravel mix vue No.10 - fontawesome](https://www.aska-ltd.jp/jp/blog/73) -->
+<!-- [Laravel mix vue No.10 - Vue Font Awesome, Vue Formulate, etc](https://www.aska-ltd.jp/jp/blog/77) -->
 
 <script src="https://www.aska-ltd.jp/js/blog.js"></script>
 <link href="https://www.aska-ltd.jp/css/blog.css" rel="stylesheet">

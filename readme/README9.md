@@ -15,7 +15,7 @@
   <li><a href="https://www.aska-ltd.jp/jp/blog/72">Laravel mix vue No.7 - Socialite - ソーシャルログイン</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/73">Laravel mix vue No.8 - Laravel Internationalization - Laravel多言語化</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/76">Laravel mix vue No.9 - Vue Internationalization - Vue多言語化</li></a>
-  <!-- <li><a href="https://www.aska-ltd.jp/jp/blog/76">Laravel mix vue No.10 - Vue Font Awesome - フォントアイコン追加</a></li> -->
+  <!-- <li><a href="https://www.aska-ltd.jp/jp/blog/77">Laravel mix vue No.10 - Vue Font Awesome, Vue Formulate, etc - UIの作り込み</a></li> -->
 </ul>
 
 # Vue Internationalization - Vue多言語化
@@ -774,9 +774,9 @@ this.$i18n.tc('sentence.sentence.{msg} world!')；
 
 これでVue側でも多言語化が完了しました。
 
-次は、UIをもっと使いやすくしていこうと思います。
+次は、「Vue Font Awesome」、「Vue Formulate」を使ってUIをもっと使いやすくしていこうと思います。
 
-<!-- [Laravel mix vue No.10 - fontawesome, ](https://www.aska-ltd.jp/jp/blog/73) -->
+<!-- [Laravel mix vue No.10 - Vue Font Awesome, Vue Formulate, etc](https://www.aska-ltd.jp/jp/blog/77) -->
 
 <script src="https://www.aska-ltd.jp/js/blog.js"></script>
 <link href="https://www.aska-ltd.jp/css/blog.css" rel="stylesheet">

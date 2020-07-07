@@ -27,18 +27,23 @@ Vue.use(VueLocalStorage, {
  * vue-i18n
  * https://kazupon.github.io/vue-i18n/
  */
+
 // モジュールのインポート
 import VueI18n from "vue-i18n";
+
 // 言語コンテンツのインポート
 import {
     messages,
     dateTimeFormats,
     numberFormats
 } from "./lang/index";
+
 // 多言語化の宣言
 Vue.use(VueI18n);
 // ローカルストレージから「language」を取得してセット、ない場合はブラウザーの言語をセット
+
 const locale = Vue.storage.get("language", Helper.getLanguage());
+
 // VueI18nコンストラクタのオプションを指定
 const i18n = new VueI18n({
     // 言語設定
@@ -51,6 +56,31 @@ const i18n = new VueI18n({
     numberFormats
 });
 
+/**
+ * fontawesome
+ * https://github.com/FortAwesome/vue-fontawesome
+ * http://l-lin.github.io/font-awesome-animation/
+ */
+
+// コアのインポート
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+// 無料で使えるフォントをインポート
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+// コンポネントをインポート
+import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from "@fortawesome/vue-fontawesome";
+
+// ライブラリに追加
+library.add(fas, far, fab);
+
+// コンポーネントを名前を指定して追加
+// 名前は自由にきめてOK
+Vue.component("FAIcon", FontAwesomeIcon);
+Vue.component('FALayers', FontAwesomeLayers);
+Vue.component('FAText', FontAwesomeLayersText);
 
 // 非同期通信でAUTHストアのcurrentUserアクションを実行するので
 // asyncメソッドにして、awaitで通信をまつ

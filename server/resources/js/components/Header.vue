@@ -15,6 +15,9 @@
                 :key="lang.value"
             >{{ $t(`word.${lang.text}`) }}</option>
         </select>
+
+        <font-awesome-icon icon="coffee"/>
+        <font-awesome-icon :icon="['fas', 'coffee']"/>
     </header>
 </template>
 
