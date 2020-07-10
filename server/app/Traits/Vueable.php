@@ -11,7 +11,7 @@ trait Vueable
      * @param string $message
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function redirectVue($vueRoute = '', $message = '')
+    public function redirectVue($vueRoute = '', $key= '', $message = '')
     {
         // vueでアクセスするルートを作る
         // コールバックURLをルート名で取得
@@ -23,13 +23,13 @@ trait Vueable
         $baseUrl = config('app.url');
         $route = "{$baseUrl}/{$vueRoute}";
 
-        if ($message) {
+        if (!$key || !$message) {
             return redirect($route);
         } else {
             return redirect($route)
                 // PHPネイティブのsetcookieメソッドに指定する引数同じ
                 // ->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly)
-                ->cookie('MESSAGE', $message, 0, '', '', false, false);
+                ->cookie($key, $message, 0, '', '', false, false);
         }
     }
 }
