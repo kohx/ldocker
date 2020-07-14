@@ -1,6 +1,6 @@
  <template>
     <div class="page">
-        <h1>{{ $t('word.password_reset') }}</h>
+        <h1>{{ $t('word.password_reset') }}</h1>
 
         <section class="reset">
             <!-- errors -->
