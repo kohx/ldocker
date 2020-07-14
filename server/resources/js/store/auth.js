@@ -78,7 +78,7 @@ const actions = {
         context.commit("setApiStatus", null);
 
         // Apiリクエスト
-        const response = await axios.post("/api/login", data);
+        const response = await axios.post("login", data);
 
         // 通信成功の場合 200
         if (response.status === OK) {
@@ -120,7 +120,7 @@ const actions = {
         context.commit("setApiStatus", null);
 
         // Apiリクエスト
-        const response = await axios.post("/api/register", data);
+        const response = await axios.post("register", data);
 
         // 通信成功の場合 201
         if (response.status === CREATED) {
@@ -157,7 +157,7 @@ const actions = {
         context.commit("setApiStatus", null);
 
         // Apiリクエスト
-        const response = await axios.post("/api/logout");
+        const response = await axios.post("logout");
 
         // 通信成功の場合 200
         if (response.status === OK) {
@@ -187,7 +187,7 @@ const actions = {
         context.commit("setApiStatus", null);
 
         // Apiリクエスト
-        const response = await axios.post("/api/forgot", data);
+        const response = await axios.post("forgot", data);
 
         // 通信成功の場合 201
         if (response.status === CREATED) {
@@ -223,7 +223,7 @@ const actions = {
         context.commit("setApiStatus", null);
 
         // Apiリクエスト
-        const response = await axios.post("/api/reset", data);
+        const response = await axios.post("reset", data);
 
         // 通信成功の場合 200
         if (response.status === OK) {
@@ -260,7 +260,7 @@ const actions = {
         context.commit("setApiStatus", null);
 
         // Apiリクエスト
-        const response = await axios.get("/api/user");
+        const response = await axios.get("user");
 
         // ユーザをレスポンスから取得、なければnull
         const user = response.data || null;

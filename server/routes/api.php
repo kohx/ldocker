@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
 Route::middleware(['language'])->group(function () {
     // register
@@ -20,14 +19,14 @@ Route::middleware(['language'])->group(function () {
         return Auth::user();
     })->name('user');
     // refresh token
-    Route::get('/refresh-token', function (Illuminate\Http\Request $request) {
+    Route::get('/refresh-token', function (Request $request) {
         $request->session()->regenerateToken();
         return response()->json();
     })->name('refresh-token');
 });
 
 // set lang
-Route::get('/set-lang/{lang}', function (Illuminate\Http\Request $request, $lang) {
+Route::get('/set-lang/{lang}', function (Request $request, $lang) {
     $request->session()->put('language', $lang);
     return response()->json();
 })->name('set-lang');

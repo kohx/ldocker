@@ -1,5 +1,6 @@
 // クッキーを簡単に扱えるモジュールをインポート
 import Cookies from "js-cookie";
+import store from "./store";
 
 /*
  * lodash
@@ -16,10 +17,18 @@ window.axios = require("axios");
 // Ajaxリクエストであることを示すヘッダーを付与する
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
+// ベースURLの設定
+window.axios.defaults.baseURL = 'api/';
+
 // requestの設定
 window.axios.interceptors.request.use(config => {
+
+    // ローディングストアのステータスをTRUE
+    store.commit("loading/setStatus", true);
+
     // クッキーからトークンを取り出す
     const xsrfToken = Cookies.get("XSRF-TOKEN");
+    
     // ヘッダーに添付する
     config.headers["X-XSRF-TOKEN"] = xsrfToken;
     return config;
@@ -29,9 +38,17 @@ window.axios.interceptors.request.use(config => {
 // API通信の成功、失敗でresponseの形が変わるので、どちらとも response にレスポンスオブジェクトを代入
 window.axios.interceptors.response.use(
     // 成功時の処理
-    response => response,
+    response => {
+        // ローディングストアのステータスをFALSE
+        store.commit("loading/setStatus", false);
+        return response;
+    },
     // 失敗時の処理
-    error => error.response || error
+    error => {
+        // ローディングストアのステータスをFALSE
+        store.commit("loading/setStatus", false);
+        return error.response || error;
+    }
 );
 
 /**

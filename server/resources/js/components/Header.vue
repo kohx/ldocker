@@ -1,23 +1,26 @@
 <template>
-    <header>
+    <header class="header">
         <!-- リンクを設定 -->
-        <RouterLink to="/">{{ $t('word.home') }}</RouterLink>
-        <RouterLink v-if="!isLogin" to="/login">{{ $t('word.login') }}</RouterLink>
+        <RouterLink to="/">
+            <FAIcon :icon="['fas', 'home']" size="lg" />
+            {{ $t('word.home') }}
+        </RouterLink>
+        <RouterLink v-if="!isLogin" to="/login">
+            <FAIcon :icon="['fas', 'sign-in-alt']" size="lg" />
+            {{ $t('word.login') }}
+        </RouterLink>
         <!-- ログインしている場合はusernameを表示 -->
-        <span v-if="isLogin">{{username}}</span>
+        <span v-if="isLogin">
+            <FAIcon :icon="['fas', 'child']" size="lg" />
+            {{username}}
+        </span>
         <!-- クリックイベントにlogoutメソッドを登録 -->
-        <span v-if="isLogin" @click="logout">logout</span>
+        <span v-if="isLogin" @click="logout" class="button">
+            <FAIcon :icon="['fas', 'sign-out-alt']" size="lg" />
+            {{ $t('word.logout') }}
+        </span>
         <!-- 言語切替 -->
-        <select v-model="selectedLang" @change="changeLang">
-            <option
-                v-for="lang in langList"
-                :value="lang.value"
-                :key="lang.value"
-            >{{ $t(`word.${lang.text}`) }}</option>
-        </select>
-
-        <font-awesome-icon icon="coffee"/>
-        <font-awesome-icon :icon="['fas', 'coffee']"/>
+        <FormulateInput @input="changeLang" v-model="selectedLang" :options="langList" type="select" class="header-lang" />
     </header>
 </template>
 
@@ -29,10 +32,10 @@ export default {
     data() {
         return {
             // 言語選択オプション
-            langList: [
-                { value: "en", text: "english" },
-                { value: "ja", text: "japanese" }
-            ],
+            langList: {
+                en: this.$i18n.tc("word.english"),
+                ja: this.$i18n.tc("word.japanese")
+            },
             // 選択された言語
             selectedLang: "en"
         };
@@ -70,7 +73,7 @@ export default {
             // ローカルストレージに「language」をセット
             this.$storage.set("language", this.selectedLang);
             // Apiリクエスト 言語を設定
-            axios.get(`/api/set-lang/${this.selectedLang}`);
+            axios.get(`set-lang/${this.selectedLang}`);
             // Vue i18n の言語を設定
             this.$i18n.locale = this.selectedLang;
         }
@@ -88,11 +91,11 @@ export default {
             // ローカルストレージに「language」をセット
             this.$storage.set("language", defaultLang);
             // Apiリクエスト 言語を設定
-            axios.get(`/api/set-lang/${defaultLang}`);
+            axios.get(`set-lang/${defaultLang}`);
         }
         // ある場合はサーバ側をクライアント側に合わせる
         else {
-            axios.get(`/api/set-lang/${this.selectedLang}`);
+            axios.get(`set-lang/${this.selectedLang}`);
         }
     }
 };

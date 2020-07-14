@@ -1,5 +1,8 @@
 <template>
-    <div class="container">
+    <div class="page">
+
+        <h1>{{ $t('word.login') }}</h1>
+        
         <!-- tabs -->
         <ul class="tab">
             <li
@@ -21,9 +24,7 @@
         <!-- /tabs -->
 
         <!-- login -->
-        <section class="login" v-show="tab === 1">
-            <h2>{{ $t('word.login') }}</h2>
-
+        <section class="login panel" v-show="tab === 1">
             <!-- errors -->
             <div v-if="loginErrors" class="errors">
                 <ul v-if="loginErrors.email">
@@ -36,30 +37,40 @@
             <!--/ errors -->
 
             <!-- @submitで login method を呼び出し -->
-            <!-- @submitイベントリスナに prevent をつけるとsubmitイベントによってページがリロードさない -->
-            <form @submit.prevent="login">
-                <div>{{ $t('word.email') }}</div>
-                <div>
-                    <!-- v-modelでdataをバインド -->
-                    <input type="email" v-model="loginForm.email" />
-                </div>
-                <div>{{ $t('word.password') }}</div>
-                <div>
-                    <input type="password" v-model="loginForm.password" />
-                </div>
-                <div>
-                    <button type="submit">{{ $t('word.login') }}</button>
-                </div>
-            </form>
+            <FormulateForm v-model="loginForm" @submit="login">
+                <FormulateInput
+                    name="email"
+                    type="email"
+                    :label="$t('word.email')"
+                    :validation-name="$t('word.email')"
+                    validation="required|email"
+                    placeholder="xxx@xxxx.xx"
+                />
+
+                <FormulateInput
+                    name="password"
+                    type="password"
+                    :label="$t('word.password')"
+                    :validation-name="$t('word.password')"
+                    validation="required|min:8"
+                    placeholder="password"
+                />
+
+                <FormulateInput type="submit" :disabled="loadingStatus">
+                    {{ $t('word.login') }}
+                    <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width />
+                </FormulateInput>
+            </FormulateForm>
 
             <h2>{{ $t('word.Socialite') }}</h2>
-            <a class="button" href="/login/twitter" title="twitter">twitter</a>
+            <a class="button" href="/login/twitter" title="twitter">
+                <FAIcon :icon="['fab', 'twitter']" size="2x" :class="['faa-tada', 'animated-hover']"/>
+            </a>
         </section>
         <!-- /login -->
 
         <!-- register -->
-        <section class="register" v-show="tab === 2">
-            <h2>{{ $t('word.register') }}</h2>
+        <section class="register panel" v-show="tab === 2">
             <!-- errors -->
             <div v-if="registerErrors" class="errors">
                 <ul v-if="registerErrors.name">
@@ -73,33 +84,49 @@
                 </ul>
             </div>
             <!--/ errors -->
-            <form @submit.prevent="register">
-                <div>{{ $t('word.name') }}</div>
-                <div>
-                    <input type="text" v-model="registerForm.name" />
-                </div>
-                <div>{{ $t('word.email') }}</div>
-                <div>
-                    <input type="email" v-model="registerForm.email" />
-                </div>
-                <div>{{ $t('word.password') }}</div>
-                <div>
-                    <input type="password" v-model="registerForm.password" />
-                </div>
-                <div>{{ $t('word.password_confirmation') }}</div>
-                <div>
-                    <input type="password" v-model="registerForm.password_confirmation" />
-                </div>
-                <div>
-                    <button type="submit">{{ $t('word.register') }}</button>
-                </div>
-            </form>
+            <FormulateForm v-model="registerForm" @submit="register">
+                <FormulateInput
+                    name="name"
+                    type="text"
+                    :label="$t('word.name')"
+                    :validation-name="$t('word.name')"
+                    validation="required|max:50"
+                    :placeholder="$t('word.name')"
+                />
+                <FormulateInput
+                    name="email"
+                    type="email"
+                    :label="$t('word.email')"
+                    :validation-name="$t('word.email')"
+                    validation="required|email"
+                    :placeholder="$t('word.email')"
+                />
+                <FormulateInput
+                    name="password"
+                    type="password"
+                    :label="$t('word.password')"
+                    :validation-name="$t('word.password')"
+                    validation="required|min:8"
+                    :placeholder="$t('word.password')"
+                />
+                <FormulateInput
+                    name="password_confirmation"
+                    type="password"
+                    :label="$t('word.password_confirmation')"
+                    :validation-name="$t('word.password_confirmation')"
+                    validation="required|min:8"
+                    :placeholder="$t('word.password_confirmation')"
+                />
+                <FormulateInput type="submit" :disabled="loadingStatus">
+                    {{ $t('word.register') }}
+                    <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width />
+                </FormulateInput>
+            </FormulateForm>
         </section>
         <!-- /register -->
 
         <!-- forgot -->
-        <section class="forgot" v-show="tab === 3">
-            <h2>forgot</h2>
+        <section class="forgot panel" v-show="tab === 3">
             <!-- errors -->
             <div v-if="forgotErrors" class="errors">
                 <ul v-if="forgotErrors.email">
@@ -107,15 +134,20 @@
                 </ul>
             </div>
             <!--/ errors -->
-            <form @submit.prevent="forgot">
-                <div>{{ $t('word.email') }}</div>
-                <div>
-                    <input type="email" v-model="forgotForm.email" />
-                </div>
-                <div>
-                    <button type="submit">{{ $t('word.send') }}</button>
-                </div>
-            </form>
+            <FormulateForm v-model="forgotForm" @submit="forgot">
+                <FormulateInput
+                    name="email"
+                    type="email"
+                    :label="$t('word.email')"
+                    :validation-name="$t('word.email')"
+                    validation="required|email"
+                    :placeholder="$t('word.email')"
+                />
+                <FormulateInput type="submit" :disabled="loadingStatus">
+                    {{ $t('word.send') }}
+                    <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width />
+                </FormulateInput>
+            </FormulateForm>
         </section>
         <!-- /forgot -->
     </div>
@@ -160,6 +192,10 @@ export default {
         // authストアのforgotErrorMessages
         forgotErrors() {
             return this.$store.state.auth.forgotErrorMessages;
+        },
+        // loadingストアのstatus
+        loadingStatus() {
+            return this.$store.state.loading.status;
         }
     },
     methods: {
@@ -243,20 +279,3 @@ export default {
     }
 };
 </script>
-
-<style>
-.tab {
-    padding: 0;
-    display: flex;
-    list-style: none;
-}
-.tab__item {
-    border: 1px solid gray;
-    padding: 0 0.5rem;
-    margin-left: 0.1rem;
-    cursor: pointer;
-}
-.tab__item--active {
-    background-color: lightgray;
-}
-</style>
