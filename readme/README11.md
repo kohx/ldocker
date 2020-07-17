@@ -1,7 +1,8 @@
 
 <p style="padding-top: 3rem;">こんにちは、あすかのkoheiです。</p>
 
-今回はUIを「Vue Font Awesome」、「Vue Formulate」を使ってもっと使いやすくします。
+今回はAWS S3に画像をアップできるようにします。
+ついでにバグも直していきます。
 
 > 連載記事
 
@@ -16,16 +17,17 @@
   <li><a href="https://www.aska-ltd.jp/jp/blog/73">Laravel mix vue No.8 - Laravel Internationalization - Laravel多言語化</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/76">Laravel mix vue No.9 - Vue Internationalization - Vue多言語化</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/77">Laravel mix vue No.10 - Vue Font Awesome, Vue Formulate, etc - UIの作り込み</a></li>
+  <li><a href="https://www.aska-ltd.jp/jp/blog/77">Laravel mix vue No.11 - Vue Font Awesome, Vue Formulate, etc - UIの作り込み</a></li>
 </ul>
 
 # Vue Font Awesome, Vue Formulate, etc - UIの作り込み
 
 ## サンプル
 - このセクションを始める前  
-[github ldocker 10](https://github.com/kohx/ldocker/tree/10)  
+[github ldocker 11](https://github.com/kohx/ldocker/tree/11)  
   
 - 完成  
-[github ldocker 11](https://github.com/kohx/ldocker/tree/11)
+[github ldocker 12](https://github.com/kohx/ldocker/tree/12)
 
 ------------------------------------------------------------------------------------------
 
@@ -90,29 +92,1100 @@ npm run watch
 
 ------------------------------------------------------------------------------------------
 
-## フォントアイコンを使う
+## S3の設定
 
-今回は`vue-i18n`を使用する  
-
-[vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome)
-
-### インストール
-
-`vue-i18n`をインストール
+### ライブラリをインストール
 
 ```bash:terminal
 
-    npm i @fortawesome/fontawesome-svg-core
-    npm i @fortawesome/free-solid-svg-icons
-    npm i @fortawesome/free-regular-svg-icons
-    npm i @fortawesome/free-brands-svg-icons
-    npm i @fortawesome/vue-fontawesome
+    composer require league/flysystem-aws-s3-v3
 
 ```
 
-### Vueで使う準備
+### envに情報追加
 
-`server\resources\js\app.js`を編集
+`server\.env`
+
+```text:server\.env
+
+    ...
+
+    AWS_ACCESS_KEY_ID=AKIAV7Z6BWDVGW53K4N6
+    AWS_SECRET_ACCESS_KEY=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
+    AWS_DEFAULT_REGION=ap-northeast-1
+    AWS_BUCKET=campox
+    AWS_URL=https://s3-ap-northeast-1.amazonaws.com/campox
+
+    ...
+
+```
+
+------------------------------------------------------------------------------------------
+
+## データベースの準備
+
+### マイグレーションファイルを作成
+
+```bash:terminal
+
+    # フォトテーブル
+    php artisan make:migration create_photos_table --create=photos
+
+    # ライクテーブル
+    php artisan make:migration create_likes_table --create=likes
+
+    # コメントテーブル
+    php artisan make:migration create_comments_table --create=comments
+
+```
+
+`server\database\migrations\xxxx_xx_xx_xxxx_create_photos_table.php`が作成されるので編集
+
+```php:server\database\migrations\xxxx_xx_xx_xxxx_create_photos_table.php
+
+    <?php
+
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Support\Facades\Schema;
+
+    class CreatePhotosTable extends Migration
+    {
+        /**
+        * Run the migrations.
+        *
+        * @return void
+        */
+        public function up()
+        {
+            Schema::create('photos', function (Blueprint $table) {
+                // uuid
+                $table->uuid('id')->primary();
+                // user id と合わせる
+                // 「$table->id()」の場合は「bigIncrements」 または 「unsignedBigInteger」
+                $table->unsignedBigInteger('user_id');
+                $table->string('filename');
+                $table->timestamps();
+
+                // 外部キーの設定
+                $table->foreign('user_id')->references('id')->on('users');
+            });
+        }
+
+        /**
+        * Reverse the migrations.
+        *
+        * @return void
+        */
+        public function down()
+        {
+            Schema::dropIfExists('photos');
+        }
+    }
+
+```
+
+`server\database\migrations\xxxx_xx_xx_xxxx_create_likes_table.php`が作成されるので編集
+
+```php:server\database\migrations\xxxx_xx_xx_xxxx_create_likes_table.php
+
+    <?php
+
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Support\Facades\Schema;
+
+    class CreateLikesTable extends Migration
+    {
+        /**
+        * Run the migrations.
+        *
+        * @return void
+        */
+        public function up()
+        {
+            Schema::create('likes', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('photo_id');
+                // user id と合わせる
+                // 「$table->id()」の場合は「bigIncrements」 または 「unsignedBigInteger」
+                $table->unsignedBigInteger('user_id');
+                $table->timestamps();
+
+                // 外部キーの設定
+                $table->foreign('photo_id')->references('id')->on('photos');
+                $table->foreign('user_id')->references('id')->on('users');
+            });
+        }
+
+        /**
+        * Reverse the migrations.
+        *
+        * @return void
+        */
+        public function down()
+        {
+            Schema::dropIfExists('likes');
+        }
+    }
+
+```
+
+`server\database\migrations\xxxx_xx_xx_xxxx_create_comments_table.php`が作成されるので編集
+
+```php:server\database\migrations\xxxx_xx_xx_xxxx_create_comments_table.php
+
+    <?php
+
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Support\Facades\Schema;
+
+    class CreateCommentsTable extends Migration
+    {
+        /**
+        * Run the migrations.
+        *
+        * @return void
+        */
+        public function up()
+        {
+            Schema::create('comments', function (Blueprint $table) {
+                $table->increments('id');
+                // photo id と合わせるので「uuid」
+                $table->uuid('photo_id');
+                // user id と合わせる
+                // 「$table->id()」の場合は「bigIncrements」 または 「unsignedBigInteger」
+                $table->unsignedBigInteger('user_id');
+                $table->text('content');
+                $table->timestamps();
+
+                // 外部キーの設定
+                $table->foreign('photo_id')->references('id')->on('photos');
+                $table->foreign('user_id')->references('id')->on('users');
+            });
+        }
+
+        /**
+        * Reverse the migrations.
+        *
+        * @return void
+        */
+        public function down()
+        {
+            Schema::dropIfExists('comments');
+        }
+    }
+
+```
+
+### マイグレーション実行
+
+```bash:terminal
+
+    php artisan migrate
+
+```
+
+------------------------------------------------------------------------------------------
+
+## モデルの作成
+
+```bash:terminal
+
+    php artisan make:model Models/Photo
+
+```
+
+`server\app\Models\Photo.php`が作成されるので編集
+
+```php:server\app\Models\Photo.php
+
+    <?php
+
+    namespace App\Models;
+
+    use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Support\Arr;
+    use Illuminate\Support\Facades\Storage;
+    use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Str;
+
+    class Photo extends Model
+    {
+        /**
+         * paginate par page
+         * ページネーションのデフォルトパーページ
+         *
+         * @var integer
+         */
+        protected $perPage = 10;
+
+        /**
+         * プライマリキーの型
+         *
+         * 初期設定（int）から変更したい場合は $keyType を上書
+         */
+
+        // ストリングに変更
+        protected $keyType = 'string';
+
+        // important! タイプがストリングの場合はインクリメントをfalse！
+        public $incrementing = false;
+
+        /**
+         * constructor
+         *
+         * コンストラクタで自動的に setId を呼び出し
+         *
+         * @param array $attributes
+         */
+        public function __construct(array $attributes = [])
+        {
+            parent::__construct($attributes);
+
+            // idがあった場合
+            if (!Arr::get($this->attributes, 'id')) {
+
+                // uuidをセットする
+                $this->setId();
+            }
+        }
+
+        /**
+         * ランダムなID値をid属性に代入する
+         */
+        private function setId()
+        {
+            // idにuuidをセット
+            $this->attributes['id'] = (string) Str::uuid();
+        }
+
+        /**
+         * JSONに含める属性
+         */
+        protected $visible = [
+            'id',
+            'owner',
+            'url',
+            'comments',
+            'likes_count',
+            'liked_by_user',
+        ];
+
+        /**
+         *  JSONに追加する属性
+         */
+        protected $appends = [
+            'url',
+            'likes_count',
+            'liked_by_user',
+        ];
+
+        /**
+         * リレーションシップ - usersテーブル
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         */
+        public function owner()
+        {
+            // 「リレーションメソッド名 ＋ _id」をデフォルトの外部キーにしている
+            return $this->belongsTo('App\User')
+                // 1. 外部キーの名前を帰る場合は
+                // $this->belongsTo('App\User', 'foreign_key')
+                // 2. リレーション先で「id」じゃないキーと紐付ける場合
+                // $this->belongsTo('App\User', 'foreign_id', 'relation_id')
+                // 3. デフォルトモデルを設定する場合は以下を追加
+                // ->withDefault(function ($user, $post) {
+                //     $user->name = 'Guest Author';
+                // })
+            ;
+        }
+
+        /**
+         * リレーションシップ - commentsテーブル
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany
+         */
+        public function comments()
+        {
+            return $this->hasMany('App\Comment')
+                ->orderBy('id', 'desc');
+        }
+
+        /**
+         * リレーションシップ - likesテーブル
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+         */
+        public function likes()
+        {
+            return $this->belongsToMany(
+                'App\User', // related model
+                'likes'    // middle table
+                // 'user_id', // foreign pivotKey
+                // 'photo_id', // related pivotKey
+            )
+                // likes テーブルにデータを挿入したとき、created_at および updated_at カラムを更新させるための指定
+                ->withTimestamps();
+        }
+
+        /**
+         * アクセサ - url
+         *
+         * アクセサは「get + 呼び出し名 + Attribute」の形式で記述
+         * 利用するには、getとAttributeを取り除いたスネークケースで記述
+         * 例）getTestNameAttribute -> test_name
+         *
+         * ファイルのURLを取得して「url」で呼び出せるようにする
+         *
+         * @return string
+         */
+        public function getUrlAttribute()
+        {
+            // server\config\filesystems.phpで
+            // 「'cloud' => env('FILESYSTEM_CLOUD', 's3')」 になっているのでS3が使用される
+            return Storage::cloud()->url($this->attributes['filename']);
+        }
+
+        /**
+         * アクセサ - likes_count
+         * ライクの数を取得して「likes」で呼び出せるようにする
+         *
+         * @return int
+         */
+        public function getLikesCountAttribute()
+        {
+            // 写真に付いたいいねの総数
+            return $this->likes->count();
+        }
+
+        /**
+         * アクセサ - liked_by_user
+         * ログインユーザがその写真にいいねしているかを取得して「liked_by_user」で呼び出せるようにする
+         *
+         * @return boolean
+         */
+        public function getLikedByUserAttribute()
+        {
+            // 「Auth::guest()」でユーザーがログインしていない状態かどうかを確認
+            // 「Auth::check()」はユーザーがログインしているかどうかを確認
+            if (Auth::guest()) {
+                return false;
+            }
+
+            // ログインユーザがその写真にいいねしているか
+            // containsでコレクションに含まれているかどうかを判定
+            return $this->likes->contains(function ($user) {
+
+                return $user->id === Auth::user()->id;
+            });
+        }
+    }
+
+```
+
+ユーザモデル`server\app\User.php`にフォトのリレーションを追加
+
+```php:server\app\User.php
+
+    ...
+
++       /**
++        * リレーションシップ - photosテーブル
++        *
++        * @return \Illuminate\Database\Eloquent\Relations\HasMany
++        */
++       public function photos()
++       {
++           return $this->hasMany('App\Photo');
++       }
+    }
+```
+
+------------------------------------------------------------------------------------------
+
+## リクエストクラスの作成
+
+ソーシンされたデータをチェックするためにフォトのチェック用と、コメントのチェック用のフォームリクエストクラスを作成
+
+```bash:terminal
+
+    php artisan make:request StorePhoto
+    php artisan make:request StoreComment
+
+```
+
+`server\app\Http\Requests\StorePhoto.php`が作成されるので編集
+
+```php:
+
+    <?php
+
+    namespace App\Http\Requests;
+
+    use Illuminate\Foundation\Http\FormRequest;
+
+    class StorePhoto extends FormRequest
+    {
+        /**
+         * Determine if the user is authorized to make this request.
+         * ユーザーにこのリクエストを行う権限があるかどうかをチェックする
+         *
+         * @return bool
+         */
+        public function authorize()
+        {
+            return true;
+        }
+
+        /**
+         * Get the validation rules that apply to the request.
+         * バリデーションをここに書く
+         * 
+         * @return array
+         */
+        public function rules()
+        {
+            return [
+                // 必須入力、ファイル、ファイルタイプが jpg,jpeg,png,gif であることをルールとして定義
+                'photo' => 'required|file|mimes:jpg,jpeg,png,gif'
+            ];
+        }
+
+
+        /**
+         * エラーメッセージのカスタマイズ
+         * エラーメッセージのカスタマイズをする場合は以下のように書く
+         * @return array
+         */
+        public function messages()
+        {
+            return [
+                // 'photo.required' => __('Please enter your name.'),
+            ];
+        }
+
+        /**
+         * 独自処理を追加する
+         * 独自処理を追加する場合は以下のように書く
+         * @param $validator
+         */
+        public function withValidator($validator)
+        {
+            // $validator->after(function ($validator) {
+                // if ($this->somethingElseIsInvalid()) {
+                //     $validator->errors()->add('field', __('Something is wrong with this field!'));
+                // }
+            // });
+        }
+    }
+
+```
+
+`server\app\Http\Requests\StoreComment.php`が作成されるので編集
+
+```php:server\app\Http\Requests\StoreComment.php
+
+<?php
+
+    namespace App\Http\Requests;
+
+    use Illuminate\Foundation\Http\FormRequest;
+
+    class StoreComment extends FormRequest
+    {
+        /**
+         * Determine if the user is authorized to make this request.
+         *
+         * @return bool
+         */
+        public function authorize()
+        {
+            return true;
+        }
+
+        /**
+         * Get the validation rules that apply to the request.
+         *
+         * @return array
+         */
+        public function rules()
+        {
+            return [
+                'content' => 'required|max:500',
+            ];
+        }
+    }
+
+```
+
+------------------------------------------------------------------------------------------
+
+## フォトコントローラの作成
+
+```bash:terminal
+
+    php artisan make:controller PhotoController
+
+```
+
+`server\app\Http\Controllers\PhotoController.php`が作成されるので編集
+
+```php:server\app\Http\Controllers\PhotoController.php
+
+    <?php
+
+    namespace App\Http\Controllers;
+    // models
+    use App\Photo;
+    use App\Comment;
+
+    // requests
+    use App\Http\Requests\StorePhoto;
+    use App\Http\Requests\StoreComment;
+
+    // facades
+    use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\DB;
+    use Illuminate\Support\Facades\Storage;
+
+    class PhotoController extends Controller
+    {
+        public function __construct()
+        {
+            // 認証が必要
+            $this->middleware('auth')
+                ->except(['index', 'download', 'show']); // 認証を除外するアクション
+        }
+
+        /**
+         * 写真一覧
+         * photo index
+         */
+        public function index()
+        {
+            // get の代わりに paginate を使うことで、
+            // JSON レスポンスでも示した total（総ページ数）や current_page（現在のページ）といった情報が自動的に追加される
+            $photos = Photo::with(['owner', 'likes'])
+                ->orderBy(Photo::CREATED_AT, 'desc')
+                ->paginate();
+
+            return $photos;
+        }
+
+        /**
+         * 写真詳細
+         * photo show
+         * 
+         * @param string $id
+         * @return Photo
+         */
+        public function show(string $id)
+        {
+            // get photo
+            // 'comments.author'でcommentsと、そのbelongsToに設定されている'author'も取得
+            $photo = Photo::with(['owner', 'comments.author', 'likes'])->findOrFail($id);
+
+            return $photo;
+        }
+
+        /**
+         * 写真投稿
+         * photo store
+         * 
+         * @param StorePhoto $request
+         * @return \Illuminate\Http\Response
+         */
+        public function store(StorePhoto $request)
+        {
+            // 投稿写真の拡張子を取得する
+            $extension = $request->photo->extension();
+
+            // create photo model instance
+            $photo = new Photo();
+
+            // インスタンス生成時に割り振られたランダムなID値と
+            // 本来の拡張子を組み合わせてファイル名とする
+            $photo->filename = "{$photo->id}.{$extension}";
+
+            // S3にファイルを保存する
+            // 第三引数の'public'はファイルを公開状態で保存するため
+            Storage::cloud()
+                ->putFileAs('', $request->photo, $photo->filename, 'public');
+
+            // データベースエラー時にファイル削除を行うためトランザクションを利用する
+            // Transaction Begin
+            DB::beginTransaction();
+
+            try {
+
+                // ユーザのフォトにインサート
+                Auth::user()->photos()->save($photo);
+
+                // Transaction commit
+                DB::commit();
+            } catch (\Exception $exception) {
+
+                // Transaction Rollback
+                DB::rollBack();
+                // DBとの不整合を避けるためアップロードしたファイルを削除
+                Storage::cloud()->delete($photo->filename);
+                throw $exception;
+            }
+
+            // リソースの新規作成なので
+            // レスポンスコードは201(CREATED)を返却する
+            return response($photo, 201);
+        }
+
+        /**
+         * 写真詳細
+         * photo show
+         * 
+         * @param string $id
+         * @return Photo
+         */
+        public function show(string $id)
+        {
+            // get photo
+            // 'comments.author'でcommentsと、そのbelongsToに設定されている'author'も取得
+            $photo = Photo::with(['owner', 'comments.author', 'likes'])->findOrFail($id);
+
+            return $photo;
+        }
+
+        /**
+         * 写真ダウンロード
+         * photo download
+         * 
+         * @param Photo $photo
+         * @return \Illuminate\Http\Response
+         */
+        public function download(Photo $photo)
+        {
+            // // 写真の存在チェック
+            if (!Storage::cloud()->exists($photo->filename)) {
+                abort(404);
+            }
+
+            // disposition value
+            $disposition = 'attachment; filename="' . $photo->filename . '"';
+
+            // コンテンツタイプにapplication/octet-streamを指定すればダウンロードできます。
+            // Content-Dispositionヘッダーにattachmentを指定すれば、コンテンツタイプが"application/octet-stream"でなくても、ダウンロードできます。
+            // filenameに指定した値が、ダウンロード時のデフォルトのファイル名になります。
+            $headers = [
+                'Content-Type' => 'application/octet-stream',
+                'Content-Disposition' => $disposition,
+            ];
+
+            // down load file
+            $file = Storage::cloud()->get($photo->filename);
+
+            return response($file, 200, $headers);
+        }
+
+        /**
+         * コメント投稿
+         *
+         * @param Photo $photo
+         * @param StoreComment $request
+         * @return \Illuminate\Http\Response
+         */
+        public function addComment(Photo $photo, StoreComment $request)
+        {
+            // create comment instance
+            $comment = new Comment();
+
+            // set value
+            $comment->content = $request->get('content');
+            $comment->user_id = Auth::user()->id;
+
+            // save comment
+            $photo->comments()->save($comment);
+
+            // authorリレーションをロードするためにコメントを取得しなおす
+            $new_comment = Comment::with('author')->find($comment->id);
+
+            return response($new_comment, 201);
+        }
+
+        /**
+         * いいね
+         * @param string $id
+         * @return array
+         */
+        public function like(string $id)
+        {
+            $photo = Photo::with('likes')->findOrFail($id);
+
+            // detach from pipod table
+            $photo->likes()->detach(Auth::user()->id);
+
+            // attach from pipod table
+            $photo->likes()->attach(Auth::user()->id);
+
+            return ["photo_id" => $id];
+        }
+
+        /**
+         * いいね解除
+         * @param string $id
+         * @return array
+         */
+        public function unlike(string $id)
+        {
+            $photo = Photo::with('likes')->findOrFail($id);
+
+            // detach from pipod table
+            $photo->likes()->detach(Auth::user()->id);
+
+            return ["photo_id" => $id];
+        }
+    }
+
+```
+
+------------------------------------------------------------------------------------------
+
+## ルートを追加
+
+`server\routes\api.php`を編集
+
+```php:server\routes\api.php
+
+    // 写真
+    Route::get('/photos', 'PhotoController@index')->name('photo.store');
+    Route::get('/photos/{id}', 'PhotoController@index')->name('photo.show');
+    Route::post('/photos', 'PhotoController@store')->name('photo.store');
+    Route::put('/photos/{id}', 'PhotoController@edit')->name('photo.edit');
+    Route::delete('/photos/{id}', 'PhotoController@destroy')->name('photo.destroy');
+
+```
+
+------------------------------------------------------------------------------------------
+
+## Vueに新しいページを追加
+
+### その前に前回のバグフィックスと追加
+
+修正するバグ
+* 送信後にVueFormulateのバリデーションが出る
+* 言語切り替えしてもVueFormulateのバリデーションの言語が切り替わらない
+* 言語切り替えセレクトの中の言語が切り替わらない  
+
+追加で修正
+* 「ログイン」と「パスワードをわすれましたか?」の場合は、サーバから返ってくるエラーをフォーム全体にセットする 
+* 「登録」の場合は、サーバから返ってくるエラーを各フィールドのFormulateにセットする 
+
+Vueルートに名前をつけるので`server\resources\js\router.js`を修正
+
+```javascript:server\resources\js\router.js
+
+    ...
+    // パスとページの設定
+    const routes = [
+        // home
+        {
+            // urlのパス
+            path: "/",
++           // ルートネーム
++           name: 'home',
+            ...
+        },
+        // login
+        {
+            // urlのパス
+            path: "/login",
++           // ルートネーム
++           name: 'login',
+            ...
+        },
+        // password reset
+        {
+            // urlのパス
+            path: "/reset",
+            // ルートネーム
++           name: 'reset',
++           ...
+        },
+        ...
+    ];
+    ...
+
+```
+
+言語の設定とフォームのクリアを追加するので`server\resources\js\components\Header.vue`を修正
+
+```javascript:server\resources\js\components\Header.vue
+    <template>
+        ...
+    </template>
+
+    <script>
+    import Cookies from "js-cookie";
+    import Helper from "../helper";
+
+    export default {
+        data() {
+            ...
+        },
+        computed: {
+            ...
+        },
+        storage: {
+            ...
+        },
+        methods: {
+            // ログアウトメソッド
+            async logout() {
+                // authストアのlogoutアクションを呼び出す
+                await this.$store.dispatch("auth/logout");
+                // ログインに移動
+                if (this.apiStatus) {
+                    this.$router.push("/login");
+                }
+            },
+            // 言語切替メソッド
+            changeLang() {
+                // ローカルストレージに「language」をセット
+                this.$storage.set("language", this.selectedLang);
+                // Apiリクエスト言語を設定
+                axios.get(`set-lang/${this.selectedLang}`);
+                // Vue i18n の言語を設定
+                this.$i18n.locale = this.selectedLang;
+
++               // bugfix: i18nの言語変更だけだと動的に変更しないのでformulateの言語を設定
++               this.$formulate.selectedLocale = this.selectedLang
+
++               // bugfix: ここで入れ直さないとセレクトの中身が変更されない
++               this.langList.en = this.$i18n.tc("word.english");
++               this.langList.ja = this.$i18n.tc("word.japanese");
+
++               // 現在のルートネームを取得
++               const currentRoute = this.$route.name;
++
++               // ルートネームがログインのときのみクリア
++               if(currentRoute === 'login'){
++                   // フォームをクリア
++                   this.$formulate.reset("login_form");
++                   this.$formulate.reset("register_form");
++                   this.$formulate.reset("forgot_form");
++               }
+            }
+        },
+        created() {
+            ...
+        }
+    };
+    </script>
+
+```
+
+フォームに名前をつけ、フォーム
+`server\resources\js\pages\Login.vue`を修正
+
+```javascript:server\resources\js\pages\Login.vue
+
+    <template>
+        <div class="page">
+            <h1>{{ $t('word.login') }}</h1>
+
+            <!-- tabs -->
+            ...
+            <!-- /tabs -->
+
+            <!-- login -->
+            <section class="login panel" v-show="tab === 1">
+-               <!-- errors -->
+-               <div v-if="loginErrors" class="errors">
+-                   <ul v-if="loginErrors.email">
+-                       <li v-for="msg in loginErrors.email" :key="msg">{{ msg }}</li>
+-                   </ul>
+-                   <ul v-if="loginErrors.password">
+-                       <li v-for="msg in loginErrors.password" :key="msg">{{ msg }}</li>
+-                   </ul>
+-               </div>
+-               <!--/ errors -->
+
+                <!-- @submitで login method を呼び出し -->
+                <!-- 「:form-errors="loginErrors ? loginErrors.email : []"」でフォーム全体に出すエラーをセット -->
+-               <FormulateForm v-model="loginForm" @submit="login">
++               <FormulateForm
++                   name="login_form"
++                   v-model="loginForm"
++                   @submit="login"
++                   :form-errors="loginErrors ? loginErrors.email : []"
++               >
+                    ...
+                </FormulateForm>
+
+                ...
+            </section>
+            <!-- /login -->
+
+            <!-- register -->
+            <section class="register panel" v-show="tab === 2">
+                <!-- errors -->
+-               <div v-if="registerErrors" class="errors">
+-                   <ul v-if="registerErrors.name">
+-                       <li v-for="msg in registerErrors.name" :key="msg">{{ msg }}</li>
+-                   </ul>
+-                   <ul v-if="registerErrors.email">
+-                       <li v-for="msg in registerErrors.email" :key="msg">{{ msg }}</li>
+-                   </ul>
+-                   <ul v-if="registerErrors.password">
+-                       <li v-for="msg in registerErrors.password" :key="msg">{{ msg }}</li>
+-                   </ul>
+-               </div>
+-               <!--/ errors -->
+                <!-- 「:errors="registerErrors」これでサーバから返ってくるエラーをFormulateにセットする -->
+-               <FormulateForm v-model="registerForm" @submit="register">
++               <FormulateForm name="register_form" v-model="registerForm" @submit="register" :errors="registerErrors">
+                    <FormulateInput
+                        name="name"
+                        type="text"
+                        :label="$t('word.name')"
+                        :validation-name="$t('word.name')"
+                        validation="required|max:50"
+                        :placeholder="$t('word.name')"
+                    />
+                    <FormulateInput
+                        name="email"
+                        type="email"
+                        :label="$t('word.email')"
+                        :validation-name="$t('word.email')"
+                        validation="required|email"
+                        :placeholder="$t('word.email')"
+                    />
+                    <FormulateInput
+                        name="password"
+                        type="password"
+                        :label="$t('word.password')"
+                        :validation-name="$t('word.password')"
+                        validation="required|min:8"
+                        :placeholder="$t('word.password')"
+                    />
+                    <!-- バリデーション「confirm」はsurfix「_confirm」のまえのnameを探す(password_confirm の場合は password) -->
+                    <!-- 違うnameで「confirm」する場合は「confirm:password」 のように一致させるフィールドのnameを渡す -->
+                    <FormulateInput
+                        name="password_confirmation"
+                        type="password"
+                        :label="$t('word.password_confirmation')"
+                        :validation-name="$t('word.password_confirmation')"
+-                       validation="required|min8"
++                       validation="required|confirm:password"
+                        :placeholder="$t('word.password_confirmation')"
+                    />
+                    <FormulateInput type="submit" :disabled="loadingStatus">
+                        {{ $t('word.register') }}
+                        <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width />
+                    </FormulateInput>
+                </FormulateForm>
+            </section>
+            <!-- /register -->
+
+            <!-- forgot -->
+            <section class="forgot panel" v-show="tab === 3">
+-               <!-- errors -->
+-               <div v-if="forgotErrors" class="errors">
+-                   <ul v-if="forgotErrors.email">
+-                       <li v-for="msg in forgotErrors.email" :key="msg">{{ msg }}</li>
+-                   </ul>
+-               </div>
+-               <!--/ errors -->
+-               <FormulateForm v-model="forgotForm" @submit="forgot">
++               <!-- 「:form-errors="forgotErrors ? forgotErrors.email : []"」でフォーム全体に出すエラーをセット -->
++               <FormulateForm
++                   name="forgot_form"
++                   v-model="forgotForm"
++                   @submit="forgot"
++                   :form-errors="forgotErrors ? forgotErrors.email : []"
++               >
+                    ...
+                </FormulateForm>
+            </section>
+            <!-- /forgot -->
+        </div>
+    </template>
+
+    <script>
+    export default {
+        // vueで使うデータ
+        data() {
+            ...
+        },
+        // 算出プロパティでストアのステートを参照
+        computed: {
+            ...
+        },
+        methods: {
+            ...
+            /*
+            * clear error messages
+            */
+            clearError() {
+                // AUTHストアのすべてのエラーメッセージをクリア
+                this.$store.commit("auth/setLoginErrorMessages", null);
+                this.$store.commit("auth/setRegisterErrorMessages", null);
+                this.$store.commit("auth/setForgotErrorMessages", null);
+
++               // ここでformulateもリセットしておく
++               this.$formulate.reset("login_form");
++               this.$formulate.reset("register_form");
++               this.$formulate.reset("forgot_form");
+            },
+            /*
+            * clear form
+            */
+            clearForm() {
+                ...
+            }
+        }
+    };
+    </script>
+
+```
+
+### フォトアップデートのページを作成
+
+ビュールートを追加
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Vueで使う準備
 
 ```javascript:server\resources\js\app.js
 
@@ -123,7 +1196,7 @@ npm run watch
 +    * https://github.com/FortAwesome/vue-fontawesome
 +    * http://l-lin.github.io/font-awesome-animation/
 +    */
-
++
 +   // コアのインポート
 +   import { library } from "@fortawesome/fontawesome-svg-core";
 +
@@ -131,13 +1204,13 @@ npm run watch
 +   import { fab } from "@fortawesome/free-brands-svg-icons";
 +   import { far } from "@fortawesome/free-regular-svg-icons";
 +   import { fas } from "@fortawesome/free-solid-svg-icons";
-
++
 +   // コンポネントをインポート
 +   import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from "@fortawesome/vue-fontawesome";
-
++
 +   // ライブラリに追加
 +   library.add(fas, far, fab);
-
++
 +   // コンポーネントを名前を指定して追加
 +   // 名前は自由にきめてOK
 +   Vue.component("FAIcon", FontAwesomeIcon);
@@ -366,25 +1439,22 @@ npm run watch
 
 ### Vueで使う準備
 
-`server\resources\js\app.js`を編集
-
 ```javascript:server\resources\js\app.js
 
     ...
 
-+   /**
++   /*
 +    * VueFormulate
 +    * https://vueformulate.com/guide/
 +    * https://vueformulate.com/guide/internationalization/#registering-a-locale
 +    * https://vueformulate.com/guide/custom-inputs/#custom-types
 +    */
-
++
 +   // コアをインポート
 +   import VueFormulate from "@braid/vue-formulate";
-
 +   // 言語をインポート
 +   import { en, ja } from "@braid/vue-formulate-i18n";
-
++
 +   // 宣言
 +   Vue.use(VueFormulate, {
 +       // 使用するプラグイン
@@ -1301,7 +2371,6 @@ Api通信中のみステータスを`true`にするため`server\resources\js\bo
 
     ...
 
-```
 
 これでUIが使いやすくなったと思います。
 

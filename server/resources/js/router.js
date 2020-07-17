@@ -21,6 +21,8 @@ const routes = [
     {
         // urlのパス
         path: "/",
+        // ルートネーム
+        name: 'home',
         // インポートしたページ
         component: Home
     },
@@ -28,6 +30,8 @@ const routes = [
     {
         // urlのパス
         path: "/login",
+        // ルートネーム
+        name: 'login',
         // インポートしたページ
         component: Login,
         // ページコンポーネントが切り替わる直前に呼び出される関数
@@ -49,6 +53,8 @@ const routes = [
     {
         // urlのパス
         path: "/reset",
+        // ルートネーム
+        name: 'reset',
         // インポートしたページ
         component: Reset,
         // ページコンポーネントが切り替わる直前に呼び出される関数
@@ -66,6 +72,7 @@ const routes = [
     // システムエラー
     {
         path: "/500",
+        // ルートネーム
         component: SystemError
     },
     // not found

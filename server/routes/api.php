@@ -23,6 +23,13 @@ Route::middleware(['language'])->group(function () {
         $request->session()->regenerateToken();
         return response()->json();
     })->name('refresh-token');
+
+    // 写真
+    Route::get('/photos', 'PhotoController@index')->name('photo.store');
+    Route::get('/photos/{id}', 'PhotoController@show')->name('photo.show');
+    Route::post('/photos', 'PhotoController@store')->name('photo.store');
+    Route::put('/photos/{id}', 'PhotoController@edit')->name('photo.edit');
+    Route::delete('/photos/{id}', 'PhotoController@destroy')->name('photo.destroy');
 });
 
 // set lang

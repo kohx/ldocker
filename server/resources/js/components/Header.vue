@@ -20,7 +20,13 @@
             {{ $t('word.logout') }}
         </span>
         <!-- 言語切替 -->
-        <FormulateInput @input="changeLang" v-model="selectedLang" :options="langList" type="select" class="header-lang" />
+        <FormulateInput
+            @input="changeLang"
+            v-model="selectedLang"
+            :options="langList"
+            type="select"
+            class="header-lang"
+        />
     </header>
 </template>
 
@@ -72,10 +78,30 @@ export default {
         changeLang() {
             // ローカルストレージに「language」をセット
             this.$storage.set("language", this.selectedLang);
-            // Apiリクエスト 言語を設定
+
+            // Apiリクエスト言語を設定
             axios.get(`set-lang/${this.selectedLang}`);
+
             // Vue i18n の言語を設定
             this.$i18n.locale = this.selectedLang;
+
+            // formulateの言語を設定
+            this.$formulate.selectedLocale = this.selectedLang;
+
+            // ここで入れ直さないとセレクトの中身が変更されない
+            this.langList.en = this.$i18n.tc("word.english");
+            this.langList.ja = this.$i18n.tc("word.japanese");
+            
+            // 現在のルートネームを取得
+            const currentRoute = this.$route.name;
+
+            // ルートネームがログインのときのみクリア
+            if(currentRoute === 'login'){
+                // formulate formの中身をクリア
+                this.$formulate.reset("login_form");
+                this.$formulate.reset("register_form");
+                this.$formulate.reset("forgot_form");
+            }
         }
     },
     created() {
@@ -83,7 +109,6 @@ export default {
         this.selectedLang = this.$storage.get("language");
 
         // サーバ側をクライアント側に合わせる
-
         // storageLangがない場合
         if (!this.selectedLang) {
             // ブラウザーの言語を取得
