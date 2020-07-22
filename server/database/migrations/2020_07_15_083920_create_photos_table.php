@@ -22,7 +22,7 @@ class CreatePhotosTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('group_id');
-            $table->string('filename');
+            $table->string('path');
             $table->timestamps();
 
             // 外部キーの設定

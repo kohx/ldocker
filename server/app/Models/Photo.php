@@ -35,8 +35,8 @@ class Photo extends Model
         'id',
         'name',
         'description',
+        'path',
         'group_id',
-        'filename',
     ];
 
     /**
@@ -151,7 +151,7 @@ class Photo extends Model
     {
         // server\config\filesystems.phpで
         // 「'cloud' => env('FILESYSTEM_CLOUD', 's3')」 になっているのでS3が使用される
-        return Storage::cloud()->url($this->attributes['filename']);
+        return Storage::cloud()->url($this->attributes['path']);
     }
 
     /**

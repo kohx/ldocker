@@ -194,7 +194,7 @@ npm run watch
                 $table->string('name');
                 $table->string('description')->nullable();
                 $table->string('group_id');
-                $table->string('filename');
+                $table->string('path');
                 $table->timestamps();
 
                 // 外部キーの設定
@@ -368,8 +368,8 @@ npm run watch
             'id',
             'name',
             'description',
+            'path',
             'group_id',
-            'filename',
         ];
 
         /**
@@ -484,7 +484,7 @@ npm run watch
         {
             // server\config\filesystems.phpで
             // 「'cloud' => env('FILESYSTEM_CLOUD', 's3')」 になっているのでS3が使用される
-            return Storage::cloud()->url($this->attributes['filename']);
+            return Storage::cloud()->url($this->attributes['path']);
         }
 
         /**
@@ -790,13 +790,16 @@ npm run watch
                     
                     // インスタンス生成時に割り振られたランダムなID値と
                     // 本来の拡張子を組み合わせてファイル名とする
-                    $photo->filename = "{$photo->id}.{$extension}";
+                    $filename = "{$photo->id}.{$extension}";
+
+                    // パスをセット
+                    $photo->path = "photos/{$filename}";
 
                     // S3にファイルを保存する
                     // putFileAsの引数は( ディレクトリ, ファイルデータ, ファイルネーム, 公開 )
                     // 第三引数の'public'はファイルを公開状態で保存するため
                     // 返り値はS3のパス
-                    $updatePhotos[] = Storage::cloud()->putFileAs('photos', $photoFile, $photo->filename, 'public');
+                    $updatePhotos[] = Storage::cloud()->putFileAs('photos', $photoFile, $filename, 'public');
                     // ユーザのフォトにインサート
                     Auth::user()->photos()->save($photo);
                 }
