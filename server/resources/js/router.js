@@ -6,7 +6,7 @@ import store from "./store";
 
 // ページをインポート
 import Home from "./pages/Home.vue";
-import Photo from "./pages/Photo.vue";
+import PhotoUpload from "./pages/PhotoUpload.vue";
 import Login from "./pages/Login.vue";
 import Reset from "./pages/Reset.vue";
 import SystemError from "./pages/errors/SystemError.vue";
@@ -30,11 +30,11 @@ const routes = [
     // photo
     {
         // urlのパス
-        path: "/photo",
+        path: "/Photo-upload",
         // ルートネーム
-        name: 'photo',
+        name: 'Photo-upload',
         // インポートしたページ
-        component: Photo,
+        component: PhotoUpload,
         // ページコンポーネントが切り替わる直前に呼び出される関数
         // to はアクセスされようとしているルートのルートオブジェクト
         // from はアクセス元のルート

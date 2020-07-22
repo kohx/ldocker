@@ -1186,7 +1186,7 @@ Vueルートに名前をつけるので`server\resources\js\router.js`を修正
 
     // ページをインポート
     import Home from "./pages/Home.vue";
-+   import Photo from "./pages/Photo.vue";
++   import PhotoUpload from "./pages/PhotoUpload.vue";
     import Login from "./pages/Login.vue";
     import Reset from "./pages/Reset.vue";
     import SystemError from "./pages/errors/SystemError.vue";
@@ -1208,11 +1208,11 @@ Vueルートに名前をつけるので`server\resources\js\router.js`を修正
 +       // photo
 +       {
 +           // urlのパス
-+           path: "/photo",
++           path: "/photo-upload",
 +           // ルートネーム
-+           name: 'photo',
++           name: 'photo-upload',
 +           // インポートしたページ
-+           component: Photo,
++           component: PhotoUpload,
 +           // ページコンポーネントが切り替わる直前に呼び出される関数
 +           // to はアクセスされようとしているルートのルートオブジェクト
 +           // from はアクセス元のルート
@@ -1277,7 +1277,7 @@ Vueルートに名前をつけるので`server\resources\js\router.js`を修正
                 <FAIcon :icon="['fas', 'home']" size="lg" />
                 {{ $t('word.home') }}
             </RouterLink>
-+           <RouterLink v-if="isLogin" :to="{ name: 'photo'}">
++           <RouterLink v-if="isLogin" :to="{ name: 'PhotoUpload'}">
 +               <FAIcon :icon="['fas', 'camera-retro']" size="lg" />
 +               {{ $t('word.photo') }}
 +           </RouterLink>
@@ -1346,7 +1346,7 @@ Vueルートに名前をつけるので`server\resources\js\router.js`を修正
 
 ### フォトアップデートのページを作成
 
-```javascript:server\resources\js\pages\Photo.vue
+```javascript:server\resources\js\pages\PhotoUpload.vue
 
     <template>
         <div class="page">
