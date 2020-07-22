@@ -86,7 +86,7 @@ export default {
                 // フォームをクリア
                 this.clearForm();
                 // トップページに移動
-                this.$router.push("/");
+                this.$router.push({name: 'home'});
             }
         },
 
@@ -115,7 +115,7 @@ export default {
         // リセットトークンがない場合はルートページへ移動させる
         if (this.resetForm.token == null) {
             // move to home
-            this.$router.push("/");
+            this.$router.push({name: 'home'});
         }
 
         // フォームにリセットトークンをセット

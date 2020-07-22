@@ -116,11 +116,23 @@ Vue.use(VueFormulate, {
     plugins: [en, ja],
     // グローバルに使う独自ルール
     rules: {
-        // ex
-        foobar: ({
-            value
-        }) => ["foo", "bar"].includes(value)
+        maxPhoto: (context, limit) => {
+            const value = context.value ? context.value.files.length : 0;
+            return value <= limit
+        }
     },
+    locales: {
+        en: {
+            maxPhoto(args) {                
+                return `Photo is ${args[0]} or less`;
+            }
+        },
+        ja: {
+            maxPhoto(args) {
+                return `写真は${args[0]}ファイルまでです。`;
+            }
+        }
+    }
 });
 
 /**

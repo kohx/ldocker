@@ -36,11 +36,13 @@ class StorePhoto extends FormRequest
     public function rules()
     {
         return [
+            'photo_name' => 'required|max:255',
+            'photo_description' => 'max:255',
             // 必須入力、ファイル、ファイルタイプが jpg,jpeg,png,gif であることをルールとして定義
-            'photo' => 'required|file|mimes:jpg,jpeg,png,gif'
+            // photo_filesが配列なので「.*」ですべてをチェック
+            'photo_files.*' => 'image|mimes:jpeg,bmp,png',
         ];
     }
-
 
     /**
      * エラーメッセージのカスタマイズ

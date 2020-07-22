@@ -6,6 +6,7 @@ import store from "./store";
 
 // ページをインポート
 import Home from "./pages/Home.vue";
+import Photo from "./pages/Photo.vue";
 import Login from "./pages/Login.vue";
 import Reset from "./pages/Reset.vue";
 import SystemError from "./pages/errors/SystemError.vue";
@@ -26,6 +27,33 @@ const routes = [
         // インポートしたページ
         component: Home
     },
+    // photo
+    {
+        // urlのパス
+        path: "/photo",
+        // ルートネーム
+        name: 'photo',
+        // インポートしたページ
+        component: Photo,
+        // ページコンポーネントが切り替わる直前に呼び出される関数
+        // to はアクセスされようとしているルートのルートオブジェクト
+        // from はアクセス元のルート
+        // next はページの移動先
+        beforeEnter(to, from, next) {
+            if (store.getters["auth/check"]) {
+                next();
+            } else {
+                next({
+                    name: 'login'
+                });
+            }
+        }
+        // こういうやり方もある
+        // metaをつけて下に書かれている「router.beforeEach」でコントロール
+        // meta: {
+        //     requiresAuth: true
+        // }
+    },
     // login
     {
         // urlのパス
@@ -42,7 +70,9 @@ const routes = [
             // AUTHストアでログインしているかチェック
             if (store.getters["auth/check"]) {
                 // してる場合はホームへ
-                next("/");
+                next({
+                    name: 'home'
+                });
             } else {
                 // してない場合はそのまま
                 next();
@@ -63,7 +93,9 @@ const routes = [
         // next はページの移動先
         beforeEnter(to, from, next) {
             if (store.getters["auth/check"]) {
-                next("/");
+                next({
+                    name: 'home'
+                });
             } else {
                 next();
             }
@@ -73,12 +105,16 @@ const routes = [
     {
         path: "/500",
         // ルートネーム
+        name: 'system-error',
+        // ルートネーム
         component: SystemError
     },
     // not found
     {
         // 定義されたルート以外のパスでのアクセスは <NotFound> が表示
         path: "*",
+        // ルートネーム
+        name: 'not-found',
         component: NotFound
     }
 ];
@@ -90,6 +126,22 @@ const router = new VueRouter({
     // 設定したルートオブジェクト
     routes
 });
+
+// こういうやり方もある
+// router.beforeEach((to, from, next) => {
+//     // metaのrequiresAuthがtrueの場合
+//     if (to.matched.some(record => record.meta.requiresAuth)) {
+
+//         // ログインしてない場合
+//         if (!store.getters["auth/check"]) {
+//             next({name: 'login'})
+//         } else {
+//             next()
+//         }
+//     } else {
+//         next()
+//     }
+// })
 
 // VueRouterインスタンスをエクスポート
 export default router;

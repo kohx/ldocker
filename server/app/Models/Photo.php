@@ -30,6 +30,15 @@ class Photo extends Model
     // important! タイプがストリングの場合はインクリメントをfalse！
     public $incrementing = false;
 
+    // モデルが以下のフィールド以外を持たないようにする
+    protected $fillable = [
+        'id',
+        'name',
+        'description',
+        'group_id',
+        'filename',
+    ];
+
     /**
      * constructor
      *

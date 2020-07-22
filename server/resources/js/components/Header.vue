@@ -1,9 +1,13 @@
 <template>
     <header class="header">
         <!-- リンクを設定 -->
-        <RouterLink to="/">
+        <RouterLink :to="{ name: 'home'}">
             <FAIcon :icon="['fas', 'home']" size="lg" />
             {{ $t('word.home') }}
+        </RouterLink>
+        <RouterLink v-if="isLogin" :to="{ name: 'photo'}">
+            <FAIcon :icon="['fas', 'camera-retro']" size="lg" />
+            {{ $t('word.photo') }}
         </RouterLink>
         <RouterLink v-if="!isLogin" to="/login">
             <FAIcon :icon="['fas', 'sign-in-alt']" size="lg" />
@@ -48,6 +52,10 @@ export default {
     },
     // 算出プロパティでストアのステートを参照
     computed: {
+        // authストアのapiStatus
+        apiStatus() {
+            return this.$store.state.auth.apiStatus;
+        },
         // authストアのステートUserを参照
         isLogin() {
             return this.$store.getters["auth/check"];
@@ -69,9 +77,13 @@ export default {
         async logout() {
             // authストアのlogoutアクションを呼び出す
             await this.$store.dispatch("auth/logout");
-            // ログインに移動
+
+            // ログアウト成功の場合
             if (this.apiStatus) {
-                this.$router.push("/login");
+                // 「photo」のページにいる場合ログインに移動
+                if (["photo"].includes(this.$route.name)) {
+                    this.$router.push({ name: "login" });
+                }
             }
         },
         // 言語切替メソッド
@@ -91,12 +103,12 @@ export default {
             // ここで入れ直さないとセレクトの中身が変更されない
             this.langList.en = this.$i18n.tc("word.english");
             this.langList.ja = this.$i18n.tc("word.japanese");
-            
+
             // 現在のルートネームを取得
             const currentRoute = this.$route.name;
 
             // ルートネームがログインのときのみクリア
-            if(currentRoute === 'login'){
+            if (currentRoute === "login") {
                 // formulate formの中身をクリア
                 this.$formulate.reset("login_form");
                 this.$formulate.reset("register_form");

@@ -19,6 +19,9 @@ class CreatePhotosTable extends Migration
             // user id と合わせる
             // 「$table->id()」の場合は「bigIncrements」 または 「unsignedBigInteger」
             $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->string('group_id');
             $table->string('filename');
             $table->timestamps();
 

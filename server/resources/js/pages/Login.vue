@@ -200,7 +200,7 @@ export default {
             // 通信成功
             if (this.apiStatus) {
                 // トップページに移動
-                this.$router.push("/");
+                this.$router.push({name: 'home'});
             }
         },
         /*

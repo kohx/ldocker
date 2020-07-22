@@ -18,6 +18,12 @@ const contents = {
             send: 'Send',
             password_reset: 'Password Reset',
             reset: 'Reset',
+            photo: 'Photo',
+            upload: 'Upload',
+            upload_photo: 'Upload Photo',
+            photo_name: 'Photo name',
+            photo_description: 'Photo description',
+            photo_files: 'Photo files',
         },
         // メッセージ
         sentence: {

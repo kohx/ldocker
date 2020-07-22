@@ -17,7 +17,7 @@
   <li><a href="https://www.aska-ltd.jp/jp/blog/73">Laravel mix vue No.8 - Laravel Internationalization - Laravel多言語化</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/76">Laravel mix vue No.9 - Vue Internationalization - Vue多言語化</li></a>
   <li><a href="https://www.aska-ltd.jp/jp/blog/77">Laravel mix vue No.10 - Vue Font Awesome, Vue Formulate, etc - UIの作り込み</a></li>
-  <li><a href="https://www.aska-ltd.jp/jp/blog/77">Laravel mix vue No.11 - Vue Font Awesome, Vue Formulate, etc - UIの作り込み</a></li>
+  <li><a href="https://www.aska-ltd.jp/jp/blog/77">Laravel mix vue No.11 - AWS S3 - AWS S3 に写真をアップデート</a></li>
 </ul>
 
 # Vue Font Awesome, Vue Formulate, etc - UIの作り込み
@@ -94,6 +94,33 @@ npm run watch
 
 ## S3の設定
 
+### AWS
+
+1. S3 -> 「バケットを作成する」
+
+    パケット名: [パケットネーム]  
+    リージョン: アジアパシフィック（東京）  
+
+2. オプションの設定 -> 「次のステップ」
+
+3. アクセス許可の設定 -> 「パブリックアクセスをすべてブロック」 のチェックを外す  
+    「現在の設定により、このバケットと中のオブジェクトがパブリックになる可能性があることを了承します。」にチェック  
+
+4. 確認 -> 「パケットを作成」  
+
+5. IAM ユーザー -> 「ユーザーを追加」  
+  
+6. リソースグループ -> 「プログラムによるアクセス」にチェック -> 次のステップ  
+
+7. アクセス許可の設定 -> 「既存のポリシーを直接アタッチ」をクリック  
+                   -> 「AmazonS3FullAccess」ポリシーにチェック   
+                    -> 次のステップ
+
+8. タグの追加 -> 次のステップ -> ユーザーの作成   
+9. 「アクセスキーID」と「シークレットアクセスキー」を取得  
+
+
+
 ### ライブラリをインストール
 
 ```bash:terminal
@@ -164,6 +191,9 @@ npm run watch
                 // user id と合わせる
                 // 「$table->id()」の場合は「bigIncrements」 または 「unsignedBigInteger」
                 $table->unsignedBigInteger('user_id');
+                $table->string('name');
+                $table->string('description')->nullable();
+                $table->string('group_id');
                 $table->string('filename');
                 $table->timestamps();
 
@@ -332,6 +362,15 @@ npm run watch
 
         // important! タイプがストリングの場合はインクリメントをfalse！
         public $incrementing = false;
+
+        // モデルが以下のフィールド以外を持たないようにする
+        protected $fillable = [
+            'id',
+            'name',
+            'description',
+            'group_id',
+            'filename',
+        ];
 
         /**
          * constructor
@@ -540,19 +579,31 @@ npm run watch
         }
 
         /**
+         * Prepare the data for validation.
+         *
+         * @return void
+         */
+        protected function prepareForValidation()
+        {
+            //
+        }
+
+        /**
          * Get the validation rules that apply to the request.
          * バリデーションをここに書く
-         * 
+         *
          * @return array
          */
         public function rules()
         {
             return [
+                'photo_name' => 'required|max:255',
+                'photo_description' => 'max:255',
                 // 必須入力、ファイル、ファイルタイプが jpg,jpeg,png,gif であることをルールとして定義
-                'photo' => 'required|file|mimes:jpg,jpeg,png,gif'
+                // photo_filesが配列なので「.*」ですべてをチェック
+                'photo_files.*' => 'image|mimes:jpeg,bmp,png',
             ];
         }
-
 
         /**
          * エラーメッセージのカスタマイズ
@@ -574,9 +625,9 @@ npm run watch
         public function withValidator($validator)
         {
             // $validator->after(function ($validator) {
-                // if ($this->somethingElseIsInvalid()) {
-                //     $validator->errors()->add('field', __('Something is wrong with this field!'));
-                // }
+            // if ($this->somethingElseIsInvalid()) {
+            //     $validator->errors()->add('field', __('Something is wrong with this field!'));
+            // }
             // });
         }
     }
@@ -637,9 +688,10 @@ npm run watch
     <?php
 
     namespace App\Http\Controllers;
+
     // models
-    use App\Photo;
-    use App\Comment;
+    use App\Models\Photo;
+    use App\Models\Comment;
 
     // requests
     use App\Http\Requests\StorePhoto;
@@ -654,9 +706,11 @@ npm run watch
     {
         public function __construct()
         {
+            // ミドルウェアをクラスに追加
             // 認証が必要
             $this->middleware('auth')
-                ->except(['index', 'download', 'show']); // 認証を除外するアクション
+                // 認証を除外するアクション
+                ->except(['index', 'download', 'show']);
         }
 
         /**
@@ -677,7 +731,7 @@ npm run watch
         /**
          * 写真詳細
          * photo show
-         * 
+         *
          * @param string $id
          * @return Photo
          */
@@ -685,43 +739,67 @@ npm run watch
         {
             // get photo
             // 'comments.author'でcommentsと、そのbelongsToに設定されている'author'も取得
+            // findOrFailでなければ404
             $photo = Photo::with(['owner', 'comments.author', 'likes'])->findOrFail($id);
 
             return $photo;
         }
 
         /**
-         * 写真投稿
          * photo store
-         * 
+         * 写真投稿
+         * リクエストは「StorePhoto」を使う
+         *
          * @param StorePhoto $request
          * @return \Illuminate\Http\Response
          */
         public function store(StorePhoto $request)
         {
-            // 投稿写真の拡張子を取得する
-            $extension = $request->photo->extension();
+            // アップデートした画像のS3のパス
+            $updatePhotos = [];
 
-            // create photo model instance
-            $photo = new Photo();
-
-            // インスタンス生成時に割り振られたランダムなID値と
-            // 本来の拡張子を組み合わせてファイル名とする
-            $photo->filename = "{$photo->id}.{$extension}";
-
-            // S3にファイルを保存する
-            // 第三引数の'public'はファイルを公開状態で保存するため
-            Storage::cloud()
-                ->putFileAs('', $request->photo, $photo->filename, 'public');
+            // 名前と説明を取得
+            $photoName = $request->input('photo_name');
+            $photoDescription = $request->input('photo_description');
 
             // データベースエラー時にファイル削除を行うためトランザクションを利用する
             // Transaction Begin
             DB::beginTransaction();
-
             try {
 
-                // ユーザのフォトにインサート
-                Auth::user()->photos()->save($photo);
+                // グループID
+                $groupId = null;
+
+                foreach ($request->file('photo_files') as $key => $photoFile) {
+                    // extension()メソッドでファイルの拡張子を取得する
+                    $extension = $photoFile->extension();
+
+                    // モデルインスタンス作成
+                    $photo = new Photo([
+                        'name' => $photoName,
+                        'description' => $photoDescription,
+                    ]);
+
+                    // グループキーを保持
+                    if ($key === 0) {
+                        $groupId = $photo->id;
+                    }
+
+                    // グループキーをセット
+                    $photo->group_id = $groupId;
+                    
+                    // インスタンス生成時に割り振られたランダムなID値と
+                    // 本来の拡張子を組み合わせてファイル名とする
+                    $photo->filename = "{$photo->id}.{$extension}";
+
+                    // S3にファイルを保存する
+                    // putFileAsの引数は( ディレクトリ, ファイルデータ, ファイルネーム, 公開 )
+                    // 第三引数の'public'はファイルを公開状態で保存するため
+                    // 返り値はS3のパス
+                    $updatePhotos[] = Storage::cloud()->putFileAs('photos', $photoFile, $photo->filename, 'public');
+                    // ユーザのフォトにインサート
+                    Auth::user()->photos()->save($photo);
+                }
 
                 // Transaction commit
                 DB::commit();
@@ -729,119 +807,22 @@ npm run watch
 
                 // Transaction Rollback
                 DB::rollBack();
+
                 // DBとの不整合を避けるためアップロードしたファイルを削除
-                Storage::cloud()->delete($photo->filename);
-                throw $exception;
+                foreach ($updatePhotos as $updatePhoto) {
+                    Storage::cloud()->delete($updatePhoto);
+                }
+
+                // log
+                \Log::info($exception);
+
+                // エラーレスポンス
+                return response()->json(['errors' => [__('upload failed.')]], 500);
             }
 
             // リソースの新規作成なので
             // レスポンスコードは201(CREATED)を返却する
-            return response($photo, 201);
-        }
-
-        /**
-         * 写真詳細
-         * photo show
-         * 
-         * @param string $id
-         * @return Photo
-         */
-        public function show(string $id)
-        {
-            // get photo
-            // 'comments.author'でcommentsと、そのbelongsToに設定されている'author'も取得
-            $photo = Photo::with(['owner', 'comments.author', 'likes'])->findOrFail($id);
-
-            return $photo;
-        }
-
-        /**
-         * 写真ダウンロード
-         * photo download
-         * 
-         * @param Photo $photo
-         * @return \Illuminate\Http\Response
-         */
-        public function download(Photo $photo)
-        {
-            // // 写真の存在チェック
-            if (!Storage::cloud()->exists($photo->filename)) {
-                abort(404);
-            }
-
-            // disposition value
-            $disposition = 'attachment; filename="' . $photo->filename . '"';
-
-            // コンテンツタイプにapplication/octet-streamを指定すればダウンロードできます。
-            // Content-Dispositionヘッダーにattachmentを指定すれば、コンテンツタイプが"application/octet-stream"でなくても、ダウンロードできます。
-            // filenameに指定した値が、ダウンロード時のデフォルトのファイル名になります。
-            $headers = [
-                'Content-Type' => 'application/octet-stream',
-                'Content-Disposition' => $disposition,
-            ];
-
-            // down load file
-            $file = Storage::cloud()->get($photo->filename);
-
-            return response($file, 200, $headers);
-        }
-
-        /**
-         * コメント投稿
-         *
-         * @param Photo $photo
-         * @param StoreComment $request
-         * @return \Illuminate\Http\Response
-         */
-        public function addComment(Photo $photo, StoreComment $request)
-        {
-            // create comment instance
-            $comment = new Comment();
-
-            // set value
-            $comment->content = $request->get('content');
-            $comment->user_id = Auth::user()->id;
-
-            // save comment
-            $photo->comments()->save($comment);
-
-            // authorリレーションをロードするためにコメントを取得しなおす
-            $new_comment = Comment::with('author')->find($comment->id);
-
-            return response($new_comment, 201);
-        }
-
-        /**
-         * いいね
-         * @param string $id
-         * @return array
-         */
-        public function like(string $id)
-        {
-            $photo = Photo::with('likes')->findOrFail($id);
-
-            // detach from pipod table
-            $photo->likes()->detach(Auth::user()->id);
-
-            // attach from pipod table
-            $photo->likes()->attach(Auth::user()->id);
-
-            return ["photo_id" => $id];
-        }
-
-        /**
-         * いいね解除
-         * @param string $id
-         * @return array
-         */
-        public function unlike(string $id)
-        {
-            $photo = Photo::with('likes')->findOrFail($id);
-
-            // detach from pipod table
-            $photo->likes()->detach(Auth::user()->id);
-
-            return ["photo_id" => $id];
+            return response()->json(['message' => __('upload success.')], 201);
         }
     }
 
@@ -906,13 +887,60 @@ Vueルートに名前をつけるので`server\resources\js\router.js`を修正
         {
             // urlのパス
             path: "/reset",
-            // ルートネーム
++           // ルートネーム
 +           name: 'reset',
-+           ...
+            ...
         },
+        // システムエラー
+        {
+            // urlのパス
+            path: "/500",
++           // ルートネーム
++           name: 'system-error',
+            ...
+        },
+        // not found
+        {
+            // 定義されたルート以外のパスでのアクセスは <NotFound> が表示
+            path: "*",
++           // ルートネーム
++           name: 'not-found',
+            ...
+        },
+        
         ...
     ];
     ...
+
+```
+
+色んな所に`this.$router.push()`がかかれているので、ルートネームで指定するように修正する。
+
+`server\resources\js\App.vue`  
+`server\resources\js\components\Header.vue`  
+`server\resources\js\pages\Login.vue`  
+`server\resources\js\pages\Reset.vue`  
+`server\resources\js\pages\Reset.vue`  
+
+```javascript:ex
+
+-   <RouterLink to="/">
++   <RouterLink to="{ name: 'home'}">
+
+-   this.$router.push("/home");
++   this.$router.push({ name: "home" });
+
+-   this.$router.push("/login");
++   this.$router.push({ name: "login" });
+
+-   this.$router.push("/500");
++   this.$router.push({ name: "system-error" });
+
+-   this.$router.push("/not-found");
++   this.$router.push({ name: "not-found" });
+
+-   next("/");
++   next({ name: 'home' });
 
 ```
 
@@ -1148,1232 +1176,405 @@ Vueルートに名前をつけるので`server\resources\js\router.js`を修正
 
 ```
 
-### フォトアップデートのページを作成
+### ビュールートを追加
 
-ビュールートを追加
+`server\resources\js\router.js`に新しいページのルートを追加
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Vueで使う準備
-
-```javascript:server\resources\js\app.js
+```javascript:server\resources\js\router.js
 
     ...
 
-+   /**
-+    * fontawesome
-+    * https://github.com/FortAwesome/vue-fontawesome
-+    * http://l-lin.github.io/font-awesome-animation/
-+    */
-+
-+   // コアのインポート
-+   import { library } from "@fortawesome/fontawesome-svg-core";
-+
-+   // 無料で使えるフォントをインポート
-+   import { fab } from "@fortawesome/free-brands-svg-icons";
-+   import { far } from "@fortawesome/free-regular-svg-icons";
-+   import { fas } from "@fortawesome/free-solid-svg-icons";
-+
-+   // コンポネントをインポート
-+   import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from "@fortawesome/vue-fontawesome";
-+
-+   // ライブラリに追加
-+   library.add(fas, far, fab);
-+
-+   // コンポーネントを名前を指定して追加
-+   // 名前は自由にきめてOK
-+   Vue.component("FAIcon", FontAwesomeIcon);
-+   Vue.component('FALayers', FontAwesomeLayers);
-+   Vue.component('FAText', FontAwesomeLayersText);
-+   ...
-
-```
-
-### 使用例
-
-```HTML:example
-
-    <!-- アイコンの指定 -->
-    <FAIcon icon="coffee" />
-    <FAIcon :icon="['fas', 'coffee']" />
-
-    <!-- サイズ -->
-    <!--  xs, sm, lg, 2x, 3x ... 10x  -->
-    <FAIcon :icon="['fas', 'coffee']" size="xs" />
-    <FAIcon :icon="['fas', 'coffee']" size="6x" />
-
-    <!-- 等幅フォント -->
-    <FAIcon :icon="['fas', 'coffee']" fixed-width />
-
-    <!-- 回転 -->
-    <FAIcon :icon="['fas', 'coffee']" rotation="90" />
-
-    <!-- フリップ -->
-    <FAIcon :icon="['fas', 'coffee']" flip="horizontal" />
-    <FAIcon :icon="['fas', 'coffee']" flip="vertical" />
-    <FAIcon :icon="['fas', 'coffee']" flip="both" />
-
-    <!-- アニメーション -->
-    <FAIcon icon="spinner" spin />
-    <FAIcon icon="spinner" pulse />
-
-    <!-- 枠線 -->
-    <FAIcon :icon="['fas', 'coffee']" border />
-
-    <!-- プル -->
-    <FAIcon :icon="['fas', 'coffee']" pull="left" />
-    <FAIcon :icon="['fas', 'coffee']" pull="right" />
-
-    <!-- 色の反転 -->
-    <FAIcon :icon="['fas', 'coffee']" inverse :style="{'background-color': 'black'}" />
-
-    <!-- トランスフォーム Scaling -->
-    <FAIcon :icon="['fas', 'coffee']" transform="shrink-8" />
-    <FAIcon :icon="['fas', 'coffee']" />
-    <FAIcon :icon="['fas', 'coffee']" transform="grow-8" />
-
-    <!-- トランスフォーム Positioning -->
-    <FAIcon :icon="['fas', 'coffee']" transform="shrink-8" :style="{'background-color': 'rgb(0 0 0 / 25%)'}" />
-    <FAIcon :icon="['fas', 'coffee']" transform="shrink-8 up-3 left-3" :style="{'background-color': 'rgb(0 0 0 / 25%)'}" />
-    <FAIcon :icon="['fas', 'coffee']" transform="shrink-8 down-3 right-3" :style="{'background-color': 'rgb(0 0 0 / 25%)'}" />
-
-    <!-- トランスフォーム Positioning Flipping -->
-    <FAIcon :icon="['fas', 'coffee']" transform="rotate-90" />
-    <FAIcon :icon="['fas', 'coffee']" transform="rotate-180" />
-    <FAIcon :icon="['fas', 'coffee']" :transform="{rotate: '270'}" />
-
-    <!-- トランスフォーム Positioning Flipping -->
-    <FAIcon :icon="['fas', 'coffee']" transform="flip-v" />
-    <FAIcon :icon="['fas', 'coffee']" transform="flip-h" />
-    <FAIcon :icon="['fas', 'coffee']" transform="flip-v flip-h" />
-
-    <!-- マスキング -->
-    <FAIcon :icon="['fas', 'coffee']" :mask="['fas', 'circle']" transform="shrink-8" size="2x" />
-
-    <!-- レイヤリング -->
-    <FALayers class="fa-2x">
-        <FAIcon :icon="['fas', 'circle']" />
-        <FAIcon :icon="['fas', 'times']" transform="shrink-3" inverse />
-    </FALayers>
-
-    <FALayers class="fa-2x">
-        <FAIcon :icon="['fas', 'play']" transform="rotate--90 grow-2" />
-        <FAIcon :icon="['fas', 'sun']" inverse transform="shrink-10 up-2" />
-        <FAIcon :icon="['fas', 'moon']" inverse transform="shrink-11 down-4.2 left-4" />
-        <FAIcon :icon="['fas', 'star']" inverse transform="shrink-11 down-4.2 right-3" />
-    </FALayers>
-
-    <FALayers class="fa-2x">
-        <FAIcon icon="calendar"/>
-        <FAText class="fa-inverse" transform="shrink-8 down-3.5" :value="30" />
-    </FALayers>
-
-    <FALayers class="fa-2x">
-        <FAIcon icon="certificate"/>
-        <FAText transform="shrink-11.5 rotate--30" value="NEW" :style="{'color': 'white'}" />
-    </FALayers>
-
-    <FALayers class="fa-4x">
-        <FAIcon icon="envelope"/>
-        <FAText counter value="21" />
-    </FALayers>
-    <FALayers class="fa-4x">
-        <FAIcon icon="envelope"/>
-        <FAText counter value="22" position="bottom-left" style="background:Tomato" />
-    </FALayers>
-
-```
-
-## 複雑なアニメーションに対応
-
-### インストール
-
-「font-awesome-animation」をインストール  
-
-[font-awesome-animation](http://l-lin.github.io/font-awesome-animation/)
-
-```bash:terminal
-
-    npm i font-awesome-animation
-
-```
-
-### Vueで使う準備
-
-`server\webpack.mix.js`に追加して`public/css/app.css`を作成させる
-
-```javascript:server\webpack.mix.js
-
-    const mix = require('laravel-mix');
-
-        mix.js("resources/js/app.js", "public/js")
-        // 配列で渡したcssを「public/css/app.css」にまとめる
-+       .styles([
-+           'node_modules/font-awesome-animation/dist/font-awesome-animation.min.css'
-+       ], 'public/css/app.css');
-
-        ...
-
-```
-
-`server\resources\views\index.blade.php`にスタイルシートを追加
-
-```javascript:server\resources\views\index.blade.php
-
-    <!doctype html>
-    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name') }}</title>
-    <script src="{{ mix('js/app.js') }}" defer></script>
-+   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    </head>
-    <body>
-    <div id="app"></div>
-    </body>
-    </html>
-
-```
-
-「watch」で監視できないのでもう一度
-
-```bash:terminal
-
-    npm run watch
-
-```
-
-### 使用例
-
-モーション
-* faa-wrench
-* faa-ring
-* faa-horizontal
-* faa-vertical
-* faa-flash
-* faa-bounce
-* faa-spin
-* faa-float
-* faa-pulse
-* faa-shake
-* faa-tada
-* faa-passing
-* faa-passing
-* faa-burst
-* faa-falling
-* faa-rising
-
-モード
-* animated
-* animated-hover
-
-スピード
-* faa-fast
-* faa-slow
-
-親要素でホバー
-* faa-parent
-
-```HTML:example
-
-    <!-- 基本 -->
-    <FAIcon icon="coffee" class="faa-wrench animated" />
-
-    <!-- 速度 -->
-    <FAIcon icon="coffee" class="faa-wrench animated faa-slow" />
-    <FAIcon icon="coffee" class="faa-wrench animated faa-fast" />
-
-    <!-- ホバー -->
-    <FAIcon icon="coffee" class="faa-wrench animated-hover" />
-
-    <!-- 親要素でホバー -->
-    <div class="faa-parent animated-hover">
-        <FAIcon icon="coffee" class="faa-wrench" />coffee
-    </div>
-
-```
-
-## フォームを使いやすくする
-
-### インストール
-
-`Vue Formulate`をインストール
-
-```bash:terminal
-
-    npm i @braid/vue-formulate
-
-```
-
-### Vueで使う準備
-
-```javascript:server\resources\js\app.js
-
-    ...
-
-+   /*
-+    * VueFormulate
-+    * https://vueformulate.com/guide/
-+    * https://vueformulate.com/guide/internationalization/#registering-a-locale
-+    * https://vueformulate.com/guide/custom-inputs/#custom-types
-+    */
-+
-+   // コアをインポート
-+   import VueFormulate from "@braid/vue-formulate";
-+   // 言語をインポート
-+   import { en, ja } from "@braid/vue-formulate-i18n";
-+
-+   // 宣言
-+   Vue.use(VueFormulate, {
-+       // 使用するプラグイン
-+       plugins: [en, ja],
-+       // グローバルに使う独自ルール
-+       rules: {
-+           // ex
-+           foobar: ({ value }) => ["foo", "bar"].includes(value)
-+       }
-+   });
-
-    ...
-
-```
-
-### テーマを入れる
-
-デフォルトテーマを入れる
-[https://vueformulate.com/guide/theming/#default-theme](https://vueformulate.com/guide/theming/#default-theme)
-
-あとでテーマをカスタマイズしたいので`server\node_modules\@braid\vue-formulate\themes\snow`フォルダをコピーして
-`server\resources\sass`の中に入れる
-
-`server\resources\sass\main.scss`を作成してインポートする
-
-```css:server\resources\sass\main.scss
-
-    @import '../../node_modules/@braid/vue-formulate/themes/snow/snow.scss';
-
-```
-
-`server\webpack.mix.js`を編集
-
-```javascript:server\webpack.mix.js
-
-    const mix = require('laravel-mix');
-
-        mix.js("resources/js/app.js", "public/js")
-+       .sass('resources/sass/main.scss', 'public/js')
-        // 配列で渡したcssを「public/css/app.css」にまとめる
-        .styles([
-            'node_modules/font-awesome-animation/dist/font-awesome-animation.min.css'
-        ], 'public/css/app.css');
-
-    ...
-
-```
-
-------------------------------------------------------------------------------------------
-
-## Api通信中のステータスをvuexで管理
-
-### ストアを作成する
-
-`server\resources\js\store\loading.js`としてローディングストアを作成
-
-```javascript:server\resources\js\store\loading.js
-
-    /*
-     * ステート（データの入れ物）
-     */
-    const state = {
-        status: false
-    };
-
-    /*
-     * ミューテーション（同期処理）
-     */
-    const mutations = {
-        setStatus(state, status) {
-            state.status = status;
-        }
-    };
-
-    /*
-     * エクスポート
-     */
-    export default {
-        namespaced: true,
-        state,
-        mutations
-    };
-
-```
-
-ストアインデックス`server\resources\js\store\index.js`に追加
-
-```javascript:server\resources\js\store\index.js
-
-    import Vue from "vue";
-    import Vuex from "vuex";
-
-    // 各ストアのインポート
-    import auth from "./auth";
-    import error from "./error";
-    import message from "./message";
-+   import loading from './loading'
-
-    Vue.use(Vuex);
-
-    const store = new Vuex.Store({
-        modules: {
-            // 各ストアと登録
-            auth,
-            error,
-            message,
-+           loading,
-        }
-    });
-
-    export default store;
-
-```
-
-------------------------------------------------------------------------------------------
-
-### 通信を状態をわかるようにする
-
-Api通信中のみステータスを`true`にするため`server\resources\js\bootstrap.js`を編集
-
-ついでにLaravelのApiはすべて「/api/xxx」となるのでaxiosに`baseURL`を設定しておく
-
-```javascript:server\resources\js\bootstrap.js
-
-    // クッキーを簡単に扱えるモジュールをインポート
-    import Cookies from "js-cookie";
-    // ストアをインポート
-+   import store from "./store";
-
-    /*
-    * lodash
-    * あると便利のなのでそのままおいておく
-    */
-    window._ = require("lodash");
-    
-    /*
-    * axios
-    * Ajax通信にはこれを使う
-    */
-    window.axios = require("axios");
-
-    // Ajaxリクエストであることを示すヘッダーを付与する
-    window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
-
-    // ベースURLの設定
-+   window.axios.defaults.baseURL = 'api/';
-
-    // requestの設定
-    window.axios.interceptors.request.use(config => {
-
-        // ローディングストアのステータスをTRUE
-+       store.commit("loading/setStatus", true);
-
-        // クッキーからトークンを取り出す
-        const xsrfToken = Cookies.get("XSRF-TOKEN");
-        // ヘッダーに添付する
-        config.headers["X-XSRF-TOKEN"] = xsrfToken;
-        return config;
-    });
-
-    // responseの設定
-    // API通信の成功、失敗でresponseの形が変わるので、どちらとも response にレスポンスオブジェクトを代入
-    window.axios.interceptors.response.use(
-        // 成功時の処理
-        response => {
-            // ローディングストアのステータスをFALSE
-+           store.commit("loading/setStatus", false);
-            return response;
+    // ページをインポート
+    import Home from "./pages/Home.vue";
++   import Photo from "./pages/Photo.vue";
+    import Login from "./pages/Login.vue";
+    import Reset from "./pages/Reset.vue";
+    import SystemError from "./pages/errors/SystemError.vue";
+    import NotFound from "./pages/errors/NotFound.vue";
+
+    Vue.use(VueRouter);
+
+    // パスとページの設定
+    const routes = [
+        // home
+        {
+            // urlのパス
+            path: "/",
+            // ルートネーム
+            name: 'home',
+            // インポートしたページ
+            component: Home
         },
-        // 失敗時の処理
-        error => {
-            // ローディングストアのステータスをFALSE
-+           store.commit("loading/setStatus", false);
-            return error.response || error;
++       // photo
++       {
++           // urlのパス
++           path: "/photo",
++           // ルートネーム
++           name: 'photo',
++           // インポートしたページ
++           component: Photo,
++           // ページコンポーネントが切り替わる直前に呼び出される関数
++           // to はアクセスされようとしているルートのルートオブジェクト
++           // from はアクセス元のルート
++           // next はページの移動先
++           beforeEnter(to, from, next) {
++               if (store.getters["auth/check"]) {
++                   next();
++               } else {
++                   next({
++                       name: 'login'
++                   });
++               }
++           }
++       },
+        // login
+        {
+            ...
+        },
+        // password reset
+        {
+            ...
+        },
+        // システムエラー
+        {
+            path: "/500",
+            // ルートネーム
+            name: 'system-error',
+            // ルートネーム
+            component: SystemError
+        },
+        // not found
+        {
+            // 定義されたルート以外のパスでのアクセスは <NotFound> が表示
+            path: "*",
+            // ルートネーム
+            name: 'not-found',
+            component: NotFound
         }
-    );
+    ];
 
-    ...
+    // VueRouterインスタンス
+    const router = new VueRouter({
+        // いつもどうりのURLを使うために「history」モードにする
+        mode: "history",
+        // 設定したルートオブジェクト
+        routes
+    });
+
+    // VueRouterインスタンスをエクスポート
+    export default router;
 
 ```
 
-ベースURLを設定したのでaxiosのURLを修正
-
-`server\resources\js\components\Header.vue`を修正
+### ヘッダに新しいページのリンクを作成
 
 ```javascript:server\resources\js\components\Header.vue
 
-    ...
-
-    export default {
-        data() {
-            ...
-        },
-        computed: {
-            ...
-        },
-        storage: {
-            ...
-        },
-        methods: {
-            async logout() {
-                ...
-            },
-            // 言語切替メソッド
-            changeLang() {
-                // ローカルストレージに「language」をセット
-                this.$storage.set("language", this.selectedLang);
-                // Apiリクエスト 言語を設定
--               axios.get(`/api/set-lang/${this.selectedLang}`);
-+               axios.get(`set-lang/${this.selectedLang}`);
-                // Vue i18n の言語を設定
-                this.$i18n.locale = this.selectedLang;
-            }
-        },
-        created() {
-            // ローカルストレージから「language」を取得
-            this.selectedLang = this.$storage.get("language");
-
-            // サーバ側をクライアント側に合わせる
-
-            // storageLangがない場合
-            if (!this.selectedLang) {
-                // ブラウザーの言語を取得
-                const defaultLang = Helper.getLanguage();
-                // ローカルストレージに「language」をセット
-                this.$storage.set("language", defaultLang);
-                // Apiリクエスト 言語を設定
--               axios.get(`/api/set-lang/${defaultLang}`);
-+               axios.get(`set-lang/${defaultLang}`);
-            }
-            // ある場合はサーバ側をクライアント側に合わせる
-            else {
--               axios.get(`/api/set-lang/${this.selectedLang}`);
-+               axios.get(`set-lang/${this.selectedLang}`);
-            }
-        }
-    };
-
-```
-
-`server\resources\js\store\auth.js`を修正
-
-```javascript:server\resources\js\store\auth.js
-
-    ...
-
-    /*
-     * アクション（非同期処理）
-     */
-    const actions = {
-        /*
-        * loginのアクション
-        */
-        async login(context, data) {
-            // apiStatusのクリア
-            context.commit("setApiStatus", null);
-
-            // Apiリクエスト
--           const response = await axios.post("/api/login", data);
-+           const response = await axios.post("login", data);
-
-            ...
-        },
-        /*
-        * registerのアクション
-        */
-        async register(context, data) {
-            // apiStatusのクリア
-            context.commit("setApiStatus", null);
-
-            // Apiリクエスト
--           const response = await axios.post("/api/register", data);
-+           const response = await axios.post("register", data);
-
-            ...
-        },
-        /*
-        * logoutのアクション
-        */
-        async logout(context) {
-            // apiStatusのクリア
-            context.commit("setApiStatus", null);
-
-            // Apiリクエスト
--           const response = await axios.post("/api/logout", data);
-+           const response = await axios.post("logout");
-
-            ...
-        },
-        /*
-        * forgotのアクション
-        */
-        async forgot(context, data) {
-            // apiStatusのクリア
-            context.commit("setApiStatus", null);
-
-            // Apiリクエスト
--           const response = await axios.post("/api/forgot", data);
-+           const response = await axios.post("forgot", data);
-
-            ...
-        },
-        /*
-        * resetのアクション
-        */
-        async reset(context, data) {
-            // apiStatusのクリア
-            context.commit("setApiStatus", null);
-
-            // Apiリクエスト
--           const response = await axios.post("/api/reset", data);
-+           const response = await axios.post("reset", data);
-
-            ...
-        },
-        /*
-        * カレントユーザのアクション
-        */
-        async currentUser(context) {
-            // apiStatusのクリア
-            context.commit("setApiStatus", null);
-
-            // Apiリクエスト
--           const response = await axios.post("/api/user", data);
-+           const response = await axios.get("user");
-
-            ...
-        }
-    };
-    ...
-
-```
-
-------------------------------------------------------------------------------------------
-
-## 上記で作成したものを実装
-
-### コンポネントに埋め込み
-
-`server\resources\js\pages\Login.vue`に埋め込んでいく
-
-```javascript:server\resources\js\pages\Login.vue
-
     <template>
--       <div class="container">
-+       <div class="page">
-
-+           <h1>{{ $t('word.login') }}</h1>
-
-            <!-- tabs -->
+        <header class="header">
+            <!-- リンクを設定 -->
+            <RouterLink :to="{ name: 'home'}">
+                <FAIcon :icon="['fas', 'home']" size="lg" />
+                {{ $t('word.home') }}
+            </RouterLink>
++           <RouterLink v-if="isLogin" :to="{ name: 'photo'}">
++               <FAIcon :icon="['fas', 'camera-retro']" size="lg" />
++               {{ $t('word.photo') }}
++           </RouterLink>
+            <RouterLink v-if="!isLogin" to="/login">
+                <FAIcon :icon="['fas', 'sign-in-alt']" size="lg" />
+                {{ $t('word.login') }}
+            </RouterLink>
             ...
-            <!-- /tabs -->
-
-            <!-- login -->
--           <section class="login" v-show="tab === 1">
-+           <section class="login panel" v-show="tab === 1">
--               <h2>{{ $t('word.login') }}</h2>
-
-                <!-- errors -->
-                ...
-                <!--/ errors -->
-
-                <!-- @submitで login method を呼び出し -->
--               <form @submit.prevent="login">
--                   <div>{{ $t('word.email') }}</div>
--                   <div>
--                       <!-- v-modelでdataをバインド -->
--                       <input type="email" v-model="loginForm.email" />
--                   </div>
--                   <div>{{ $t('word.password') }}</div>
--                   <div>
--                       <input type="password" v-model="loginForm.password" />
--                   </div>
--                   <div>
--                       <button type="submit">{{ $t('word.login') }}</button>
--                   </div>
--               </form>
-
-+               <FormulateForm v-model="loginForm" @submit="login">
-+                   <FormulateInput
-+                       name="email"
-+                       type="email"
-+                       :label="$t('word.email')"
-+                       :validation-name="$t('word.email')"
-+                       validation="required|email"
-+                       :placeholder="$t('word.email')"
-+                   />
-+                   <FormulateInput
-+                       name="password"
-+                       type="password"
-+                       :label="$t('word.password')"
-+                       :validation-name="$t('word.password')"
-+                       validation="required|min:8"
-+                       "placeholder="$t('word.password')"
-+                   />
-+                   <FormulateInput type="submit" :disabled="loadingStatus">
-+                       {{ $t('word.login') }}
-+                       <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width/>
-+                   </FormulateInput>
-+               </FormulateForm>
-
-                <h2>{{ $t('word.Socialite') }}</h2>
--               <a class="button" href="/login/twitter" title="twitter">twitter</a>
-+               <a class="button" href="/login/twitter" title="twitter">
-+                       <FAIcon :icon="['fab', 'twitter']" size="2x" :class="['faa-tada', 'animated-hover']"/>
-+               </a>
-                
-            </section>
-            <!-- /login -->
-
-            <!-- register -->
--           <section class="register" v-show="tab === 2">
-+           <section class="register panel" v-show="tab === 2">
--               <h2>{{ $t('word.register') }}</h2>
-                <!-- errors -->
-                <div v-if="registerErrors" class="errors">
-                    <ul v-if="registerErrors.name">
-                        <li v-for="msg in registerErrors.name" :key="msg">{{ msg }}</li>
-                    </ul>
-                    <ul v-if="registerErrors.email">
-                        <li v-for="msg in registerErrors.email" :key="msg">{{ msg }}</li>
-                    </ul>
-                    <ul v-if="registerErrors.password">
-                        <li v-for="msg in registerErrors.password" :key="msg">{{ msg }}</li>
-                    </ul>
-                </div>
-                <!--/ errors -->
--               <form @submit.prevent="register">
--                   <div>{{ $t('word.name') }}</div>
--                   <div>
--                       <input type="text" v-model="registerForm.name" />
--                   </div>
--                   <div>{{ $t('word.email') }}</div>
--                   <div>
--                       <input type="email" v-model="registerForm.email" />
--                   </div>
--                   <div>{{ $t('word.password') }}</div>
--                   <div>
--                       <input type="password" v-model="registerForm.password" />
--                   </div>
--                   <div>{{ $t('word.password_confirmation') }}</div>
--                   <div>
--                       <input type="password" v-model="registerForm.password_confirmation" />
--                   </div>
--                   <div>
--                       <button type="submit">{{ $t('word.register') }}</button>
--                   </div>
--               </form>
-
-+               <FormulateForm v-model="registerForm" @submit="register">
-+                   <FormulateInput
-+                       name="name"
-+                       type="name"
-+                       :label="$t('word.name')"
-+                       :validation-name="$t('word.name')"
-+                       validation="required|max:50"
-+                       :placeholder="$t('word.name')"
-+                   />
-+                   <FormulateInput
-+                       name="email"
-+                       type="email"
-+                       :label="$t('word.email')"
-+                       :validation-name="$t('word.email')"
-+                       validation="required|email"
-+                       :placeholder="$t('word.email')"
-+                   />
-+                   <FormulateInput
-+                       name="password"
-+                       type="password"
-+                       :label="$t('word.password')"
-+                       :validation-name="$t('word.password')"
-+                       validation="required|min:8"
-+                       :placeholder="$t('word.password')"
-+                   />
-+                   <FormulateInput
-+                       name="password_confirmation"
-+                       type="password"
-+                       :label="$t('word.password_confirmation')"
-+                       :validation-name="$t('word.password_confirmation')"
-+                       validation="required|min:8"
-+                       :placeholder="$t('word.password_confirmation')"
-+                   />
-+                   <FormulateInput type="submit" :disabled="loadingStatus">
-+                       {{ $t('word.register') }}
-+                       <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width/>
-+                   </FormulateInput>
-+               </FormulateForm>
-            </section>
-            <!-- /register -->
-
-            <!-- forgot -->
--           <section class="forgot" v-show="tab === 3">
-+           <section class="forgot panel" v-show="tab === 3">
--               <h2>forgot</h2>
-                <!-- errors -->
-                <div v-if="forgotErrors" class="errors">
-                    <ul v-if="forgotErrors.email">
-                        <li v-for="msg in forgotErrors.email" :key="msg">{{ msg }}</li>
-                    </ul>
-                </div>
-                <!--/ errors -->
--               <form @submit.prevent="forgot">
--                   <div>{{ $t('word.email') }}</div>
--                   <div>
--                       <input type="email" v-model="forgotForm.email" />
--                   </div>
--                   <div>
--                       <button type="submit">{{ $t('word.send') }}</button>
--                   </div>
--               </form>
-
-+               <FormulateForm v-model="forgotForm" @submit="forgot">
-+                   <FormulateInput
-+                       name="email"
-+                       type="email"
-+                       :label="$t('word.email')"
-+                       :validation-name="$t('word.email')"
-+                       validation="required|email"
-+                       :placeholder="$t('word.email')"
-+                   />
-+                   <FormulateInput type="submit" :disabled="loadingStatus">
-+                       {{ $t('word.send') }}
-+                       <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width/>
-+                   </FormulateInput>
-+               </FormulateForm>
-            </section>
-            <!-- /forgot -->
-        </div>
+        </header>
     </template>
 
     <script>
+    import Cookies from "js-cookie";
+    import Helper from "../helper";
+
     export default {
         data() {
             ...
         },
         // 算出プロパティでストアのステートを参照
         computed: {
-            // authストアのapiStatus
-            apiStatus() {
-                return this.$store.state.auth.apiStatus;
++           // bugfix: 忘れていたので追加
++           // authストアのapiStatus
++           apiStatus() {
++               return this.$store.state.auth.apiStatus;
++           },
+            // authストアのステートUserを参照
+            isLogin() {
+                return this.$store.getters["auth/check"];
             },
-            // authストアのloginErrorMessages
-            loginErrors() {
-                return this.$store.state.auth.loginErrorMessages;
-            },
-            // authストアのregisterErrorMessages
-            registerErrors() {
-                return this.$store.state.auth.registerErrorMessages;
-            },
-            // authストアのforgotErrorMessages
-            forgotErrors() {
-                return this.$store.state.auth.forgotErrorMessages;
-            },
-+           // loadingストアのstatus
-+           loadingStatus() {
-+               return this.$store.state.loading.status;
-+           }
+            // authストアのステートUserをusername
+            username() {
+                return this.$store.getters["auth/username"];
+            }
         },
+        // app.jsでVueLocalStorageの名前を変更したので「storage」で宣言
+        storage: {
+            ...
+        },
+        methods: {
+            // ログアウトメソッド
+            async logout() {
+                // authストアのlogoutアクションを呼び出す
+                await this.$store.dispatch("auth/logout");
 
-        ...
-
++               // ログアウト成功の場合
++               if (this.apiStatus) {
++                   // 「photo」のページにいる場合ログインに移動
++                   if (["photo"].includes(this.$route.name)) {
++                       this.$router.push({ 'name': "login" });
++                   }
++               }
+            },
+            // 言語切替メソッド
+            changeLang() {
+                ...
+            }
+        },
+        created() {
+            ...
+        }
     };
     </script>
 
 ```
 
-```javascript:server\resources\js\pages\Reset.vue
+### フォトアップデートのページを作成
+
+```javascript:server\resources\js\pages\Photo.vue
 
     <template>
-        <div class="container--small">
--           <h2>{{ $t('word.password_reset') }}</h2>
-+           <h1>{{ $t('word.password_reset') }}</h1>
+        <div class="page">
+            <h1>{{ $t('word.upload_photo') }}</h1>
 
--           <div class="panel">
-+           <section class="page" >
--               <form class="form" @submit.prevent="reset">
-                    <!-- errors -->
-                    <div v-if="resetErrors" class="errors">
-                        <ul v-if="resetErrors.password">
-                            <li v-for="msg in resetErrors.password" :key="msg">{{ msg }}</li>
-                        </ul>
-                        <ul v-if="resetErrors.token">
-                            <li v-for="msg in resetErrors.token" :key="msg">{{ msg }}</li>
-                        </ul>
-                    </div>
-                    <!--/ errors -->
+            <FormulateForm
+                @submit="uploadPhoto"
+                name="upload_form"
+                v-model="photoForm"
+                :form-errors="uploadErrors"
+            >
+                <FormulateInput
+                    type="text"
+                    name="photo_name"
+                    :label="$t('word.photo_name')"
+                    :validation-name="$t('word.photo_name')"
+                    validation="required|max:255,length"
+                />
+                <FormulateInput
+                    type="textarea"
+                    name="photo_description"
+                    :label="$t('word.photo_description')"
+                    :validation-name="$t('word.photo_description')"
+                    validation="max:255,length"
+                />
+                <FormulateInput
+                    name="photo_files"
+                    type="image"
+                    :label="$t('word.photo_files')"
+                    :validation-name="$t('word.photo_files')"
+                    validation="required|mime:image/jpeg,image/png,image/gif|max_photo:3"
+                    upload-behavior="delayed"
+                    :uploader="uploader"
+                    multiple
+                />
 
--                   <div>
--                       <input type="password" v-model="resetForm.password" />
--                   </div>
--                   <div>
--                       <input type="password" v-model="resetForm.password_confirmation" />
--                   </div>
--                   <div>
--                       <button type="submit">{{ $t('word.reset') }}</button>
--                   </div>
--               </form>
-
--           <FormulateForm v-model="resetForm" @submit="reset">
--               <FormulateInput
--                   name="password"
--                   type="password"
--                   :label="$t('word.password')"
--                   :validation-name="$t('word.password')"
--                   validation="required|min:8"
--                   :placeholder="$t('word.password')"
--               />
--               <FormulateInput
--                   name="password_confirmation"
--                   type="password"
--                   :label="$t('word.password_confirmation')"
--                   :validation-name="$t('word.password_confirmation')"
--                   validation="required|min:8"
--                   :placeholder="$t('word.password_confirmation')"
--               />
--               <FormulateInput type="submit" :disabled="loadingStatus">
--                   {{ $t('word.reset') }}
--                   <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width />
--               </FormulateInput>
--           </FormulateForm>
--           </div>
-+           </section>
+                <FormulateInput type="submit" :disabled="loadingStatus">
+                    {{ $t('word.upload') }}
+                    <FAIcon v-if="loadingStatus" :icon="['fas', 'spinner']" pulse fixed-width />
+                </FormulateInput>
+            </FormulateForm>
         </div>
     </template>
 
     <script>
-    import Cookies from "js-cookie";
+    import { CREATED, UNPROCESSABLE_ENTITY, INTERNAL_SERVER_ERROR } from "../const";
 
     export default {
-        // vueで使うデータ
         data() {
-            ...
+            return {
+                photoForm: {
+                    photo_files: null,
+                    photo_name: "",
+                    photo_description: ""
+                },
+                uploadErrors: []
+            };
         },
+        // 算出プロパティでストアのステートを参照
         computed: {
-            // authストアのapiStatus
-            apiStatus() {
-                return this.$store.state.auth.apiStatus;
-            },
-            // authストアのresetErrorMessages
-            resetErrors() {
-                return this.$store.state.auth.resetErrorMessages;
-            },
-+           // loadingストアのstatus
-+           loadingStatus() {
-+               return this.$store.state.loading.status;
-+           }
+            // loadingストアのstatus
+            loadingStatus() {
+                return this.$store.state.loading.status;
+            }
         },
+        methods: {
+            // ダミーアップローダ
+            uploader: function(file, progress) {
+                // ここで処理しないで、uploadPhotoメソッドで処理する
+                // プログレスの進行を100%にするのみ
+                progress(100);
+                return Promise.resolve({});
+            },
+            async uploadPhoto() {
+                // フォームデータオブジェクトを作成
+                const formData = new FormData();
 
-        ...
+                // フォームデータにファイルオブジェクトを追加
+                let c = 0;
+                this.photoForm.photo_files.files.forEach(item => {
+                    formData.append(`photo_files[${c++}]`, item.file);
+                });
+
+                // その他の値をセット
+                formData.append("photo_name", this.photoForm.photo_name);
+                formData.append(
+                    "photo_description",
+                    this.photoForm.photo_description
+                );
+
+                // Api リクエスト
+                const response = await axios.post("photos", formData);
+
+                // アップデート成功
+                if (response.status === CREATED) {
+                    // 成功時はメッセージを出す
+                    this.$store.commit("message/setContent", {
+                        content: response.data.message,
+                        timeout: 6000
+                    });
+
+                    // フォームのクリア
+                    this.photoForm = {
+                        photo_files: null,
+                        photo_name: "",
+                        photo_description: ""
+                    };
+                    // バリデーションのクリア
+                    this.$formulate.reset("upload_form");
+                } else {
+                    // エラー時はformに表示
+                    this.uploadErrors = response.data.errors;
+                }
+            }
+        }
     };
     </script>
 
 ```
 
-`server\resources\js\components\Header.vue`を修正
+### VueFomurateのバリデーションルールを作る
 
-```javascript:server\resources\js\components\Header.vue
+わかりやすいように`server\resources\js\app.js`にグローバルルールを作成
 
-    <template>
--       <header>
--           <!-- リンクを設定 -->
--           <RouterLink to="/">{{ $t('word.home') }}</RouterLink>
--           <RouterLink v-if="!isLogin" to="/login">{{ $t('word.login') }}</RouterLink>
--           <!-- ログインしている場合はusernameを表示 -->
--           <span v-if="isLogin">{{username}}</span>
--           <!-- クリックイベントにlogoutメソッドを登録 -->
--           <span v-if="isLogin" @click="logout">logout</span>
--           <!-- 言語切替 -->
--           <select v-model="selectedLang" @change="changeLang">
--               <option
--                   v-for="lang in langList"
--                   :value="lang.value"
--                   :key="lang.value"
--               >{{ $t(`word.${lang.text}`) }}</option>
--           </select>
--       </header>
+```javascript:server\resources\js\app.js
 
-+       <header class="header">
-+           <RouterLink to="/">
-+               <FAIcon :icon="['fas', 'home']" size="lg" />
-+               {{ $t('word.home') }}
-+           </RouterLink>
-+   
-+           <RouterLink v-if="!isLogin" to="/login">
-+               <FAIcon :icon="['fas', 'sign-in-alt']" size="lg" />
-+               {{ $t('word.login') }}
-+           </RouterLink>
-+   
-+           <span v-if="isLogin">
-+               <FAIcon :icon="['fas', 'child']" size="lg" />
-+               {{username}}
-+           </span>
-+   
-+           <span v-if="isLogin" @click="logout" class="button">
-+               <FAIcon :icon="['fas', 'sign-out-alt']" size="lg" />
-+               {{ $t('word.logout') }}
-+           </span>
-+
-+           <FormulateInput @input="changeLang" v-model="selectedLang" :options="langList" type="select" class="header-lang" />
-        </header>
-    </template>
+    ...
+
+    // 宣言
+    Vue.use(VueFormulate, {
+        // 使用するプラグイン
+        plugins: [en, ja],
+        // グローバルに使う独自ルール
+-       rules: {
+-           // ex
+-           foobar: ({
+-               value
+-           }) => ["foo", "bar"].includes(value)
+-       },
++       rules: {
++           maxPhoto: (context, limit) => {
++               const value = context.value ? context.value.files.length : 0;
++               return value <= limit
++           }
++       },
++       locales: {
++           en: {
++               maxPhoto(args) {                
++                   return `Photo is ${args[0]} or less`;
++               }
++           },
++           ja: {
++               maxPhoto(args) {
++                   return `写真は${args[0]}ファイルまでです。`;
++               }
++           }
++       }
+    });
 
     ...
 
 ```
-`server\resources\js\pages\Home.vue`を修正
 
-```
-    <template>
--   <div class="container">
-+   <div class="page">
+### 翻訳ファイルに追加
 
-        <h1>{{ $t('word.home') }}</h1>
-
-    </div>
-    </template>
-
-```
-
-### スタイルを追加
-
-リセットスタイル`server\resources\css\reset.css`を作成する
-
-```css:server\resources\css\reset.css
-
-    html,
-    body {
-        height: 100%;
-
-    }
-
-    /* Box sizingの定義 */
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
-
-    /* デフォルトのpaddingを削除 */
-    ul[class],
-    ol[class] {
-        padding: 0;
-    }
-
-    /* デフォルトのmarginを削除 */
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    ul[class],
-    ol[class],
-    li,
-    figure,
-    figcaption,
-    blockquote,
-    dl,
-    dd {
-        margin: 0;
-        font-size: unset;
-        font-weight: normal;
-    }
-
-    /* bodyのデフォルトを定義 */
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-            "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        min-height: 100vh;
-        scroll-behavior: smooth;
-        text-rendering: optimizeSpeed;
-        line-height: 1.5;
-    }
-
-    /* class属性を持つul、ol要素のリストスタイルを削除 */
-    ul[class],
-    ol[class] {
-        list-style: none;
-    }
-
-    /* classを持たない要素はデフォルトのスタイルを取得 */
-    a:not([class]) {
-        text-decoration-skip-ink: auto;
-    }
-
-    /* img要素の扱いを簡単にする */
-    img {
-        max-width: 100%;
-        display: block;
-    }
-
-    /* article要素内の要素に自然な流れとリズムを定義 */
-    article > * + * {
-        margin-top: 1em;
-    }
-
-    /* inputやbuttonなどのフォントは継承を定義 */
-    input,
-    button,
-    textarea,
-    select {
-        font: inherit;
-    }
-
-    button {
-        border: 0;
-        outline: none;
-    }
-
-    /* 見たくない人用に、すべてのアニメーションとトランジションを削除 */
-
-    @media (prefers-reduced-motion: reduce) {
-        * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-        }
-    }
-
-```
-
-
-```css:server\resources\css\style.css
-
-    h1 {
-        margin: 0;
-        padding: 0;
-        color: dodgerblue;
-        border-bottom: solid thin dodgerblue;
-        margin: 2rem 0;
-        font-weight: bold;
-    }
-
-    .wrapper {
-        width: clamp(600px, 80%, 1000px);
-        margin: 5vh auto;
-        border: solid 3px dodgerblue;
-        min-height: 90vh;
-    }
-
-    .header {
-        padding: 1rem 1rem 0;
-        display: flex;
-    }
-
-    .header>* {
-        margin: 1rem;
-        text-decoration: none;
-        color: gray;
-    }
-
-    .header>*:last-child {
-        margin-left: auto;
-    }
-
-    .header .router-link-exact-active {
-        pointer-events: none;
-        color: dodgerblue;
-    }
-
-    .container {
-        padding: 2rem;
-    }
-
-    .tab {
-        padding: 0;
-        display: flex;
-        list-style: none;
-        transform: translateY(1px);
-    }
-
-    .tab__item {
-        background-color: lightgrey;
-        border: 1px solid gray;
-        border-radius: 0.3rem 0.3rem 0 0;
-        padding: 0.5rem 1rem 0.4rem;
-        margin-right: 0.5rem;
-        cursor: pointer;
-    }
-
-    .tab__item--active {
-        background-color: white;
-        border-bottom: 1px solid white;
-    }
-
-    .panel {
-        border: solid 1px gray;
-        padding: 2rem;
-    }
-
-    .button {
-        cursor: pointer;
-    }
-
-```
-
-`server\webpack.mix.js`を編集
-
-```javascript:server\webpack.mix.js
-
-    const mix = require('laravel-mix');
-
-        mix.js("resources/js/app.js", "public/js")
-        .sass('resources/sass/main.scss', 'public/js')
-        // 配列で渡したcssを「public/css/app.css」にまとめる
-        .styles([
-+           'resources/css/reset.css',
-+           'resources/css/style.css',
-            'node_modules/font-awesome-animation/dist/font-awesome-animation.min.css'
-        ], 'public/css/app.css');
+```javascript:server\resources\js\lang\En.js
 
     ...
+    word: {
+        hello: 'hello!',
+        home: 'Home',
+        login: 'Login',
+        logout: 'logout',
+        english: 'English',
+        japanese: 'Japanese',
+        register: 'Register',
+        forgot_password: 'Forgot Password ?',
+        email: 'Email',
+        password: 'Password',
+        Socialite: 'Socialite',
+        name: 'Name',
+        password_confirmation: 'Password Confirmation',
+        send: 'Send',
+        password_reset: 'Password Reset',
+        reset: 'Reset',
++       photo: 'Photo',
++       upload: 'Upload',
++       upload_photo: 'Upload Photo',
++       photo_name: 'Photo name',
++       photo_description: 'Photo description',
++       photo_files: 'Photo files',
+    },
+    ...
 
+```
 
-これでUIが使いやすくなったと思います。
+```javascript:server\resources\js\lang\Ja.js
 
+    ...
+    word: {
+        hello: 'hello!',
+        home: 'Home',
+        login: 'Login',
+        logout: 'logout',
+        english: 'English',
+        japanese: 'Japanese',
+        register: 'Register',
+        forgot_password: 'Forgot Password ?',
+        email: 'Email',
+        password: 'Password',
+        Socialite: 'Socialite',
+        name: 'Name',
+        password_confirmation: 'Password Confirmation',
+        send: 'Send',
+        password_reset: 'Password Reset',
+        reset: 'Reset',
++       photo: '写真',
++       upload: 'アップロード',
++       upload_photo: '写真をアップロード',
++       photo_name: '写真の名前',
++       photo_description: '写真の説明',
++       photo_files: '写真ファイル',
+    },
+    ...
+
+```
+
+次はアップデートした写真の一覧を表示するページを作ります。
 
 // <!-- [Laravel mix vue No.11 - ](https://www.aska-ltd.jp/jp/blog/) -->
 
