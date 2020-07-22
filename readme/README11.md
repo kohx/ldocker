@@ -405,11 +405,11 @@ npm run watch
          */
         protected $visible = [
             'id',
-            'owner',
+            'user',
             'url',
             'comments',
-            'likes_count',
-            'liked_by_user',
+            'total_like',
+            'is_liked',
         ];
 
         /**
@@ -417,8 +417,8 @@ npm run watch
          */
         protected $appends = [
             'url',
-            'likes_count',
-            'liked_by_user',
+            'total_like',
+            'is_liked',
         ];
 
         /**
@@ -426,7 +426,7 @@ npm run watch
          *
          * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
          */
-        public function owner()
+        public function user()
         {
             // 「リレーションメソッド名 ＋ _id」をデフォルトの外部キーにしている
             return $this->belongsTo('App\User')
@@ -448,7 +448,7 @@ npm run watch
          */
         public function comments()
         {
-            return $this->hasMany('App\Comment')
+            return $this->hasMany('App\Models\Comment')
                 ->orderBy('id', 'desc');
         }
 
@@ -488,24 +488,24 @@ npm run watch
         }
 
         /**
-         * アクセサ - likes_count
+         * アクセサ - total_like
          * ライクの数を取得して「likes」で呼び出せるようにする
          *
          * @return int
          */
-        public function getLikesCountAttribute()
+        public function getTotalLikeAttribute()
         {
             // 写真に付いたいいねの総数
             return $this->likes->count();
         }
 
         /**
-         * アクセサ - liked_by_user
+         * アクセサ - is_liked
          * ログインユーザがその写真にいいねしているかを取得して「liked_by_user」で呼び出せるようにする
          *
          * @return boolean
          */
-        public function getLikedByUserAttribute()
+        public function getIsLikedAttribute()
         {
             // 「Auth::guest()」でユーザーがログインしていない状態かどうかを確認
             // 「Auth::check()」はユーザーがログインしているかどうかを確認

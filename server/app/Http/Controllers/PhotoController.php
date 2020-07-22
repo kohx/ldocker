@@ -27,38 +27,6 @@ class PhotoController extends Controller
     }
 
     /**
-     * 写真一覧
-     * photo index
-     */
-    public function index()
-    {
-        // get の代わりに paginate を使うことで、
-        // JSON レスポンスでも示した total（総ページ数）や current_page（現在のページ）といった情報が自動的に追加される
-        $photos = Photo::with(['owner', 'likes'])
-            ->orderBy(Photo::CREATED_AT, 'desc')
-            ->paginate();
-
-        return $photos;
-    }
-
-    /**
-     * 写真詳細
-     * photo show
-     *
-     * @param string $id
-     * @return Photo
-     */
-    public function show(string $id)
-    {
-        // get photo
-        // 'comments.author'でcommentsと、そのbelongsToに設定されている'author'も取得
-        // findOrFailでなければ404
-        $photo = Photo::with(['owner', 'comments.author', 'likes'])->findOrFail($id);
-
-        return $photo;
-    }
-
-    /**
      * photo store
      * 写真投稿
      * リクエストは「StorePhoto」を使う
