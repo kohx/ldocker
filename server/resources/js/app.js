@@ -51,6 +51,65 @@ const i18n = new VueI18n({
     numberFormats
 });
 
+/**
+ * fontawesome
+ * https://github.com/FortAwesome/vue-fontawesome
+ * http://l-lin.github.io/font-awesome-animation/
+ */
+// コアのインポート
+import {
+    library
+} from "@fortawesome/fontawesome-svg-core";
+
+// 無料で使えるフォントをインポート
+import {
+    fab
+} from "@fortawesome/free-brands-svg-icons";
+import {
+    far
+} from "@fortawesome/free-regular-svg-icons";
+import {
+    fas
+} from "@fortawesome/free-solid-svg-icons";
+// コンポネントをインポート
+import {
+    FontAwesomeIcon,
+    FontAwesomeLayers,
+    FontAwesomeLayersText
+} from "@fortawesome/vue-fontawesome";
+// ライブラリに追加
+library.add(fas, far, fab);
+// コンポーネントを名前を指定して追加
+// 名前は自由にきめてOK
+Vue.component("FAIcon", FontAwesomeIcon);
+Vue.component('FALayers', FontAwesomeLayers);
+Vue.component('FAText', FontAwesomeLayersText);
+
+/**
+ * VueFormulate
+ * https://vueformulate.com/guide/
+ * https://vueformulate.com/guide/internationalization/#registering-a-locale
+ * https://vueformulate.com/guide/custom-inputs/#custom-types
+ */
+// コアをインポート
+import VueFormulate from "@braid/vue-formulate";
+// 言語をインポート
+import {
+    en,
+    ja
+} from "@braid/vue-formulate-i18n";
+// 宣言
+Vue.use(VueFormulate, {
+    // 使用するプラグイン
+    plugins: [en, ja],
+    // グローバルに使う独自ルール
+    rules: {
+        // ex
+        foobar: ({
+            value
+        }) => ["foo", "bar"].includes(value)
+    }
+});
 
 // 非同期通信でAUTHストアのcurrentUserアクションを実行するので
 // asyncメソッドにして、awaitで通信をまつ
@@ -69,7 +128,9 @@ const createApp = async () => {
         // I18nを登録
         i18n,
         // 使用するコンポーネントにルートコンポーネントの登録
-        components: { App },
+        components: {
+            App
+        },
         // 描画するテンプレート
         template: "<App />"
     });

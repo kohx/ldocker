@@ -1,33 +1,50 @@
  <template>
     <div class="container--small">
-        <h2>{{ $t('word.password_reset') }}</h2>
+        <h1>{{ $t("word.password_reset") }}</h1>
 
-        <div class="panel">
-            <!-- @submitで login method を呼び出し -->
-            <!-- @submitイベントリスナに reset をつけるとsubmitイベントによってページがリロードさない -->
-            <form class="form" @submit.prevent="reset">
-                <!-- errors -->
-                <div v-if="resetErrors" class="errors">
-                    <ul v-if="resetErrors.password">
-                        <li v-for="msg in resetErrors.password" :key="msg">{{ msg }}</li>
-                    </ul>
-                    <ul v-if="resetErrors.token">
-                        <li v-for="msg in resetErrors.token" :key="msg">{{ msg }}</li>
-                    </ul>
-                </div>
-                <!--/ errors -->
-
-                <div>
-                    <input type="password" v-model="resetForm.password" />
-                </div>
-                <div>
-                    <input type="password" v-model="resetForm.password_confirmation" />
-                </div>
-                <div>
-                    <button type="submit">{{ $t('word.reset') }}</button>
-                </div>
-            </form>
-        </div>
+        <section class="page">
+            <!-- errors -->
+            <div v-if="resetErrors" class="errors">
+                <ul v-if="resetErrors.password">
+                    <li v-for="msg in resetErrors.password" :key="msg">
+                        {{ msg }}
+                    </li>
+                </ul>
+                <ul v-if="resetErrors.token">
+                    <li v-for="msg in resetErrors.token" :key="msg">
+                        {{ msg }}
+                    </li>
+                </ul>
+            </div>
+            <!--/ errors -->
+            <FormulateForm v-model="resetForm" @submit="reset">
+                <FormulateInput
+                    name="password"
+                    type="password"
+                    :label="$t('word.password')"
+                    :validation-name="$t('word.password')"
+                    validation="required|min:8"
+                    :placeholder="$t('word.password')"
+                />
+                <FormulateInput
+                    name="password_confirmation"
+                    type="password"
+                    :label="$t('word.password_confirmation')"
+                    :validation-name="$t('word.password_confirmation')"
+                    validation="required|min:8"
+                    :placeholder="$t('word.password_confirmation')"
+                />
+                <FormulateInput type="submit" :disabled="loadingStatus">
+                    {{ $t("word.reset") }}
+                    <FAIcon
+                        v-if="loadingStatus"
+                        :icon="['fas', 'spinner']"
+                        pulse
+                        fixed-width
+                    />
+                </FormulateInput>
+            </FormulateForm>
+        </section>
     </div>
 </template>
 
@@ -41,8 +58,8 @@ export default {
             resetForm: {
                 password: "",
                 password_confirmation: "",
-                token: ""
-            }
+                token: "",
+            },
         };
     },
     computed: {
@@ -53,7 +70,11 @@ export default {
         // authストアのresetErrorMessages
         resetErrors() {
             return this.$store.state.auth.resetErrorMessages;
-        }
+        },
+        // loadingストアのstatus
+        loadingStatus() {
+            return this.$store.state.loading.status;
+        },
     },
     methods: {
         /*
@@ -67,7 +88,7 @@ export default {
                 // メッセージストアで表示
                 this.$store.commit("message/setContent", {
                     content: "パスワードをリセットしました。",
-                    timeout: 10000
+                    timeout: 10000,
                 });
                 // AUTHストアのエラーメッセージをクリア
                 this.clearError();
@@ -94,7 +115,7 @@ export default {
             this.resetForm.password = "";
             this.resetForm.password_confirmation = "";
             this.resetForm.token = "";
-        }
+        },
     },
     created() {
         // クッキーからリセットトークンを取得
@@ -113,6 +134,6 @@ export default {
         if (token) {
             Cookies.remove("RESETTOKEN");
         }
-    }
+    },
 };
 </script>

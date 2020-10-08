@@ -1,0 +1,80 @@
+html, body {
+    height: 100%;
+}
+
+/* Box sizingの定義 */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* デフォルトのpaddingを削除 */
+
+ul[class], ol[class] {
+    padding: 0;
+}
+
+/* デフォルトのmarginを削除 */
+
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    font-size: unset;
+    font-weight: normal;
+}
+
+/* bodyのデフォルトを定義 */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* class属性を持つul、ol要素のリストスタイルを削除 */
+
+ul[class], ol[class] {
+    list-style: none;
+}
+
+/* classを持たない要素はデフォルトのスタイルを取得 */
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* img要素の扱いを簡単にする */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* article要素内の要素に自然な流れとリズムを定義 */
+
+article>*+* {
+    margin-top: 1em;
+}
+
+/* inputやbuttonなどのフォントは継承を定義 */
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    outline: none;
+}
+
+/* 見たくない人用に、すべてのアニメーションとトランジションを削除 */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page">
 
     <h1>{{ $t('word.home') }}</h1>
 
