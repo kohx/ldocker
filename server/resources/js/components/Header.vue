@@ -5,7 +5,7 @@
             <FAIcon :icon="['fas', 'home']" size="lg" />
             {{ $t('word.home') }}
         </RouterLink>
-        <RouterLink v-if="isLogin" :to="{ name: 'Photo-upload'}">
+        <RouterLink v-if="isLogin" :to="{ name: 'photo-upload'}">
             <FAIcon :icon="['fas', 'camera-retro']" size="lg" />
             {{ $t('word.photo') }}
         </RouterLink>

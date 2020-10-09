@@ -98,6 +98,120 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
+/***/ "./node_modules/@braid/vue-formulate-i18n/dist/locales.esm.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@braid/vue-formulate-i18n/dist/locales.esm.js ***!
+  \********************************************************************/
+/*! exports provided: ar, cs, da, de, en, es, fr, he, it, ja, ko, lt, nb, nl, pl, pt, ru, sr, sv, th, zh */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ar", function() { return n; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cs", function() { return t; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "da", function() { return u; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "de", function() { return s; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "en", function() { return l; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "es", function() { return c; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fr", function() { return d; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "he", function() { return y; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "it", function() { return h; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ja", function() { return b; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ko", function() { return N; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lt", function() { return q; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nb", function() { return j; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nl", function() { return W; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pl", function() { return P; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pt", function() { return V; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ru", function() { return R; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sr", function() { return E; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sv", function() { return F; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "th", function() { return I; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "zh", function() { return B; });
+function e(e){return"string"==typeof e?e[0].toUpperCase()+e.substr(1):e}var r={accepted:function(e){return"من فضلك اقبل ال "+e.name},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" يجب أن يأتي بعد "+a[0]+".":e(n)+" يجب أن يكون تاريخ أحدث"},alpha:function(r){return e(r.name)+" يجب أن يحتوى على حروف أبجدية فقط."},alphanumeric:function(r){return e(r.name)+" يمكن أن يحتوي على حروف أبجدية أو أرقام فقط."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" يجب أن يكون قبل "+a[0]+".":e(n)+" يجب أن يكون تاريخ أقدم"},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" يجب أن يقع بين "+t[0]+" و "+t[1]+".":e(n)+" يجب ان يكون طوله بين "+t[0]+" و "+t[1]+" حرف."},confirm:function(r){var n=r.name;r.args;return e(n)+" غير متطابق."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" ليس على الصيغة الصحيحة, من فضلك استخدم هذه الصيغة "+a[0]:e(n)+" ليس على الصيغة الصحيحة."},default:function(e){e.name;return"هذه القيمة غير مناسبة."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” ليس عنوان بريد الكتروني.":"من فضلك أدخل عنوان بريد الكتروني مناسب."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” لا تنتهي بنهاية صحيحة.":"نهاية هذه القيمة ليست صحيحة."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” ليس "+n+" صحيح.":"هذه القيمة ليست "+n+" صحيح."},matches:function(r){return e(r.name)+" ليست قيمة مسموح بها."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"يمكنك فقط ان تختار "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" لا يمكن أن يتجاوز "+t[0]+".":e(n)+" لا يجب ان يزيد طوله عن "+t[0]+" حرف."},mime:function(r){var n=r.name,a=r.args;return e(n)+" يجب ان يكون من نوع "+(a[0]||"لا يسمح بأي نوع.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"يجب أن تختار على الأقل "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" يجب أن يكون أكبر من "+t[0]+".":e(n)+" يجب أن يكون طوله أكبر من "+t[0]+" حرف."},not:function(e){var r=e.name;return"“"+e.value+"” ليست قيمة مسموح بها ك"+r+"."},number:function(r){return e(r.name)+" يجب أن يكون رقم."},required:function(r){return e(r.name)+" ضروري."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” لا تبدأ بقيمة صحيحة.":"هذه القيمة لا تبدأ بقيمة صحيحة."},url:function(e){e.name;return"من فضلك أدخل رابط صحيح."}};function n(e){var n;e.extend({locales:(n={},n.ar=r,n)})}var a={accepted:function(e){return"Prosím potvrďte "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" musí bý po "+a[0]+".":e(n)+" musí být pozdější datum."},alpha:function(r){return e(r.name)+" může obsahovat pouze písmena."},alphanumeric:function(r){return e(r.name)+" může obsahovat pouze písmena a čísla."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" musí být před "+a[0]+".":e(n)+" musí být dřívější datum."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" musí být mezi "+t[0]+" a "+t[1]+".":e(n)+" délka musí být mezi "+t[0]+" a "+t[1]+" znaky."},confirm:function(r){var n=r.name;r.args;return e(n)+" se neshoduje."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" není platné datum, použijte formát "+a[0]:e(n)+" není platné datum."},default:function(e){e.name;return"Toto pole není vyplěno správně."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” není platná e-mailová adresa.":"Zadejte platnou e-mailovou adresu."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” nekončí správnou hodnotou.":"Toto pole nekončí správnou hodnotou."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” není povolená hodnota "+n+".":"Toto není povolená hodnota "+n+"."},matches:function(r){return e(r.name)+" není povolená hodnota."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Můžete vybrat pouze "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" musí být menší nebo rovno "+t[0]+".":e(n)+" musí být menší nebo rovno "+t[0]+" znaků."},mime:function(r){var n=r.name,a=r.args;return e(n)+" musí být typ: "+(a[0]||"Žádné typy souborů nejsou povolené.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Je potřeba nejméně "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" musí být nejméně "+t[0]+".":e(n)+" musí být nejméně "+t[0]+" znaků."},not:function(e){var r=e.name;return"“"+e.value+"” není povolená hodnota "+r+"."},number:function(r){return e(r.name)+" musí být číslo."},required:function(r){return"Pole "+e(r.name)+" je povinné."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” nezačíná platnou hodnotou.":"Toto pole nezačíná platnou hodnotou."},url:function(e){e.name;return"Zadejte platnou URL adresu."}};function t(e){var r;e.extend({locales:(r={},r.cs=a,r)})}var i={accepted:function(e){return"Accepter venligst "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" skal være efter "+a[0]+".":e(n)+" skal være en senere dato."},alpha:function(r){return e(r.name)+" kan kun indeholde bogstaver."},alphanumeric:function(r){return e(r.name)+" kan kun indeholde bogstaver og tal."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" skal være før "+a[0]+".":e(n)+" skal være en tidligere dato."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" skal være mellem "+t[0]+" og "+t[1]+".":e(n)+" skal være mellem "+t[0]+" og "+t[1]+" tegn."},confirm:function(r){var n=r.name;r.args;return e(n)+" matcher ikke."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" er ikke gyldig, brug venligst formatet "+a[0]:e(n)+" er ikke en gyldig dato."},default:function(e){e.name;return"Dette felt er ikke gyldigt."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” er ikke en gyldig email-adresse.":"Indtast venligst en gyldig email-adresse."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” slutter ikke med en gyldig værdi.":"Dette felt slutter ikke med en gyldig værdi."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” er ikke en tilladt "+n+".":"Dette er ikke en tilladt "+n+"."},matches:function(r){return e(r.name)+" er ikke en gyldig værdi."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Du kan kun vælge "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" skal være mindre end eller lig "+t[0]+".":e(n)+" skal være mindre end eller lig "+t[0]+" tegn."},mime:function(r){var n=r.name,a=r.args;return e(n)+" skal være af typen: "+(a[0]||"Ingen tilladte filformater.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Du skal vælge mindst "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" skal være mere end "+t[0]+".":e(n)+" skal være mere end "+t[0]+" tegn."},not:function(e){var r=e.name;return"“"+e.value+"” er ikke en gyldig "+r+"."},number:function(r){return e(r.name)+" skal være et tal."},required:function(r){return e(r.name)+" er påkrævet."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” starter ikke med en gyldig værdi.":"Dette felt starter ikke med en gyldig værdi."},url:function(e){e.name;return"Indtast venligst en gyldig URL."}};function u(e){var r;e.extend({locales:(r={},r.da=i,r)})}var o={accepted:function(e){return e.name+" erfordert Zustimmung."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" muss auf "+a[0]+" folgen.":e(n)+" muss ein späteres Datum sein."},alpha:function(r){return e(r.name)+" darf nur Buchstaben enthalten."},alphanumeric:function(r){return e(r.name)+" darf nur Buchstaben und Zahlen enthalten."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" muss vor "+a[0]+" sein.":e(n)+" muss ein früheres Datum sein."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" muss zwischen "+t[0]+" und "+t[1]+".":e(n)+" muss zwischen "+t[0]+" und "+t[1]+" Zeichen lang sein."},confirm:function(r){var n=r.name;r.args;return e(n)+" stimmt nicht überein."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" ist nicht korrekt, bitte das Format "+a[0]+" benutzen.":e(n)+" ist kein gültiges Datum."},default:function(e){e.name;return"Das Feld hat einen Fehler."},email:function(e){e.name;var r=e.value;return r?"„"+r+"“ ist keine gültige E-Mail-Adresse.":"Bitte eine gültige E-Mail-Adresse eingeben."},endsWith:function(e){e.name;var r=e.value;return r?"„"+r+"” endet nicht mit einem gültigen Wert.":"Dieses Feld endet nicht mit einem gültigen Wert"},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"„"+e(a)+"“ ist kein gültiger Wert für "+n+".":"Dies ist kein gültiger Wert für "+n+"."},matches:function(r){return e(r.name)+" ist kein gültiger Wert."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Es dürfen nur "+t[0]+" "+n+" ausgewählt werden.";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" muss kleiner oder gleich "+t[0]+" sein.":e(n)+" muss "+t[0]+" oder weniger Zeichen lang sein."},mime:function(r){var n=r.name,a=r.args;return e(n)+" muss den Typ "+(a[0]||"Keine Dateien erlaubt")+" haben."},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Es müssen mindestens "+t[0]+" "+n+" ausgewählt werden.";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" muss größer als "+t[0]+" sein.":e(n)+" must "+t[0]+" oder mehr Zeichen lang sein."},not:function(e){var r=e.name;return"„"+e.value+"“ ist kein erlaubter Wert für "+r+"."},number:function(r){return e(r.name)+" muss eine Zahl sein."},required:function(r){return e(r.name)+" ist ein Pflichtfeld."},startsWith:function(e){e.name;var r=e.value;return r?"„"+r+"” beginnt nicht mit einem gültigen Wert":"Dieses Feld beginnt nicht mit einem gültigen Wert"},url:function(r){return e(r.name)+" muss eine gültige URL sein."}};function s(e){var r;e.extend({locales:(r={},r.de=o,r)})}var m={accepted:function(e){return"Please accept the "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" must be after "+a[0]+".":e(n)+" must be a later date."},alpha:function(r){return e(r.name)+" can only contain alphabetical characters."},alphanumeric:function(r){return e(r.name)+" can only contain letters and numbers."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" must be before "+a[0]+".":e(n)+" must be an earlier date."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" must be between "+t[0]+" and "+t[1]+".":e(n)+" must be between "+t[0]+" and "+t[1]+" characters long."},confirm:function(r){var n=r.name;r.args;return e(n)+" does not match."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" is not a valid date, please use the format "+a[0]:e(n)+" is not a valid date."},default:function(e){e.name;return"This field isn’t valid."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” is not a valid email address.":"Please enter a valid email address."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” doesn’t end with a valid value.":"This field doesn’t end with a valid value."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” is not an allowed "+n+".":"This is not an allowed "+n+"."},matches:function(r){return e(r.name)+" is not an allowed value."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"You may only select "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" must be less than or equal to "+t[0]+".":e(n)+" must be less than or equal to "+t[0]+" characters long."},mime:function(r){var n=r.name,a=r.args;return e(n)+" must be of the type: "+(a[0]||"No file formats allowed.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"You need at least "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" must be at least "+t[0]+".":e(n)+" must be at least "+t[0]+" characters long."},not:function(e){var r=e.name;return"“"+e.value+"” is not an allowed "+r+"."},number:function(r){return e(r.name)+" must be a number."},required:function(r){return e(r.name)+" is required."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” doesn’t start with a valid value.":"This field doesn’t start with a valid value."},url:function(e){e.name;return"Please include a valid url."}};function l(e){var r;e.extend({locales:(r={},r.en=m,r)})}var v={accepted:function(e){return"Por favor acepta los "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" debe ser luego de "+a[0]+".":e(n)+" debe ser una fecha posterior."},alpha:function(r){return e(r.name)+" solo puede contener letras."},alphanumeric:function(r){return e(r.name)+" solo puede contener letras y números."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" debe ser antes de "+a[0]+".":e(n)+" debe ser una fecha anterior."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" debe estar entre "+t[0]+" y "+t[1]+".":e(n)+" debe tener entre "+t[0]+" y "+t[1]+" caracteres."},confirm:function(r){var n=r.name;r.args;return e(n)+" no coincide."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" no es una fecha válida, por favor use el formato "+a[0]:e(n)+" no es una fecha válida."},default:function(e){e.name;return"Este campo no es válido."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” no es un correo electrónico válido.":"Por favor introduzca un correo electrónico válido."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” no termina en un valor válido.":"Este campo no termina en un valor válido."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” no es un "+n+" permitido.":"Esto no es un "+n+" permitido."},matches:function(r){return e(r.name)+" no es un valor permitido."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Solo puedes seleccionar "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" debe ser menor o igual que "+t[0]+".":e(n)+" debe ser menor o igual que "+t[0]+" caracteres."},mime:function(r){var n=r.name,a=r.args;return e(n)+" debe ser de tipo: "+(a[0]||"No se permite el formato de archivos.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Necesitas al menos "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" debe contener al menos "+t[0]+".":e(n)+" debe contener al menos "+t[0]+" caracteres."},not:function(e){var r=e.name;return"“"+e.value+"” no es un "+r+" permitido."},number:function(r){return e(r.name)+" debe ser un número."},required:function(r){return e(r.name)+" es requerido."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” no comienza con un valor válido.":"Este campo no comienza con un valor válido."},url:function(e){e.name;return"Por favor introduzca una url válida."}};function c(e){var r;e.extend({locales:(r={},r.es=v,r)})}var f={accepted:function(e){return"Merci d'accepter les "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" doit être postérieur à "+a[0]+".":e(n)+" doit être une date ultérieure."},alpha:function(r){return e(r.name)+" peut uniquement contenir des lettres."},alphanumeric:function(r){return e(r.name)+" peut uniquement contenir des lettres ou des chiffres"},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" doit être antérieur à "+a[0]+".":e(n)+" doit être une date antérieure."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" doit être compris entre "+t[0]+" et "+t[1]+".":e(n)+" doit être compris entre "+t[0]+" et "+t[1]+" caractères."},confirm:function(r){var n=r.name;r.args;return e(n)+" ne correspond pas."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" n'est pas valide.  Merci d'utiliser le format "+a[0]:e(n)+" n'est pas une date valide."},default:function(e){e.name;return"Ce champ n'est pas valide."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” n'est pas une adresse email valide.":"Merci d'entrer une adresse email valide."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” ne termine pas par une valeur correcte.":"Ce champ ne termine pas par une valeur correcte."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” n'est pas un(e) "+n+" autorisé(e).":"Cette valeur n'est pas un(e) "+n+" autorisé(e)."},matches:function(r){return e(r.name)+" n'est pas une valeur autorisée."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Vous pouvez uniquement sélectionner "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" doit être inférieur ou égal à "+t[0]+".":e(n)+" doit être inférieur ou égal à "+t[0]+" caractères."},mime:function(r){var n=r.name,a=r.args;return e(n)+" doit être de type: "+(a[0]||"Aucun format autorisé.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Vous devez sélectionner au moins "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" doit être supérieur à "+t[0]+".":e(n)+" doit être plus long que "+t[0]+" caractères."},not:function(e){var r=e.name;return"“"+e.value+"” n'est pas un(e) "+r+" autorisé(e)."},number:function(r){return e(r.name)+" doit être un nombre."},required:function(r){return e(r.name)+" est obligatoire."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” ne commence pas par une valeur correcte.":"Ce champ ne commence pas par une valeur correcte."},url:function(e){e.name;return"Merci d'entrer une URL valide."}};function d(e){var r;e.extend({locales:(r={},r.fr=f,r)})}var g={accepted:function(e){return"אנא קבל את ה"+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" חייב להיות אחרי "+a[0]+".":e(n)+" חייב להיות תאריך יותר מאוחר."},alpha:function(r){return e(r.name)+" יכול להכיל אותיות בלבד."},alphanumeric:function(r){return e(r.name)+" יכול להכיל אותיות ומספרים בלבד."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" חייב להיות לפני "+a[0]+".":e(n)+" חייב להיות תאריך יותר מוקדם."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" חייב להיות בין "+t[0]+" ו-"+t[1]+".":e(n)+" חייב להיות בין "+t[0]+" ו-"+t[1]+" אותיות."},confirm:function(r){var n=r.name;r.args;return e(n)+" אינו תואם."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" אינו תאריך תקין, אנא השתמש בפורמט "+a[0]:e(n)+" אינו תאריך תקין."},default:function(e){e.name;return"השדה אינו תקין."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” אינו כתובת אימייל תקין.":"אנא הכנס כתובת אימייל תקין."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” אינו מסתיים בערך תקין.":"שדה זו אינו מסתיים בערך תקין."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” אינו "+n+" מורשה.":"ערך זו איננו "+n+" מורשה."},matches:function(r){return e(r.name)+" אינו ערך מורשה."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"אתה יכול לבחור רק "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" חייב להיות פחות או שוה ל-"+t[0]+".":e(n)+" חייב להיות פחות או שוה ל-"+t[0]+" אותיות."},mime:function(r){var n=r.name,a=r.args;return e(n)+" חייב להיות מסוג של: "+(a[0]||"סוגי קבצים לא מורשים.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"אתה צריך לפחות "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" חייב להיות לפחות "+t[0]+".":e(n)+" חייב להיות לפחות "+t[0]+" אותיות."},not:function(e){var r=e.name;return"“"+e.value+"” אינו "+r+" מורשה."},number:function(r){return e(r.name)+" חייב להיות מספר."},required:function(r){return e(r.name)+" נדרש."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” אינו מתחיל בערך תקף.":"שדה זה אינו מתחיל בערך תקף."},url:function(e){e.name;return"אנא כלול כתובת אתר חוקית."}};function y(e){var r;e.extend({locales:(r={},r.he=g,r)})}var A={accepted:function(e){return"Per favore, accetta il campo "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" deve essere una data successiva al "+a[0]+".":e(n)+" deve essere una data successiva a quella attuale."},alpha:function(r){return e(r.name)+" può contenere solo lettere."},alphanumeric:function(r){return e(r.name)+" può contenere solo lettere e numeri."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" deve essere una data precedente al "+a[0]+".":e(n)+" deve essere una data precedente a quella attuale."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" deve essere tra "+t[0]+" e "+t[1]+".":e(n)+" deve avere una lunghezza compresa tra "+t[0]+" e "+t[1]+" caratteri."},confirm:function(r){var n=r.name;r.args;return e(n)+" non corrisponde."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" non è una data valida. Per favore usa il formato "+a[0]:e(n)+" non è una data valida."},default:function(e){e.name;return"Questo campo non è valido."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” non è un indirizzo email valido.":"Per favore, inserisci un indirizzo email valido."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” non termina con un valore valido.":"Questo campo non termina con un valore valido."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” non è un valore valido per il campo "+n+".":n+" invalido."},matches:function(r){return e(r.name)+" invalido."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Puoi selezionare al massimo "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" deve essere inferiore o uguale a "+t[0]+".":e(n)+" deve essere inferiore o uguale a "+t[0]+" caratteri."},mime:function(r){var n=r.name,a=r.args;return e(n)+" deve essere del tipo: "+(a[0]||"Nessun formato file autorizzato.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Devi selezionare almeno "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" deve essere maggiore di "+t[0]+".":e(n)+" deve essere più lungo di "+t[0]+" caratteri."},not:function(e){var r=e.name;return"“"+e.value+"” non è un valore valido per il campo "+r+"."},number:function(r){return e(r.name)+" deve essere un numero."},required:function(r){return e(r.name)+" è un campo obbligatorio."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” non inizia con un valore valido.":"Questo campo non inizia con un valore valido."},url:function(e){e.name;return"Per favore inserisci un URL valido."}};function h(e){var r;e.extend({locales:(r={},r.it=A,r)})}var p={accepted:function(e){return e.name+"を承認してください。"},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+"は "+a[0]+" 以降にしてください。":e(n)+"はより後にしてください。"},alpha:function(r){return e(r.name)+"にはアルファベットのみ使用できます。"},alphanumeric:function(r){return e(r.name)+"には英数字のみ使用できます。"},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+"は "+a[0]+" 以前にしてください。":e(n)+"はより前にしてください。"},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+"は"+t[0]+"から"+t[1]+"の間でなければなりません。":e(n)+"は"+t[0]+"文字から"+t[1]+"文字でなければなりません。"},confirm:function(r){var n=r.name;r.args;return e(n)+"が一致しません。"},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+"は有効な形式ではありません。次のフォーマットで入力してください: "+a[0]:e(n)+"は有効な形式ではありません。"},default:function(e){e.name;return"有効な値ではありません。"},email:function(e){e.name;var r=e.value;return r?"“"+r+"” は有効なメールアドレスではありません。":"有効なメールアドレスを入力してください。"},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” は有効な値で終わっていません。":"有効な値で終わっていません。"},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” は許可された"+n+"ではありません。":"許可された"+n+"ではありません。"},matches:function(r){return e(r.name)+"は許可された値ではありません。"},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return n+"は"+t[0]+"項目しか選択できません。";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+"は"+t[0]+"以下でなければなりません。":e(n)+"は"+t[0]+"文字以下でなければなりません。"},mime:function(r){var n=r.name,a=r.args;return e(n)+"は次のファイル形式でなければなりません: "+(a[0]||"許可されたファイル形式がありません")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return n+"は"+t[0]+"項目以上選択してください。";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+"は"+t[0]+"以上でなければなりません。":e(n)+"は"+t[0]+"文字以上でなければなりません。"},not:function(e){var r=e.name;return"“"+e.value+"” は許可された"+r+"ではありません。"},number:function(r){return e(r.name)+"には数字のみ使用できます。"},required:function(r){return e(r.name)+"は必須項目です。"},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” は有効な値で始まっていません。":"有効な値で始まっていません。"},url:function(e){e.name;return"有効なURLを入力してください。"}};function b(e){var r;e.extend({locales:(r={},r.ja=p,r)})}var k={accepted:function(e){return e.name+" 승인해 주세요."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" "+a[0]+" 이후이어야 합니다.":e(n)+" 미래의 날짜이어야 합니다."},alpha:function(r){return e(r.name)+" 알파벳만 사용할 수 있습니다."},alphanumeric:function(r){return e(r.name)+" 문자와 숫자만 사용할 수 있습니다."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" "+a[0]+" 이전이어야 합니다.":e(n)+"이전이어야 합니다."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" "+t[0]+"와 "+t[1]+"사이이어야 합니다.":e(n)+" "+t[0]+"자애서 "+t[1]+"자 사이이어야 합니다."},confirm:function(r){var n=r.name;r.args;return e(n)+" 일치하지 않습니다."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" 유효한 날짜 형식이 아닙니다. 다음과 같은 형식으로 입력해 주세요: "+a[0]:e(n)+"올바른 날짜 형식이 아닙니다."},default:function(e){e.name;return"유효하지 않은 값입니다."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” 유효한 이메일 주소가 아닙니다.":"유효한 이메일 주소를 입력해 주세요."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"”으로 끝내야합니다.":"유효한 값으로 끝나지 않습니다."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” 허용된 "+n+" 아닙니다.":n+" 허용된 값이 아닙니다."},matches:function(r){return e(r.name)+" 허용 된 값이 아닙니다."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return n+" "+t[0]+"개의 항목만 선택 가능합니다.";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" "+t[0]+"이하이어야 합니다.":e(n)+" "+t[0]+"자 이하이어야 합니다."},mime:function(r){var n=r.name,a=r.args;return e(n)+" 다음과 같은 파일 형식이어야 합니다: "+(a[0]||"허용되는 파일 형식이 아닙니다.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return n+" "+t[0]+" 이상 선택해 주세요.";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" "+t[0]+"이상이어야 합니다.":e(n)+" "+t[0]+"자 이상이어야 합니다."},not:function(e){var r=e.name;return"“"+e.value+"” 허용된 "+r+" 아닙니다."},number:function(r){return e(r.name)+" 숫자만 사용 가능합니다."},required:function(r){return e(r.name)+" 필수 항목입니다."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” 유효한 값으로 시작하지 않습니다.":"유효한 값으로 시작하지 않습니다."},url:function(e){e.name;return"유효한 URL을 입력해 주세요."}};function N(e){var r;e.extend({locales:(r={},r.ko=k,r)})}var z={accepted:function(e){return"Vennligst aksepter "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" må være etter "+a[0]+".":e(n)+" må være på en senere dato."},alpha:function(r){return e(r.name)+" kan kun inneholde bokstaver."},alphanumeric:function(r){return e(r.name)+" kan kun inneholde bokstaver og tall."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" må være før "+a[0]+".":e(n)+" må være en tidligere dato."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" må være mellom "+t[0]+" og "+t[1]+".":e(n)+" må være mellom "+t[0]+" og "+t[1]+" tegn."},confirm:function(r){var n=r.name;r.args;return e(n)+" matcher ikke."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" er ikke gyldig. Vennligst bruk formatet "+a[0]:e(n)+" er ikke en gyldig dato."},default:function(e){e.name;return"Dette feltet er ikke gyldig."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” er ikke en gyldig e-postadresse.":"Vennligst skriv inn en gyldig e-postadresse."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” slutter ikke med en gyldig verdi.":"Dette feltet slutter ikke med en gyldig verdi."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” er ikke et tillatt "+n+".":"Dette er ikke et tillatt "+n+"."},matches:function(r){return e(r.name)+" er ikke en gyldig verdi."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Du kan kun velge "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" må være mindre eller lik "+t[0]+".":e(n)+" må være mindre eller lik "+t[0]+" tegn."},mime:function(r){var n=r.name,a=r.args;return e(n)+" må være av typen: "+(a[0]||"Ingen tillatte filformater.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Du skal velge minst "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" må være større enn "+t[0]+".":e(n)+" må være minst "+t[0]+" tegn."},not:function(e){var r=e.name;return"“"+e.value+"” er ikke et tillatt "+r+"."},number:function(r){return e(r.name)+" må være et tall."},required:function(r){return e(r.name)+" er påkrevd."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” starter ikke med en gyldig verdi.":"Dette feltet starter ikke med en gyldig verdi."},url:function(e){e.name;return"Vennligst skriv inn en gyldig URL."}};function j(e){var r;e.extend({locales:(r={},r.nb=z,r)})}var w={accepted:function(e){return"Sta "+e.name+" toe."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" moet na "+a[0]+" zijn.":e(n)+" moet een latere datum zijn."},alpha:function(r){return e(r.name)+" mag enkel letters bevatten."},alphanumeric:function(r){return e(r.name)+" mag enkel letters en cijfers bevatten."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" moet voor "+a[0]+" zijn.":e(n)+" moet een eerdere datum zijn."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" moet tussen "+t[0]+" en "+t[1]+" zitten.":e(n)+" moet tussen "+t[0]+" en "+t[1]+" lang zijn."},confirm:function(r){var n=r.name;r.args;return e(n)+" komt niet overeen."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" is geen geldige datum, het juiste format is "+a[0]:e(n)+" is geen geldige datum."},default:function(e){e.name;return"De invoer voor dit veld is niet geldig"},email:function(e){e.name;var r=e.value;return r?"“"+r+"” is geen geldig e-mailadres.":"Voer een geldig e-mailadres in."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” eindigt niet op een geldige waarde.":"Dit veld eindigt niet op een geldige waarde."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” is niet toegestaan als "+n+".":"Deze "+n+" is niet toegestaan."},matches:function(r){return e(r.name)+" is niet toegestaan."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Je kunt maximaal "+t[0]+" selecteren als "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" moet kleiner of gelijk zijn aan "+t[0]+".":e(n)+" mag maximaal "+t[0]+" karakters bevatten."},mime:function(r){var n=r.name,a=r.args;return e(n)+" moet van dit type zijn: "+(a[0]||"Bestanden zijn niet toegestaan")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Je moet tenminste "+t[0]+" selecteren als "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" moet groter zijn dan "+t[0]+".":e(n)+" moet tenminste "+t[0]+" karakters bevatten."},not:function(e){var r=e.name;return"“"+e.value+"” is geen geldige "+r+"."},number:function(r){return e(r.name)+" moet een getal zijn."},required:function(r){return e(r.name)+" is verplicht."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” begint niet met een geldige waarde.":"Dit veld begint niet met een geldige waarde."},url:function(e){e.name;return"Voer een geldige URL in."}};function W(e){var r;e.extend({locales:(r={},r.nl=w,r)})}var x={accepted:function(e){return"Prašome priimti "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" turi būti po "+a[0]+".":e(n)+" turi būti vėlesnė data."},alpha:function(r){return e(r.name)+" gali būti tik abėcėlės raidės."},alphanumeric:function(r){return e(r.name)+" gali būti tik raidės ir skaičiai."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" turi būti prieš "+a[0]+".":e(n)+" turi būti ankstesnė data."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" turi būti tarp "+t[0]+" ir "+t[1]+".":e(n)+" turi būti tarp "+t[0]+" ir "+t[1]+" simbolių ilgio."},confirm:function(r){var n=r.name;r.args;return e(n)+" nesutampa."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" neteisinga data, naudokite formatą "+a[0]:e(n)+" neteisinga data."},default:function(e){e.name;return"Šis laukas nėra validus."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” nėra teisingas el. pašto adresas.":"Prašome įvesti galiojantį el. pašto adresą."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” nesibaigia galiojančia reikšme.":"Šis laukas nesibaigia galiojančia reikšme."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” nėra tinkamas "+n+".":"Tai netinkamas "+n+"."},matches:function(r){return e(r.name)+" nėra leistina reikšmė."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Galite pasirinkti tik "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" turi būti mažesnis arba lygus "+t[0]+".":e(n)+" turi turėti mažiau arba lygiai "+t[0]+" simbolių."},mime:function(r){var n=r.name,a=r.args;return e(n)+" turi būti tokio tipo: "+(a[0]||"Neleidžiami jokie failų formatai.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Turi būti ne mažiau nei "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" turi būti ne mažiau nei "+t[0]+".":e(n)+" turi būti ne mažiau "+t[0]+" simbolių."},not:function(e){var r=e.name;return"“"+e.value+"” nėra leistinas "+r+"."},number:function(r){return e(r.name)+" turi būti skaičius."},required:function(r){return e(r.name)+" yra privalomas."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” neprasideda galiojančia reikšme.":"Šis laukas neprasideda galiojančia reikšme."},url:function(e){e.name;return"Įveskite galiojantį URL."}};function q(e){var r;e.extend({locales:(r={},r.lt=x,r)})}var D={accepted:function(e){return"Proszę zaakceptować "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" musi być po "+a[0]+".":e(n)+" musi być przyszłą datą."},alpha:function(r){return e(r.name)+" może zawierać wyłącznie znaki alfabetyczne."},alphanumeric:function(r){return e(r.name)+" może zawierać wyłącznie liczby i litery."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" musi być przed "+a[0]+".":e(n)+" musi być wczesniejszą datą."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" musi być pomiędzy "+t[0]+" oraz "+t[1]+".":e(n)+" musi być pomiędzy "+t[0]+" oraz "+t[1]+" znaków."},confirm:function(r){var n=r.name;r.args;return e(n)+" nie pasuje."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" nie jest poprawną datą, proszę użyć formatu "+a[0]:e(n)+" nie jest poprawną datą."},default:function(e){e.name;return"Pole nie jest poprawne."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” nie jest poprawnym adresem email.":"Proszę podać poprawny adres email."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” nie kończy się z poprawną wartością.":"Pole nie kończy się z poprawną wartością."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” jest niedozwoloną wartością pola "+n+".":"Wartość jest niedozwolona w polu "+n+"."},matches:function(r){return e(r.name)+" nie jest dozwoloną wartością."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Możesz wybrać maksymalnie "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" musi być mniejszy lub równy "+t[0]+".":e(n)+" musi być mniejszy lub równy "+t[0]+" znaków."},mime:function(r){var n=r.name,a=r.args;return e(n)+" musi być typem: "+(a[0]||"Niedozwolone formaty plików.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Potrzeba przynajmniej "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" musi mieć przynajmniej "+t[0]+".":e(n)+" musi mieć przynajmniej "+t[0]+" znaków."},not:function(e){var r=e.name;return"“"+e.value+"” jest niedozwoloną wartością "+r+"."},number:function(r){return e(r.name)+" musi być liczbą."},required:function(r){return e(r.name)+" jest wymagane."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” nie zaczyna się z poprawną wartością.":"Pole nie zaczyna się z poprawną wartością."},url:function(e){e.name;return"Proszę wprowadzić poprawny adres URL."}};function P(e){var r;e.extend({locales:(r={},r.pl=D,r)})}var U={accepted:function(e){return"Por favor aceite o "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" deve ser posterior a "+a[0]+".":e(n)+" deve ser uma data posterior."},alpha:function(r){return e(r.name)+" pode conter apenas letras."},alphanumeric:function(r){return e(r.name)+" pode conter apenas letras e números."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" deve ser antes de "+a[0]+".":e(n)+" deve ser uma data anterior."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" deve ser entre "+t[0]+" e "+t[1]+".":e(n)+" deve ter entre "+t[0]+" e "+t[1]+" caracteres."},confirm:function(r){var n=r.name;r.args;return e(n)+" não corresponde."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" não é válido, por favor use o formato "+a[0]:e(n)+" não é uma data válida."},default:function(e){e.name;return"Este campo não é válido."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” não é um e-mail válido.":"Por favor informe um e-mail válido."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” não termina com um valor válido.":"Este campo não termina com um valor válido."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” não é um "+n+" permitido.":"Isso não é um "+n+" permitido."},matches:function(r){return e(r.name)+" não é um valor válido."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Você deve selecionar apenas "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" deve ser menor ou igual a "+t[0]+".":e(n)+" deve ter no máximo "+t[0]+" caracteres."},mime:function(r){var n=r.name,a=r.args;return e(n)+" deve ser no formato: "+(a[0]||"Formato de arquivo não permitido.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Você deve selecionar pelo menos "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" deve ser maior que "+t[0]+".":e(n)+" deve ter mais de "+t[0]+" caracteres."},not:function(e){var r=e.name;return"“"+e.value+"” não é um "+r+" válido."},number:function(r){return e(r.name)+" deve ser um número."},required:function(r){return e(r.name)+" é obrigatório."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” não começa com um valor válido.":"Este campo não começa com um valor válido."},url:function(e){e.name;return"Por favor informe uma URL válida."}};function V(e){var r;e.extend({locales:(r={},r.pt=U,r)})}var L={accepted:function(e){return"Пожалуйста, подтвердите "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" должна быть после "+a[0]+".":e(n)+" должна быть дата после."},alpha:function(r){return e(r.name)+" может содержать только буквы."},alphanumeric:function(r){return e(r.name)+" может содержать только буквы и цифры."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" должно быть раньше "+a[0]+".":e(n)+" должно быть раньше."},between:function(r){var n=r.name,a=r.value,t=r.args;!(!Array.isArray(t)||!t[2])&&t[2];return isNaN(a),e(n)+" должно быть между "+t[0]+" и "+t[1]+"."},confirm:function(r){var n=r.name;r.args;return e(n)+" не совпадает."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" не является допустимой датой, пожалуйста, используйте формат "+a[0]:e(n)+" не является допустимой датой."},default:function(e){e.name;return"Это поле не является допустимым."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” недействительный адрес электронной почты.":"Пожалуйста, введите действительный адрес электронной почты."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” не заканчивается допустимым значением.":"Это поле не заканчивается допустимым значением."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” является ошибочным для "+n+".":"Выбранное значение для "+n+" ошибочно."},matches:function(r){return e(r.name)+" не совпадает."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Вы можете выбрать только "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" должно быть меньше или равно "+t[0]+".":"Количество символов "+e(n)+" должно быть меньше или равно "+t[0]+"."},mime:function(r){var n=r.name,a=r.args;return e(n)+" должно быть файлом одного из следующих типов: "+(a[0]||"Не допустимые форматы файлов.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Должно быть не менее "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" должно быть не менее "+t[0]+".":"Количество символов "+e(n)+" должно быть не менее "+t[0]+"."},not:function(e){var r=e.name;return"“"+e.value+"” не является допустимым "+r+"."},number:function(r){return e(r.name)+" должны быть числом."},required:function(r){return e(r.name)+" обязательное поле."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” должно начинаться действительным значением.":"Поле должно начинаться действительным значением."},url:function(e){e.name;return"Пожалуйста, укажите действительный URL."}};function R(e){var r;e.extend({locales:(r={},r.ru=L,r)})}var T={accepted:function(e){return"Molimo Vas prihvatite "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" mora biti posle "+a[0]+".":e(n)+" mora biti kasniji datum."},alpha:function(r){return e(r.name)+" može sadržati samo abecedne karaktere."},alphanumeric:function(r){return e(r.name)+" može sadržati samo slova i brojeve."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" mora biti pre "+a[0]+".":e(n)+" mora biti raniji datum."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" mora biti između "+t[0]+" i "+t[1]+".":e(n)+" mora biti između "+t[0]+" i "+t[1]+" karaktera."},confirm:function(r){var n=r.name;r.args;return e(n)+" se ne podudara."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" nije važeći datum, koristite format "+a[0]:e(n)+" nije važeći datum."},default:function(e){e.name;return"Ovo polje nije važeće."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” nije važeća e-mail adresa.":"Unesite ispravnu e-mail adresu."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” se ne završava važećom vrednošću.":"Ovo polje se ne završava važećom vrednošću."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” nije dozvoljeno "+n+".":"Ovo nije dozvoljeno "+n+"."},matches:function(r){return e(r.name)+" nije dozvoljena vrednost."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Možete odabrati samo "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" mora biti manje ili jednako "+t[0]+".":e(n)+" mora biti manje ili jednako "+t[0]+" karaktera."},mime:function(r){var n=r.name,a=r.args;return e(n)+" mora biti tipa: "+(a[0]||"Format datoteke nije dozvoljen.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Treba Vam bar "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" treba da ima najmanje "+t[0]+".":e(n)+" treba da ima najmanje "+t[0]+" karaktera."},not:function(e){var r=e.name;return"“"+e.value+"” nije dozvoljena vrednost "+r+"."},number:function(r){return e(r.name)+" mora biti broj."},required:function(r){return e(r.name)+" je obavezno."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” ne počinje sa važećom vrednošću.":"Ovo polje ne počinje sa važećom vrednošću."},url:function(e){e.name;return"Unesite važeći url."}};function E(e){var r;e.extend({locales:(r={},r.sr=T,r)})}var M={accepted:function(e){return"Var vänlig acceptera "+e.name+"."},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" måste vara efter "+a[0]+".":e(n)+" måste vara ett senare datum."},alpha:function(r){return e(r.name)+" får bara innehålla bokstäver."},alphanumeric:function(r){return e(r.name)+" får bara innehålla bokstäver och nummer."},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" måste vara innan "+a[0]+".":e(n)+" måste vara ett tidigare datum."},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" måste vara mellan "+t[0]+" och "+t[1]+".":e(n)+" måste vara mellan "+t[0]+" och "+t[1]+" tecken ."},confirm:function(r){var n=r.name;r.args;return e(n)+" matchar inte."},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" är inte ett giltigt datum, var vänlig och använd formatet "+a[0]:e(n)+" är inte ett giltigt datum."},default:function(e){e.name;return"Fältet är inte giltigt."},email:function(e){e.name;var r=e.value;return r?"“"+r+"” är inte en giltigt e-postadress.":"Var vänlig och ange en giltig e-postadress."},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” slutar inte med ett giltigt värde.":"Detta fält slutar inte med ett giltigt värde."},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” är inte ett tillåtet "+n+".":"Detta är inte ett tillåtet "+n+"."},matches:function(r){return e(r.name)+" är inte ett tillåtet värde."},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Du får bara välja "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" måste vara mer än eller lika med "+t[0]+".":e(n)+" måste vara mindre än eller lika med "+t[0]+" tecken."},mime:function(r){var n=r.name,a=r.args;return e(n)+" måste vara av typen: "+(a[0]||"Inga filformat tillåtna.")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"Du måste välja minst "+t[0]+" "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" måste vara minst "+t[0]+".":e(n)+" måste åtminstone vara "+t[0]+" tecken långt."},not:function(e){var r=e.name;return"“"+e.value+"” är inte tillåtet "+r+"."},number:function(r){return e(r.name)+" måste vara ett nummer."},required:function(r){return e(r.name)+" är obligatoriskt."},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” börjar inte med ett giltigt värde.":"Detta fält börjar inte med ett giltigt värde."},url:function(e){e.name;return"Vänligen ange en giltig url."}};function F(e){var r;e.extend({locales:(r={},r.sv=M,r)})}var Z={accepted:function(r){return"กรุณายอมรับ "+e(r.name)},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" ต้องเป็นวันที่หลังจาก "+a[0]:e(n)+" ต้องเป็นวันที่ยังไม่มาถึง"},alpha:function(r){return e(r.name)+" มีได้เฉพาะตัวอักษรเท่านั้น"},alphanumeric:function(r){return e(r.name)+" มีได้เฉพาะตัวอักษรและตัวเลขเท่านั้น"},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" ต้องเป็นวันที่ก่อนหน้า "+a[0]:e(n)+" ต้องเป็นวันที่ผ่านมาแล้ว"},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" ต้องมีค่าระหว่าง "+t[0]+" ถึง "+t[1]:e(n)+" ต้องมีความยาว "+t[0]+" ถึง "+t[1]+" ตัว"},confirm:function(r){var n=r.name;r.args;return e(n)+" ไม่ตรงกัน"},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" ไม่ใช่วันที่ที่ถูกต้อง กรุณาใช้ตามรูปแบบ "+a[0]:e(n)+" ไม่ใช่วันที่ที่ถูกต้อง"},default:function(e){e.name;return"ข้อมูลช่องนี้ไม่ถูกต้อง"},email:function(e){e.name;var r=e.value;return r?"“"+r+"” ไม่ใช่ที่อยู่อีเมลที่ถูกต้อง":"กรุณากรอกที่อยู่อีเมลให้ถูกต้อง"},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” ไม่ได้ลงท้ายด้วยค่าที่ถูกต้อง":"ข้อมูลช่องนี้ไม่ได้ลงท้ายด้วยค่าที่ถูกต้อง"},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” ไม่ใช่ "+n+" ที่อนุญาตให้กรอก":"นี่ไม่ใช่ "+n+" ที่อนุญาตให้กรอก"},matches:function(r){return e(r.name)+" ไม่ใช่ค่าที่อนุญาตให้กรอก"},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"คุณเลือกได้เพียง "+t[0]+" "+n+" เท่านั้น";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" ต้องมีไม่เกิน "+t[0]:e(n)+" ต้องยาวไม่เกิน "+t[0]+" ตัว"},mime:function(r){var n=r.name,a=r.args;return e(n)+" ต้องเป็นประเภท: "+(a[0]||"ไม่มีประเภทไฟล์ที่อนุญาต")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"คุณต้องเลือกอย่างน้อย "+t[0]+" "+n;var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" ต้องมีค่าอย่างน้อย "+t[0]:e(n)+" ต้องยาวอย่างน้อย "+t[0]+" ตัว"},not:function(e){var r=e.name;return"“"+e.value+"” ไม่ใช่ค่า "+r+" ที่อนุญาตให้กรอก"},number:function(r){return e(r.name)+" ต้องเป็นตัวเลข"},required:function(r){return e(r.name)+" จำเป็นต้องกรอก"},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” ไม่ได้ขึ้นต้นด้วยค่าที่ถูกต้อง":"ข้อมูลช่องนี้ไม่ได้ขึ้นต้นด้วยค่าที่ถูกต้อง"},url:function(e){e.name;return"กรุณาแนบลิงก์ให้ถูกต้อง"}};function I(e){var r;e.extend({locales:(r={},r.th=Z,r)})}var C={accepted:function(e){return"请同意"+e.name+"。"},after:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" 必须在 "+a[0]+" 之后。":e(n)+" 必须是以后的日期。"},alpha:function(r){return e(r.name)+" 只能包含字母。"},alphanumeric:function(r){return e(r.name)+" 只能包含字母或数字。"},before:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" 必须在 "+a[0]+" 之前":e(n)+" 必须是以前的日期。"},between:function(r){var n=r.name,a=r.value,t=r.args,i=!(!Array.isArray(t)||!t[2])&&t[2];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" 必须在 "+t[0]+" 和 "+t[1]+" 之间。":e(n)+" 必须在 "+t[0]+" 和 "+t[1]+" 字符长度之间。"},confirm:function(r){var n=r.name;r.args;return e(n)+" 不匹配。"},date:function(r){var n=r.name,a=r.args;return Array.isArray(a)&&a.length?e(n)+" 日期无效，请使用 "+a[0]+" 格式。":e(n)+" 日期无效。"},default:function(e){e.name;return"此输入无效。"},email:function(e){e.name;var r=e.value;return r?"“"+r+"” 不是一个有效的电子邮箱地址。":"请输入有效的电子邮箱地址。"},endsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” 包含无效的结尾值。":"无效的结尾值。"},in:function(r){var n=r.name,a=r.value;return"string"==typeof a&&a?"“"+e(a)+"” 是 "+n+" 不允许的值。":n+" 包含不允许的值。"},matches:function(r){return e(r.name)+" 包含不允许的值。"},max:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"您最多可有 "+t[0]+" 个 "+n+"。";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" 必须小于或等于 "+t[0]+".":e(n)+" 必须小于或等于 "+t[0]+" 字符长度."},mime:function(r){var n=r.name,a=r.args;return e(n)+" 格式必须是: "+(a[0]||"无允许文件格式")},min:function(r){var n=r.name,a=r.value,t=r.args;if(Array.isArray(a))return"您需要最少 "+t[0]+" 个 "+n+".";var i=!(!Array.isArray(t)||!t[1])&&t[1];return!isNaN(a)&&"length"!==i||"value"===i?e(n)+" 最少是 "+t[0]+".":e(n)+" 最少 "+t[0]+" 字符长度。"},not:function(e){var r=e.name;return"“"+e.value+"” 是 "+r+" 不被允许的值。"},number:function(r){return e(r.name)+" 必须是数字。"},required:function(r){return e(r.name)+" 是必填项。"},startsWith:function(e){e.name;var r=e.value;return r?"“"+r+"” 包含无效的起始值":"无效的起始值"},url:function(e){e.name;return"请输入正确的网址。"}};function B(e){var r;e.extend({locales:(r={},r.zh=C,r)})}
+
+
+/***/ }),
+
+/***/ "./node_modules/@braid/vue-formulate/dist/formulate.esm.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@braid/vue-formulate/dist/formulate.esm.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var is_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! is-url */ "./node_modules/is-url/index.js");
+/* harmony import */ var is_url__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(is_url__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nanoid_non_secure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nanoid/non-secure */ "./node_modules/nanoid/non-secure/index.js");
+/* harmony import */ var nanoid_non_secure__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nanoid_non_secure__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var is_plain_object__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! is-plain-object */ "./node_modules/@braid/vue-formulate/node_modules/is-plain-object/index.es.js");
+/* harmony import */ var _braid_vue_formulate_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @braid/vue-formulate-i18n */ "./node_modules/@braid/vue-formulate-i18n/dist/locales.esm.js");
+var i=function(t,e){return{classification:t,component:"FormulateInput"+(e||t[0].toUpperCase()+t.substr(1))}},n=Object.assign({},["text","email","number","color","date","hidden","month","password","search","tel","time","url","week","datetime-local"].reduce((function(t,e){var r;return Object.assign({},t,((r={})[e]=i("text"),r))}),{}),{range:i("slider"),textarea:i("textarea","TextArea"),checkbox:i("box"),radio:i("box"),submit:i("button"),button:i("button"),select:i("select"),file:i("file"),image:i("file"),group:i("group")});function s(t,e){var r={};for(var o in t)r[o]=e(o,t[o]);return r}function a(t,e){if(t===e)return!0;if(!t||!e)return!1;var r=Object.keys(t),o=Object.keys(e),i=r.length;if(o.length!==i)return!1;for(var n=0;n<i;n++){var s=r[n];if(t[s]!==e[s])return!1}return!0}function l(t){return"string"==typeof t?t.replace(/([_-][a-z0-9])/gi,(function(e){return 0===t.indexOf(e)||/[_-]/.test(t[t.indexOf(e)-1])?e:e.toUpperCase().replace(/[_-]/,"")})):t}function u(t){return"string"==typeof t?t[0].toUpperCase()+t.substr(1):t}function c(t){return t?"string"==typeof t?[t]:Array.isArray(t)?t:"object"==typeof t?Object.values(t):[]:[]}function d(t,e){return"string"==typeof t?d(t.split("|"),e):Array.isArray(t)?t.map((function(t){return function(t,e){if("function"==typeof t)return[t,[]];if(Array.isArray(t)&&t.length){var r=p((t=t.map((function(t){return t}))).shift()),o=r[0],i=r[1];if("string"==typeof o&&e.hasOwnProperty(o))return[e[o],t,o,i];if("function"==typeof o)return[o,t,o,i]}if("string"==typeof t&&t){var n=t.split(":"),s=p(n.shift()),a=s[0],l=s[1];if(e.hasOwnProperty(a))return[e[a],n.length?n.join(":").split(","):[],a,l];throw new Error("Unknown validation rule "+t)}return!1}(t,e)})).filter((function(t){return!!t})):[]}function p(t){return/^[\^]/.test(t.charAt(0))?[l(t.substr(1)),t.charAt(0)]:[l(t),null]}function h(t){switch(typeof t){case"symbol":case"number":case"string":case"boolean":case"undefined":return!0;default:return null===t}}function f(t,e){return Object.prototype.hasOwnProperty.call(t,e)}function m(t,r){return Object.defineProperty(t,"__id",Object.assign(Object.create(null),{value:r||nanoid_non_secure__WEBPACK_IMPORTED_MODULE_1___default()(9)}))}function v(t){return"number"!=typeof t&&(void 0===t||""===t||null===t||!1===t||Array.isArray(t)&&!t.some((function(t){return!v(t)}))||t&&!Array.isArray(t)&&"object"==typeof t&&v(Object.values(t)))}var y=function(t,e,r){void 0===r&&(r={}),this.input=t,this.fileList=t.files,this.files=[],this.options=Object.assign({},{mimes:{}},r),this.results=!1,this.context=e,this.uploadPromise=null,Array.isArray(this.fileList)?this.rehydrateFileList(this.fileList):this.addFileList(this.fileList)};y.prototype.rehydrateFileList=function(t){var e=this,r=t.reduce((function(t,r){var o=r[e.options?e.options.fileUrlKey:"url"],i=!(!o||-1===o.lastIndexOf("."))&&o.substr(o.lastIndexOf(".")+1),n=e.options.mimes[i]||!1;return t.push(Object.assign({},r,o?{name:o.substr(o.lastIndexOf("/")+1||0),type:r.type?r.type:n,previewData:o}:{})),t}),[]);this.addFileList(r),this.results=this.mapUUID(t)},y.prototype.addFileList=function(t){for(var r=this,o=function(o){var i=t[o],n=nanoid_non_secure__WEBPACK_IMPORTED_MODULE_1___default()();r.files.push({progress:!1,error:!1,complete:!1,justFinished:!1,name:i.name||"file-upload",file:i,uuid:n,path:!1,removeFile:function(){this.removeFile(n)}.bind(r),previewData:i.previewData||!1})},i=0;i<t.length;i++)o(i)},y.prototype.hasUploader=function(){return!!this.context.uploader},y.prototype.uploaderIsAxios=function(){return!(!this.hasUploader||"function"!=typeof this.context.uploader.request||"function"!=typeof this.context.uploader.get||"function"!=typeof this.context.uploader.delete||"function"!=typeof this.context.uploader.post)},y.prototype.getUploader=function(){for(var t,e=[],r=arguments.length;r--;)e[r]=arguments[r];if(this.uploaderIsAxios()){var o=new FormData;if(o.append(this.context.name||"file",e[0]),!1===this.context.uploadUrl)throw new Error("No uploadURL specified: https://vueformulate.com/guide/inputs/file/#props");return this.context.uploader.post(this.context.uploadUrl,o,{headers:{"Content-Type":"multipart/form-data"},onUploadProgress:function(t){e[1](Math.round(100*t.loaded/t.total))}}).then((function(t){return t.data})).catch((function(t){return e[2](t)}))}return(t=this.context).uploader.apply(t,e)},y.prototype.upload=function(){var t=this;return this.uploadPromise||(this.uploadPromise=new Promise((function(e,r){if(!t.hasUploader)return r(new Error("No uploader has been defined"));Promise.all(t.files.map((function(e){return e.error=!1,e.complete=!!e.path,e.path?Promise.resolve(e.path):t.getUploader(e.file,(function(r){e.progress=r,r>=100&&(e.complete||(e.justFinished=!0,setTimeout((function(){e.justFinished=!1}),t.options.uploadJustCompleteDuration)),e.complete=!0)}),(function(o){e.progress=0,e.error=o,e.complete=!0,t.uploadPromise=null,r(o)}),t.options)}))).then((function(r){t.results=t.mapUUID(r),e(r)})).catch((function(t){throw new Error(t)}))}))),this.uploadPromise},y.prototype.removeFile=function(t){if(this.files=this.files.filter((function(e){return e.uuid!==t})),this.results=this.results.filter((function(e){return e.__id!==t})),this.context.performValidation(),window&&this.fileList instanceof FileList){var e=new DataTransfer;this.files.map((function(t){return e.items.add(t.file)})),this.fileList=e.files,this.input.files=this.fileList}else this.fileList=this.fileList.filter((function(e){return e.__id!==t}))},y.prototype.loadPreviews=function(){this.files.map((function(t){if(!t.previewData&&window&&window.FileReader&&/^image\//.test(t.file.type)){var e=new FileReader;e.onload=function(e){return Object.assign(t,{previewData:e.target.result})},e.readAsDataURL(t.file)}}))},y.prototype.getFileList=function(){return this.fileList},y.prototype.getFiles=function(){return this.files},y.prototype.mapUUID=function(t){var e=this;return t.map((function(t,r){return m(t,e.files[r].uuid)}))},y.prototype.toString=function(){var t=this.files.length?this.files.length+" files":"empty";return this.results?JSON.stringify(this.results,null,"  "):"FileUpload("+t+")"};var g,b={accepted:function(t){var e=t.value;return Promise.resolve(["yes","on","1",1,!0,"true"].includes(e))},after:function(t,e){var r=t.value;void 0===e&&(e=!1);var o=Date.parse(e||new Date),i=Date.parse(r);return Promise.resolve(!isNaN(i)&&i>o)},alpha:function(t,e){var r=t.value;void 0===e&&(e="default");var o={default:/^[a-zA-ZÀ-ÖØ-öø-ÿĄąĆćĘęŁłŃńŚśŹźŻż]+$/,latin:/^[a-zA-Z]+$/},i=o.hasOwnProperty(e)?e:"default";return Promise.resolve(o[i].test(r))},alphanumeric:function(t,e){var r=t.value;void 0===e&&(e="default");var o={default:/^[a-zA-Z0-9À-ÖØ-öø-ÿĄąĆćĘęŁłŃńŚśŹźŻż]+$/,latin:/^[a-zA-Z0-9]+$/},i=o.hasOwnProperty(e)?e:"default";return Promise.resolve(o[i].test(r))},before:function(t,e){var r=t.value;void 0===e&&(e=!1);var o=Date.parse(e||new Date),i=Date.parse(r);return Promise.resolve(!isNaN(i)&&i<o)},between:function(t,e,r,o){var i=t.value;return void 0===e&&(e=0),void 0===r&&(r=10),Promise.resolve(null!==e&&null!==r&&!isNaN(e)&&!isNaN(r)&&(!isNaN(i)&&"length"!==o||"value"===o?(i=Number(i),e=Number(e),r=Number(r),i>e&&i<r):("string"==typeof i||"length"===o)&&(i=isNaN(i)?i:i.toString()).length>e&&i.length<r))},confirm:function(t,e){var r,o,i=t.value,n=t.getFormValues,s=t.name;return Promise.resolve((r=n(),(o=e)||(o=/_confirm$/.test(s)?s.substr(0,s.length-8):s+"_confirm"),r[o]===i))},date:function(t,e){var r=t.value;return void 0===e&&(e=!1),Promise.resolve(e&&"string"==typeof e?function(t){var e="^"+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"$",r={MM:"(0[1-9]|1[012])",M:"([1-9]|1[012])",DD:"([012][0-9]|3[01])",D:"([012]?[1-9]|3[01])",YYYY:"\\d{4}",YY:"\\d{2}"};return new RegExp(Object.keys(r).reduce((function(t,e){return t.replace(e,r[e])}),e))}(e).test(r):!isNaN(Date.parse(r)))},email:function(t){var e=t.value;return Promise.resolve(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(e))},endsWith:function(t){for(var e=t.value,r=[],o=arguments.length-1;o-- >0;)r[o]=arguments[o+1];return Promise.resolve("string"==typeof e&&r.length?void 0!==r.find((function(t){return e.endsWith(t)})):"string"==typeof e&&0===r.length)},in:function(t){for(var e=t.value,r=[],o=arguments.length-1;o-- >0;)r[o]=arguments[o+1];return Promise.resolve(void 0!==r.find((function(t){return"object"==typeof t?a(t,e):t===e})))},matches:function(t){for(var e=t.value,r=[],o=arguments.length-1;o-- >0;)r[o]=arguments[o+1];return Promise.resolve(!!r.find((function(t){return"string"==typeof t&&"/"===t.substr(0,1)&&"/"===t.substr(-1)&&(t=new RegExp(t.substr(1,t.length-2))),t instanceof RegExp?t.test(e):t===e})))},mime:function(t){for(var e=t.value,r=[],o=arguments.length-1;o-- >0;)r[o]=arguments[o+1];return Promise.resolve(function(){if(e instanceof y)for(var t=e.getFiles(),o=0;o<t.length;o++){var i=t[o].file;if(!r.includes(i.type))return!1}return!0}())},min:function(t,e,r){var o=t.value;return void 0===e&&(e=1),Promise.resolve(Array.isArray(o)?(e=isNaN(e)?e:Number(e),o.length>=e):!isNaN(o)&&"length"!==r||"value"===r?(o=isNaN(o)?o:Number(o))>=e:("string"==typeof o||"length"===r)&&(o=isNaN(o)?o:o.toString()).length>=e)},max:function(t,e,r){var o=t.value;return void 0===e&&(e=10),Promise.resolve(Array.isArray(o)?(e=isNaN(e)?e:Number(e),o.length<=e):!isNaN(o)&&"length"!==r||"value"===r?(o=isNaN(o)?o:Number(o))<=e:("string"==typeof o||"length"===r)&&(o=isNaN(o)?o:o.toString()).length<=e)},not:function(t){for(var e=t.value,r=[],o=arguments.length-1;o-- >0;)r[o]=arguments[o+1];return Promise.resolve(void 0===r.find((function(t){return"object"==typeof t?a(t,e):t===e})))},number:function(t){var e=t.value;return Promise.resolve(!isNaN(e))},required:function(t,e){var r=t.value;return void 0===e&&(e=!0),Promise.resolve(!(e&&!["no","false"].includes(e))||(Array.isArray(r)?!!r.length:r instanceof y?r.getFiles().length>0:"string"==typeof r?!!r:"object"!=typeof r||!!r&&!!Object.keys(r).length))},startsWith:function(t){for(var e=t.value,r=[],o=arguments.length-1;o-- >0;)r[o]=arguments[o+1];return Promise.resolve("string"==typeof e&&r.length?void 0!==r.find((function(t){return e.startsWith(t)})):"string"==typeof e&&0===r.length)},url:function(e){var r=e.value;return Promise.resolve(is_url__WEBPACK_IMPORTED_MODULE_0___default()(r))},bail:function(){return Promise.resolve(!0)},optional:function(t){var e=t.value;return Promise.resolve(!v(e))}},x="image/",E={csv:"text/csv",gif:x+"gif",jpg:x+"jpeg",jpeg:x+"jpeg",png:x+"png",pdf:"application/pdf",svg:x+"svg+xml"},_=["outer","wrapper","label","element","input","help","errors","error","decorator","rangeValue","uploadArea","uploadAreaMask","files","file","fileName","fileRemove","fileProgress","fileUploadError","fileImagePreview","fileProgressInner","grouping","groupRepeatable","groupRepeatableRemove","groupAddMore"],w={hasErrors:function(t){return t.hasErrors},hasValue:function(t){return t.hasValue},isValid:function(t){return t.isValid}},P=function(t,e,r){var o=[];switch(e){case"label":o.push(t+"--"+r.labelPosition);break;case"element":var i="group"===r.classification?"group":r.type;o.push(t+"--"+i),"group"===i&&o.push("formulate-input-group");break;case"help":o.push(t+"--"+r.helpPosition)}return o},F=(g=[""].concat(Object.keys(w).map((function(t){return u(t)}))),_.reduce((function(t,e){return t.concat(g.reduce((function(t,r){return t.push(""+e+r+"Class"),t}),[]))}),[]));function O(t,e,r){switch(typeof e){case"string":return e;case"function":return e(r,c(t));case"object":if(Array.isArray(e))return c(t).concat(e);default:return t}}function V(t){return _.reduce((function(e,r){var o;return Object.assign(e,((o={})[r]=function(t,e){var r=t.replace(/[A-Z]/g,(function(t){return"-"+t.toLowerCase()})),o="formulate"+("file"===r.substr(0,4)?"":"-input")+(["decorator","range-value"].includes(r)?"-element":"")+("outer"!==r?"-"+r:"");return"input"===r?[]:[o].concat(P(o,t,e))}(r,t),o))}),{})}function A(t,e,r,o){return new Promise((function(r,i){var n=(o.fauxUploaderDuration||2e3)*(.5+Math.random()),s=performance.now(),a=function(){return setTimeout((function(){var o=performance.now()-s,i=Math.min(100,Math.round(o/n*100));if(e(i),i>=100)return r({url:"http://via.placeholder.com/350x150.png",name:t.name});a()}),20)};a()}))}function j(t,e){var r={};for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&-1===e.indexOf(o)&&(r[o]=t[o]);return r}var $={inheritAttrs:!1,functional:!0,render:function(t,e){for(var r=e.props,o=e.data,i=e.parent,n=e.children,s=i,a=(r.name,r.forceWrap),l=r.context,u=j(r,["name","forceWrap","context"]);s&&"FormulateInput"!==s.$options.name;)s=s.$parent;if(!s)return null;if(s.$scopedSlots&&s.$scopedSlots[r.name])return s.$scopedSlots[r.name](Object.assign({},l,u));if(Array.isArray(n)&&(n.length>1||a&&n.length>0)){var c=o.attrs,d=(c.name,c.context,j(c,["name","context"]));return t("div",Object.assign({},o,{attrs:d}),n)}return Array.isArray(n)&&1===n.length?n[0]:null}};function S(t,e){if(t&&"object"==typeof t&&!Array.isArray(t)){var r=t.children;void 0===r&&(r=null);var o=t.component;void 0===o&&(o="FormulateInput");var i=t.depth;void 0===i&&(i=1);var n=function(t,e){var r={};for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&-1===e.indexOf(o)&&(r[o]=t[o]);return r}(t,["children","component","depth"]),s=n.class||{};delete n.class;var a="FormulateInput"===o?n.type||"text":"",l=n.name||a||"el",u=n.id||l+"-"+i+"-"+e,c=Array.isArray(r)?r.map((function(t){return Object.assign(t,{depth:i+1})})):r;return Object.assign({key:u,depth:i,attrs:n,component:o,class:s},c?{children:c}:{})}return null}var R={functional:!0,render:function(t,e){return function t(e,r){return Array.isArray(r)?r.map((function(r){var o=S(r);return e(o.component,{attrs:o.attrs,class:o.class,key:o.key},o.children?t(e,o.children):null)})):r}(t,e.props.schema)}};function k(t,e){var r={};for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&-1===e.indexOf(o)&&(r[o]=t[o]);return r}var I=function(t){this.registry=new Map,this.ctx=t};function D(t){return new I(t).dataProps()}function N(){return{hasInitialValue:function(){return this.formulateValue&&"object"==typeof this.formulateValue||this.values&&"object"==typeof this.values||this.isGrouping&&"object"==typeof this.context.model[this.index]},isVmodeled:function(){return!!(this.$options.propsData.hasOwnProperty("formulateValue")&&this._events&&Array.isArray(this._events.input)&&this._events.input.length)},initialValues:function(){return f(this.$options.propsData,"formulateValue")&&"object"==typeof this.formulateValue?Object.assign({},this.formulateValue):f(this.$options.propsData,"values")&&"object"==typeof this.values?Object.assign({},this.values):this.isGrouping&&"object"==typeof this.context.model[this.index]?this.context.model[this.index]:{}}}}function C(t){void 0===t&&(t=[]);var e={applyInitialValues:function(){this.hasInitialValue&&(this.proxy=this.initialValues)},setFieldValue:function(t,e){var r;if(void 0===e){var o=this.proxy,i=(o[t],k(o,[String(t)]));this.proxy=i}else Object.assign(this.proxy,((r={})[t]=e,r));this.$emit("input",Object.assign({},this.proxy))},valueDeps:function(t){var e=this;return Object.keys(this.proxy).reduce((function(r,o){return Object.defineProperty(r,o,{enumerable:!0,get:function(){var r=e.registry.get(o);return e.deps.set(t,e.deps.get(t)||new Set),r&&(e.deps.set(r,e.deps.get(r)||new Set),e.deps.get(r).add(t.name)),e.deps.get(t).add(o),e.proxy[o]}})}),Object.create(null))},validateDeps:function(t){var e=this;this.deps.has(t)&&this.deps.get(t).forEach((function(t){return e.registry.has(t)&&e.registry.get(t).performValidation()}))},hasValidationErrors:function(){return Promise.all(this.registry.reduce((function(t,e,r){return t.push(e.performValidation()&&e.getValidationErrors()),t}),[])).then((function(t){return t.some((function(t){return t.hasErrors}))}))},showErrors:function(){this.childrenShouldShowErrors=!0,this.registry.map((function(t){t.formShouldShowErrors=!0}))},hideErrors:function(){this.childrenShouldShowErrors=!1,this.registry.map((function(t){t.formShouldShowErrors=!1,t.behavioralErrorVisibility=!1}))},setValues:function(t){var e=this;Array.from(new Set(Object.keys(t).concat(Object.keys(this.proxy)))).forEach((function(r){a(t[r],e.proxy[r])||(e.setFieldValue(r,t[r]),e.registry.has(r)&&!a(t[r],e.registry.get(r).proxy)&&(e.registry.get(r).context.model=t[r]))}))}};return Object.keys(e).reduce((function(r,o){var i;return t.includes(o)?r:Object.assign({},r,((i={})[o]=e[o],i))}),{})}function L(t,e){void 0===e&&(e=[]);var r={formulateSetter:t.setFieldValue,formulateRegister:t.register,formulateDeregister:t.deregister,getFormValues:t.valueDeps,validateDependents:t.validateDeps};return Object.keys(r).filter((function(t){return!e.includes(t)})).reduce((function(t,e){var o;return Object.assign(t,((o={})[e]=r[e],o))}),{})}I.prototype.add=function(t,e){return this.registry.set(t,e),this},I.prototype.remove=function(t){this.ctx.deps.delete(this.registry.get(t)),this.ctx.deps.forEach((function(e){return e.delete(t)}));var e=!this.ctx.keepModelData&&(!this.registry.has(t)||!this.registry.get(t).keepModelData);if(this.registry.delete(t),e){var r=this.ctx.proxy,o=(r[t],k(r,[String(t)]));this.ctx.uuid&&m(o,this.ctx.uuid),this.ctx.proxy=o,this.ctx.$emit("input",this.ctx.proxy)}return this},I.prototype.has=function(t){return this.registry.has(t)},I.prototype.get=function(t){return this.registry.get(t)},I.prototype.map=function(t){var e={};return this.registry.forEach((function(r,o){var i;return Object.assign(e,((i={})[o]=t(r,o),i))})),e},I.prototype.keys=function(){return Array.from(this.registry.keys())},I.prototype.register=function(t,e){var r=this;if(this.registry.has(t))return this.ctx.$nextTick((function(){return!r.registry.has(t)&&r.register(t,e)})),!1;this.add(t,e);var o=f(e.$options.propsData,"formulateValue"),i=f(e.$options.propsData,"value");o||!this.ctx.hasInitialValue||v(this.ctx.initialValues[t])?!o&&!i||a(e.proxy,this.ctx.initialValues[t])||this.ctx.setFieldValue(t,e.proxy):e.context.model=this.ctx.initialValues[t],this.childrenShouldShowErrors&&(e.formShouldShowErrors=!0)},I.prototype.reduce=function(t,e){return this.registry.forEach((function(r,o){e=t(e,r,o)})),e},I.prototype.dataProps=function(){var t=this;return{proxy:{},registry:this,register:this.register.bind(this),deregister:function(e){return t.remove(e)},childrenShouldShowErrors:!1,deps:new Map}};var U=function(t){this.form=t};function B(t,e,r,o,i,n,s,a,l,u){"boolean"!=typeof s&&(l=a,a=s,s=!1);var c,d="function"==typeof r?r.options:r;if(t&&t.render&&(d.render=t.render,d.staticRenderFns=t.staticRenderFns,d._compiled=!0,i&&(d.functional=!0)),o&&(d._scopeId=o),n?(c=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),e&&e.call(this,l(t)),t&&t._registeredComponents&&t._registeredComponents.add(n)},d._ssrRegister=c):e&&(c=s?function(t){e.call(this,u(t,this.$root.$options.shadowRoot))}:function(t){e.call(this,a(t))}),c)if(d.functional){var p=d.render;d.render=function(t,e){return c.call(e),p(t,e)}}else{var h=d.beforeCreate;d.beforeCreate=h?[].concat(h,c):[c]}return r}U.prototype.hasValidationErrors=function(){return this.form.hasValidationErrors()},U.prototype.values=function(){var t=this;return new Promise((function(e,r){var o=[],i=function t(e){if("object"!=typeof e)return e;var r=Array.isArray(e)?[]:{};for(var o in e)e[o]instanceof y||h(e[o])?r[o]=e[o]:r[o]=t(e[o]);return r}(t.form.proxy),n=function(e){"object"==typeof t.form.proxy[e]&&t.form.proxy[e]instanceof y&&o.push(t.form.proxy[e].upload().then((function(t){var r;return Object.assign(i,((r={})[e]=t,r))})))};for(var s in i)n(s);Promise.all(o).then((function(){return e(i)})).catch((function(t){return r(t)}))}))};var M={provide:function(){return Object.assign({},L(this),{observeErrors:this.addErrorObserver,removeErrorObserver:this.removeErrorObserver,formulateFieldValidation:this.formulateFieldValidation})},name:"FormulateForm",model:{prop:"formulateValue",event:"input"},props:{name:{type:[String,Boolean],default:!1},formulateValue:{type:Object,default:function(){return{}}},values:{type:[Object,Boolean],default:!1},errors:{type:[Object,Boolean],default:!1},formErrors:{type:Array,default:function(){return[]}},schema:{type:[Array,Boolean],default:!1},keepModelData:{type:Boolean,default:!1}},data:function(){return Object.assign({},D(this),{formShouldShowErrors:!1,errorObservers:[],namedErrors:[],namedFieldErrors:{},submissionPromise:null})},computed:Object.assign({},N(),{formContext:function(){return{errors:this.mergedFormErrors}},classes:function(){var t={"formulate-form":!0};return this.name&&(t["formulate-form--"+this.name]=!0),t},mergedFormErrors:function(){return this.formErrors.concat(this.namedErrors)},mergedFieldErrors:function(){var t={};if(this.errors)for(var e in this.errors)t[e]=c(this.errors[e]);for(var r in this.namedFieldErrors)t[r]=c(this.namedFieldErrors[r]);return t},hasFormErrorObservers:function(){return!!this.errorObservers.filter((function(t){return"form"===t.type})).length}}),watch:{formulateValue:{handler:function(t){this.isVmodeled&&t&&"object"==typeof t&&this.setValues(t)},deep:!0},mergedFormErrors:function(t){this.errorObservers.filter((function(t){return"form"===t.type})).forEach((function(e){return e.callback(t)}))},mergedFieldErrors:{handler:function(t){this.errorObservers.filter((function(t){return"input"===t.type})).forEach((function(e){return e.callback(t[e.field]||[])}))},immediate:!0}},created:function(){this.$formulate.register(this),this.applyInitialValues()},destroyed:function(){this.$formulate.deregister(this)},methods:Object.assign({},C(),{applyErrors:function(t){var e=t.formErrors,r=t.inputErrors;this.namedErrors=e,this.namedFieldErrors=r},addErrorObserver:function(t){this.errorObservers.find((function(e){return t.callback===e.callback}))||(this.errorObservers.push(t),"form"===t.type?t.callback(this.mergedFormErrors):f(this.mergedFieldErrors,t.field)&&t.callback(this.mergedFieldErrors[t.field]))},removeErrorObserver:function(t){this.errorObservers=this.errorObservers.filter((function(e){return e.callback!==t}))},registerErrorComponent:function(t){this.errorComponents.includes(t)||this.errorComponents.push(t)},formSubmitted:function(){var t=this;if(this.submissionPromise)return this.submissionPromise;this.showErrors();var e=new U(this);return this.$emit("submit-raw",e),this.submissionPromise=e.hasValidationErrors().then((function(t){return t?void 0:e.values()})).then((function(e){if(void 0!==e)return t.$emit("submit",e),e})).finally((function(){t.submissionPromise=null})),this.submissionPromise},formulateFieldValidation:function(t){this.$emit("validation",t)}})},G=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("form",{class:t.classes,on:{submit:function(e){return e.preventDefault(),t.formSubmitted(e)}}},[t.schema?r("FormulateSchema",{attrs:{schema:t.schema}}):t._e(),t._v(" "),t.hasFormErrorObservers?t._e():r("FormulateErrors",{attrs:{context:t.formContext}}),t._v(" "),t._t("default")],2)};G._withStripped=!0;var q=B({render:G,staticRenderFns:[]},void 0,M,void 0,!1,void 0,!1,void 0,void 0,void 0);var H={context:function(){return z.call(this,Object.assign({},{addLabel:this.logicalAddLabel,removeLabel:this.logicalRemoveLabel,attributes:this.elementAttributes,blurHandler:Y.bind(this),classification:this.classification,component:this.component,disableErrors:this.disableErrors,errors:this.explicitErrors,formShouldShowErrors:this.formShouldShowErrors,getValidationErrors:this.getValidationErrors.bind(this),hasGivenName:this.hasGivenName,hasValue:this.hasValue,hasLabel:this.label&&"button"!==this.classification,hasValidationErrors:this.hasValidationErrors.bind(this),help:this.help,helpPosition:this.logicalHelpPosition,id:this.id||this.defaultId,isValid:this.isValid,imageBehavior:this.imageBehavior,label:this.label,labelPosition:this.logicalLabelPosition,limit:this.limit===1/0?this.limit:parseInt(this.limit,10),name:this.nameOrFallback,minimum:parseInt(this.minimum,10),performValidation:this.performValidation.bind(this),pseudoProps:this.pseudoProps,preventWindowDrops:this.preventWindowDrops,repeatable:this.repeatable,rootEmit:this.$emit.bind(this),setErrors:this.setErrors.bind(this),showValidationErrors:this.showValidationErrors,slotComponents:this.slotComponents,slotProps:this.slotProps,type:this.type,uploadBehavior:this.uploadBehavior,uploadUrl:this.mergedUploadUrl,uploader:this.uploader||this.$formulate.getUploader(),validationErrors:this.validationErrors,value:this.value,visibleValidationErrors:this.visibleValidationErrors,isSubField:this.isSubField,classes:this.classes},this.typeContext))},nameOrFallback:function(){if(!0===this.name&&"button"!==this.classification){var t=this.id||this.elementAttributes.id.replace(/[^0-9]/g,"");return this.type+"_"+t}if(!1===this.name||"button"===this.classification&&!0===this.name)return!1;return this.name},hasGivenName:function(){return"boolean"!=typeof this.name},typeContext:function(){var t=this;switch(this.classification){case"select":return{options:W.call(this,this.options),optionGroups:!!this.optionGroups&&s(this.optionGroups,(function(e,r){return W.call(t,r)})),placeholder:this.$attrs.placeholder||!1};case"slider":return{showValue:!!this.showValue};default:return this.options?{options:W.call(this,this.options)}:{}}},elementAttributes:function(){var t=Object.assign({},this.filteredAttributes);this.id?t.id=this.id:t.id=this.defaultId;this.hasGivenName&&(t.name=this.name);this.help&&(t["aria-describedby"]=t.id+"-help");!this.classes.input||Array.isArray(this.classes.input)&&!this.classes.input.length||(t.class=this.classes.input);return t},logicalLabelPosition:function(){if(this.labelPosition)return this.labelPosition;switch(this.classification){case"box":return"after";default:return"before"}},logicalHelpPosition:function(){if(this.helpPosition)return this.helpPosition;switch(this.classification){case"group":return"before";default:return"after"}},mergedUploadUrl:function(){return this.uploadUrl||this.$formulate.getUploadUrl()},hasValue:function(){var t=this,e=this.proxy;if("box"===this.classification&&this.isGrouped||"select"===this.classification&&f(this.filteredAttributes,"multiple"))return Array.isArray(e)?e.some((function(e){return e===t.value})):this.value===e;return!v(e)},visibleValidationErrors:function(){return this.showValidationErrors&&this.validationErrors.length?this.validationErrors:[]},slotComponents:function(){var t=this.$formulate.slotComponent.bind(this.$formulate);return{label:t(this.type,"label"),help:t(this.type,"help"),errors:t(this.type,"errors"),repeatable:t(this.type,"repeatable"),addMore:t(this.type,"addMore"),remove:t(this.type,"remove")}},logicalAddLabel:function(){if("boolean"==typeof this.addLabel)return"+ "+(this.label||this.name||"Add");return this.addLabel},logicalRemoveLabel:function(){if("boolean"==typeof this.removeLabel)return"Remove";return this.removeLabel},classes:function(){return this.$formulate.classes(Object.assign({},this.$props,this.pseudoProps,{attrs:this.filteredAttributes,classification:this.classification,hasErrors:this.hasVisibleErrors,hasValue:this.hasValue,helpPosition:this.logicalHelpPosition,isValid:this.isValid,labelPosition:this.logicalLabelPosition,type:this.type,value:this.proxy}))},showValidationErrors:function(){if(this.showErrors||this.formShouldShowErrors)return!0;if("file"===this.classification&&"live"===this.uploadBehavior&&K.call(this))return!0;return this.behavioralErrorVisibility},slotProps:function(){var t=this.$formulate.slotProps.bind(this.$formulate);return{label:t(this.type,"label",this.typeProps),help:t(this.type,"help",this.typeProps),errors:t(this.type,"errors",this.typeProps),repeatable:t(this.type,"repeatable",this.typeProps),addMore:t(this.type,"addMore",this.typeProps),remove:t(this.type,"remove",this.typeProps),component:t(this.type,"component",this.typeProps)}},pseudoProps:function(){return T(this.localAttributes,F)},isValid:function(){return!this.hasErrors},isVmodeled:function(){return!!(this.$options.propsData.hasOwnProperty("formulateValue")&&this._events&&Array.isArray(this._events.input)&&this._events.input.length)},mergedValidationName:function(){if(this.validationName)return this.validationName;if("string"==typeof this.name)return this.name;if(this.label)return this.label;return this.type},explicitErrors:function(){return c(this.errors).concat(this.localErrors).concat(c(this.error))},allErrors:function(){return this.explicitErrors.concat(c(this.validationErrors))},hasVisibleErrors:function(){return Array.isArray(this.validationErrors)&&this.validationErrors.length&&this.showValidationErrors||!!this.explicitErrors.length},hasErrors:function(){return!!this.allErrors.length},filteredAttributes:function(){var t=this,e=Object.keys(this.pseudoProps).concat(Object.keys(this.typeProps));return Object.keys(this.localAttributes).reduce((function(r,o){return e.includes(l(o))||(r[o]=t.localAttributes[o]),r}),{})},typeProps:function(){return T(this.localAttributes,this.$formulate.typeProps(this.type))},listeners:function(){var t=this.$listeners;t.input;return function(t,e){var r={};for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&-1===e.indexOf(o)&&(r[o]=t[o]);return r}(t,["input"])}};function T(t,e){return Object.keys(t).reduce((function(r,o){var i=l(o);return e.includes(i)&&(r[i]=t[o]),r}),{})}function W(t){var e=this;if(!Array.isArray(t)&&t&&"object"==typeof t){var r=[];for(var o in t)r.push({value:o,label:t[o],id:this.elementAttributes.id+"_"+o});return r}return Array.isArray(t)&&(t=t.map((function(t){return t.id?t:Object.assign({},t,{id:e.elementAttributes.id+"_"+t.value})}))),t}function Y(){"blur"===this.errorBehavior&&(this.behavioralErrorVisibility=!0)}function z(t){return Object.defineProperty(t,"model",{get:K.bind(this),set:Z.bind(this),enumerable:!0})}function K(){var t=this.isVmodeled?"formulateValue":"proxy";return"checkbox"===this.type&&!Array.isArray(this[t])&&this.options?[]:this[t]||0===this[t]?this[t]:""}function Z(t){var e=!1;a(t,this.proxy)||(this.proxy=t,e=!0),this.context.name&&"function"==typeof this.formulateSetter&&this.formulateSetter(this.context.name,t),e&&this.$emit("input",t)}var J={name:"FormulateInput",inheritAttrs:!1,provide:function(){return{formulateRegisterRule:this.registerRule,formulateRemoveRule:this.removeRule}},inject:{formulateSetter:{default:void 0},formulateFieldValidation:{default:function(){return function(){return{}}}},formulateRegister:{default:void 0},formulateDeregister:{default:void 0},getFormValues:{default:function(){return function(){return{}}}},validateDependents:{default:function(){return function(){}}},observeErrors:{default:void 0},removeErrorObserver:{default:void 0},isSubField:{default:function(){return function(){return!1}}}},model:{prop:"formulateValue",event:"input"},props:{type:{type:String,default:"text"},name:{type:[String,Boolean],default:!0},formulateValue:{default:""},value:{default:!1},options:{type:[Object,Array,Boolean],default:!1},optionGroups:{type:[Object,Boolean],default:!1},id:{type:[String,Boolean,Number],default:!1},label:{type:[String,Boolean],default:!1},labelPosition:{type:[String,Boolean],default:!1},limit:{type:[String,Number],default:1/0,validator:function(t){return 1/0}},minimum:{type:[String,Number],default:0,validator:function(t){return parseInt(t,10)==t}},help:{type:[String,Boolean],default:!1},helpPosition:{type:[String,Boolean],default:!1},isGrouped:{type:Boolean,default:!1},errors:{type:[String,Array,Boolean],default:!1},repeatable:{type:Boolean,default:!1},validation:{type:[String,Boolean,Array],default:!1},validationName:{type:[String,Boolean],default:!1},error:{type:[String,Boolean],default:!1},errorBehavior:{type:String,default:"blur",validator:function(t){return["blur","live","submit"].includes(t)}},showErrors:{type:Boolean,default:!1},imageBehavior:{type:String,default:"preview"},uploadUrl:{type:[String,Boolean],default:!1},uploader:{type:[Function,Object,Boolean],default:!1},uploadBehavior:{type:String,default:"live"},preventWindowDrops:{type:Boolean,default:!0},showValue:{type:[String,Boolean],default:!1},validationMessages:{type:Object,default:function(){return{}}},validationRules:{type:Object,default:function(){return{}}},checked:{type:[String,Boolean],default:!1},disableErrors:{type:Boolean,default:!1},addLabel:{type:[Boolean,String],default:!1},removeLabel:{type:[Boolean,String],default:!1},keepModelData:{type:[Boolean],default:!1}},data:function(){return{defaultId:this.$formulate.nextId(this),localAttributes:{},localErrors:[],proxy:this.getInitialValue(),behavioralErrorVisibility:"live"===this.errorBehavior,formShouldShowErrors:!1,validationErrors:[],pendingValidation:Promise.resolve(),ruleRegistry:[],messageRegistry:{}}},computed:Object.assign({},H,{classification:function(){var t=this.$formulate.classify(this.type);return"box"===t&&this.options?"group":t},component:function(){return"group"===this.classification?"FormulateInputGroup":this.$formulate.component(this.type)},parsedValidationRules:function(){var t=this,e={};return Object.keys(this.validationRules).forEach((function(r){e[l(r)]=t.validationRules[r]})),e},messages:function(){var t=this,e={};return Object.keys(this.validationMessages).forEach((function(r){e[l(r)]=t.validationMessages[r]})),Object.keys(this.messageRegistry).forEach((function(r){e[l(r)]=t.messageRegistry[r]})),e}}),watch:{$attrs:{handler:function(t){this.updateLocalAttributes(t)},deep:!0},proxy:function(t,e){this.performValidation(),this.isVmodeled||a(t,e)||(this.context.model=t),this.validateDependents(this)},formulateValue:function(t,e){this.isVmodeled&&!a(t,e)&&(this.context.model=t)},showValidationErrors:{handler:function(t){this.$emit("error-visibility",t)},immediate:!0}},created:function(){this.applyInitialValue(),this.formulateRegister&&"function"==typeof this.formulateRegister&&this.formulateRegister(this.nameOrFallback,this),this.applyDefaultValue(),this.disableErrors||"function"!=typeof this.observeErrors||this.observeErrors({callback:this.setErrors,type:"input",field:this.nameOrFallback}),this.updateLocalAttributes(this.$attrs),this.performValidation()},beforeDestroy:function(){this.disableErrors||"function"!=typeof this.removeErrorObserver||this.removeErrorObserver(this.setErrors),"function"==typeof this.formulateDeregister&&this.formulateDeregister(this.nameOrFallback)},methods:{getInitialValue:function(){var t=this.$formulate.classify(this.type);return"box"===(t="box"===t&&this.options?"group":t)&&this.checked?this.value||!0:f(this.$options.propsData,"value")&&"box"!==t?this.value:f(this.$options.propsData,"formulateValue")?this.formulateValue:""},applyInitialValue:function(){!a(this.context.model,this.proxy)&&f(this.$options.propsData,"options")&&"box"===this.classification&&(this.context.model=this.proxy)},applyDefaultValue:function(){"select"===this.type&&!this.context.placeholder&&v(this.proxy)&&!this.isVmodeled&&!1===this.value&&this.context.options.length&&(f(this.$attrs,"multiple")?this.context.model=[]:this.context.model=this.context.options[0].value)},updateLocalAttributes:function(t){a(t,this.localAttributes)||(this.localAttributes=t)},performValidation:function(){var t=this,e=d(this.validation,this.$formulate.rules(this.parsedValidationRules));return e=this.ruleRegistry.length?this.ruleRegistry.concat(e):e,this.pendingValidation=this.runRules(e).then((function(e){return t.didValidate(e)})),this.pendingValidation},runRules:function(t){var e=this,r=function(t){var r=t[0],o=t[1],i=t[2],n=(t[3],r.apply(void 0,[{value:e.context.model,getFormValues:function(){for(var t,r=[],o=arguments.length;o--;)r[o]=arguments[o];return(t=e).getFormValues.apply(t,[e].concat(r))},name:e.context.name}].concat(o)));return(n=n instanceof Promise?n:Promise.resolve(n)).then((function(t){return!t&&e.getMessage(i,o)}))};return new Promise((function(e){var o=function(t,i){void 0===i&&(i=[]);var n=t.shift();Array.isArray(n)&&n.length?Promise.all(n.map(r)).then((function(t){return t.filter((function(t){return!!t}))})).then((function(r){return(r=Array.isArray(r)?r:[]).length&&n.bail||!t.length?e(i.concat(r).filter((function(t){return!v(t)}))):o(t,i.concat(r))})):e([])};o(function(t){var e=[],r=t.findIndex((function(t){return"bail"===t[2].toLowerCase()})),o=t.findIndex((function(t){return"optional"===t[2].toLowerCase()}));if(o>=0){var i=t.splice(o,1);e.push(Object.defineProperty(i,"bail",{value:!0}))}if(r>=0){var n=t.splice(0,r+1).slice(0,-1);n.length&&e.push(n),t.map((function(t){return e.push(Object.defineProperty([t],"bail",{value:!0}))}))}else e.push(t);return e.reduce((function(t,e){var r=function(t,e){if(void 0===e&&(e=!1),t.length<2)return Object.defineProperty([t],"bail",{value:e});var o=[],i=t.findIndex((function(t){return"^"===t[3]}));if(i>=0){var n=t.splice(0,i);n.length&&o.push.apply(o,r(n,e)),o.push(Object.defineProperty([t.shift()],"bail",{value:!0})),t.length&&o.push.apply(o,r(t,e))}else o.push(t);return o};return t.concat(r(e))}),[])}(t))}))},didValidate:function(t){var e=!a(t,this.validationErrors);if(this.validationErrors=t,e){var r=this.getErrorObject();this.$emit("validation",r),this.formulateFieldValidation&&"function"==typeof this.formulateFieldValidation&&this.formulateFieldValidation(r)}},getMessage:function(t,e){var r=this;return this.getMessageFunc(t)({args:e,name:this.mergedValidationName,value:this.context.model,vm:this,formValues:this.getFormValues(this),getFormValues:function(){for(var t,e=[],o=arguments.length;o--;)e[o]=arguments[o];return(t=r).getFormValues.apply(t,[r].concat(e))}})},getMessageFunc:function(t){var e=this;if("optional"===(t=l(t)))return function(){return[]};if(this.messages&&void 0!==this.messages[t])switch(typeof this.messages[t]){case"function":return this.messages[t];case"string":case"boolean":return function(){return e.messages[t]}}return function(r){return e.$formulate.validationMessage(t,r,e)}},hasValidationErrors:function(){var t=this;return new Promise((function(e){t.$nextTick((function(){t.pendingValidation.then((function(){return e(!!t.validationErrors.length)}))}))}))},getValidationErrors:function(){var t=this;return new Promise((function(e){t.$nextTick((function(){return t.pendingValidation.then((function(){return e(t.getErrorObject())}))}))}))},getErrorObject:function(){return{name:this.context.nameOrFallback||this.context.name,errors:this.validationErrors.filter((function(t){return"string"==typeof t})),hasErrors:!!this.validationErrors.length}},setErrors:function(t){this.localErrors=c(t)},registerRule:function(t,e,r,o){void 0===o&&(o=null),this.ruleRegistry.some((function(t){return t[2]===r}))||(this.ruleRegistry.push([t,e,r]),null!==o&&(this.messageRegistry[r]=o))},removeRule:function(t){var e=this.ruleRegistry.findIndex((function(e){return e[2]===t}));e>=0&&(this.ruleRegistry.splice(e,1),delete this.messageRegistry[t])}}},X=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.outer,attrs:{"data-classification":t.classification,"data-has-errors":t.hasErrors,"data-is-showing-errors":t.hasVisibleErrors,"data-has-value":t.hasValue,"data-type":t.type}},[r("div",{class:t.context.classes.wrapper},["before"===t.context.labelPosition?t._t("label",[t.context.hasLabel?r(t.context.slotComponents.label,t._b({tag:"component",attrs:{context:t.context}},"component",t.context.slotProps.label,!1)):t._e()],null,t.context):t._e(),t._v(" "),"before"===t.context.helpPosition?t._t("help",[t.context.help?r(t.context.slotComponents.help,t._b({tag:"component",attrs:{context:t.context}},"component",t.context.slotProps.help,!1)):t._e()],null,t.context):t._e(),t._v(" "),t._t("element",[r(t.context.component,t._g(t._b({tag:"component",attrs:{context:t.context}},"component",t.context.slotProps.component,!1),t.listeners),[t._t("default",null,null,t.context)],2)],null,t.context),t._v(" "),"after"===t.context.labelPosition?t._t("label",[t.context.hasLabel?r(t.context.slotComponents.label,t._b({tag:"component",attrs:{context:t.context}},"component",t.context.slotProps.label,!1)):t._e()],null,t.context):t._e()],2),t._v(" "),"after"===t.context.helpPosition?t._t("help",[t.context.help?r(t.context.slotComponents.help,t._b({tag:"component",attrs:{context:t.context}},"component",t.context.slotProps.help,!1)):t._e()],null,t.context):t._e(),t._v(" "),t._t("errors",[t.context.disableErrors?t._e():r(t.context.slotComponents.errors,t._b({tag:"component",attrs:{type:"FormulateErrors"===t.context.slotComponents.errors&&"input",context:t.context}},"component",t.context.slotProps.errors,!1))],null,t.context)],2)};X._withStripped=!0;var Q=B({render:X,staticRenderFns:[]},void 0,J,void 0,!1,void 0,!1,void 0,void 0,void 0),tt={inject:{observeErrors:{default:!1},removeErrorObserver:{default:!1}},props:{context:{type:Object,default:function(){return{}}},type:{type:String,default:"form"}},data:function(){return{boundSetErrors:this.setErrors.bind(this),localErrors:[]}},computed:{visibleValidationErrors:function(){return Array.isArray(this.context.visibleValidationErrors)?this.context.visibleValidationErrors:[]},errors:function(){return Array.isArray(this.context.errors)?this.context.errors:[]},mergedErrors:function(){return this.errors.concat(this.localErrors)},visibleErrors:function(){return Array.from(new Set(this.mergedErrors.concat(this.visibleValidationErrors))).filter((function(t){return"string"==typeof t}))},outerClass:function(){return"input"===this.type&&this.context.classes?this.context.classes.errors:"formulate-"+this.type+"-errors"},itemClass:function(){return"input"===this.type&&this.context.classes?this.context.classes.error:"formulate-"+this.type+"-error"},role:function(){return"form"===this.type?"alert":"status"},ariaLive:function(){return"form"===this.type?"assertive":"polite"}},created:function(){"form"!==this.type||"function"!=typeof this.observeErrors||Array.isArray(this.context.errors)||this.observeErrors({callback:this.boundSetErrors,type:this.type})},destroyed:function(){"form"!==this.type||"function"!=typeof this.removeErrorObserver||Array.isArray(this.context.errors)||this.removeErrorObserver(this.boundSetErrors)},methods:{setErrors:function(t){this.localErrors=c(t)}}},et=function(){var t=this,e=t.$createElement,r=t._self._c||e;return t.visibleErrors.length?r("ul",{class:t.outerClass},t._l(t.visibleErrors,(function(e){return r("li",{key:e,class:t.itemClass,attrs:{role:t.role,"aria-live":t.ariaLive},domProps:{textContent:t._s(e)}})})),0):t._e()};et._withStripped=!0;var rt=B({render:et,staticRenderFns:[]},void 0,tt,void 0,!1,void 0,!1,void 0,void 0,void 0),ot={props:{context:{type:Object,required:!0}}},it=function(){var t=this.$createElement,e=this._self._c||t;return this.context.help?e("div",{class:this.context.classes.help,attrs:{id:this.context.id+"-help"},domProps:{textContent:this._s(this.context.help)}}):this._e()};it._withStripped=!0;var nt=B({render:it,staticRenderFns:[]},void 0,ot,void 0,!1,void 0,!1,void 0,void 0,void 0),st={name:"FormulateGrouping",props:{context:{type:Object,required:!0}},provide:function(){return{isSubField:function(){return!0},registerProvider:this.registerProvider,deregisterProvider:this.deregisterProvider}},data:function(){return{providers:[]}},inject:["formulateRegisterRule","formulateRemoveRule"],computed:{items:function(){return Array.isArray(this.context.model)?this.context.repeatable||0!==this.context.model.length?this.context.model.map((function(t){return m(t,t.__id)})):[m({})]:new Array(this.context.minimum||1).fill("").map((function(){return m({})}))},formShouldShowErrors:function(){return this.context.formShouldShowErrors}},watch:{providers:function(){this.formShouldShowErrors&&this.showErrors()},formShouldShowErrors:function(t){t&&this.showErrors()}},created:function(){this.formulateRegisterRule(this.validateGroup.bind(this),[],"formulateGrouping",!0)},destroyed:function(){this.formulateRemoveRule("formulateGrouping")},methods:{getAtIndex:function(t){return void 0!==this.context.model[t]&&this.context.model[t].__id?this.context.model[t]:void 0!==this.context.model[t]?m(this.context.model[t]):void 0===this.context.model[t]&&void 0!==this.items[t]?m({},this.items[t].__id):m({})},setFieldValue:function(t,e,r){var o,i=Array.isArray(this.context.model)?this.context.model:[],n=this.getAtIndex(t),s=m(Object.assign({},n,((o={})[e]=r,o)),n.__id);i.splice(t,1,s),this.context.model=i},validateGroup:function(){return Promise.all(this.providers.reduce((function(t,e){return e&&"function"==typeof e.hasValidationErrors&&t.push(e.hasValidationErrors()),t}),[])).then((function(t){return!t.some((function(t){return!!t}))}))},showErrors:function(){this.providers.forEach((function(t){return t&&"function"==typeof t.showErrors&&t.showErrors()}))},setItem:function(t){var e=Array.isArray(this.context.model)?this.context.model:[],r=e.findIndex((function(e){return e.__id===t.__id}));r>-1&&!a(e[r],t)&&(e.splice(r,1,t),this.context.model=e)},removeItem:function(t){Array.isArray(this.context.model)&&this.context.model.length>this.context.minimum?this.context.model.splice(t,1):this.items.length>this.context.minimum&&(this.context.model=new Array(this.items.length-1).fill("").map((function(){return m({})})))},registerProvider:function(t){this.providers.some((function(e){return e===t}))||this.providers.push(t)},deregisterProvider:function(t){this.providers=this.providers.filter((function(e){return e!==t}))}}},at=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("FormulateSlot",{class:t.context.classes.grouping,attrs:{name:"grouping",context:t.context,"force-wrap":t.context.repeatable}},t._l(t.items,(function(e,o){return r("FormulateRepeatableProvider",{key:e.__id,attrs:{index:o,"set-field-value":function(e,r){return t.setFieldValue(o,e,r)},context:t.context,uuid:e.__id},on:{remove:t.removeItem,input:t.setItem}},[t._t("default")],2)})),1)};at._withStripped=!0;var lt=B({render:at,staticRenderFns:[]},void 0,st,void 0,!1,void 0,!1,void 0,void 0,void 0),ut={props:{context:{type:Object,required:!0}}},ct=function(){var t=this.$createElement;return(this._self._c||t)("label",{class:this.context.classes.label,attrs:{for:this.context.id},domProps:{textContent:this._s(this.context.label)}})};ct._withStripped=!0;var dt=B({render:ct,staticRenderFns:[]},void 0,ut,void 0,!1,void 0,!1,void 0,void 0,void 0),pt={props:{context:{type:Object,required:!0},addMore:{type:Function,required:!0}}},ht=function(){var t=this.$createElement,e=this._self._c||t;return e("div",{class:this.context.classes.groupAddMore},[e("FormulateInput",{attrs:{type:"button",label:this.context.addLabel,"data-minor":"","data-ghost":""},on:{click:this.addMore}})],1)};ht._withStripped=!0;var ft=B({render:ht,staticRenderFns:[]},void 0,pt,void 0,!1,void 0,!1,void 0,void 0,void 0),mt={props:{context:{type:Object,required:!0}},computed:{type:function(){return this.context.type},attributes:function(){return this.context.attributes||{}},hasValue:function(){return this.context.hasValue}}},vt={name:"FormulateInputBox",mixins:[mt]},yt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-type":t.context.type}},["radio"===t.type?r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:"radio"},domProps:{value:t.context.value,checked:t._q(t.context.model,t.context.value)},on:{blur:t.context.blurHandler,change:function(e){return t.$set(t.context,"model",t.context.value)}}},"input",t.attributes,!1),t.$listeners)):r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:"checkbox"},domProps:{value:t.context.value,checked:Array.isArray(t.context.model)?t._i(t.context.model,t.context.value)>-1:t.context.model},on:{blur:t.context.blurHandler,change:function(e){var r=t.context.model,o=e.target,i=!!o.checked;if(Array.isArray(r)){var n=t.context.value,s=t._i(r,n);o.checked?s<0&&t.$set(t.context,"model",r.concat([n])):s>-1&&t.$set(t.context,"model",r.slice(0,s).concat(r.slice(s+1)))}else t.$set(t.context,"model",i)}}},"input",t.attributes,!1),t.$listeners)),t._v(" "),r("label",{tag:"component",class:t.context.classes.decorator,attrs:{for:t.attributes.id}})],1)};yt._withStripped=!0;var gt=B({render:yt,staticRenderFns:[]},void 0,vt,void 0,!1,void 0,!1,void 0,void 0,void 0),bt={name:"FormulateInputText",mixins:[mt]},xt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-type":t.context.type}},["checkbox"===t.type?r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:"checkbox"},domProps:{checked:Array.isArray(t.context.model)?t._i(t.context.model,null)>-1:t.context.model},on:{blur:t.context.blurHandler,change:function(e){var r=t.context.model,o=e.target,i=!!o.checked;if(Array.isArray(r)){var n=t._i(r,null);o.checked?n<0&&t.$set(t.context,"model",r.concat([null])):n>-1&&t.$set(t.context,"model",r.slice(0,n).concat(r.slice(n+1)))}else t.$set(t.context,"model",i)}}},"input",t.attributes,!1),t.$listeners)):"radio"===t.type?r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:"radio"},domProps:{checked:t._q(t.context.model,null)},on:{blur:t.context.blurHandler,change:function(e){return t.$set(t.context,"model",null)}}},"input",t.attributes,!1),t.$listeners)):r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:t.type},domProps:{value:t.context.model},on:{blur:t.context.blurHandler,input:function(e){e.target.composing||t.$set(t.context,"model",e.target.value)}}},"input",t.attributes,!1),t.$listeners))])};xt._withStripped=!0;var Et=B({render:xt,staticRenderFns:[]},void 0,bt,void 0,!1,void 0,!1,void 0,void 0,void 0),_t={name:"FormulateFiles",props:{files:{type:y,required:!0},imagePreview:{type:Boolean,default:!1},context:{type:Object,required:!0}},computed:{fileUploads:function(){return this.files.files||[]}},watch:{files:function(){this.imagePreview&&this.files.loadPreviews()}},mounted:function(){this.imagePreview&&this.files.loadPreviews()}},wt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return t.fileUploads.length?r("ul",{class:t.context.classes.files},t._l(t.fileUploads,(function(e){return r("li",{key:e.uuid,attrs:{"data-has-error":!!e.error,"data-has-preview":!(!t.imagePreview||!e.previewData)}},[r("div",{class:t.context.classes.file},[t.imagePreview&&e.previewData?r("div",{class:t.context.classes.fileImagePreview},[r("img",{attrs:{src:e.previewData}})]):t._e(),t._v(" "),r("div",{class:t.context.classes.fileName,attrs:{title:e.name},domProps:{textContent:t._s(e.name)}}),t._v(" "),!1!==e.progress?r("div",{class:t.context.classes.fileProgress,attrs:{"data-just-finished":e.justFinished,"data-is-finished":!e.justFinished&&e.complete}},[r("div",{class:t.context.classes.fileProgressInner,style:{width:e.progress+"%"}})]):t._e(),t._v(" "),e.complete&&!e.justFinished||!1===e.progress?r("div",{class:t.context.classes.fileRemove,on:{click:e.removeFile}}):t._e()]),t._v(" "),e.error?r("div",{class:t.context.classes.fileUploadError,domProps:{textContent:t._s(e.error)}}):t._e()])})),0):t._e()};wt._withStripped=!0;var Pt={name:"FormulateInputFile",components:{FormulateFiles:B({render:wt,staticRenderFns:[]},void 0,_t,void 0,!1,void 0,!1,void 0,void 0,void 0)},mixins:[mt],data:function(){return{isOver:!1}},computed:{hasFiles:function(){return!!(this.context.model instanceof y&&this.context.model.files.length)}},created:function(){Array.isArray(this.context.model)&&"string"==typeof this.context.model[0][this.$formulate.getFileUrlKey()]&&(this.context.model=this.$formulate.createUpload({files:this.context.model},this.context))},mounted:function(){window&&this.context.preventWindowDrops&&(window.addEventListener("dragover",this.preventDefault),window.addEventListener("drop",this.preventDefault))},destroyed:function(){window&&this.context.preventWindowDrops&&(window.removeEventListener("dragover",this.preventDefault),window.removeEventListener("drop",this.preventDefault))},methods:{preventDefault:function(t){"INPUT"!==t.target.tagName&&"file"!==t.target.getAttribute("type")&&(t=t||event).preventDefault()},handleFile:function(){var t=this;this.isOver=!1;var e=this.$refs.file;e.files.length&&(this.context.model=this.$formulate.createUpload(e,this.context),this.$nextTick((function(){return t.attemptImmediateUpload()})))},attemptImmediateUpload:function(){var t=this;"live"===this.context.uploadBehavior&&this.context.model instanceof y&&this.context.hasValidationErrors().then((function(e){e||t.context.model.upload()}))},handleDragOver:function(t){t.preventDefault(),this.isOver=!0},handleDragLeave:function(t){t.preventDefault(),this.isOver=!1}}},Ft=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-type":t.context.type,"data-has-files":t.hasFiles}},[r("div",{class:t.context.classes.uploadArea,attrs:{"data-has-files":t.hasFiles}},[r("input",t._g(t._b({ref:"file",attrs:{"data-is-drag-hover":t.isOver,type:"file"},on:{blur:t.context.blurHandler,change:t.handleFile,dragover:t.handleDragOver,dragleave:t.handleDragLeave}},"input",t.attributes,!1),t.$listeners)),t._v(" "),r("div",{directives:[{name:"show",rawName:"v-show",value:!t.hasFiles,expression:"!hasFiles"}],class:t.context.classes.uploadAreaMask}),t._v(" "),t.hasFiles?r("FormulateFiles",{attrs:{files:t.context.model,"image-preview":"image"===t.context.type&&"preview"===t.context.imageBehavior,context:t.context}}):t._e()],1)])};Ft._withStripped=!0;var Ot=B({render:Ft,staticRenderFns:[]},void 0,Pt,void 0,!1,void 0,!1,void 0,void 0,void 0),Vt={props:{context:{type:Object,required:!0},removeItem:{type:Function,required:!0},index:{type:Number,required:!0}}},At=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.groupRepeatable},[r("FormulateSlot",{attrs:{name:"remove",context:t.context,"remove-item":t.removeItem}},[r(t.context.slotComponents.remove,t._b({tag:"component",attrs:{context:t.context,"remove-item":t.removeItem}},"component",t.context.slotProps.remove,!1))],1),t._v(" "),t._t("default")],2)};At._withStripped=!0;var jt=B({render:At,staticRenderFns:[]},void 0,Vt,void 0,!1,void 0,!1,void 0,void 0,void 0);function $t(t,e){var r={};for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&-1===e.indexOf(o)&&(r[o]=t[o]);return r}var St={name:"FormulateInputGroup",props:{context:{type:Object,required:!0}},computed:{options:function(){return this.context.options||[]},subType:function(){return"group"===this.context.type?"grouping":"inputs"},optionsWithContext:function(){var t=this,e=this.context,r=e.attributes,o=(r.id,$t(r,["id"])),i=(e.blurHandler,e.classification,e.component,e.getValidationErrors,e.hasLabel,e.hasValidationErrors,e.isSubField,e.isValid,e.labelPosition,e.options,e.performValidation,e.setErrors,e.slotComponents,e.slotProps,e.validationErrors,e.visibleValidationErrors,e.classes,e.showValidationErrors,e.rootEmit,e.help,e.pseudoProps,e.model,$t(e,["attributes","blurHandler","classification","component","getValidationErrors","hasLabel","hasValidationErrors","isSubField","isValid","labelPosition","options","performValidation","setErrors","slotComponents","slotProps","validationErrors","visibleValidationErrors","classes","showValidationErrors","rootEmit","help","pseudoProps","model"]));return this.options.map((function(e){return t.groupItemContext(i,e,o)}))},totalItems:function(){return Array.isArray(this.context.model)?this.context.model.length:this.context.minimum||1},canAddMore:function(){return this.context.repeatable&&this.totalItems<this.context.limit}},methods:{addItem:function(){if(Array.isArray(this.context.model))return this.context.model.push(m({}));this.context.model=new Array(this.totalItems+1).fill("").map((function(){return m({})}))},groupItemContext:function(t,e,r){return Object.assign({},t,e,r,{isGrouped:!0},t.hasGivenName?{}:{name:!0})}}},Rt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-is-repeatable":t.context.repeatable}},["grouping"!==t.subType?t._l(t.optionsWithContext,(function(e){return r("FormulateInput",t._b({key:e.id,staticClass:"formulate-input-group-item",attrs:{"disable-errors":!0},on:{blur:t.context.blurHandler},model:{value:t.context.model,callback:function(e){t.$set(t.context,"model",e)},expression:"context.model"}},"FormulateInput",e,!1))})):[r("FormulateGrouping",{attrs:{context:t.context}},[t._t("default")],2),t._v(" "),t.canAddMore?r("FormulateSlot",{attrs:{name:"addmore",context:t.context,"add-more":t.addItem}},[r(t.context.slotComponents.addMore,t._b({tag:"component",attrs:{context:t.context,"add-more":t.addItem},on:{add:t.addItem}},"component",t.context.slotProps.addMore,!1))],1):t._e()]],2)};Rt._withStripped=!0;var kt=B({render:Rt,staticRenderFns:[]},void 0,St,void 0,!1,void 0,!1,void 0,void 0,void 0),It={name:"FormulateInputButton",mixins:[mt]},Dt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-type":t.context.type}},[r("button",t._g(t._b({attrs:{type:t.type}},"button",t.attributes,!1),t.$listeners),[t._t("default",[r("span",{class:"formulate-input-element--"+t.context.type+"--label",domProps:{textContent:t._s(t.context.value||t.context.label||t.context.name||"Submit")}})])],2)])};Dt._withStripped=!0;var Nt=B({render:Dt,staticRenderFns:[]},void 0,It,void 0,!1,void 0,!1,void 0,void 0,void 0),Ct={name:"FormulateInputSelect",mixins:[mt],computed:{options:function(){return this.context.options||{}},optionGroups:function(){return this.context.optionGroups||!1},placeholderSelected:function(){return!(this.hasValue||!this.context.attributes||!this.context.attributes.placeholder)}}},Lt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-type":t.context.type,"data-multiple":t.attributes&&void 0!==t.attributes.multiple}},[r("select",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{"data-placeholder-selected":t.placeholderSelected},on:{blur:t.context.blurHandler,change:function(e){var r=Array.prototype.filter.call(e.target.options,(function(t){return t.selected})).map((function(t){return"_value"in t?t._value:t.value}));t.$set(t.context,"model",e.target.multiple?r:r[0])}}},"select",t.attributes,!1),t.$listeners),[t.context.placeholder?r("option",{attrs:{value:"",hidden:"hidden",disabled:""},domProps:{selected:!t.hasValue}},[t._v("\n      "+t._s(t.context.placeholder)+"\n    ")]):t._e(),t._v(" "),t.optionGroups?t._l(t.optionGroups,(function(e,o){return r("optgroup",{key:o,attrs:{label:o}},t._l(e,(function(e){return r("option",t._b({key:e.id,domProps:{value:e.value,textContent:t._s(e.label)}},"option",e.attributes||{},!1))})),0)})):t._l(t.options,(function(e){return r("option",t._b({key:e.id,domProps:{value:e.value,textContent:t._s(e.label)}},"option",e.attributes||{},!1))}))],2)])};Lt._withStripped=!0;var Ut=B({render:Lt,staticRenderFns:[]},void 0,Ct,void 0,!1,void 0,!1,void 0,void 0,void 0),Bt={name:"FormulateInputSlider",mixins:[mt]},Mt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-type":t.context.type}},["checkbox"===t.type?r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:"checkbox"},domProps:{checked:Array.isArray(t.context.model)?t._i(t.context.model,null)>-1:t.context.model},on:{blur:t.context.blurHandler,change:function(e){var r=t.context.model,o=e.target,i=!!o.checked;if(Array.isArray(r)){var n=t._i(r,null);o.checked?n<0&&t.$set(t.context,"model",r.concat([null])):n>-1&&t.$set(t.context,"model",r.slice(0,n).concat(r.slice(n+1)))}else t.$set(t.context,"model",i)}}},"input",t.attributes,!1),t.$listeners)):"radio"===t.type?r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:"radio"},domProps:{checked:t._q(t.context.model,null)},on:{blur:t.context.blurHandler,change:function(e){return t.$set(t.context,"model",null)}}},"input",t.attributes,!1),t.$listeners)):r("input",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],attrs:{type:t.type},domProps:{value:t.context.model},on:{blur:t.context.blurHandler,input:function(e){e.target.composing||t.$set(t.context,"model",e.target.value)}}},"input",t.attributes,!1),t.$listeners)),t._v(" "),t.context.showValue?r("div",{class:t.context.classes.rangeValue,domProps:{textContent:t._s(t.context.model)}}):t._e()])};Mt._withStripped=!0;var Gt=B({render:Mt,staticRenderFns:[]},void 0,Bt,void 0,!1,void 0,!1,void 0,void 0,void 0),qt={name:"FormulateInputTextArea",mixins:[mt]},Ht=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{class:t.context.classes.element,attrs:{"data-type":"textarea"}},[r("textarea",t._g(t._b({directives:[{name:"model",rawName:"v-model",value:t.context.model,expression:"context.model"}],domProps:{value:t.context.model},on:{blur:t.context.blurHandler,input:function(e){e.target.composing||t.$set(t.context,"model",e.target.value)}}},"textarea",t.attributes,!1),t.$listeners))])};Ht._withStripped=!0;var Tt=B({render:Ht,staticRenderFns:[]},void 0,qt,void 0,!1,void 0,!1,void 0,void 0,void 0),Wt={provide:function(){var t=this;return Object.assign({},L(this,["getFormValues"]),{formulateSetter:function(e,r){return t.setFieldValue(e,r)}})},inject:{registerProvider:"registerProvider",deregisterProvider:"deregisterProvider"},props:{index:{type:Number,required:!0},context:{type:Object,required:!0},setFieldValue:{type:Function,required:!0},uuid:{type:String,required:!0}},data:function(){return Object.assign({},D(this),{isGrouping:!0})},computed:Object.assign({},N()),created:function(){this.registerProvider(this)},beforeDestroy:function(){this.deregisterProvider(this)},methods:Object.assign({},C(["setFieldValue"]),{removeItem:function(){this.$emit("remove",this.index)}})},Yt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("FormulateSlot",{attrs:{name:"repeatable",context:t.context,index:t.index,"remove-item":t.removeItem}},[r(t.context.slotComponents.repeatable,t._b({tag:"component",attrs:{context:t.context,index:t.index,"remove-item":t.removeItem}},"component",t.context.slotProps.repeatable,!1),[r("FormulateSlot",{attrs:{context:t.context,index:t.index,name:"default"}})],1)],1)};Yt._withStripped=!0;var zt=B({render:Yt,staticRenderFns:[]},void 0,Wt,void 0,!1,void 0,!1,void 0,void 0,void 0),Kt={props:{context:{type:Object,required:!0},removeItem:{type:Function,required:!0}}},Zt=function(){var t=this,e=t.$createElement,r=t._self._c||e;return t.context.repeatable?r("a",{class:t.context.classes.groupRepeatableRemove,attrs:{role:"button"},domProps:{textContent:t._s(t.context.removeLabel)},on:{click:function(e){return e.preventDefault(),t.removeItem(e)},keypress:function(e){return!e.type.indexOf("key")&&t._k(e.keyCode,"enter",13,e.key,"Enter")?null:t.removeItem(e)}}}):t._e()};Zt._withStripped=!0;var Jt=B({render:Zt,staticRenderFns:[]},void 0,Kt,void 0,!1,void 0,!1,void 0,void 0,void 0),Xt=function(){this.options={},this.defaults={components:{FormulateSlot:$,FormulateForm:q,FormulateHelp:nt,FormulateLabel:dt,FormulateInput:Q,FormulateErrors:rt,FormulateSchema:R,FormulateAddMore:ft,FormulateGrouping:lt,FormulateInputBox:gt,FormulateInputText:Et,FormulateInputFile:Ot,FormulateRepeatable:jt,FormulateInputGroup:kt,FormulateInputButton:Nt,FormulateInputSelect:Ut,FormulateInputSlider:Gt,FormulateInputTextArea:Tt,FormulateRepeatableRemove:Jt,FormulateRepeatableProvider:zt},slotComponents:{label:"FormulateLabel",help:"FormulateHelp",errors:"FormulateErrors",repeatable:"FormulateRepeatable",addMore:"FormulateAddMore",remove:"FormulateRepeatableRemove"},slotProps:{},library:n,rules:b,mimes:E,locale:!1,uploader:A,uploadUrl:!1,fileUrlKey:"url",uploadJustCompleteDuration:1e3,errorHandler:function(t){return t},plugins:[_braid_vue_formulate_i18n__WEBPACK_IMPORTED_MODULE_3__["en"]],locales:{},idPrefix:"formulate-",baseClasses:function(t){return t},coreClasses:V,classes:{}},this.registry=new Map,this.idRegistry={}};Xt.prototype.install=function(t,e){var r=this;t.prototype.$formulate=this,this.options=this.defaults;var o=this.defaults.plugins;for(var i in e&&Array.isArray(e.plugins)&&e.plugins.length&&(o=o.concat(e.plugins)),o.forEach((function(t){return"function"==typeof t?t(r):null})),this.extend(e||{}),this.options.components)t.component(i,this.options.components[i])},Xt.prototype.nextId=function(t){var e=!(!t.$route||!t.$route.path)&&t.$route.path?t.$route.path.replace(/[/\\.\s]/g,"-"):"global";return Object.prototype.hasOwnProperty.call(this.idRegistry,e)||(this.idRegistry[e]=0),""+this.options.idPrefix+e+"-"+ ++this.idRegistry[e]},Xt.prototype.extend=function(t){if("object"==typeof t)return this.options=this.merge(this.options,t),this;throw new Error("Formulate.extend expects an object, was "+typeof t)},Xt.prototype.merge=function(t,e,o){void 0===o&&(o=!0);var i={};for(var n in t)e.hasOwnProperty(n)?Object(is_plain_object__WEBPACK_IMPORTED_MODULE_2__["default"])(e[n])&&Object(is_plain_object__WEBPACK_IMPORTED_MODULE_2__["default"])(t[n])?i[n]=this.merge(t[n],e[n],o):o&&Array.isArray(t[n])&&Array.isArray(e[n])?i[n]=t[n].concat(e[n]):i[n]=e[n]:i[n]=t[n];for(var s in e)i.hasOwnProperty(s)||(i[s]=e[s]);return i},Xt.prototype.classify=function(t){return this.options.library.hasOwnProperty(t)?this.options.library[t].classification:"unknown"},Xt.prototype.classes=function(t){var e=this,r=this.options.coreClasses(t),o=this.options.baseClasses(r,t);return Object.keys(o).reduce((function(r,i){var n,s=O(o[i],e.options.classes[i],t);return s=function(t,e,r,o){return Object.keys(w).reduce((function(e,i){if(w[i](o)){var n=""+t+u(i),s=n+"Class";if(r[n])e=O(e,"string"==typeof r[n]?c(r[n]):r[n],o);if(o[s])e=O(e,"string"==typeof o[s]?c(o[s]):o[n+"Class"],o)}return e}),e)}(i,s=O(s,t[i+"Class"],t),e.options.classes,t),Object.assign(r,((n={})[i]=s,n))}),{})},Xt.prototype.typeProps=function(t){var e=function(t){return Object.keys(t).reduce((function(e,r){return Array.isArray(t[r])?e.concat(t[r]):e}),[])},r=e(this.options.slotProps);return this.options.library[t]?r.concat(e(this.options.library[t].slotProps||{})):r},Xt.prototype.slotProps=function(t,e,r){var o=Array.isArray(this.options.slotProps[e])?this.options.slotProps[e]:[],i=this.options.library[t];return i&&i.slotProps&&Array.isArray(i.slotProps[e])&&(o=o.concat(i.slotProps[e])),o.reduce((function(t,e){var o;return Object.assign(t,((o={})[e]=r[e],o))}),{})},Xt.prototype.component=function(t){return!!this.options.library.hasOwnProperty(t)&&this.options.library[t].component},Xt.prototype.slotComponent=function(t,e){var r=this.options.library[t];return r&&r.slotComponents&&r.slotComponents[e]?r.slotComponents[e]:this.options.slotComponents[e]},Xt.prototype.rules=function(t){return void 0===t&&(t={}),Object.assign({},this.options.rules,t)},Xt.prototype.i18n=function(t){if(t.$i18n)switch(typeof t.$i18n.locale){case"string":return t.$i18n.locale;case"function":return t.$i18n.locale()}return!1},Xt.prototype.getLocale=function(t){var e=this;return this.selectedLocale||(this.selectedLocale=[this.options.locale,this.i18n(t),"en"].reduce((function(t,r){if(t)return t;if(r){var o=function(t){return t.split("-").reduce((function(t,e){return t.length&&t.unshift(t[0]+"-"+e),t.length?t:[e]}),[])}(r).find((function(t){return f(e.options.locales,t)}));o&&(t=o)}return t}),!1)),this.selectedLocale},Xt.prototype.setLocale=function(t){f(this.options.locales,t)&&(this.options.locale=t,this.selectedLocale=t)},Xt.prototype.validationMessage=function(t,e,r){var o=this.options.locales[this.getLocale(r)];return o.hasOwnProperty(t)?o[t](e):o.hasOwnProperty("default")?o.default(e):"Invalid field value"},Xt.prototype.register=function(t){"FormulateForm"===t.$options.name&&t.name&&this.registry.set(t.name,t)},Xt.prototype.deregister=function(t){"FormulateForm"===t.$options.name&&t.name&&this.registry.has(t.name)&&this.registry.delete(t.name)},Xt.prototype.handle=function(t,e,r){void 0===r&&(r=!1);var o=r?t:this.options.errorHandler(t,e);return e&&this.registry.has(e)&&this.registry.get(e).applyErrors({formErrors:c(o.formErrors),inputErrors:o.inputErrors||{}}),o},Xt.prototype.reset=function(t,e){void 0===e&&(e={}),this.resetValidation(t),this.setValues(t,e)},Xt.prototype.submit=function(t){this.registry.get(t).formSubmitted()},Xt.prototype.resetValidation=function(t){var e=this.registry.get(t);e.hideErrors(t),e.namedErrors=[],e.namedFieldErrors={}},Xt.prototype.setValues=function(t,e){e&&!Array.isArray(e)&&"object"==typeof e&&this.registry.get(t).setValues(Object.assign({},e))},Xt.prototype.getUploader=function(){return this.options.uploader||!1},Xt.prototype.getUploadUrl=function(){return this.options.uploadUrl||!1},Xt.prototype.getFileUrlKey=function(){return this.options.fileUrlKey||"url"},Xt.prototype.createUpload=function(t,e){return new y(t,e,this.options)};var Qt=new Xt;/* harmony default export */ __webpack_exports__["default"] = (Qt);
+
+
+/***/ }),
+
+/***/ "./node_modules/@braid/vue-formulate/node_modules/is-plain-object/index.es.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@braid/vue-formulate/node_modules/is-plain-object/index.es.js ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*!
+ * isobject <https://github.com/jonschlinkert/isobject>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+function isObject(val) {
+  return val != null && typeof val === 'object' && Array.isArray(val) === false;
+}
+
+/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+function isObjectObject(o) {
+  return isObject(o) === true
+    && Object.prototype.toString.call(o) === '[object Object]';
+}
+
+function isPlainObject(o) {
+  var ctor,prot;
+
+  if (isObjectObject(o) === false) return false;
+
+  // If has modified constructor
+  ctor = o.constructor;
+  if (typeof ctor !== 'function') return false;
+
+  // If has modified prototype
+  prot = ctor.prototype;
+  if (isObjectObject(prot) === false) return false;
+
+  // If constructor does not have an Object-specific method
+  if (prot.hasOwnProperty('isPrototypeOf') === false) {
+    return false;
+  }
+
+  // Most likely a plain Object
+  return true;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (isPlainObject);
+
+
+/***/ }),
+
 /***/ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js":
 /*!********************************************************************!*\
   !*** ./node_modules/@fortawesome/fontawesome-svg-core/index.es.js ***!
@@ -118,6 +232,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dom", function() { return dom; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parse", function() { return parse; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findIconDefinition", function() { return findIconDefinition; });
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
     _typeof = function (obj) {
@@ -300,6 +418,7 @@ var PREFIX_TO_STYLE = {
   'fal': 'light',
   'fad': 'duotone',
   'fab': 'brands',
+  'fak': 'kit',
   'fa': 'solid'
 };
 var STYLE_TO_PREFIX = {
@@ -307,10 +426,12 @@ var STYLE_TO_PREFIX = {
   'regular': 'far',
   'light': 'fal',
   'duotone': 'fad',
-  'brands': 'fab'
+  'brands': 'fab',
+  'kit': 'fak'
 };
 var LAYERS_TEXT_CLASSNAME = 'fa-layers-text';
-var FONT_FAMILY_PATTERN = /Font Awesome 5 (Solid|Regular|Light|Duotone|Brands|Free|Pro)/;
+var FONT_FAMILY_PATTERN = /Font Awesome ([5 ]*)(Solid|Regular|Light|Duotone|Brands|Free|Pro|Kit).*/; // TODO: do we need to handle font-weight for kit SVG pseudo-elements?
+
 var FONT_WEIGHT_TO_PREFIX = {
   '900': 'fas',
   '400': 'far',
@@ -1051,9 +1172,12 @@ function makeInlineSvgAbstract(params) {
       width = _ref.width,
       height = _ref.height;
 
-  var widthClass = "fa-w-".concat(Math.ceil(width / height * 16));
+  var isUploadedIcon = prefix === 'fak';
+  var widthClass = isUploadedIcon ? '' : "fa-w-".concat(Math.ceil(width / height * 16));
   var attrClass = [config.replacementClass, iconName ? "".concat(config.familyPrefix, "-").concat(iconName) : '', widthClass].filter(function (c) {
     return extra.classes.indexOf(c) === -1;
+  }).filter(function (c) {
+    return c !== '' || !!c;
   }).concat(extra.classes).join(' ');
   var content = {
     children: [],
@@ -1066,6 +1190,9 @@ function makeInlineSvgAbstract(params) {
       'viewBox': "0 0 ".concat(width, " ").concat(height)
     })
   };
+  var uploadedIconWidthStyle = isUploadedIcon && !~extra.classes.indexOf('fa-fw') ? {
+    width: "".concat(width / height * 16 * 0.0625, "em")
+  } : {};
 
   if (watchable) {
     content.attributes[DATA_FA_I2SVG] = '';
@@ -1087,7 +1214,7 @@ function makeInlineSvgAbstract(params) {
     maskId: maskId,
     transform: transform,
     symbol: symbol,
-    styles: extra.styles
+    styles: _objectSpread({}, uploadedIconWidthStyle, extra.styles)
   });
 
   var _ref2 = mask.found && main.found ? makeIconMasking(args) : makeIconStandard(args),
@@ -1203,7 +1330,7 @@ var p = config.measurePerformance && PERFORMANCE && PERFORMANCE.mark && PERFORMA
   mark: noop$1,
   measure: noop$1
 };
-var preamble = "FA \"5.13.1\"";
+var preamble = "FA \"5.15.1\"";
 
 var begin = function begin(name) {
   p.mark("".concat(preamble, " ").concat(name, " begins"));
@@ -1279,6 +1406,35 @@ function toHex(unicode) {
   }
 
   return result;
+}
+function codePointAt(string, index) {
+  /*! https://mths.be/codepointat v0.2.0 by @mathias */
+  var size = string.length;
+  var first = string.charCodeAt(index);
+  var second;
+
+  if (first >= 0xD800 && first <= 0xDBFF && size > index + 1) {
+    second = string.charCodeAt(index + 1);
+
+    if (second >= 0xDC00 && second <= 0xDFFF) {
+      return (first - 0xD800) * 0x400 + second - 0xDC00 + 0x10000;
+    }
+  }
+
+  return first;
+}
+/**
+ * Used to check that the character is between the E000..F8FF private unicode
+ * range
+ */
+
+function isPrivateUnicode(iconName) {
+  if (iconName.length !== 1) {
+    return false;
+  } else {
+    var cp = codePointAt(iconName, 0);
+    return cp >= 57344 && cp <= 63743;
+  }
 }
 
 function defineIcons(prefix, icons) {
@@ -1389,7 +1545,7 @@ function getCanonicalIcon(values) {
 
     if (styles$1[cls]) {
       acc.prefix = cls;
-    } else if (config.autoFetchSvg && ['fas', 'far', 'fal', 'fad', 'fab', 'fa'].indexOf(cls) > -1) {
+    } else if (config.autoFetchSvg && Object.keys(PREFIX_TO_STYLE).indexOf(cls) > -1) {
       acc.prefix = cls;
     } else if (iconName) {
       var shim = acc.prefix === 'fa' ? byOldName(iconName) : {};
@@ -1451,7 +1607,7 @@ var mutators = {
     }).join('\n');
 
     if (node.parentNode && node.outerHTML) {
-      node.outerHTML = newOuterHTML + (config.keepOriginalSource && node.tagName.toLowerCase() !== 'svg' ? "<!-- ".concat(node.outerHTML, " -->") : '');
+      node.outerHTML = newOuterHTML + (config.keepOriginalSource && node.tagName.toLowerCase() !== 'svg' ? "<!-- ".concat(node.outerHTML, " Font Awesome fontawesome.com -->") : '');
     } else if (node.parentNode) {
       var newNode = document.createElement('span');
       node.parentNode.replaceChild(newNode, node);
@@ -1858,6 +2014,27 @@ var missing = {
 };
 
 var styles$2 = namespace.styles;
+function resolveCustomIconVersion() {
+  var kitConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var iconName = arguments.length > 1 ? arguments[1] : undefined;
+
+  if (iconName && isPrivateUnicode(iconName)) {
+    if (kitConfig && kitConfig.iconUploads) {
+      var iconUploads = kitConfig.iconUploads;
+      var descriptiveIconName = Object.keys(iconUploads).find(function (key) {
+        return iconUploads[key] && iconUploads[key].u && iconUploads[key].u === toHex(iconName);
+      });
+
+      if (descriptiveIconName) {
+        return iconUploads[descriptiveIconName].v;
+      }
+    }
+  } else {
+    if (kitConfig && kitConfig.iconUploads && kitConfig.iconUploads[iconName] && kitConfig.iconUploads[iconName].v) {
+      return kitConfig.iconUploads[iconName].v;
+    }
+  }
+}
 function asFoundIcon(icon) {
   var width = icon[0];
   var height = icon[1];
@@ -1920,11 +2097,11 @@ function findIcon(iconName, prefix) {
       var icon = styles$2[prefix][iconName];
       return resolve(asFoundIcon(icon));
     }
+    var kitToken = null;
+    var iconVersion = resolveCustomIconVersion(WINDOW.FontAwesomeKitConfig, iconName);
 
-    var headers = {};
-
-    if (_typeof(WINDOW.FontAwesomeKitConfig) === 'object' && typeof window.FontAwesomeKitConfig.token === 'string') {
-      headers['fa-kit-token'] = WINDOW.FontAwesomeKitConfig.token;
+    if (WINDOW.FontAwesomeKitConfig && WINDOW.FontAwesomeKitConfig.token) {
+      kitToken = WINDOW.FontAwesomeKitConfig.token;
     }
 
     if (iconName && prefix && !config.showMissingIcons) {
@@ -2115,8 +2292,10 @@ function replaceForPosition(node, position) {
       node.removeChild(alreadyProcessedPseudoElement);
       return resolve();
     } else if (fontFamily && content !== 'none' && content !== '') {
-      var prefix = ~['Solid', 'Regular', 'Light', 'Duotone', 'Brands'].indexOf(fontFamily[1]) ? STYLE_TO_PREFIX[fontFamily[1].toLowerCase()] : FONT_WEIGHT_TO_PREFIX[fontWeight];
-      var hexValue = toHex(content.length === 3 ? content.substr(1, 1) : content);
+      var _content = styles.getPropertyValue('content');
+
+      var prefix = ~['Solid', 'Regular', 'Light', 'Duotone', 'Brands', 'Kit'].indexOf(fontFamily[2]) ? STYLE_TO_PREFIX[fontFamily[2].toLowerCase()] : FONT_WEIGHT_TO_PREFIX[fontWeight];
+      var hexValue = toHex(_content.length === 3 ? _content.substr(1, 1) : _content);
       var iconName = byUnicode(prefix, hexValue);
       var iconIdentifier = iconName; // Only convert the pseudo element in this :before/:after position into an icon if we haven't
       // already done so with the same prefix and iconName
@@ -2553,7 +2732,7 @@ var autoReplace = function autoReplace() {
 /*!*********************************************************************!*\
   !*** ./node_modules/@fortawesome/free-brands-svg-icons/index.es.js ***!
   \*********************************************************************/
-/*! exports provided: fab, prefix, fa500px, faAccessibleIcon, faAccusoft, faAcquisitionsIncorporated, faAdn, faAdobe, faAdversal, faAffiliatetheme, faAirbnb, faAlgolia, faAlipay, faAmazon, faAmazonPay, faAmilia, faAndroid, faAngellist, faAngrycreative, faAngular, faAppStore, faAppStoreIos, faApper, faApple, faApplePay, faArtstation, faAsymmetrik, faAtlassian, faAudible, faAutoprefixer, faAvianex, faAviato, faAws, faBandcamp, faBattleNet, faBehance, faBehanceSquare, faBimobject, faBitbucket, faBitcoin, faBity, faBlackTie, faBlackberry, faBlogger, faBloggerB, faBluetooth, faBluetoothB, faBootstrap, faBtc, faBuffer, faBuromobelexperte, faBuyNLarge, faBuysellads, faCanadianMapleLeaf, faCcAmazonPay, faCcAmex, faCcApplePay, faCcDinersClub, faCcDiscover, faCcJcb, faCcMastercard, faCcPaypal, faCcStripe, faCcVisa, faCentercode, faCentos, faChrome, faChromecast, faCloudscale, faCloudsmith, faCloudversify, faCodepen, faCodiepie, faConfluence, faConnectdevelop, faContao, faCottonBureau, faCpanel, faCreativeCommons, faCreativeCommonsBy, faCreativeCommonsNc, faCreativeCommonsNcEu, faCreativeCommonsNcJp, faCreativeCommonsNd, faCreativeCommonsPd, faCreativeCommonsPdAlt, faCreativeCommonsRemix, faCreativeCommonsSa, faCreativeCommonsSampling, faCreativeCommonsSamplingPlus, faCreativeCommonsShare, faCreativeCommonsZero, faCriticalRole, faCss3, faCss3Alt, faCuttlefish, faDAndD, faDAndDBeyond, faDailymotion, faDashcube, faDeezer, faDelicious, faDeploydog, faDeskpro, faDev, faDeviantart, faDhl, faDiaspora, faDigg, faDigitalOcean, faDiscord, faDiscourse, faDochub, faDocker, faDraft2digital, faDribbble, faDribbbleSquare, faDropbox, faDrupal, faDyalog, faEarlybirds, faEbay, faEdge, faEdgeLegacy, faElementor, faEllo, faEmber, faEmpire, faEnvira, faErlang, faEthereum, faEtsy, faEvernote, faExpeditedssl, faFacebook, faFacebookF, faFacebookMessenger, faFacebookSquare, faFantasyFlightGames, faFedex, faFedora, faFigma, faFirefox, faFirefoxBrowser, faFirstOrder, faFirstOrderAlt, faFirstdraft, faFlickr, faFlipboard, faFly, faFontAwesome, faFontAwesomeAlt, faFontAwesomeFlag, faFontAwesomeLogoFull, faFonticons, faFonticonsFi, faFortAwesome, faFortAwesomeAlt, faForumbee, faFoursquare, faFreeCodeCamp, faFreebsd, faFulcrum, faGalacticRepublic, faGalacticSenate, faGetPocket, faGg, faGgCircle, faGit, faGitAlt, faGitSquare, faGithub, faGithubAlt, faGithubSquare, faGitkraken, faGitlab, faGitter, faGlide, faGlideG, faGofore, faGoodreads, faGoodreadsG, faGoogle, faGoogleDrive, faGooglePay, faGooglePlay, faGooglePlus, faGooglePlusG, faGooglePlusSquare, faGoogleWallet, faGratipay, faGrav, faGripfire, faGrunt, faGulp, faHackerNews, faHackerNewsSquare, faHackerrank, faHips, faHireAHelper, faHooli, faHornbill, faHotjar, faHouzz, faHtml5, faHubspot, faIdeal, faImdb, faInstagram, faInstagramSquare, faIntercom, faInternetExplorer, faInvision, faIoxhost, faItchIo, faItunes, faItunesNote, faJava, faJediOrder, faJenkins, faJira, faJoget, faJoomla, faJs, faJsSquare, faJsfiddle, faKaggle, faKeybase, faKeycdn, faKickstarter, faKickstarterK, faKorvue, faLaravel, faLastfm, faLastfmSquare, faLeanpub, faLess, faLine, faLinkedin, faLinkedinIn, faLinode, faLinux, faLyft, faMagento, faMailchimp, faMandalorian, faMarkdown, faMastodon, faMaxcdn, faMdb, faMedapps, faMedium, faMediumM, faMedrt, faMeetup, faMegaport, faMendeley, faMicroblog, faMicrosoft, faMix, faMixcloud, faMixer, faMizuni, faModx, faMonero, faNapster, faNeos, faNimblr, faNode, faNodeJs, faNpm, faNs8, faNutritionix, faOdnoklassniki, faOdnoklassnikiSquare, faOldRepublic, faOpencart, faOpenid, faOpera, faOptinMonster, faOrcid, faOsi, faPage4, faPagelines, faPalfed, faPatreon, faPaypal, faPennyArcade, faPeriscope, faPhabricator, faPhoenixFramework, faPhoenixSquadron, faPhp, faPiedPiper, faPiedPiperAlt, faPiedPiperHat, faPiedPiperPp, faPiedPiperSquare, faPinterest, faPinterestP, faPinterestSquare, faPlaystation, faProductHunt, faPushed, faPython, faQq, faQuinscape, faQuora, faRProject, faRaspberryPi, faRavelry, faReact, faReacteurope, faReadme, faRebel, faRedRiver, faReddit, faRedditAlien, faRedditSquare, faRedhat, faRenren, faReplyd, faResearchgate, faResolving, faRev, faRocketchat, faRockrms, faRust, faSafari, faSalesforce, faSass, faSchlix, faScribd, faSearchengin, faSellcast, faSellsy, faServicestack, faShirtsinbulk, faShopify, faShopware, faSimplybuilt, faSistrix, faSith, faSketch, faSkyatlas, faSkype, faSlack, faSlackHash, faSlideshare, faSnapchat, faSnapchatGhost, faSnapchatSquare, faSoundcloud, faSourcetree, faSpeakap, faSpeakerDeck, faSpotify, faSquarespace, faStackExchange, faStackOverflow, faStackpath, faStaylinked, faSteam, faSteamSquare, faSteamSymbol, faStickerMule, faStrava, faStripe, faStripeS, faStudiovinari, faStumbleupon, faStumbleuponCircle, faSuperpowers, faSupple, faSuse, faSwift, faSymfony, faTeamspeak, faTelegram, faTelegramPlane, faTencentWeibo, faTheRedYeti, faThemeco, faThemeisle, faThinkPeaks, faTiktok, faTradeFederation, faTrello, faTripadvisor, faTumblr, faTumblrSquare, faTwitch, faTwitter, faTwitterSquare, faTypo3, faUber, faUbuntu, faUikit, faUmbraco, faUniregistry, faUnity, faUnsplash, faUntappd, faUps, faUsb, faUsps, faUssunnah, faVaadin, faViacoin, faViadeo, faViadeoSquare, faViber, faVimeo, faVimeoSquare, faVimeoV, faVine, faVk, faVnv, faVuejs, faWaze, faWeebly, faWeibo, faWeixin, faWhatsapp, faWhatsappSquare, faWhmcs, faWikipediaW, faWindows, faWix, faWizardsOfTheCoast, faWolfPackBattalion, faWordpress, faWordpressSimple, faWpbeginner, faWpexplorer, faWpforms, faWpressr, faXbox, faXing, faXingSquare, faYCombinator, faYahoo, faYammer, faYandex, faYandexInternational, faYarn, faYelp, faYoast, faYoutube, faYoutubeSquare, faZhihu */
+/*! exports provided: fab, prefix, fa500px, faAccessibleIcon, faAccusoft, faAcquisitionsIncorporated, faAdn, faAdversal, faAffiliatetheme, faAirbnb, faAlgolia, faAlipay, faAmazon, faAmazonPay, faAmilia, faAndroid, faAngellist, faAngrycreative, faAngular, faAppStore, faAppStoreIos, faApper, faApple, faApplePay, faArtstation, faAsymmetrik, faAtlassian, faAudible, faAutoprefixer, faAvianex, faAviato, faAws, faBandcamp, faBattleNet, faBehance, faBehanceSquare, faBimobject, faBitbucket, faBitcoin, faBity, faBlackTie, faBlackberry, faBlogger, faBloggerB, faBluetooth, faBluetoothB, faBootstrap, faBtc, faBuffer, faBuromobelexperte, faBuyNLarge, faBuysellads, faCanadianMapleLeaf, faCcAmazonPay, faCcAmex, faCcApplePay, faCcDinersClub, faCcDiscover, faCcJcb, faCcMastercard, faCcPaypal, faCcStripe, faCcVisa, faCentercode, faCentos, faChrome, faChromecast, faCloudflare, faCloudscale, faCloudsmith, faCloudversify, faCodepen, faCodiepie, faConfluence, faConnectdevelop, faContao, faCottonBureau, faCpanel, faCreativeCommons, faCreativeCommonsBy, faCreativeCommonsNc, faCreativeCommonsNcEu, faCreativeCommonsNcJp, faCreativeCommonsNd, faCreativeCommonsPd, faCreativeCommonsPdAlt, faCreativeCommonsRemix, faCreativeCommonsSa, faCreativeCommonsSampling, faCreativeCommonsSamplingPlus, faCreativeCommonsShare, faCreativeCommonsZero, faCriticalRole, faCss3, faCss3Alt, faCuttlefish, faDAndD, faDAndDBeyond, faDailymotion, faDashcube, faDeezer, faDelicious, faDeploydog, faDeskpro, faDev, faDeviantart, faDhl, faDiaspora, faDigg, faDigitalOcean, faDiscord, faDiscourse, faDochub, faDocker, faDraft2digital, faDribbble, faDribbbleSquare, faDropbox, faDrupal, faDyalog, faEarlybirds, faEbay, faEdge, faEdgeLegacy, faElementor, faEllo, faEmber, faEmpire, faEnvira, faErlang, faEthereum, faEtsy, faEvernote, faExpeditedssl, faFacebook, faFacebookF, faFacebookMessenger, faFacebookSquare, faFantasyFlightGames, faFedex, faFedora, faFigma, faFirefox, faFirefoxBrowser, faFirstOrder, faFirstOrderAlt, faFirstdraft, faFlickr, faFlipboard, faFly, faFontAwesome, faFontAwesomeAlt, faFontAwesomeFlag, faFontAwesomeLogoFull, faFonticons, faFonticonsFi, faFortAwesome, faFortAwesomeAlt, faForumbee, faFoursquare, faFreeCodeCamp, faFreebsd, faFulcrum, faGalacticRepublic, faGalacticSenate, faGetPocket, faGg, faGgCircle, faGit, faGitAlt, faGitSquare, faGithub, faGithubAlt, faGithubSquare, faGitkraken, faGitlab, faGitter, faGlide, faGlideG, faGofore, faGoodreads, faGoodreadsG, faGoogle, faGoogleDrive, faGooglePay, faGooglePlay, faGooglePlus, faGooglePlusG, faGooglePlusSquare, faGoogleWallet, faGratipay, faGrav, faGripfire, faGrunt, faGuilded, faGulp, faHackerNews, faHackerNewsSquare, faHackerrank, faHips, faHireAHelper, faHive, faHooli, faHornbill, faHotjar, faHouzz, faHtml5, faHubspot, faIdeal, faImdb, faInnosoft, faInstagram, faInstagramSquare, faInstalod, faIntercom, faInternetExplorer, faInvision, faIoxhost, faItchIo, faItunes, faItunesNote, faJava, faJediOrder, faJenkins, faJira, faJoget, faJoomla, faJs, faJsSquare, faJsfiddle, faKaggle, faKeybase, faKeycdn, faKickstarter, faKickstarterK, faKorvue, faLaravel, faLastfm, faLastfmSquare, faLeanpub, faLess, faLine, faLinkedin, faLinkedinIn, faLinode, faLinux, faLyft, faMagento, faMailchimp, faMandalorian, faMarkdown, faMastodon, faMaxcdn, faMdb, faMedapps, faMedium, faMediumM, faMedrt, faMeetup, faMegaport, faMendeley, faMicroblog, faMicrosoft, faMix, faMixcloud, faMixer, faMizuni, faModx, faMonero, faNapster, faNeos, faNimblr, faNode, faNodeJs, faNpm, faNs8, faNutritionix, faOctopusDeploy, faOdnoklassniki, faOdnoklassnikiSquare, faOldRepublic, faOpencart, faOpenid, faOpera, faOptinMonster, faOrcid, faOsi, faPage4, faPagelines, faPalfed, faPatreon, faPaypal, faPennyArcade, faPerbyte, faPeriscope, faPhabricator, faPhoenixFramework, faPhoenixSquadron, faPhp, faPiedPiper, faPiedPiperAlt, faPiedPiperHat, faPiedPiperPp, faPiedPiperSquare, faPinterest, faPinterestP, faPinterestSquare, faPlaystation, faProductHunt, faPushed, faPython, faQq, faQuinscape, faQuora, faRProject, faRaspberryPi, faRavelry, faReact, faReacteurope, faReadme, faRebel, faRedRiver, faReddit, faRedditAlien, faRedditSquare, faRedhat, faRenren, faReplyd, faResearchgate, faResolving, faRev, faRocketchat, faRockrms, faRust, faSafari, faSalesforce, faSass, faSchlix, faScribd, faSearchengin, faSellcast, faSellsy, faServicestack, faShirtsinbulk, faShopify, faShopware, faSimplybuilt, faSistrix, faSith, faSketch, faSkyatlas, faSkype, faSlack, faSlackHash, faSlideshare, faSnapchat, faSnapchatGhost, faSnapchatSquare, faSoundcloud, faSourcetree, faSpeakap, faSpeakerDeck, faSpotify, faSquarespace, faStackExchange, faStackOverflow, faStackpath, faStaylinked, faSteam, faSteamSquare, faSteamSymbol, faStickerMule, faStrava, faStripe, faStripeS, faStudiovinari, faStumbleupon, faStumbleuponCircle, faSuperpowers, faSupple, faSuse, faSwift, faSymfony, faTeamspeak, faTelegram, faTelegramPlane, faTencentWeibo, faTheRedYeti, faThemeco, faThemeisle, faThinkPeaks, faTiktok, faTradeFederation, faTrello, faTripadvisor, faTumblr, faTumblrSquare, faTwitch, faTwitter, faTwitterSquare, faTypo3, faUber, faUbuntu, faUikit, faUmbraco, faUncharted, faUniregistry, faUnity, faUnsplash, faUntappd, faUps, faUsb, faUsps, faUssunnah, faVaadin, faViacoin, faViadeo, faViadeoSquare, faViber, faVimeo, faVimeoSquare, faVimeoV, faVine, faVk, faVnv, faVuejs, faWatchmanMonitoring, faWaze, faWeebly, faWeibo, faWeixin, faWhatsapp, faWhatsappSquare, faWhmcs, faWikipediaW, faWindows, faWix, faWizardsOfTheCoast, faWodu, faWolfPackBattalion, faWordpress, faWordpressSimple, faWpbeginner, faWpexplorer, faWpforms, faWpressr, faXbox, faXing, faXingSquare, faYCombinator, faYahoo, faYammer, faYandex, faYandexInternational, faYarn, faYelp, faYoast, faYoutube, faYoutubeSquare, faZhihu */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2565,7 +2744,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faAccusoft", function() { return faAccusoft; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faAcquisitionsIncorporated", function() { return faAcquisitionsIncorporated; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faAdn", function() { return faAdn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faAdobe", function() { return faAdobe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faAdversal", function() { return faAdversal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faAffiliatetheme", function() { return faAffiliatetheme; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faAirbnb", function() { return faAirbnb; });
@@ -2626,6 +2804,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faCentos", function() { return faCentos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faChrome", function() { return faChrome; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faChromecast", function() { return faChromecast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faCloudflare", function() { return faCloudflare; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faCloudscale", function() { return faCloudscale; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faCloudsmith", function() { return faCloudsmith; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faCloudversify", function() { return faCloudversify; });
@@ -2752,12 +2931,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faGrav", function() { return faGrav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faGripfire", function() { return faGripfire; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faGrunt", function() { return faGrunt; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faGuilded", function() { return faGuilded; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faGulp", function() { return faGulp; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHackerNews", function() { return faHackerNews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHackerNewsSquare", function() { return faHackerNewsSquare; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHackerrank", function() { return faHackerrank; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHips", function() { return faHips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHireAHelper", function() { return faHireAHelper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHive", function() { return faHive; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHooli", function() { return faHooli; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHornbill", function() { return faHornbill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHotjar", function() { return faHotjar; });
@@ -2766,8 +2947,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faHubspot", function() { return faHubspot; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faIdeal", function() { return faIdeal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faImdb", function() { return faImdb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faInnosoft", function() { return faInnosoft; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faInstagram", function() { return faInstagram; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faInstagramSquare", function() { return faInstagramSquare; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faInstalod", function() { return faInstalod; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faIntercom", function() { return faIntercom; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faInternetExplorer", function() { return faInternetExplorer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faInvision", function() { return faInvision; });
@@ -2831,6 +3014,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faNpm", function() { return faNpm; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faNs8", function() { return faNs8; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faNutritionix", function() { return faNutritionix; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faOctopusDeploy", function() { return faOctopusDeploy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faOdnoklassniki", function() { return faOdnoklassniki; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faOdnoklassnikiSquare", function() { return faOdnoklassnikiSquare; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faOldRepublic", function() { return faOldRepublic; });
@@ -2846,6 +3030,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faPatreon", function() { return faPatreon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faPaypal", function() { return faPaypal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faPennyArcade", function() { return faPennyArcade; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faPerbyte", function() { return faPerbyte; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faPeriscope", function() { return faPeriscope; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faPhabricator", function() { return faPhabricator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faPhoenixFramework", function() { return faPhoenixFramework; });
@@ -2957,6 +3142,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faUbuntu", function() { return faUbuntu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faUikit", function() { return faUikit; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faUmbraco", function() { return faUmbraco; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faUncharted", function() { return faUncharted; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faUniregistry", function() { return faUniregistry; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faUnity", function() { return faUnity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faUnsplash", function() { return faUnsplash; });
@@ -2977,6 +3163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVk", function() { return faVk; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVnv", function() { return faVnv; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVuejs", function() { return faVuejs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWatchmanMonitoring", function() { return faWatchmanMonitoring; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWaze", function() { return faWaze; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWeebly", function() { return faWeebly; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWeibo", function() { return faWeibo; });
@@ -2988,6 +3175,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWindows", function() { return faWindows; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWix", function() { return faWix; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWizardsOfTheCoast", function() { return faWizardsOfTheCoast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWodu", function() { return faWodu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWolfPackBattalion", function() { return faWolfPackBattalion; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWordpress", function() { return faWordpress; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWordpressSimple", function() { return faWordpressSimple; });
@@ -3009,6 +3197,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faYoutube", function() { return faYoutube; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faYoutubeSquare", function() { return faYoutubeSquare; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faZhihu", function() { return faZhihu; });
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
 var prefix = "fab";
 var fa500px = {
   prefix: 'fab',
@@ -3034,11 +3226,6 @@ var faAdn = {
   prefix: 'fab',
   iconName: 'adn',
   icon: [496, 512, [], "f170", "M248 167.5l64.9 98.8H183.1l64.9-98.8zM496 256c0 136.9-111.1 248-248 248S0 392.9 0 256 111.1 8 248 8s248 111.1 248 248zm-99.8 82.7L248 115.5 99.8 338.7h30.4l33.6-51.7h168.6l33.6 51.7h30.2z"]
-};
-var faAdobe = {
-  prefix: 'fab',
-  iconName: 'adobe',
-  icon: [512, 512, [], "f778", "M315.5 64h170.9v384L315.5 64zm-119 0H25.6v384L196.5 64zM256 206.1L363.5 448h-73l-30.7-76.8h-78.7L256 206.1z"]
 };
 var faAdversal = {
   prefix: 'fab',
@@ -3338,7 +3525,12 @@ var faChrome = {
 var faChromecast = {
   prefix: 'fab',
   iconName: 'chromecast',
-  icon: [512, 512, [], "f838", "M447.83 64H64a42.72 42.72 0 0 0-42.72 42.72v63.92H64v-63.92h383.83v298.56H298.64V448H448a42.72 42.72 0 0 0 42.72-42.72V106.72A42.72 42.72 0 0 0 448 64zM21.28 383.58v63.92h63.91a63.91 63.91 0 0 0-63.91-63.92zm0-85.28V341a106.63 106.63 0 0 1 106.64 106.66v.34h42.72a149.19 149.19 0 0 0-149-149.36h-.33zm0-85.27v42.72c106-.1 192 85.75 192.08 191.75v.5h42.72c-.46-129.46-105.34-234.27-234.8-234.64z"]
+  icon: [512, 512, [], "f838", "M447.8,64H64c-23.6,0-42.7,19.1-42.7,42.7v63.9H64v-63.9h383.8v298.6H298.6V448H448c23.6,0,42.7-19.1,42.7-42.7V106.7 C490.7,83.1,471.4,64,447.8,64z M21.3,383.6L21.3,383.6l0,63.9h63.9C85.2,412.2,56.6,383.6,21.3,383.6L21.3,383.6z M21.3,298.6V341 c58.9,0,106.6,48.1,106.6,107h42.7C170.7,365.6,103.7,298.7,21.3,298.6z M213.4,448h42.7c-0.5-129.5-105.3-234.3-234.8-234.6l0,42.4 C127.3,255.6,213.3,342,213.4,448z"]
+};
+var faCloudflare = {
+  prefix: 'fab',
+  iconName: 'cloudflare',
+  icon: [640, 512, [], "e07d", "M407.906,319.913l-230.8-2.928a4.58,4.58,0,0,1-3.632-1.926,4.648,4.648,0,0,1-.494-4.147,6.143,6.143,0,0,1,5.361-4.076L411.281,303.9c27.631-1.26,57.546-23.574,68.022-50.784l13.286-34.542a7.944,7.944,0,0,0,.524-2.936,7.735,7.735,0,0,0-.164-1.631A151.91,151.91,0,0,0,201.257,198.4,68.12,68.12,0,0,0,94.2,269.59C41.924,271.106,0,313.728,0,366.12a96.054,96.054,0,0,0,1.029,13.958,4.508,4.508,0,0,0,4.445,3.871l426.1.051c.043,0,.08-.019.122-.02a5.606,5.606,0,0,0,5.271-4l3.273-11.265c3.9-13.4,2.448-25.8-4.1-34.9C430.124,325.423,420.09,320.487,407.906,319.913ZM513.856,221.1c-2.141,0-4.271.062-6.391.164a3.771,3.771,0,0,0-3.324,2.653l-9.077,31.193c-3.9,13.4-2.449,25.786,4.1,34.89,6.02,8.4,16.054,13.323,28.238,13.9l49.2,2.939a4.491,4.491,0,0,1,3.51,1.894,4.64,4.64,0,0,1,.514,4.169,6.153,6.153,0,0,1-5.351,4.075l-51.125,2.939c-27.754,1.27-57.669,23.574-68.145,50.784l-3.695,9.606a2.716,2.716,0,0,0,2.427,3.68c.046,0,.088.017.136.017h175.91a4.69,4.69,0,0,0,4.539-3.37,124.807,124.807,0,0,0,4.682-34C640,277.3,583.524,221.1,513.856,221.1Z"]
 };
 var faCloudscale = {
   prefix: 'fab',
@@ -3493,7 +3685,7 @@ var faDAndDBeyond = {
 var faDailymotion = {
   prefix: 'fab',
   iconName: 'dailymotion',
-  icon: [448, 512, [], "f952", "M298.93,267a48.4,48.4,0,0,0-24.36-6.21q-19.83,0-33.44,13.27t-13.61,33.42q0,21.16,13.28,34.6t33.43,13.44q20.5,0,34.11-13.78T322,307.47A47.13,47.13,0,0,0,315.9,284,44.13,44.13,0,0,0,298.93,267ZM0,32V480H448V32ZM374.71,405.26h-53.1V381.37h-.67q-15.79,26.2-55.78,26.2-27.56,0-48.89-13.1a88.29,88.29,0,0,1-32.94-35.77q-11.6-22.68-11.59-50.89,0-27.56,11.76-50.22a89.9,89.9,0,0,1,32.93-35.78q21.18-13.09,47.72-13.1a80.87,80.87,0,0,1,29.74,5.21q13.28,5.21,25,17V153l55.79-12.09Z"]
+  icon: [448, 512, [], "e052", "M298.93,267a48.4,48.4,0,0,0-24.36-6.21q-19.83,0-33.44,13.27t-13.61,33.42q0,21.16,13.28,34.6t33.43,13.44q20.5,0,34.11-13.78T322,307.47A47.13,47.13,0,0,0,315.9,284,44.13,44.13,0,0,0,298.93,267ZM0,32V480H448V32ZM374.71,405.26h-53.1V381.37h-.67q-15.79,26.2-55.78,26.2-27.56,0-48.89-13.1a88.29,88.29,0,0,1-32.94-35.77q-11.6-22.68-11.59-50.89,0-27.56,11.76-50.22a89.9,89.9,0,0,1,32.93-35.78q21.18-13.09,47.72-13.1a80.87,80.87,0,0,1,29.74,5.21q13.28,5.21,25,17V153l55.79-12.09Z"]
 };
 var faDashcube = {
   prefix: 'fab',
@@ -3503,7 +3695,7 @@ var faDashcube = {
 var faDeezer = {
   prefix: 'fab',
   iconName: 'deezer',
-  icon: [576, 512, [], "f977", "M451.46,244.71H576V172H451.46Zm0-173.89v72.67H576V70.82Zm0,275.06H576V273.2H451.46ZM0,447.09H124.54V374.42H0Zm150.47,0H275V374.42H150.47Zm150.52,0H425.53V374.42H301Zm150.47,0H576V374.42H451.46ZM301,345.88H425.53V273.2H301Zm-150.52,0H275V273.2H150.47Zm0-101.17H275V172H150.47Z"]
+  icon: [576, 512, [], "e077", "M451.46,244.71H576V172H451.46Zm0-173.89v72.67H576V70.82Zm0,275.06H576V273.2H451.46ZM0,447.09H124.54V374.42H0Zm150.47,0H275V374.42H150.47Zm150.52,0H425.53V374.42H301Zm150.47,0H576V374.42H451.46ZM301,345.88H425.53V273.2H301Zm-150.52,0H275V273.2H150.47Zm0-101.17H275V172H150.47Z"]
 };
 var faDelicious = {
   prefix: 'fab',
@@ -3618,7 +3810,7 @@ var faEdge = {
 var faEdgeLegacy = {
   prefix: 'fab',
   iconName: 'edge-legacy',
-  icon: [512, 512, [], "f978", "M25.71,228.16l.35-.48c0,.16,0,.32-.07.48Zm460.58,15.51c0-44-7.76-84.46-28.81-122.4C416.5,47.88,343.91,8,258.89,8,119,7.72,40.62,113.21,26.06,227.68c42.42-61.31,117.07-121.38,220.37-125,0,0,109.67,0,99.42,105H170c6.37-37.39,18.55-59,34.34-78.93-75.05,34.9-121.85,96.1-120.75,188.32.83,71.45,50.13,144.84,120.75,172,83.35,31.84,192.77,7.2,240.13-21.33V363.31C363.6,419.8,173.6,424.23,172.21,295.74H486.29V243.67Z"]
+  icon: [512, 512, [], "e078", "M25.71,228.16l.35-.48c0,.16,0,.32-.07.48Zm460.58,15.51c0-44-7.76-84.46-28.81-122.4C416.5,47.88,343.91,8,258.89,8,119,7.72,40.62,113.21,26.06,227.68c42.42-61.31,117.07-121.38,220.37-125,0,0,109.67,0,99.42,105H170c6.37-37.39,18.55-59,34.34-78.93-75.05,34.9-121.85,96.1-120.75,188.32.83,71.45,50.13,144.84,120.75,172,83.35,31.84,192.77,7.2,240.13-21.33V363.31C363.6,419.8,173.6,424.23,172.21,295.74H486.29V243.67Z"]
 };
 var faElementor = {
   prefix: 'fab',
@@ -3718,7 +3910,7 @@ var faFirefox = {
 var faFirefoxBrowser = {
   prefix: 'fab',
   iconName: 'firefox-browser',
-  icon: [512, 512, [], "f907", "M189.37,152.86Zm-58.74-29.37C130.79,123.5,130.71,123.5,130.63,123.49Zm351.42,45.35c-10.61-25.5-32.08-53-48.94-61.73,13.72,26.89,21.67,53.88,24.7,74,0,0,0,.14.05.41-27.58-68.75-74.35-96.47-112.55-156.83-1.93-3.05-3.86-6.11-5.74-9.33-1-1.65-1.86-3.34-2.69-5.05A44.88,44.88,0,0,1,333.24.69a.63.63,0,0,0-.55-.66.9.9,0,0,0-.46,0l-.12.07-.18.1.1-.14c-54.23,31.77-76.72,87.38-82.5,122.78a130,130,0,0,0-48.33,12.33,6.25,6.25,0,0,0-3.09,7.75,6.13,6.13,0,0,0,7.79,3.79l.52-.21a117.84,117.84,0,0,1,42.11-11l1.42-.1c2-.12,4-.2,6-.22A122.61,122.61,0,0,1,291,140c.67.2,1.32.42,2,.63,1.89.57,3.76,1.2,5.62,1.87,1.36.5,2.71,1,4.05,1.58,1.09.44,2.18.88,3.25,1.35q2.52,1.13,5,2.35c.75.37,1.5.74,2.25,1.13q2.4,1.26,4.74,2.63,1.51.87,3,1.8a124.89,124.89,0,0,1,42.66,44.13c-13-9.15-36.35-18.19-58.82-14.28,87.74,43.86,64.18,194.9-57.39,189.2a108.43,108.43,0,0,1-31.74-6.12c-2.42-.91-4.8-1.89-7.16-2.93-1.38-.63-2.76-1.27-4.12-2C174.5,346,149.9,316.92,146.83,281.59c0,0,11.25-41.95,80.62-41.95,7.5,0,28.93-20.92,29.33-27-.09-2-42.54-18.87-59.09-35.18-8.85-8.71-13.05-12.91-16.77-16.06a69.58,69.58,0,0,0-6.31-4.77A113.05,113.05,0,0,1,173.92,97c-25.06,11.41-44.55,29.45-58.71,45.37h-.12c-9.67-12.25-9-52.65-8.43-61.08-.12-.53-7.22,3.68-8.15,4.31a178.54,178.54,0,0,0-23.84,20.43A214,214,0,0,0,51.9,133.36l0,0a.08.08,0,0,1,0,0,205.84,205.84,0,0,0-32.73,73.9c-.06.27-2.33,10.21-4,22.48q-.42,2.87-.78,5.74c-.57,3.69-1,7.71-1.44,14,0,.24,0,.48-.05.72-.18,2.71-.34,5.41-.49,8.12,0,.41,0,.82,0,1.24,0,134.7,109.21,243.89,243.92,243.89,120.64,0,220.82-87.58,240.43-202.62.41-3.12.74-6.26,1.11-9.41,4.85-41.83-.54-85.79-15.82-122.55Z"]
+  icon: [512, 512, [], "e007", "M189.37,152.86Zm-58.74-29.37C130.79,123.5,130.71,123.5,130.63,123.49Zm351.42,45.35c-10.61-25.5-32.08-53-48.94-61.73,13.72,26.89,21.67,53.88,24.7,74,0,0,0,.14.05.41-27.58-68.75-74.35-96.47-112.55-156.83-1.93-3.05-3.86-6.11-5.74-9.33-1-1.65-1.86-3.34-2.69-5.05A44.88,44.88,0,0,1,333.24.69a.63.63,0,0,0-.55-.66.9.9,0,0,0-.46,0l-.12.07-.18.1.1-.14c-54.23,31.77-76.72,87.38-82.5,122.78a130,130,0,0,0-48.33,12.33,6.25,6.25,0,0,0-3.09,7.75,6.13,6.13,0,0,0,7.79,3.79l.52-.21a117.84,117.84,0,0,1,42.11-11l1.42-.1c2-.12,4-.2,6-.22A122.61,122.61,0,0,1,291,140c.67.2,1.32.42,2,.63,1.89.57,3.76,1.2,5.62,1.87,1.36.5,2.71,1,4.05,1.58,1.09.44,2.18.88,3.25,1.35q2.52,1.13,5,2.35c.75.37,1.5.74,2.25,1.13q2.4,1.26,4.74,2.63,1.51.87,3,1.8a124.89,124.89,0,0,1,42.66,44.13c-13-9.15-36.35-18.19-58.82-14.28,87.74,43.86,64.18,194.9-57.39,189.2a108.43,108.43,0,0,1-31.74-6.12c-2.42-.91-4.8-1.89-7.16-2.93-1.38-.63-2.76-1.27-4.12-2C174.5,346,149.9,316.92,146.83,281.59c0,0,11.25-41.95,80.62-41.95,7.5,0,28.93-20.92,29.33-27-.09-2-42.54-18.87-59.09-35.18-8.85-8.71-13.05-12.91-16.77-16.06a69.58,69.58,0,0,0-6.31-4.77A113.05,113.05,0,0,1,173.92,97c-25.06,11.41-44.55,29.45-58.71,45.37h-.12c-9.67-12.25-9-52.65-8.43-61.08-.12-.53-7.22,3.68-8.15,4.31a178.54,178.54,0,0,0-23.84,20.43A214,214,0,0,0,51.9,133.36l0,0a.08.08,0,0,1,0,0,205.84,205.84,0,0,0-32.73,73.9c-.06.27-2.33,10.21-4,22.48q-.42,2.87-.78,5.74c-.57,3.69-1,7.71-1.44,14,0,.24,0,.48-.05.72-.18,2.71-.34,5.41-.49,8.12,0,.41,0,.82,0,1.24,0,134.7,109.21,243.89,243.92,243.89,120.64,0,220.82-87.58,240.43-202.62.41-3.12.74-6.26,1.11-9.41,4.85-41.83-.54-85.79-15.82-122.55Z"]
 };
 var faFirstOrder = {
   prefix: 'fab',
@@ -3923,7 +4115,7 @@ var faGoogleDrive = {
 var faGooglePay = {
   prefix: 'fab',
   iconName: 'google-pay',
-  icon: [640, 512, [], "f979", "M105.72,215v41.25h57.1a49.66,49.66,0,0,1-21.14,32.6c-9.54,6.55-21.72,10.28-36,10.28-27.6,0-50.93-18.91-59.3-44.22a65.61,65.61,0,0,1,0-41l0,0c8.37-25.46,31.7-44.37,59.3-44.37a56.43,56.43,0,0,1,40.51,16.08L176.47,155a101.24,101.24,0,0,0-70.75-27.84,105.55,105.55,0,0,0-94.38,59.11,107.64,107.64,0,0,0,0,96.18v.15a105.41,105.41,0,0,0,94.38,59c28.47,0,52.55-9.53,70-25.91,20-18.61,31.41-46.15,31.41-78.91A133.76,133.76,0,0,0,205.38,215Zm389.41-4c-10.13-9.38-23.93-14.14-41.39-14.14-22.46,0-39.34,8.34-50.5,24.86l20.85,13.26q11.45-17,31.26-17a34.05,34.05,0,0,1,22.75,8.79A28.14,28.14,0,0,1,487.79,248v5.51c-9.1-5.07-20.55-7.75-34.64-7.75-16.44,0-29.65,3.88-39.49,11.77s-14.82,18.31-14.82,31.56a39.74,39.74,0,0,0,13.94,31.27c9.25,8.34,21,12.51,34.79,12.51,16.29,0,29.21-7.3,39-21.89h1v17.72h22.61V250C510.25,233.45,505.26,220.34,495.13,211ZM475.9,300.3a37.32,37.32,0,0,1-26.57,11.16A28.61,28.61,0,0,1,431,305.21a19.41,19.41,0,0,1-7.77-15.63c0-7,3.22-12.81,9.54-17.42s14.53-7,24.07-7C470,265,480.3,268,487.64,273.94,487.64,284.07,483.68,292.85,475.9,300.3Zm-93.65-142A55.71,55.71,0,0,0,341.74,142H279.07V328.74H302.7V253.1h39c16,0,29.5-5.36,40.51-15.93.88-.89,1.76-1.79,2.65-2.68A54.45,54.45,0,0,0,382.25,158.26Zm-16.58,62.23a30.65,30.65,0,0,1-23.34,9.68H302.7V165h39.63a32,32,0,0,1,22.6,9.23A33.18,33.18,0,0,1,365.67,220.49ZM614.31,201,577.77,292.7h-.45L539.9,201H514.21L566,320.55l-29.35,64.32H561L640,201Z"]
+  icon: [640, 512, [], "e079", "M105.72,215v41.25h57.1a49.66,49.66,0,0,1-21.14,32.6c-9.54,6.55-21.72,10.28-36,10.28-27.6,0-50.93-18.91-59.3-44.22a65.61,65.61,0,0,1,0-41l0,0c8.37-25.46,31.7-44.37,59.3-44.37a56.43,56.43,0,0,1,40.51,16.08L176.47,155a101.24,101.24,0,0,0-70.75-27.84,105.55,105.55,0,0,0-94.38,59.11,107.64,107.64,0,0,0,0,96.18v.15a105.41,105.41,0,0,0,94.38,59c28.47,0,52.55-9.53,70-25.91,20-18.61,31.41-46.15,31.41-78.91A133.76,133.76,0,0,0,205.38,215Zm389.41-4c-10.13-9.38-23.93-14.14-41.39-14.14-22.46,0-39.34,8.34-50.5,24.86l20.85,13.26q11.45-17,31.26-17a34.05,34.05,0,0,1,22.75,8.79A28.14,28.14,0,0,1,487.79,248v5.51c-9.1-5.07-20.55-7.75-34.64-7.75-16.44,0-29.65,3.88-39.49,11.77s-14.82,18.31-14.82,31.56a39.74,39.74,0,0,0,13.94,31.27c9.25,8.34,21,12.51,34.79,12.51,16.29,0,29.21-7.3,39-21.89h1v17.72h22.61V250C510.25,233.45,505.26,220.34,495.13,211ZM475.9,300.3a37.32,37.32,0,0,1-26.57,11.16A28.61,28.61,0,0,1,431,305.21a19.41,19.41,0,0,1-7.77-15.63c0-7,3.22-12.81,9.54-17.42s14.53-7,24.07-7C470,265,480.3,268,487.64,273.94,487.64,284.07,483.68,292.85,475.9,300.3Zm-93.65-142A55.71,55.71,0,0,0,341.74,142H279.07V328.74H302.7V253.1h39c16,0,29.5-5.36,40.51-15.93.88-.89,1.76-1.79,2.65-2.68A54.45,54.45,0,0,0,382.25,158.26Zm-16.58,62.23a30.65,30.65,0,0,1-23.34,9.68H302.7V165h39.63a32,32,0,0,1,22.6,9.23A33.18,33.18,0,0,1,365.67,220.49ZM614.31,201,577.77,292.7h-.45L539.9,201H514.21L566,320.55l-29.35,64.32H561L640,201Z"]
 };
 var faGooglePlay = {
   prefix: 'fab',
@@ -3970,6 +4162,11 @@ var faGrunt = {
   iconName: 'grunt',
   icon: [384, 512, [], "f3ad", "M61.3 189.3c-1.1 10 5.2 19.1 5.2 19.1.7-7.5 2.2-12.8 4-16.6.4 10.3 3.2 23.5 12.8 34.1 6.9 7.6 35.6 23.3 54.9 6.1 1 2.4 2.1 5.3 3 8.5 2.9 10.3-2.7 25.3-2.7 25.3s15.1-17.1 13.9-32.5c10.8-.5 21.4-8.4 21.1-19.5 0 0-18.9 10.4-35.5-8.8-9.7-11.2-40.9-42-83.1-31.8 4.3 1 8.9 2.4 13.5 4.1h-.1c-4.2 2-6.5 7.1-7 12zm28.3-1.8c19.5 11 37.4 25.7 44.9 37-5.7 3.3-21.7 10.4-38-1.7-10.3-7.6-9.8-26.2-6.9-35.3zm142.1 45.8c-1.2 15.5 13.9 32.5 13.9 32.5s-5.6-15-2.7-25.3c.9-3.2 2-6 3-8.5 19.3 17.3 48 1.5 54.8-6.1 9.6-10.6 12.3-23.8 12.8-34.1 1.8 3.8 3.4 9.1 4 16.6 0 0 6.4-9.1 5.2-19.1-.6-5-2.9-10-7-11.8h-.1c4.6-1.8 9.2-3.2 13.5-4.1-42.3-10.2-73.4 20.6-83.1 31.8-16.7 19.2-35.5 8.8-35.5 8.8-.2 10.9 10.4 18.9 21.2 19.3zm62.7-45.8c3 9.1 3.4 27.7-7 35.4-16.3 12.1-32.2 5-37.9 1.6 7.5-11.4 25.4-26 44.9-37zM160 418.5h-29.4c-5.5 0-8.2 1.6-9.5 2.9-1.9 2-2.2 4.7-.9 8.1 3.5 9.1 11.4 16.5 13.7 18.6 3.1 2.7 7.5 4.3 11.8 4.3 4.4 0 8.3-1.7 11-4.6 7.5-8.2 11.9-17.1 13-19.8.6-1.5 1.3-4.5-.9-6.8-1.8-1.8-4.7-2.7-8.8-2.7zm189.2-101.2c-2.4 17.9-13 33.8-24.6 43.7-3.1-22.7-3.7-55.5-3.7-62.4 0-14.7 9.5-24.5 12.2-26.1 2.5-1.5 5.4-3 8.3-4.6 18-9.6 40.4-21.6 40.4-43.7 0-16.2-9.3-23.2-15.4-27.8-.8-.6-1.5-1.1-2.2-1.7-2.1-1.7-3.7-3-4.3-4.4-4.4-9.8-3.6-34.2-1.7-37.6.6-.6 16.7-20.9 11.8-39.2-2-7.4-6.9-13.3-14.1-17-5.3-2.7-11.9-4.2-19.5-4.5-.1-2-.5-3.9-.9-5.9-.6-2.6-1.1-5.3-.9-8.1.4-4.7.8-9 2.2-11.3 8.4-13.3 28.8-17.6 29-17.6l12.3-2.4-8.1-9.5c-.1-.2-17.3-17.5-46.3-17.5-7.9 0-16 1.3-24.1 3.9-24.2 7.8-42.9 30.5-49.4 39.3-3.1-1-6.3-1.9-9.6-2.7-4.2-15.8 9-38.5 9-38.5s-13.6-3-33.7 15.2c-2.6-6.5-8.1-20.5-1.8-37.2C184.6 10.1 177.2 26 175 40.4c-7.6-5.4-6.7-23.1-7.2-27.6-7.5.9-29.2 21.9-28.2 48.3-2 .5-3.9 1.1-5.9 1.7-6.5-8.8-25.1-31.5-49.4-39.3-7.9-2.2-16-3.5-23.9-3.5-29 0-46.1 17.3-46.3 17.5L6 46.9l12.3 2.4c.2 0 20.6 4.3 29 17.6 1.4 2.2 1.8 6.6 2.2 11.3.2 2.8-.4 5.5-.9 8.1-.4 1.9-.8 3.9-.9 5.9-7.7.3-14.2 1.8-19.5 4.5-7.2 3.7-12.1 9.6-14.1 17-5 18.2 11.2 38.5 11.8 39.2 1.9 3.4 2.7 27.8-1.7 37.6-.6 1.4-2.2 2.7-4.3 4.4-.7.5-1.4 1.1-2.2 1.7-6.1 4.6-15.4 11.7-15.4 27.8 0 22.1 22.4 34.1 40.4 43.7 3 1.6 5.8 3.1 8.3 4.6 2.7 1.6 12.2 11.4 12.2 26.1 0 6.9-.6 39.7-3.7 62.4-11.6-9.9-22.2-25.9-24.6-43.8 0 0-29.2 22.6-20.6 70.8 5.2 29.5 23.2 46.1 47 54.7 8.8 19.1 29.4 45.7 67.3 49.6C143 504.3 163 512 192.2 512h.2c29.1 0 49.1-7.7 63.6-19.5 37.9-3.9 58.5-30.5 67.3-49.6 23.8-8.7 41.7-25.2 47-54.7 8.2-48.4-21.1-70.9-21.1-70.9zM305.7 37.7c5.6-1.8 11.6-2.7 17.7-2.7 11 0 19.9 3 24.7 5-3.1 1.4-6.4 3.2-9.7 5.3-2.4-.4-5.6-.8-9.2-.8-10.5 0-20.5 3.1-28.7 8.9-12.3 8.7-18 16.9-20.7 22.4-2.2-1.3-4.5-2.5-7.1-3.7-1.6-.8-3.1-1.5-4.7-2.2 6.1-9.1 19.9-26.5 37.7-32.2zm21 18.2c-.8 1-1.6 2.1-2.3 3.2-3.3 5.2-3.9 11.6-4.4 17.8-.5 6.4-1.1 12.5-4.4 17-4.2.8-8.1 1.7-11.5 2.7-2.3-3.1-5.6-7-10.5-11.2 1.4-4.8 5.5-16.1 13.5-22.5 5.6-4.3 12.2-6.7 19.6-7zM45.6 45.3c-3.3-2.2-6.6-4-9.7-5.3 4.8-2 13.7-5 24.7-5 6.1 0 12 .9 17.7 2.7 17.8 5.8 31.6 23.2 37.7 32.1-1.6.7-3.2 1.4-4.8 2.2-2.5 1.2-4.9 2.5-7.1 3.7-2.6-5.4-8.3-13.7-20.7-22.4-8.3-5.8-18.2-8.9-28.8-8.9-3.4.1-6.6.5-9 .9zm44.7 40.1c-4.9 4.2-8.3 8-10.5 11.2-3.4-.9-7.3-1.9-11.5-2.7C65 89.5 64.5 83.4 64 77c-.5-6.2-1.1-12.6-4.4-17.8-.7-1.1-1.5-2.2-2.3-3.2 7.4.3 14 2.6 19.5 7 8 6.3 12.1 17.6 13.5 22.4zM58.1 259.9c-2.7-1.6-5.6-3.1-8.4-4.6-14.9-8-30.2-16.3-30.2-30.5 0-11.1 4.3-14.6 8.9-18.2l.5-.4c.7-.6 1.4-1.2 2.2-1.8-.9 7.2-1.9 13.3-2.7 14.9 0 0 12.1-15 15.7-44.3 1.4-11.5-1.1-34.3-5.1-43 .2 4.9 0 9.8-.3 14.4-.4-.8-.8-1.6-1.3-2.2-3.2-4-11.8-17.5-9.4-26.6.9-3.5 3.1-6 6.7-7.8 3.8-1.9 8.8-2.9 15.1-2.9 12.3 0 25.9 3.7 32.9 6 25.1 8 55.4 30.9 64.1 37.7.2.2.4.3.4.3l5.6 3.9-3.5-5.8c-.2-.3-19.1-31.4-53.2-46.5 2-2.9 7.4-8.1 21.6-15.1 21.4-10.5 46.5-15.8 74.3-15.8 27.9 0 52.9 5.3 74.3 15.8 14.2 6.9 19.6 12.2 21.6 15.1-34 15.1-52.9 46.2-53.1 46.5l-3.5 5.8 5.6-3.9s.2-.1.4-.3c8.7-6.8 39-29.8 64.1-37.7 7-2.2 20.6-6 32.9-6 6.3 0 11.3 1 15.1 2.9 3.5 1.8 5.7 4.4 6.7 7.8 2.5 9.1-6.1 22.6-9.4 26.6-.5.6-.9 1.3-1.3 2.2-.3-4.6-.5-9.5-.3-14.4-4 8.8-6.5 31.5-5.1 43 3.6 29.3 15.7 44.3 15.7 44.3-.8-1.6-1.8-7.7-2.7-14.9.7.6 1.5 1.2 2.2 1.8l.5.4c4.6 3.7 8.9 7.1 8.9 18.2 0 14.2-15.4 22.5-30.2 30.5-2.9 1.5-5.7 3.1-8.4 4.6-8.7 5-18 16.7-19.1 34.2-.9 14.6.9 49.9 3.4 75.9-12.4 4.8-26.7 6.4-39.7 6.8-2-4.1-3.9-8.5-5.5-13.1-.7-2-19.6-51.1-26.4-62.2 5.5 39 17.5 73.7 23.5 89.6-3.5-.5-7.3-.7-11.7-.7h-117c-4.4 0-8.3.3-11.7.7 6-15.9 18.1-50.6 23.5-89.6-6.8 11.2-25.7 60.3-26.4 62.2-1.6 4.6-3.5 9-5.5 13.1-13-.4-27.2-2-39.7-6.8 2.5-26 4.3-61.2 3.4-75.9-.9-17.4-10.3-29.2-19-34.2zM34.8 404.6c-12.1-20-8.7-54.1-3.7-59.1 10.9 34.4 47.2 44.3 74.4 45.4-2.7 4.2-5.2 7.6-7 10l-1.4 1.4c-7.2 7.8-8.6 18.5-4.1 31.8-22.7-.1-46.3-9.8-58.2-29.5zm45.7 43.5c6 1.1 12.2 1.9 18.6 2.4 3.5 8 7.4 15.9 12.3 23.1-14.4-5.9-24.4-16-30.9-25.5zM192 498.2c-60.6-.1-78.3-45.8-84.9-64.7-3.7-10.5-3.4-18.2.9-23.1 2.9-3.3 9.5-7.2 24.6-7.2h118.8c15.1 0 21.8 3.9 24.6 7.2 4.2 4.8 4.5 12.6.9 23.1-6.6 18.8-24.3 64.6-84.9 64.7zm80.6-24.6c4.9-7.2 8.8-15.1 12.3-23.1 6.4-.5 12.6-1.3 18.6-2.4-6.5 9.5-16.5 19.6-30.9 25.5zm76.6-69c-12 19.7-35.6 29.3-58.1 29.7 4.5-13.3 3.1-24.1-4.1-31.8-.4-.5-.9-1-1.4-1.5-1.8-2.4-4.3-5.8-7-10 27.2-1.2 63.5-11 74.4-45.4 5 5 8.4 39.1-3.8 59zM191.9 187.7h.2c12.7-.1 27.2-17.8 27.2-17.8-9.9 6-18.8 8.1-27.3 8.3-8.5-.2-17.4-2.3-27.3-8.3 0 0 14.5 17.6 27.2 17.8zm61.7 230.7h-29.4c-4.2 0-7.2.9-8.9 2.7-2.2 2.3-1.5 5.2-.9 6.7 1 2.6 5.5 11.3 13 19.3 2.7 2.9 6.6 4.5 11 4.5s8.7-1.6 11.8-4.2c2.3-2 10.2-9.2 13.7-18.1 1.3-3.3 1-6-.9-7.9-1.3-1.3-4-2.9-9.4-3z"]
 };
+var faGuilded = {
+  prefix: 'fab',
+  iconName: 'guilded',
+  icon: [448, 512, [], "e07e", "M443.427,64H4.571c0,103.26,22.192,180.06,43.418,222.358C112.046,414.135,224,448,225.256,448a312.824,312.824,0,0,0,140.55-103.477c25.907-33.923,53.1-87.19,65.916-145.761H171.833c4.14,36.429,22.177,67.946,45.1,86.944h88.589c-17.012,28.213-48.186,54.4-80.456,69.482-31.232-13.259-69.09-46.544-96.548-98.362-26.726-53.833-27.092-105.883-27.092-105.883H437.573A625.91,625.91,0,0,0,443.427,64Z"]
+};
 var faGulp = {
   prefix: 'fab',
   iconName: 'gulp',
@@ -3999,6 +4196,11 @@ var faHireAHelper = {
   prefix: 'fab',
   iconName: 'hire-a-helper',
   icon: [512, 512, [], "f3b0", "M443.1 0H71.9C67.9 37.3 37.4 67.8 0 71.7v371.5c37.4 4.9 66 32.4 71.9 68.8h372.2c3-36.4 32.5-65.8 67.9-69.8V71.7c-36.4-5.9-65-35.3-68.9-71.7zm-37 404.9c-36.3 0-18.8-2-55.1-2-35.8 0-21 2-56.1 2-5.9 0-4.9-8.2 0-9.8 22.8-7.6 22.9-10.2 24.6-12.8 10.4-15.6 5.9-83 5.9-113 0-5.3-6.4-12.8-13.8-12.8H200.4c-7.4 0-13.8 7.5-13.8 12.8 0 30-4.5 97.4 5.9 113 1.7 2.5 1.8 5.2 24.6 12.8 4.9 1.6 6 9.8 0 9.8-35.1 0-20.3-2-56.1-2-36.3 0-18.8 2-55.1 2-7.9 0-5.8-10.8 0-10.8 10.2-3.4 13.5-3.5 21.7-13.8 7.7-12.9 7.9-44.4 7.9-127.8V151.3c0-22.2-12.2-28.3-28.6-32.4-8.8-2.2-4-11.8 1-11.8 36.5 0 20.6 2 57.1 2 32.7 0 16.5-2 49.2-2 3.3 0 8.5 8.3 1 10.8-4.9 1.6-27.6 3.7-27.6 39.3 0 45.6-.2 55.8 1 68.8 0 1.3 2.3 12.8 12.8 12.8h109.2c10.5 0 12.8-11.5 12.8-12.8 1.2-13 1-23.2 1-68.8 0-35.6-22.7-37.7-27.6-39.3-7.5-2.5-2.3-10.8 1-10.8 32.7 0 16.5 2 49.2 2 36.5 0 20.6-2 57.1-2 4.9 0 9.9 9.6 1 11.8-16.4 4.1-28.6 10.3-28.6 32.4v101.2c0 83.4.1 114.9 7.9 127.8 8.2 10.2 11.4 10.4 21.7 13.8 5.8 0 7.8 10.8 0 10.8z"]
+};
+var faHive = {
+  prefix: 'fab',
+  iconName: 'hive',
+  icon: [512, 512, [], "e07f", "M260.353,254.878,131.538,33.1a2.208,2.208,0,0,0-3.829.009L.3,254.887A2.234,2.234,0,0,0,.3,257.122L129.116,478.9a2.208,2.208,0,0,0,3.83-.009L260.358,257.113A2.239,2.239,0,0,0,260.353,254.878Zm39.078-25.713a2.19,2.19,0,0,0,1.9,1.111h66.509a2.226,2.226,0,0,0,1.9-3.341L259.115,33.111a2.187,2.187,0,0,0-1.9-1.111H190.707a2.226,2.226,0,0,0-1.9,3.341ZM511.7,254.886,384.9,33.112A2.2,2.2,0,0,0,382.99,32h-66.6a2.226,2.226,0,0,0-1.906,3.34L440.652,256,314.481,476.66a2.226,2.226,0,0,0,1.906,3.34h66.6a2.2,2.2,0,0,0,1.906-1.112L511.7,257.114A2.243,2.243,0,0,0,511.7,254.886ZM366.016,284.917H299.508a2.187,2.187,0,0,0-1.9,1.111l-108.8,190.631a2.226,2.226,0,0,0,1.9,3.341h66.509a2.187,2.187,0,0,0,1.9-1.111l108.8-190.631A2.226,2.226,0,0,0,366.016,284.917Z"]
 };
 var faHooli = {
   prefix: 'fab',
@@ -4033,12 +4235,17 @@ var faHubspot = {
 var faIdeal = {
   prefix: 'fab',
   iconName: 'ideal',
-  icon: [576, 512, [], "f913", "M125.61,165.48a49.07,49.07,0,1,0,49.06,49.06A49.08,49.08,0,0,0,125.61,165.48ZM86.15,425.84h78.94V285.32H86.15Zm151.46-211.6c0-20-10-22.53-18.74-22.53H204.82V237.5h14.05C228.62,237.5,237.61,234.69,237.61,214.24Zm201.69,46V168.93h22.75V237.5h33.69C486.5,113.08,388.61,86.19,299.67,86.19H204.84V169h14c25.6,0,41.5,17.35,41.5,45.26,0,28.81-15.52,46-41.5,46h-14V425.88h94.83c144.61,0,194.94-67.16,196.72-165.64Zm-109.75,0H273.3V169h54.43v22.73H296v10.58h30V225H296V237.5h33.51Zm74.66,0-5.16-17.67H369.31l-5.18,17.67H340.47L368,168.92h32.35l27.53,91.34ZM299.65,32H32V480H299.65c161.85,0,251-79.73,251-224.52C550.62,172,518,32,299.65,32Zm0,426.92H53.07V53.07H299.65c142.1,0,229.9,64.61,229.9,202.41C529.55,389.57,448.55,458.92,299.65,458.92Zm83.86-264.85L376,219.88H392.4l-7.52-25.81Z"]
+  icon: [576, 512, [], "e013", "M125.61,165.48a49.07,49.07,0,1,0,49.06,49.06A49.08,49.08,0,0,0,125.61,165.48ZM86.15,425.84h78.94V285.32H86.15Zm151.46-211.6c0-20-10-22.53-18.74-22.53H204.82V237.5h14.05C228.62,237.5,237.61,234.69,237.61,214.24Zm201.69,46V168.93h22.75V237.5h33.69C486.5,113.08,388.61,86.19,299.67,86.19H204.84V169h14c25.6,0,41.5,17.35,41.5,45.26,0,28.81-15.52,46-41.5,46h-14V425.88h94.83c144.61,0,194.94-67.16,196.72-165.64Zm-109.75,0H273.3V169h54.43v22.73H296v10.58h30V225H296V237.5h33.51Zm74.66,0-5.16-17.67H369.31l-5.18,17.67H340.47L368,168.92h32.35l27.53,91.34ZM299.65,32H32V480H299.65c161.85,0,251-79.73,251-224.52C550.62,172,518,32,299.65,32Zm0,426.92H53.07V53.07H299.65c142.1,0,229.9,64.61,229.9,202.41C529.55,389.57,448.55,458.92,299.65,458.92Zm83.86-264.85L376,219.88H392.4l-7.52-25.81Z"]
 };
 var faImdb = {
   prefix: 'fab',
   iconName: 'imdb',
   icon: [448, 512, [], "f2d8", "M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM21.3 229.2H21c.1-.1.2-.3.3-.4zM97 319.8H64V192h33zm113.2 0h-28.7v-86.4l-11.6 86.4h-20.6l-12.2-84.5v84.5h-29V192h42.8c3.3 19.8 6 39.9 8.7 59.9l7.6-59.9h43zm11.4 0V192h24.6c17.6 0 44.7-1.6 49 20.9 1.7 7.6 1.4 16.3 1.4 24.4 0 88.5 11.1 82.6-75 82.5zm160.9-29.2c0 15.7-2.4 30.9-22.2 30.9-9 0-15.2-3-20.9-9.8l-1.9 8.1h-29.8V192h31.7v41.7c6-6.5 12-9.2 20.9-9.2 21.4 0 22.2 12.8 22.2 30.1zM265 229.9c0-9.7 1.6-16-10.3-16v83.7c12.2.3 10.3-8.7 10.3-18.4zm85.5 26.1c0-5.4 1.1-12.7-6.2-12.7-6 0-4.9 8.9-4.9 12.7 0 .6-1.1 39.6 1.1 44.7.8 1.6 2.2 2.4 3.8 2.4 7.8 0 6.2-9 6.2-14.4z"]
+};
+var faInnosoft = {
+  prefix: 'fab',
+  iconName: 'innosoft',
+  icon: [448, 512, [], "e080", "M422.559,159.71a27.379,27.379,0,0,0-13.866-23.337,26.42,26.42,0,0,0-26.211.133L73.943,314.647V176.261a11.955,11.955,0,0,1,6.047-10.34L218.066,86.208a12.153,12.153,0,0,1,11.922.025l32.656,18.853L112.581,191.723v56L359.642,105.086,241.129,36.679c-10.992-6.129-22.3-6.255-33.8-.27l-164.6,95.026c-10.634,6.12-16.771,16.39-17.29,29.124l0,191.5c.17,10.135,5.08,18.672,13.474,23.428a27.037,27.037,0,0,0,26.736-.045L374.057,197.376V335.657a11.976,11.976,0,0,1-5.92,10.368L230.025,425.77a12.175,12.175,0,0,1-11.937.062l-32.723-18.9,150.051-86.627v-56L88.367,406.932l118.794,68.583a33.88,33.88,0,0,0,34.25-.327l164.527-94.995c10.746-6.631,16.649-17.118,16.624-29.528Z"]
 };
 var faInstagram = {
   prefix: 'fab',
@@ -4048,7 +4255,12 @@ var faInstagram = {
 var faInstagramSquare = {
   prefix: 'fab',
   iconName: 'instagram-square',
-  icon: [448, 512, [], "f955", "M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"]
+  icon: [448, 512, [], "e055", "M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"]
+};
+var faInstalod = {
+  prefix: 'fab',
+  iconName: 'instalod',
+  icon: [512, 512, [], "e081", "M153.384,480H387.113L502.554,275.765,204.229,333.211ZM504.726,240.078,387.113,32H155.669L360.23,267.9ZM124.386,48.809,7.274,256,123.236,461.154,225.627,165.561Z"]
 };
 var faIntercom = {
   prefix: 'fab',
@@ -4288,7 +4500,7 @@ var faMendeley = {
 var faMicroblog = {
   prefix: 'fab',
   iconName: 'microblog',
-  icon: [448, 512, [], "f91a", "M399.36,362.23c29.49-34.69,47.1-78.34,47.1-125.79C446.46,123.49,346.86,32,224,32S1.54,123.49,1.54,236.44,101.14,440.87,224,440.87a239.28,239.28,0,0,0,79.44-13.44,7.18,7.18,0,0,1,8.12,2.56c18.58,25.09,47.61,42.74,79.89,49.92a4.42,4.42,0,0,0,5.22-3.43,4.37,4.37,0,0,0-.85-3.62,87,87,0,0,1,3.69-110.69ZM329.52,212.4l-57.3,43.49L293,324.75a6.5,6.5,0,0,1-9.94,7.22L224,290.92,164.94,332a6.51,6.51,0,0,1-9.95-7.22l20.79-68.86-57.3-43.49a6.5,6.5,0,0,1,3.8-11.68l71.88-1.51,23.66-67.92a6.5,6.5,0,0,1,12.28,0l23.66,67.92,71.88,1.51a6.5,6.5,0,0,1,3.88,11.68Z"]
+  icon: [448, 512, [], "e01a", "M399.36,362.23c29.49-34.69,47.1-78.34,47.1-125.79C446.46,123.49,346.86,32,224,32S1.54,123.49,1.54,236.44,101.14,440.87,224,440.87a239.28,239.28,0,0,0,79.44-13.44,7.18,7.18,0,0,1,8.12,2.56c18.58,25.09,47.61,42.74,79.89,49.92a4.42,4.42,0,0,0,5.22-3.43,4.37,4.37,0,0,0-.85-3.62,87,87,0,0,1,3.69-110.69ZM329.52,212.4l-57.3,43.49L293,324.75a6.5,6.5,0,0,1-9.94,7.22L224,290.92,164.94,332a6.51,6.51,0,0,1-9.95-7.22l20.79-68.86-57.3-43.49a6.5,6.5,0,0,1,3.8-11.68l71.88-1.51,23.66-67.92a6.5,6.5,0,0,1,12.28,0l23.66,67.92,71.88,1.51a6.5,6.5,0,0,1,3.88,11.68Z"]
 };
 var faMicrosoft = {
   prefix: 'fab',
@@ -4308,7 +4520,7 @@ var faMixcloud = {
 var faMixer = {
   prefix: 'fab',
   iconName: 'mixer',
-  icon: [512, 512, [], "f956", "M114.57,76.07a45.71,45.71,0,0,0-67.51-6.41c-17.58,16.18-19,43.52-4.75,62.77l91.78,123L41.76,379.58c-14.23,19.25-13.11,46.59,4.74,62.77A45.71,45.71,0,0,0,114,435.94L242.89,262.7a12.14,12.14,0,0,0,0-14.23ZM470.24,379.58,377.91,255.45l91.78-123c14.22-19.25,12.83-46.59-4.75-62.77a45.71,45.71,0,0,0-67.51,6.41l-128,172.12a12.14,12.14,0,0,0,0,14.23L398,435.94a45.71,45.71,0,0,0,67.51,6.41C483.35,426.17,484.47,398.83,470.24,379.58Z"]
+  icon: [512, 512, [], "e056", "M114.57,76.07a45.71,45.71,0,0,0-67.51-6.41c-17.58,16.18-19,43.52-4.75,62.77l91.78,123L41.76,379.58c-14.23,19.25-13.11,46.59,4.74,62.77A45.71,45.71,0,0,0,114,435.94L242.89,262.7a12.14,12.14,0,0,0,0-14.23ZM470.24,379.58,377.91,255.45l91.78-123c14.22-19.25,12.83-46.59-4.75-62.77a45.71,45.71,0,0,0-67.51,6.41l-128,172.12a12.14,12.14,0,0,0,0,14.23L398,435.94a45.71,45.71,0,0,0,67.51,6.41C483.35,426.17,484.47,398.83,470.24,379.58Z"]
 };
 var faMizuni = {
   prefix: 'fab',
@@ -4358,12 +4570,17 @@ var faNpm = {
 var faNs8 = {
   prefix: 'fab',
   iconName: 'ns8',
-  icon: [640, 512, [], "f3d5", "M187.1 159.9l-34.2 113.7-54.5-113.7H49L0 320h44.9L76 213.5 126.6 320h56.9L232 159.9h-44.9zm452.5-.9c-2.9-18-23.9-28.1-42.1-31.3-44.6-7.8-101.9 16.3-88.5 58.8v.1c-43.8 8.7-74.3 26.8-94.2 48.2-3-9.8-13.6-16.6-34-16.6h-87.6c-9.3 0-12.9-2.3-11.5-7.4 1.6-5.5 1.9-6.8 3.7-12.2 2.1-6.4 7.8-7.1 13.3-7.1h133.5l9.7-31.5c-139.7 0-144.5-.5-160.1 1.2-12.3 1.3-23.5 4.8-30.6 15-6.8 9.9-14.4 35.6-17.6 47.1-5.4 19.4-.6 28.6 32.8 28.6h87.3c7.8 0 8.8 2.7 7.7 6.6-1.1 4.4-2.8 10-4.5 14.6-1.6 4.2-4.7 7.4-13.8 7.4H216.3L204.7 320c139.9 0 145.3-.6 160.9-2.3 6.6-.7 13-2.1 18.5-4.9.2 3.7.5 7.3 1.2 10.8 5.4 30.5 27.4 52.3 56.8 59.5 48.6 11.9 108.7-16.8 135.1-68 18.7-36.2 14.1-76.2-3.4-105.5h.1c29.6-5.9 70.3-22 65.7-50.6zM530.7 263.7c-5.9 29.5-36.6 47.8-61.6 43.9-30.9-4.8-38.5-39.5-14.1-64.8 16.2-16.8 45.2-24 68.5-26.9 6.7 14.1 10.3 32 7.2 47.8zm21.8-83.1c-4.2-6-9.8-18.5-2.5-26.3 6.7-7.2 20.9-10.1 31.8-7.7 15.3 3.4 19.7 15.9 4.9 24.4-10.7 6.1-23.6 8.1-34.2 9.6z"]
+  icon: [640, 512, [], "f3d5", "M104.324,269.172h26.067V242.994H104.324Zm52.466-26.178-.055-26.178v-.941a39.325,39.325,0,0,0-78.644.941v.166h26.4v-.166a12.98,12.98,0,0,1,25.956,0v26.178Zm52.356,25.846a91.1,91.1,0,0,1-91.1,91.1h-.609a91.1,91.1,0,0,1-91.1-91.1H0v.166A117.33,117.33,0,0,0,117.44,386.28h.775A117.331,117.331,0,0,0,235.49,268.84V242.828H209.146Zm-157.233,0a65.362,65.362,0,0,0,130.723,0H156.292a39.023,39.023,0,0,1-78.035,0V242.883H51.968v-26.62A65.42,65.42,0,0,1,182.8,217.48v25.293h26.344V217.48a91.761,91.761,0,0,0-183.522,0v25.4H51.913Zm418.4-71.173c13.67,0,24.573,6.642,30.052,18.264l.719,1.549,23.245-11.511-.609-1.439c-8.025-19.26-28.5-31.27-53.407-31.27-23.134,0-43.611,11.4-50.972,28.447-.123,26.876-.158,23.9,0,24.85,4.7,11.013,14.555,19.37,28.668,24.241a102.033,102.033,0,0,0,19.813,3.984c5.479.72,10.626,1.384,15.829,3.1,6.364,2.1,10.46,5.257,12.84,9.851v9.851c-3.708,7.527-13.781,12.342-25.791,12.342-14.334,0-25.956-6.918-31.933-19.039l-.72-1.494L415.026,280.9l.553,1.439c7.915,19.426,29.609,32.044,55.289,32.044,23.632,0,44.608-11.4,52.3-28.447l.166-25.9-.166-.664c-4.87-11.014-15.219-19.647-28.944-24.241-7.693-2.712-14.335-3.6-20.7-4.427a83.777,83.777,0,0,1-14.832-2.878c-6.31-1.937-10.4-5.092-12.619-9.63v-8.412C449.45,202.427,458.969,197.667,470.315,197.667ZM287.568,311.344h26.067v-68.4H287.568Zm352.266-53.3c-2.933-6.254-8.3-12.01-15.441-16.714A37.99,37.99,0,0,0,637.4,226l.166-25.347-.166-.664C630.038,184,610.667,173.26,589.25,173.26S548.461,184,541.1,199.992l-.166,25.347.166.664a39.643,39.643,0,0,0,13.006,15.331c-7.2,4.7-12.508,10.46-15.441,16.714l-.166,28.889.166.72c7.582,15.994,27.893,26.731,50.585,26.731s43.057-10.737,50.584-26.731l.166-28.89Zm-73.22-50.806c3.6-6.31,12.563-10.516,22.58-10.516s19.038,4.206,22.636,10.516v13.725c-3.542,6.2-12.563,10.349-22.636,10.349s-19.094-4.15-22.58-10.349Zm47.319,72.169c-3.764,6.641-13.338,10.9-24.683,10.9-11.125,0-20.976-4.372-24.684-10.9V263.25c3.708-6.309,13.5-10.515,24.684-10.515,11.345,0,20.919,4.15,24.683,10.515ZM376.4,265.962l-59.827-89.713h-29v40.623h26.51v.387l62.539,94.085H402.3V176.249H376.4Z"]
 };
 var faNutritionix = {
   prefix: 'fab',
   iconName: 'nutritionix',
   icon: [400, 512, [], "f3d6", "M88 8.1S221.4-.1 209 112.5c0 0 19.1-74.9 103-40.6 0 0-17.7 74-88 56 0 0 14.6-54.6 66.1-56.6 0 0-39.9-10.3-82.1 48.8 0 0-19.8-94.5-93.6-99.7 0 0 75.2 19.4 77.6 107.5 0 .1-106.4 7-104-119.8zm312 315.6c0 48.5-9.7 95.3-32 132.3-42.2 30.9-105 48-168 48-62.9 0-125.8-17.1-168-48C9.7 419 0 372.2 0 323.7 0 275.3 17.7 229 40 192c42.2-30.9 97.1-48.6 160-48.6 63 0 117.8 17.6 160 48.6 22.3 37 40 83.3 40 131.7zM120 428c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zM192 428c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zM264 428c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zM336 428c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm0-66.2c0-15.5-12.5-28-28-28s-28 12.5-28 28 12.5 28 28 28 28-12.5 28-28zm24-39.6c-4.8-22.3-7.4-36.9-16-56-38.8-19.9-90.5-32-144-32S94.8 180.1 56 200c-8.8 19.5-11.2 33.9-16 56 42.2-7.9 98.7-14.8 160-14.8s117.8 6.9 160 14.8z"]
+};
+var faOctopusDeploy = {
+  prefix: 'fab',
+  iconName: 'octopus-deploy',
+  icon: [512, 512, [], "e082", "M455.6,349.2c-45.891-39.09-36.67-77.877-16.095-128.11C475.16,134.04,415.967,34.14,329.93,8.3,237.04-19.6,134.252,24.341,99.677,117.147a180.862,180.862,0,0,0-10.988,73.544c1.733,29.543,14.717,52.97,24.09,80.3,17.2,50.161-28.1,92.743-66.662,117.582-46.806,30.2-36.319,39.857-8.428,41.858,23.378,1.68,44.478-4.548,65.265-15.045,9.2-4.647,40.687-18.931,45.13-28.588C135.9,413.388,111.122,459.5,126.621,488.9c19.1,36.229,67.112-31.77,76.709-45.812,8.591-12.572,42.963-81.279,63.627-46.926,18.865,31.361,8.6,76.391,35.738,104.622,32.854,34.2,51.155-18.312,51.412-44.221.163-16.411-6.1-95.852,29.9-59.944C405.428,418,436.912,467.8,472.568,463.642c38.736-4.516-22.123-67.967-28.262-78.695,5.393,4.279,53.665,34.128,53.818,9.52C498.234,375.678,468.039,359.8,455.6,349.2Z"]
 };
 var faOdnoklassniki = {
   prefix: 'fab',
@@ -4440,6 +4657,11 @@ var faPennyArcade = {
   iconName: 'penny-arcade',
   icon: [640, 512, [], "f704", "M421.91 164.27c-4.49 19.45-1.4 6.06-15.1 65.29l39.73-10.61c-22.34-49.61-17.29-38.41-24.63-54.68zm-206.09 51.11c-20.19 5.4-11.31 3.03-39.63 10.58l4.46 46.19c28.17-7.59 20.62-5.57 34.82-9.34 42.3-9.79 32.85-56.42.35-47.43zm326.16-26.19l-45.47-99.2c-5.69-12.37-19.46-18.84-32.62-15.33-70.27 18.75-38.72 10.32-135.59 36.23a27.618 27.618 0 0 0-18.89 17.41C144.26 113.27 0 153.75 0 226.67c0 33.5 30.67 67.11 80.9 95.37l1.74 17.88a27.891 27.891 0 0 0-17.77 28.67l4.3 44.48c1.39 14.31 13.43 25.21 27.8 25.2 5.18-.01-3.01 1.78 122.53-31.76 12.57-3.37 21.12-15.02 20.58-28.02 216.59 45.5 401.99-5.98 399.89-84.83.01-28.15-22.19-66.56-97.99-104.47zM255.14 298.3l-21.91 5.88-48.44 12.91 2.46 23.55 20.53-5.51 4.51 44.51-115.31 30.78-4.3-44.52 20.02-5.35-11.11-114.64-20.12 5.39-4.35-44.5c178.15-47.54 170.18-46.42 186.22-46.65 56.66-1.13 64.15 71.84 42.55 104.43a86.7 86.7 0 0 1-50.75 33.72zm199.18 16.62l-3.89-39.49 14.9-3.98-6.61-14.68-57.76 15.42-4.1 17.54 19.2-5.12 4.05 39.54-112.85 30.07-4.46-44.43 20.99-5.59 33.08-126.47-17.15 4.56-4.2-44.48c93.36-24.99 65.01-17.41 135.59-36.24l66.67 145.47 20.79-5.56 4.3 44.48-108.55 28.96z"]
 };
+var faPerbyte = {
+  prefix: 'fab',
+  iconName: 'perbyte',
+  icon: [448, 512, [], "e083", "M305.314,284.578H246.6V383.3h58.711q24.423,0,38.193-13.77t13.77-36.11q0-21.826-14.032-35.335T305.314,284.578ZM149.435,128.7H90.724v98.723h58.711q24.42,0,38.19-13.773t13.77-36.107q0-21.826-14.029-35.338T149.435,128.7ZM366.647,32H81.353A81.445,81.445,0,0,0,0,113.352V398.647A81.445,81.445,0,0,0,81.353,480H366.647A81.445,81.445,0,0,0,448,398.647V113.352A81.445,81.445,0,0,0,366.647,32Zm63.635,366.647a63.706,63.706,0,0,1-63.635,63.635H81.353a63.706,63.706,0,0,1-63.635-63.635V113.352A63.706,63.706,0,0,1,81.353,49.718H366.647a63.706,63.706,0,0,1,63.635,63.634ZM305.314,128.7H246.6v98.723h58.711q24.423,0,38.193-13.773t13.77-36.107q0-21.826-14.032-35.338T305.314,128.7Z"]
+};
 var faPeriscope = {
   prefix: 'fab',
   iconName: 'periscope',
@@ -4488,7 +4710,7 @@ var faPiedPiperPp = {
 var faPiedPiperSquare = {
   prefix: 'fab',
   iconName: 'pied-piper-square',
-  icon: [448, 512, [], "f91e", "M32 419L0 479.2l.8-328C.8 85.3 54 32 120 32h327.2c-93 28.9-189.9 94.2-253.9 168.6C122.7 282 82.6 338 32 419M448 32S305.2 98.8 261.6 199.1c-23.2 53.6-28.9 118.1-71 158.6-28.9 27.8-69.8 38.2-105.3 56.3-23.2 12-66.4 40.5-84.9 66h328.4c66 0 119.3-53.3 119.3-119.2-.1 0-.1-328.8-.1-328.8z"]
+  icon: [448, 512, [], "e01e", "M32 419L0 479.2l.8-328C.8 85.3 54 32 120 32h327.2c-93 28.9-189.9 94.2-253.9 168.6C122.7 282 82.6 338 32 419M448 32S305.2 98.8 261.6 199.1c-23.2 53.6-28.9 118.1-71 158.6-28.9 27.8-69.8 38.2-105.3 56.3-23.2 12-66.4 40.5-84.9 66h328.4c66 0 119.3-53.3 119.3-119.2-.1 0-.1-328.8-.1-328.8z"]
 };
 var faPinterest = {
   prefix: 'fab',
@@ -4553,7 +4775,7 @@ var faRaspberryPi = {
 var faRavelry = {
   prefix: 'fab',
   iconName: 'ravelry',
-  icon: [512, 512, [], "f2d9", "M407.4 61.5C331.6 22.1 257.8 31 182.9 66c-11.3 5.2-15.5 10.6-19.9 19-10.3 19.2-16.2 37.4-19.9 52.7-21.2 25.6-36.4 56.1-43.3 89.9-10.6 18-20.9 41.4-23.1 71.4 0 0-.7 7.6-.5 7.9-35.3-4.6-76.2-27-76.2-27 9.1 14.5 61.3 32.3 76.3 37.9 0 0 1.7 98 64.5 131.2-11.3-17.2-13.3-20.2-13.3-20.2S94.8 369 100.4 324.7c.7 0 1.5.2 2.2.2 23.9 87.4 103.2 151.4 196.9 151.4 6.2 0 12.1-.2 18-.7 14 1.5 27.6.5 40.1-3.9 6.9-2.2 13.8-6.4 20.2-10.8 70.2-39.1 100.9-82 123.1-147.7 5.4-16 8.1-35.5 9.8-52.2 8.7-82.3-30.6-161.6-103.3-199.5zM138.8 163.2s-1.2 12.3-.7 19.7c-3.4 2.5-10.1 8.1-18.2 16.7 5.2-12.8 11.3-25.1 18.9-36.4zm-31.2 121.9c4.4-17.2 13.3-39.1 29.8-55.1 0 0 1.7 48 15.8 90.1l-41.4-6.9c-2.2-9.2-3.5-18.5-4.2-28.1zm7.9 42.8c14.8 3.2 34 7.6 43.1 9.1 27.3 76.8 108.3 124.3 108.3 124.3 1 .5 1.7.7 2.7 1-73.1-11.6-132.7-64.7-154.1-134.4zM386 444.1c-14.5 4.7-36.2 8.4-64.7 3.7 0 0-91.1-23.1-127.5-107.8 38.2.7 52.4-.2 78-3.9 39.4-5.7 79-16.2 115-33 11.8-5.4 11.1-19.4 9.6-29.8-2-12.8-11.1-12.1-21.4-4.7 0 0-82 58.6-189.8 53.7-18.7-32-26.8-110.8-26.8-110.8 41.4-35.2 83.2-59.6 168.4-52.4.2-6.4 3-27.1-20.4-28.1 0 0-93.5-11.1-146 33.5 2.5-16.5 5.9-29.3 11.1-39.4 34.2-30.8 79-49.5 128.3-49.5 106.4 0 193 87.1 193 194.5-.2 76-43.8 142-106.8 174z"]
+  icon: [512, 512, [], "f2d9", "M498.252,234.223c-1.208-10.34-1.7-20.826-3.746-31a310.306,310.306,0,0,0-9.622-36.6,184.068,184.068,0,0,0-30.874-57.5,251.154,251.154,0,0,0-18.818-21.689,237.362,237.362,0,0,0-47.113-36.116A240.8,240.8,0,0,0,331.356,26.65c-11.018-3.1-22.272-5.431-33.515-7.615-6.78-1.314-13.749-1.667-20.627-2.482-.316-.036-.6-.358-.9-.553q-16.143.009-32.288.006c-2.41.389-4.808.925-7.236,1.15a179.331,179.331,0,0,0-34.256,7.1,221.5,221.5,0,0,0-39.768,16.355,281.385,281.385,0,0,0-38.08,24.158c-6.167,4.61-12.268,9.36-17.974,14.518C96.539,88.494,86.34,97.72,76.785,107.555a243.878,243.878,0,0,0-33.648,43.95,206.488,206.488,0,0,0-20.494,44.6,198.2,198.2,0,0,0-7.691,34.759A201.13,201.13,0,0,0,13.4,266.385a299.716,299.716,0,0,0,4.425,40.24,226.865,226.865,0,0,0,16.73,53.3,210.543,210.543,0,0,0,24,39.528,213.589,213.589,0,0,0,26.358,28.416A251.313,251.313,0,0,0,126.7,458.455a287.831,287.831,0,0,0,55.9,25.277,269.5,269.5,0,0,0,40.641,9.835c6.071,1.01,12.275,1.253,18.412,1.873a4.149,4.149,0,0,1,1.19.56h32.289c2.507-.389,5-.937,7.527-1.143,16.336-1.332,32.107-5.335,47.489-10.717A219.992,219.992,0,0,0,379.1,460.322c9.749-6.447,19.395-13.077,28.737-20.1,5.785-4.348,10.988-9.5,16.3-14.457,3.964-3.7,7.764-7.578,11.51-11.5a232.162,232.162,0,0,0,31.427-41.639c9.542-16.045,17.355-32.905,22.3-50.926,2.859-10.413,4.947-21.045,7.017-31.652,1.032-5.279,1.251-10.723,1.87-16.087.036-.317.358-.6.552-.9V236.005A9.757,9.757,0,0,1,498.252,234.223Zm-161.117-1.15s-16.572-2.98-28.47-2.98c-27.2,0-33.57,14.9-33.57,37.04V360.8H201.582V170.062H275.1v31.931c8.924-26.822,26.771-36.189,62.04-36.189Z"]
 };
 var faReact = {
   prefix: 'fab',
@@ -4628,7 +4850,7 @@ var faRev = {
 var faRocketchat = {
   prefix: 'fab',
   iconName: 'rocketchat',
-  icon: [576, 512, [], "f3e8", "M486.41 107.57c-76.93-50.83-179.18-62.4-264.12-47.07C127.26-31.16 20.77 11 0 23.12c0 0 73.08 62.1 61.21 116.49-86.52 88.2-45.39 186.4 0 232.77C73.08 426.77 0 488.87 0 488.87c20.57 12.16 126.77 54.19 222.29-37 84.75 15.23 187 3.76 264.12-47.16 119.26-76.14 119.65-220.61 0-297.15zM294.18 404.22a339.53 339.53 0 0 1-88.11-11.37l-19.77 19.09a179.74 179.74 0 0 1-36.59 27.39A143.14 143.14 0 0 1 98 454.06c1-1.78 1.88-3.56 2.77-5.24q29.67-55 16-98.69c-32.53-25.61-52-58.34-52-94.13 0-82 102.74-148.43 229.41-148.43S523.59 174 523.59 256 420.85 404.22 294.18 404.22zM184.12 291.3a34.32 34.32 0 0 1-34.8-33.72c-.7-45.39 67.83-46.38 68.52-1.09v.51a34 34 0 0 1-33.72 34.32zm73.77-33.72c-.79-45.39 67.74-46.48 68.53-1.19v.61c.39 45.08-67.74 45.57-68.53.58zm143.38 33.72a34.33 34.33 0 0 1-34.81-33.72c-.69-45.39 67.84-46.38 68.53-1.09v.51a33.89 33.89 0 0 1-33.72 34.32z"]
+  icon: [576, 512, [], "f3e8", "M284.046,224.8a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,284.046,224.8Zm-110.45,0a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,173.6,224.8Zm220.923,0a34.114,34.114,0,1,0,34.317,34.113A34.215,34.215,0,0,0,394.519,224.8Zm153.807-55.319c-15.535-24.172-37.31-45.57-64.681-63.618-52.886-34.817-122.374-54-195.666-54a405.975,405.975,0,0,0-72.032,6.357,238.524,238.524,0,0,0-49.51-36.588C99.684-11.7,40.859.711,11.135,11.421A14.291,14.291,0,0,0,5.58,34.782C26.542,56.458,61.222,99.3,52.7,138.252c-33.142,33.9-51.112,74.776-51.112,117.337,0,43.372,17.97,84.248,51.112,118.148,8.526,38.956-26.154,81.816-47.116,103.491a14.284,14.284,0,0,0,5.555,23.34c29.724,10.709,88.549,23.147,155.324-10.2a238.679,238.679,0,0,0,49.51-36.589A405.972,405.972,0,0,0,288,460.14c73.313,0,142.8-19.159,195.667-53.975,27.371-18.049,49.145-39.426,64.679-63.619,17.309-26.923,26.07-55.916,26.07-86.125C574.394,225.4,565.634,196.43,548.326,169.485ZM284.987,409.9a345.65,345.65,0,0,1-89.446-11.5l-20.129,19.393a184.366,184.366,0,0,1-37.138,27.585,145.767,145.767,0,0,1-52.522,14.87c.983-1.771,1.881-3.563,2.842-5.356q30.258-55.68,16.325-100.078c-32.992-25.962-52.778-59.2-52.778-95.4,0-83.1,104.254-150.469,232.846-150.469s232.867,67.373,232.867,150.469C517.854,342.525,413.6,409.9,284.987,409.9Z"]
 };
 var faRockrms = {
   prefix: 'fab',
@@ -4638,7 +4860,7 @@ var faRockrms = {
 var faRust = {
   prefix: 'fab',
   iconName: 'rust',
-  icon: [512, 512, [], "f97a", "M508.52,249.75,486.7,236.24c-.17-2-.34-3.93-.55-5.88l18.72-17.5a7.35,7.35,0,0,0-2.44-12.25l-24-9c-.54-1.88-1.08-3.78-1.67-5.64l15-20.83a7.35,7.35,0,0,0-4.79-11.54l-25.42-4.15c-.9-1.73-1.79-3.45-2.73-5.15l10.68-23.42a7.35,7.35,0,0,0-6.95-10.39l-25.82.91q-1.79-2.22-3.61-4.4L439,81.84A7.36,7.36,0,0,0,430.16,73L405,78.93q-2.17-1.83-4.4-3.61l.91-25.82a7.35,7.35,0,0,0-10.39-7L367.7,53.23c-1.7-.94-3.43-1.84-5.15-2.73L358.4,25.08a7.35,7.35,0,0,0-11.54-4.79L326,35.26c-1.86-.59-3.75-1.13-5.64-1.67l-9-24a7.35,7.35,0,0,0-12.25-2.44l-17.5,18.72c-1.95-.21-3.91-.38-5.88-.55L262.25,3.48a7.35,7.35,0,0,0-12.5,0L236.24,25.3c-2,.17-3.93.34-5.88.55L212.86,7.13a7.35,7.35,0,0,0-12.25,2.44l-9,24c-1.89.55-3.79,1.08-5.66,1.68l-20.82-15a7.35,7.35,0,0,0-11.54,4.79l-4.15,25.41c-1.73.9-3.45,1.79-5.16,2.73L120.88,42.55a7.35,7.35,0,0,0-10.39,7l.92,25.81c-1.49,1.19-3,2.39-4.42,3.61L81.84,73A7.36,7.36,0,0,0,73,81.84L78.93,107c-1.23,1.45-2.43,2.93-3.62,4.41l-25.81-.91a7.42,7.42,0,0,0-6.37,3.26,7.35,7.35,0,0,0-.57,7.13l10.66,23.41c-.94,1.7-1.83,3.43-2.73,5.16L25.08,153.6a7.35,7.35,0,0,0-4.79,11.54l15,20.82c-.59,1.87-1.13,3.77-1.68,5.66l-24,9a7.35,7.35,0,0,0-2.44,12.25l18.72,17.5c-.21,1.95-.38,3.91-.55,5.88L3.48,249.75a7.35,7.35,0,0,0,0,12.5L25.3,275.76c.17,2,.34,3.92.55,5.87L7.13,299.13a7.35,7.35,0,0,0,2.44,12.25l24,9c.55,1.89,1.08,3.78,1.68,5.65l-15,20.83a7.35,7.35,0,0,0,4.79,11.54l25.42,4.15c.9,1.72,1.79,3.45,2.73,5.14L42.56,391.12a7.35,7.35,0,0,0,.57,7.13,7.13,7.13,0,0,0,6.37,3.26l25.83-.91q1.77,2.22,3.6,4.4L73,430.16A7.36,7.36,0,0,0,81.84,439L107,433.07q2.18,1.83,4.41,3.61l-.92,25.82a7.35,7.35,0,0,0,10.39,6.95l23.43-10.68c1.69.94,3.42,1.83,5.14,2.73l4.15,25.42a7.34,7.34,0,0,0,11.54,4.78l20.83-15c1.86.6,3.76,1.13,5.65,1.68l9,24a7.36,7.36,0,0,0,12.25,2.44l17.5-18.72c1.95.21,3.92.38,5.88.55l13.51,21.82a7.35,7.35,0,0,0,12.5,0l13.51-21.82c2-.17,3.93-.34,5.88-.56l17.5,18.73a7.36,7.36,0,0,0,12.25-2.44l9-24c1.89-.55,3.78-1.08,5.65-1.68l20.82,15a7.34,7.34,0,0,0,11.54-4.78l4.15-25.42c1.72-.9,3.45-1.79,5.15-2.73l23.42,10.68a7.35,7.35,0,0,0,10.39-6.95l-.91-25.82q2.22-1.79,4.4-3.61L430.16,439a7.36,7.36,0,0,0,8.84-8.84L433.07,405q1.83-2.17,3.61-4.4l25.82.91a7.23,7.23,0,0,0,6.37-3.26,7.35,7.35,0,0,0,.58-7.13L458.77,367.7c.94-1.7,1.83-3.43,2.73-5.15l25.42-4.15a7.35,7.35,0,0,0,4.79-11.54l-15-20.83c.59-1.87,1.13-3.76,1.67-5.65l24-9a7.35,7.35,0,0,0,2.44-12.25l-18.72-17.5c.21-1.95.38-3.91.55-5.87l21.82-13.51a7.35,7.35,0,0,0,0-12.5Zm-151,129.08A13.91,13.91,0,0,0,341,389.51l-7.64,35.67A187.51,187.51,0,0,1,177,424.44l-7.64-35.66a13.87,13.87,0,0,0-16.46-10.68l-31.51,6.76a187.38,187.38,0,0,1-16.26-19.21H258.3c1.72,0,2.89-.29,2.89-1.91V309.55c0-1.57-1.17-1.91-2.89-1.91H213.47l.05-34.35H262c4.41,0,23.66,1.28,29.79,25.87,1.91,7.55,6.17,32.14,9.06,40,2.89,8.82,14.6,26.46,27.1,26.46H407a187.3,187.3,0,0,1-17.34,20.09Zm25.77,34.49A15.24,15.24,0,1,1,368,398.08h.44A15.23,15.23,0,0,1,383.24,413.32Zm-225.62-.68a15.24,15.24,0,1,1-15.25-15.25h.45A15.25,15.25,0,0,1,157.62,412.64ZM69.57,234.15l32.83-14.6a13.88,13.88,0,0,0,7.06-18.33L102.69,186h26.56V305.73H75.65A187.65,187.65,0,0,1,69.57,234.15ZM58.31,198.09a15.24,15.24,0,0,1,15.23-15.25H74a15.24,15.24,0,1,1-15.67,15.24Zm155.16,24.49.05-35.32h63.26c3.28,0,23.07,3.77,23.07,18.62,0,12.29-15.19,16.7-27.68,16.7ZM399,306.71c-9.8,1.13-20.63-4.12-22-10.09-5.78-32.49-15.39-39.4-30.57-51.4,18.86-11.95,38.46-29.64,38.46-53.26,0-25.52-17.49-41.59-29.4-49.48-16.76-11-35.28-13.23-40.27-13.23H116.32A187.49,187.49,0,0,1,221.21,70.06l23.47,24.6a13.82,13.82,0,0,0,19.6.44l26.26-25a187.51,187.51,0,0,1,128.37,91.43l-18,40.57A14,14,0,0,0,408,220.43l34.59,15.33a187.12,187.12,0,0,1,.4,32.54H423.71c-1.91,0-2.69,1.27-2.69,3.13v8.82C421,301,409.31,305.58,399,306.71ZM240,60.21A15.24,15.24,0,0,1,255.21,45h.45A15.24,15.24,0,1,1,240,60.21ZM436.84,214a15.24,15.24,0,1,1,0-30.48h.44a15.24,15.24,0,0,1-.44,30.48Z"]
+  icon: [512, 512, [], "e07a", "M508.52,249.75,486.7,236.24c-.17-2-.34-3.93-.55-5.88l18.72-17.5a7.35,7.35,0,0,0-2.44-12.25l-24-9c-.54-1.88-1.08-3.78-1.67-5.64l15-20.83a7.35,7.35,0,0,0-4.79-11.54l-25.42-4.15c-.9-1.73-1.79-3.45-2.73-5.15l10.68-23.42a7.35,7.35,0,0,0-6.95-10.39l-25.82.91q-1.79-2.22-3.61-4.4L439,81.84A7.36,7.36,0,0,0,430.16,73L405,78.93q-2.17-1.83-4.4-3.61l.91-25.82a7.35,7.35,0,0,0-10.39-7L367.7,53.23c-1.7-.94-3.43-1.84-5.15-2.73L358.4,25.08a7.35,7.35,0,0,0-11.54-4.79L326,35.26c-1.86-.59-3.75-1.13-5.64-1.67l-9-24a7.35,7.35,0,0,0-12.25-2.44l-17.5,18.72c-1.95-.21-3.91-.38-5.88-.55L262.25,3.48a7.35,7.35,0,0,0-12.5,0L236.24,25.3c-2,.17-3.93.34-5.88.55L212.86,7.13a7.35,7.35,0,0,0-12.25,2.44l-9,24c-1.89.55-3.79,1.08-5.66,1.68l-20.82-15a7.35,7.35,0,0,0-11.54,4.79l-4.15,25.41c-1.73.9-3.45,1.79-5.16,2.73L120.88,42.55a7.35,7.35,0,0,0-10.39,7l.92,25.81c-1.49,1.19-3,2.39-4.42,3.61L81.84,73A7.36,7.36,0,0,0,73,81.84L78.93,107c-1.23,1.45-2.43,2.93-3.62,4.41l-25.81-.91a7.42,7.42,0,0,0-6.37,3.26,7.35,7.35,0,0,0-.57,7.13l10.66,23.41c-.94,1.7-1.83,3.43-2.73,5.16L25.08,153.6a7.35,7.35,0,0,0-4.79,11.54l15,20.82c-.59,1.87-1.13,3.77-1.68,5.66l-24,9a7.35,7.35,0,0,0-2.44,12.25l18.72,17.5c-.21,1.95-.38,3.91-.55,5.88L3.48,249.75a7.35,7.35,0,0,0,0,12.5L25.3,275.76c.17,2,.34,3.92.55,5.87L7.13,299.13a7.35,7.35,0,0,0,2.44,12.25l24,9c.55,1.89,1.08,3.78,1.68,5.65l-15,20.83a7.35,7.35,0,0,0,4.79,11.54l25.42,4.15c.9,1.72,1.79,3.45,2.73,5.14L42.56,391.12a7.35,7.35,0,0,0,.57,7.13,7.13,7.13,0,0,0,6.37,3.26l25.83-.91q1.77,2.22,3.6,4.4L73,430.16A7.36,7.36,0,0,0,81.84,439L107,433.07q2.18,1.83,4.41,3.61l-.92,25.82a7.35,7.35,0,0,0,10.39,6.95l23.43-10.68c1.69.94,3.42,1.83,5.14,2.73l4.15,25.42a7.34,7.34,0,0,0,11.54,4.78l20.83-15c1.86.6,3.76,1.13,5.65,1.68l9,24a7.36,7.36,0,0,0,12.25,2.44l17.5-18.72c1.95.21,3.92.38,5.88.55l13.51,21.82a7.35,7.35,0,0,0,12.5,0l13.51-21.82c2-.17,3.93-.34,5.88-.56l17.5,18.73a7.36,7.36,0,0,0,12.25-2.44l9-24c1.89-.55,3.78-1.08,5.65-1.68l20.82,15a7.34,7.34,0,0,0,11.54-4.78l4.15-25.42c1.72-.9,3.45-1.79,5.15-2.73l23.42,10.68a7.35,7.35,0,0,0,10.39-6.95l-.91-25.82q2.22-1.79,4.4-3.61L430.16,439a7.36,7.36,0,0,0,8.84-8.84L433.07,405q1.83-2.17,3.61-4.4l25.82.91a7.23,7.23,0,0,0,6.37-3.26,7.35,7.35,0,0,0,.58-7.13L458.77,367.7c.94-1.7,1.83-3.43,2.73-5.15l25.42-4.15a7.35,7.35,0,0,0,4.79-11.54l-15-20.83c.59-1.87,1.13-3.76,1.67-5.65l24-9a7.35,7.35,0,0,0,2.44-12.25l-18.72-17.5c.21-1.95.38-3.91.55-5.87l21.82-13.51a7.35,7.35,0,0,0,0-12.5Zm-151,129.08A13.91,13.91,0,0,0,341,389.51l-7.64,35.67A187.51,187.51,0,0,1,177,424.44l-7.64-35.66a13.87,13.87,0,0,0-16.46-10.68l-31.51,6.76a187.38,187.38,0,0,1-16.26-19.21H258.3c1.72,0,2.89-.29,2.89-1.91V309.55c0-1.57-1.17-1.91-2.89-1.91H213.47l.05-34.35H262c4.41,0,23.66,1.28,29.79,25.87,1.91,7.55,6.17,32.14,9.06,40,2.89,8.82,14.6,26.46,27.1,26.46H407a187.3,187.3,0,0,1-17.34,20.09Zm25.77,34.49A15.24,15.24,0,1,1,368,398.08h.44A15.23,15.23,0,0,1,383.24,413.32Zm-225.62-.68a15.24,15.24,0,1,1-15.25-15.25h.45A15.25,15.25,0,0,1,157.62,412.64ZM69.57,234.15l32.83-14.6a13.88,13.88,0,0,0,7.06-18.33L102.69,186h26.56V305.73H75.65A187.65,187.65,0,0,1,69.57,234.15ZM58.31,198.09a15.24,15.24,0,0,1,15.23-15.25H74a15.24,15.24,0,1,1-15.67,15.24Zm155.16,24.49.05-35.32h63.26c3.28,0,23.07,3.77,23.07,18.62,0,12.29-15.19,16.7-27.68,16.7ZM399,306.71c-9.8,1.13-20.63-4.12-22-10.09-5.78-32.49-15.39-39.4-30.57-51.4,18.86-11.95,38.46-29.64,38.46-53.26,0-25.52-17.49-41.59-29.4-49.48-16.76-11-35.28-13.23-40.27-13.23H116.32A187.49,187.49,0,0,1,221.21,70.06l23.47,24.6a13.82,13.82,0,0,0,19.6.44l26.26-25a187.51,187.51,0,0,1,128.37,91.43l-18,40.57A14,14,0,0,0,408,220.43l34.59,15.33a187.12,187.12,0,0,1,.4,32.54H423.71c-1.91,0-2.69,1.27-2.69,3.13v8.82C421,301,409.31,305.58,399,306.71ZM240,60.21A15.24,15.24,0,0,1,255.21,45h.45A15.24,15.24,0,1,1,240,60.21ZM436.84,214a15.24,15.24,0,1,1,0-30.48h.44a15.24,15.24,0,0,1-.44,30.48Z"]
 };
 var faSafari = {
   prefix: 'fab',
@@ -4693,7 +4915,7 @@ var faShirtsinbulk = {
 var faShopify = {
   prefix: 'fab',
   iconName: 'shopify',
-  icon: [448, 512, [], "f957", "M388.32,104.1a4.66,4.66,0,0,0-4.4-4c-2,0-37.23-.8-37.23-.8s-21.61-20.82-29.62-28.83V503.2L442.76,472S388.72,106.5,388.32,104.1ZM288.65,70.47a116.67,116.67,0,0,0-7.21-17.61C271,32.85,255.42,22,237,22a15,15,0,0,0-4,.4c-.4-.8-1.2-1.2-1.6-2C223.4,11.63,213,7.63,200.58,8c-24,.8-48,18-67.25,48.83-13.61,21.62-24,48.84-26.82,70.06-27.62,8.4-46.83,14.41-47.23,14.81-14,4.4-14.41,4.8-16,18-1.2,10-38,291.82-38,291.82L307.86,504V65.67a41.66,41.66,0,0,0-4.4.4S297.86,67.67,288.65,70.47ZM233.41,87.69c-16,4.8-33.63,10.4-50.84,15.61,4.8-18.82,14.41-37.63,25.62-50,4.4-4.4,10.41-9.61,17.21-12.81C232.21,54.86,233.81,74.48,233.41,87.69ZM200.58,24.44A27.49,27.49,0,0,1,215,28c-6.4,3.2-12.81,8.41-18.81,14.41-15.21,16.42-26.82,42-31.62,66.45-14.42,4.41-28.83,8.81-42,12.81C131.33,83.28,163.75,25.24,200.58,24.44ZM154.15,244.61c1.6,25.61,69.25,31.22,73.25,91.66,2.8,47.64-25.22,80.06-65.65,82.47-48.83,3.2-75.65-25.62-75.65-25.62l10.4-44s26.82,20.42,48.44,18.82c14-.8,19.22-12.41,18.81-20.42-2-33.62-57.24-31.62-60.84-86.86-3.2-46.44,27.22-93.27,94.47-97.68,26-1.6,39.23,4.81,39.23,4.81L221.4,225.39s-17.21-8-37.63-6.4C154.15,221,153.75,239.8,154.15,244.61ZM249.42,82.88c0-12-1.6-29.22-7.21-43.63,18.42,3.6,27.22,24,31.23,36.43Q262.63,78.68,249.42,82.88Z"]
+  icon: [448, 512, [], "e057", "M388.32,104.1a4.66,4.66,0,0,0-4.4-4c-2,0-37.23-.8-37.23-.8s-21.61-20.82-29.62-28.83V503.2L442.76,472S388.72,106.5,388.32,104.1ZM288.65,70.47a116.67,116.67,0,0,0-7.21-17.61C271,32.85,255.42,22,237,22a15,15,0,0,0-4,.4c-.4-.8-1.2-1.2-1.6-2C223.4,11.63,213,7.63,200.58,8c-24,.8-48,18-67.25,48.83-13.61,21.62-24,48.84-26.82,70.06-27.62,8.4-46.83,14.41-47.23,14.81-14,4.4-14.41,4.8-16,18-1.2,10-38,291.82-38,291.82L307.86,504V65.67a41.66,41.66,0,0,0-4.4.4S297.86,67.67,288.65,70.47ZM233.41,87.69c-16,4.8-33.63,10.4-50.84,15.61,4.8-18.82,14.41-37.63,25.62-50,4.4-4.4,10.41-9.61,17.21-12.81C232.21,54.86,233.81,74.48,233.41,87.69ZM200.58,24.44A27.49,27.49,0,0,1,215,28c-6.4,3.2-12.81,8.41-18.81,14.41-15.21,16.42-26.82,42-31.62,66.45-14.42,4.41-28.83,8.81-42,12.81C131.33,83.28,163.75,25.24,200.58,24.44ZM154.15,244.61c1.6,25.61,69.25,31.22,73.25,91.66,2.8,47.64-25.22,80.06-65.65,82.47-48.83,3.2-75.65-25.62-75.65-25.62l10.4-44s26.82,20.42,48.44,18.82c14-.8,19.22-12.41,18.81-20.42-2-33.62-57.24-31.62-60.84-86.86-3.2-46.44,27.22-93.27,94.47-97.68,26-1.6,39.23,4.81,39.23,4.81L221.4,225.39s-17.21-8-37.63-6.4C154.15,221,153.75,239.8,154.15,244.61ZM249.42,82.88c0-12-1.6-29.22-7.21-43.63,18.42,3.6,27.22,24,31.23,36.43Q262.63,78.68,249.42,82.88Z"]
 };
 var faShopware = {
   prefix: 'fab',
@@ -4928,7 +5150,7 @@ var faThinkPeaks = {
 var faTiktok = {
   prefix: 'fab',
   iconName: 'tiktok',
-  icon: [448, 512, [], "f97b", "M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"]
+  icon: [448, 512, [], "e07b", "M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"]
 };
 var faTradeFederation = {
   prefix: 'fab',
@@ -4943,7 +5165,7 @@ var faTrello = {
 var faTripadvisor = {
   prefix: 'fab',
   iconName: 'tripadvisor',
-  icon: [576, 512, [], "f262", "M195.11,285.18a51.06,51.06,0,1,1-51.05-51.06,51,51,0,0,1,51.05,51.06m236.77-51.06a51.06,51.06,0,1,0,51.06,51.06,51.06,51.06,0,0,0-51.06-51.06m144,51.06A143.94,143.94,0,0,1,334.11,390.76L288,440.93l-46.14-50.2A143.91,143.91,0,1,1,47.09,178.82L0,127.58H104.66a326.11,326.11,0,0,1,367,0H576l-47.09,51.24a143.56,143.56,0,0,1,46.94,106.36m-334.4,0a97.39,97.39,0,1,0-97.39,97.39,97.39,97.39,0,0,0,97.39-97.39m154.63-145.4a281,281,0,0,0-216.17,0C241.38,163.29,288,218.28,288,282.37c0-64.08,46.61-119.07,108.08-142.59m133.2,145.4a97.4,97.4,0,1,0-97.4,97.39,97.4,97.4,0,0,0,97.4-97.39"]
+  icon: [576, 512, [], "f262", "M528.91,178.82,576,127.58H471.66a326.11,326.11,0,0,0-367,0H0l47.09,51.24A143.911,143.911,0,0,0,241.86,390.73L288,440.93l46.11-50.17A143.94,143.94,0,0,0,575.88,285.18h-.03A143.56,143.56,0,0,0,528.91,178.82ZM144.06,382.57a97.39,97.39,0,1,1,97.39-97.39A97.39,97.39,0,0,1,144.06,382.57ZM288,282.37c0-64.09-46.62-119.08-108.09-142.59a281,281,0,0,1,216.17,0C334.61,163.3,288,218.29,288,282.37Zm143.88,100.2h-.01a97.405,97.405,0,1,1,.01,0ZM144.06,234.12h-.01a51.06,51.06,0,1,0,51.06,51.06v-.11A51,51,0,0,0,144.06,234.12Zm287.82,0a51.06,51.06,0,1,0,51.06,51.06A51.06,51.06,0,0,0,431.88,234.12Z"]
 };
 var faTumblr = {
   prefix: 'fab',
@@ -4995,6 +5217,11 @@ var faUmbraco = {
   iconName: 'umbraco',
   icon: [510, 512, [], "f8e8", "M255.35 8C118.36 7.83 7.14 118.72 7 255.68c-.07 137 111 248.2 248 248.27 136.85 0 247.82-110.7 248-247.67S392.34 8.17 255.35 8zm145 266q-1.14 40.68-14 65t-43.51 35q-30.61 10.7-85.45 10.47h-4.6q-54.78.22-85.44-10.47t-43.52-35q-12.85-24.36-14-65a224.81 224.81 0 0 1 0-30.71 418.37 418.37 0 0 1 3.6-43.88c1.88-13.39 3.57-22.58 5.4-32 1-4.88 1.28-6.42 1.82-8.45a5.09 5.09 0 0 1 4.9-3.89h.69l32 5a5.07 5.07 0 0 1 4.16 5 5 5 0 0 1 0 .77l-1.7 8.78q-2.41 13.25-4.84 33.68a380.62 380.62 0 0 0-2.64 42.15q-.28 40.43 8.13 59.83a43.87 43.87 0 0 0 31.31 25.18A243 243 0 0 0 250 340.6h10.25a242.64 242.64 0 0 0 57.27-5.16 43.86 43.86 0 0 0 31.15-25.23q8.53-19.42 8.13-59.78a388 388 0 0 0-2.6-42.15q-2.48-20.38-4.89-33.68l-1.69-8.78a5 5 0 0 1 0-.77 5 5 0 0 1 4.2-5l32-5h.82a5 5 0 0 1 4.9 3.89c.55 2.05.81 3.57 1.83 8.45 1.82 9.62 3.52 18.78 5.39 32a415.71 415.71 0 0 1 3.61 43.88 228.06 228.06 0 0 1-.04 30.73z"]
 };
+var faUncharted = {
+  prefix: 'fab',
+  iconName: 'uncharted',
+  icon: [448, 512, [], "e084", "M171.73,232.813A5.381,5.381,0,0,0,176.7,229.5,48.081,48.081,0,0,1,191.6,204.244c1.243-.828,1.657-2.484,1.657-4.141a4.22,4.22,0,0,0-2.071-3.312L74.429,128.473,148.958,85a9.941,9.941,0,0,0,4.968-8.281,9.108,9.108,0,0,0-4.968-8.281L126.6,55.6a9.748,9.748,0,0,0-9.523,0l-100.2,57.966a9.943,9.943,0,0,0-4.969,8.281V236.954a9.109,9.109,0,0,0,4.969,8.281L39.235,258.07a8.829,8.829,0,0,0,4.968,1.242,9.4,9.4,0,0,0,6.625-2.484,10.8,10.8,0,0,0,2.9-7.039V164.5L169.66,232.4A4.5,4.5,0,0,0,171.73,232.813ZM323.272,377.73a12.478,12.478,0,0,0-4.969,1.242l-74.528,43.062V287.882c0-2.9-2.9-5.8-6.211-4.555a53.036,53.036,0,0,1-28.984.414,4.86,4.86,0,0,0-6.21,4.555V421.619l-74.529-43.061a8.83,8.83,0,0,0-4.969-1.242,9.631,9.631,0,0,0-9.523,9.523v26.085a9.107,9.107,0,0,0,4.969,8.281l100.2,57.553A8.829,8.829,0,0,0,223.486,480a11.027,11.027,0,0,0,4.969-1.242l100.2-57.553a9.941,9.941,0,0,0,4.968-8.281V386.839C332.8,382.285,328.24,377.73,323.272,377.73ZM286.007,78a23,23,0,1,0-23-23A23,23,0,0,0,286.007,78Zm63.627-10.086a23,23,0,1,0,23,23A23,23,0,0,0,349.634,67.914ZM412.816,151.6a23,23,0,1,0-23-23A23,23,0,0,0,412.816,151.6Zm-63.182-9.2a23,23,0,1,0,23,23A23,23,0,0,0,349.634,142.4Zm-63.627,83.244a23,23,0,1,0-23-23A23,23,0,0,0,286.007,225.648Zm-62.074,36.358a23,23,0,1,0-23-23A23,23,0,0,0,223.933,262.006Zm188.883-82.358a23,23,0,1,0,23,23A23,23,0,0,0,412.816,179.648Zm0,72.272a23,23,0,1,0,23,23A23,23,0,0,0,412.816,251.92Z"]
+};
 var faUniregistry = {
   prefix: 'fab',
   iconName: 'uniregistry',
@@ -5003,12 +5230,12 @@ var faUniregistry = {
 var faUnity = {
   prefix: 'fab',
   iconName: 'unity',
-  icon: [576, 512, [], "f949", "M498.11,206.4,445.31,14.72,248.2,66.08,219,116.14l-59.2-.43L15.54,256,159.82,396.32l59.17-.43,29.24,50,197.08,51.36,52.8-191.62-30-49.63ZM223.77,124.2,374.55,86.51,288,232.33H114.87Zm0,263.63L114.87,279.71H288l86.55,145.81Zm193,14L330.17,256l86.58-145.84L458.56,256Z"]
+  icon: [576, 512, [], "e049", "M498.11,206.4,445.31,14.72,248.2,66.08,219,116.14l-59.2-.43L15.54,256,159.82,396.32l59.17-.43,29.24,50,197.08,51.36,52.8-191.62-30-49.63ZM223.77,124.2,374.55,86.51,288,232.33H114.87Zm0,263.63L114.87,279.71H288l86.55,145.81Zm193,14L330.17,256l86.58-145.84L458.56,256Z"]
 };
 var faUnsplash = {
   prefix: 'fab',
   iconName: 'unsplash',
-  icon: [448, 512, [], "f97c", "M448,230.17V480H0V230.17H141.13V355.09H306.87V230.17ZM306.87,32H141.13V156.91H306.87Z"]
+  icon: [448, 512, [], "e07c", "M448,230.17V480H0V230.17H141.13V355.09H306.87V230.17ZM306.87,32H141.13V156.91H306.87Z"]
 };
 var faUntappd = {
   prefix: 'fab',
@@ -5095,6 +5322,11 @@ var faVuejs = {
   iconName: 'vuejs',
   icon: [448, 512, [], "f41f", "M356.9 64.3H280l-56 88.6-48-88.6H0L224 448 448 64.3h-91.1zm-301.2 32h53.8L224 294.5 338.4 96.3h53.8L224 384.5 55.7 96.3z"]
 };
+var faWatchmanMonitoring = {
+  prefix: 'fab',
+  iconName: 'watchman-monitoring',
+  icon: [512, 512, [], "e087", "M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM121.69,429.122C70.056,388.972,36.741,326.322,36.741,256a218.519,218.519,0,0,1,9.587-64.122l102.9-17.895-.121,10.967-13.943,2.013s-.144,12.5-.144,19.549a12.778,12.778,0,0,0,4.887,10.349l9.468,7.4Zm105.692-283.27,8.48-7.618s6.934-5.38-.143-9.344c-7.188-4.024-39.53-34.5-39.53-34.5-5.348-5.477-8.257-7.347-15.46,0,0,0-32.342,30.474-39.529,34.5-7.078,3.964-.144,9.344-.144,9.344l8.481,7.618-.048,4.369L75.982,131.045c39.644-56.938,105.532-94.3,180.018-94.3A218.754,218.754,0,0,1,420.934,111.77l-193.512,37.7Zm34.063,329.269-33.9-250.857,9.467-7.4a12.778,12.778,0,0,0,4.888-10.349c0-7.044-.144-19.549-.144-19.549l-13.943-2.013-.116-10.474,241.711,31.391A218.872,218.872,0,0,1,475.259,256C475.259,375.074,379.831,472.212,261.445,475.121Z"]
+};
 var faWaze = {
   prefix: 'fab',
   iconName: 'waze',
@@ -5149,6 +5381,11 @@ var faWizardsOfTheCoast = {
   prefix: 'fab',
   iconName: 'wizards-of-the-coast',
   icon: [640, 512, [], "f730", "M219.19 345.69c-1.9 1.38-11.07 8.44-.26 23.57 4.64 6.42 14.11 12.79 21.73 6.55 6.5-4.88 7.35-12.92.26-23.04-5.47-7.76-14.28-12.88-21.73-7.08zm336.75 75.94c-.34 1.7-.55 1.67.79 0 2.09-4.19 4.19-10.21 4.98-19.9 3.14-38.49-40.33-71.49-101.34-78.03-54.73-6.02-124.38 9.17-188.8 60.49l-.26 1.57c2.62 4.98 4.98 10.74 3.4 21.21l.79.26c63.89-58.4 131.19-77.25 184.35-73.85 58.4 3.67 100.03 34.04 100.03 68.08-.01 9.96-2.63 15.72-3.94 20.17zM392.28 240.42c.79 7.07 4.19 10.21 9.17 10.47 5.5.26 9.43-2.62 10.47-6.55.79-3.4 2.09-29.85 2.09-29.85s-11.26 6.55-14.93 10.47c-3.66 3.68-7.33 8.39-6.8 15.46zm-50.02-151.1C137.75 89.32 13.1 226.8.79 241.2c-1.05.52-1.31.79.79 1.31 60.49 16.5 155.81 81.18 196.13 202.16l1.05.26c55.25-69.92 140.88-128.05 236.99-128.05 80.92 0 130.15 42.16 130.15 80.39 0 18.33-6.55 33.52-22.26 46.35 0 .96-.2.79.79.79 14.66-10.74 27.5-28.8 27.5-48.18 0-22.78-12.05-38.23-12.05-38.23 7.07 7.07 10.74 16.24 10.74 16.24 5.76-40.85 26.97-62.32 26.97-62.32-2.36-9.69-6.81-17.81-6.81-17.81 7.59 8.12 14.4 27.5 14.4 41.37 0 10.47-3.4 22.78-12.57 31.95l.26.52c8.12-4.98 16.5-16.76 16.5-37.97 0-15.71-4.71-25.92-4.71-25.92 5.76-5.24 11.26-9.17 15.97-11.78.79 3.4 2.09 9.69 2.36 14.93 0 1.05.79 1.83 1.05 0 .79-5.76-.26-16.24-.26-16.5 6.02-3.14 9.69-4.45 9.69-4.45C617.74 176 489.43 89.32 342.26 89.32zm-99.24 289.62c-11.06 8.99-24.2 4.08-30.64-4.19-7.45-9.58-6.76-24.09 4.19-32.47 14.85-11.35 27.08-.49 31.16 5.5.28.39 12.13 16.57-4.71 31.16zm2.09-136.43l9.43-17.81 11.78 70.96-12.57 6.02-24.62-28.8 14.14-26.71 3.67 4.45-1.83-8.11zm18.59 117.58l-.26-.26c2.05-4.1-2.5-6.61-17.54-31.69-1.31-2.36-3.14-2.88-4.45-2.62l-.26-.52c7.86-5.76 15.45-10.21 25.4-15.71l.52.26c1.31 1.83 2.09 2.88 3.4 4.71l-.26.52c-1.05-.26-2.36-.79-5.24.26-2.09.79-7.86 3.67-12.31 7.59v1.31c1.57 2.36 3.93 6.55 5.76 9.69h.26c10.05-6.28 7.56-4.55 11.52-7.86h.26c.52 1.83.52 1.83 1.83 5.5l-.26.26c-3.06.61-4.65.34-11.52 5.5v.26c9.46 17.02 11.01 16.75 12.57 15.97l.26.26c-2.34 1.59-6.27 4.21-9.68 6.57zm55.26-32.47c-3.14 1.57-6.02 2.88-9.95 4.98l-.26-.26c1.29-2.59 1.16-2.71-11.78-32.47l-.26-.26c-.15 0-8.9 3.65-9.95 7.33h-.52l-1.05-5.76.26-.52c7.29-4.56 25.53-11.64 27.76-12.57l.52.26 3.14 4.98-.26.52c-3.53-1.76-7.35.76-12.31 2.62v.26c12.31 32.01 12.67 30.64 14.66 30.64v.25zm44.77-16.5c-4.19 1.05-5.24 1.31-9.69 2.88l-.26-.26.52-4.45c-1.05-3.4-3.14-11.52-3.67-13.62l-.26-.26c-3.4.79-8.9 2.62-12.83 3.93l-.26.26c.79 2.62 3.14 9.95 4.19 13.88.79 2.36 1.83 2.88 2.88 3.14v.52c-3.67 1.05-7.07 2.62-10.21 3.93l-.26-.26c1.05-1.31 1.05-2.88.26-4.98-1.05-3.14-8.12-23.83-9.17-27.23-.52-1.83-1.57-3.14-2.62-3.14v-.52c3.14-1.05 6.02-2.09 10.74-3.4l.26.26-.26 4.71c1.31 3.93 2.36 7.59 3.14 9.69h.26c3.93-1.31 9.43-2.88 12.83-3.93l.26-.26-2.62-9.43c-.52-1.83-1.05-3.4-2.62-3.93v-.26c4.45-1.05 7.33-1.83 10.74-2.36l.26.26c-1.05 1.31-1.05 2.88-.52 4.45 1.57 6.28 4.71 20.43 6.28 26.45.54 2.62 1.85 3.41 2.63 3.93zm32.21-6.81l-.26.26c-4.71.52-14.14 2.36-22.52 4.19l-.26-.26.79-4.19c-1.57-7.86-3.4-18.59-4.98-26.19-.26-1.83-.79-2.88-2.62-3.67l.79-.52c9.17-1.57 20.16-2.36 24.88-2.62l.26.26c.52 2.36.79 3.14 1.57 5.5l-.26.26c-1.14-1.14-3.34-3.2-16.24-.79l-.26.26c.26 1.57 1.05 6.55 1.57 9.95l.26.26c9.52-1.68 4.76-.06 10.74-2.36h.26c0 1.57-.26 1.83-.26 5.24h-.26c-4.81-1.03-2.15-.9-10.21 0l-.26.26c.26 2.09 1.57 9.43 2.09 12.57l.26.26c1.15.38 14.21-.65 16.24-4.71h.26c-.53 2.38-1.05 4.21-1.58 6.04zm10.74-44.51c-4.45 2.36-8.12 2.88-11 2.88-.25.02-11.41 1.09-17.54-9.95-6.74-10.79-.98-25.2 5.5-31.69 8.8-8.12 23.35-10.1 28.54-17.02 8.03-10.33-13.04-22.31-29.59-5.76l-2.62-2.88 5.24-16.24c25.59-1.57 45.2-3.04 50.02 16.24.79 3.14 0 9.43-.26 12.05 0 2.62-1.83 18.85-2.09 23.04-.52 4.19-.79 18.33-.79 20.69.26 2.36.52 4.19 1.57 5.5 1.57 1.83 5.76 1.83 5.76 1.83l-.79 4.71c-11.82-1.07-10.28-.59-20.43-1.05-3.22-5.15-2.23-3.28-4.19-7.86 0 .01-4.19 3.94-7.33 5.51zm37.18 21.21c-6.35-10.58-19.82-7.16-21.73 5.5-2.63 17.08 14.3 19.79 20.69 10.21l.26.26c-.52 1.83-1.83 6.02-1.83 6.28l-.52.52c-10.3 6.87-28.5-2.5-25.66-18.59 1.94-10.87 14.44-18.93 28.8-9.95l.26.52c0 1.06-.27 3.41-.27 5.25zm5.77-87.73v-6.55c.69 0 19.65 3.28 27.76 7.33l-1.57 17.54s10.21-9.43 15.45-10.74c5.24-1.57 14.93 7.33 14.93 7.33l-11.26 11.26c-12.07-6.35-19.59-.08-20.69.79-5.29 38.72-8.6 42.17 4.45 46.09l-.52 4.71c-17.55-4.29-18.53-4.5-36.92-7.33l.79-4.71c7.25 0 7.48-5.32 7.59-6.81 0 0 4.98-53.16 4.98-55.25-.02-2.87-4.99-3.66-4.99-3.66zm10.99 114.44c-8.12-2.09-14.14-11-10.74-20.69 3.14-9.43 12.31-12.31 18.85-10.21 9.17 2.62 12.83 11.78 10.74 19.38-2.61 8.9-9.42 13.87-18.85 11.52zm42.16 9.69c-2.36-.52-7.07-2.36-8.64-2.88v-.26l1.57-1.83c.59-8.24.59-7.27.26-7.59-4.82-1.81-6.66-2.36-7.07-2.36-1.31 1.83-2.88 4.45-3.67 5.5l-.79 3.4v.26c-1.31-.26-3.93-1.31-6.02-1.57v-.26l2.62-1.83c3.4-4.71 9.95-14.14 13.88-20.16v-2.09l.52-.26c2.09.79 5.5 2.09 7.59 2.88.48.48.18-1.87-1.05 25.14-.24 1.81.02 2.6.8 3.91zm-4.71-89.82c11.25-18.27 30.76-16.19 34.04-3.4L539.7 198c2.34-6.25-2.82-9.9-4.45-11.26l1.83-3.67c12.22 10.37 16.38 13.97 22.52 20.43-25.91 73.07-30.76 80.81-24.62 84.32l-1.83 4.45c-6.37-3.35-8.9-4.42-17.81-8.64l2.09-6.81c-.26-.26-3.93 3.93-9.69 3.67-19.06-1.3-22.89-31.75-9.67-52.9zm29.33 79.34c0-5.71-6.34-7.89-7.86-5.24-1.31 2.09 1.05 4.98 2.88 8.38 1.57 2.62 2.62 6.28 1.05 9.43-2.64 6.34-12.4 5.31-15.45-.79 0-.7-.27.09 1.83-4.71l.79-.26c-.57 5.66 6.06 9.61 8.38 4.98 1.05-2.09-.52-5.5-2.09-8.38-1.57-2.62-3.67-6.28-1.83-9.69 2.72-5.06 11.25-4.47 14.66 2.36v.52l-2.36 3.4zm21.21 13.36c-1.96-3.27-.91-2.14-4.45-4.71h-.26c-2.36 4.19-5.76 10.47-8.64 16.24-1.31 2.36-1.05 3.4-.79 3.93l-.26.26-5.76-4.45.26-.26 2.09-1.31c3.14-5.76 6.55-12.05 9.17-17.02v-.26c-2.64-1.98-1.22-1.51-6.02-1.83v-.26l3.14-3.4h.26c3.67 2.36 9.95 6.81 12.31 8.9l.26.26-1.31 3.91zm27.23-44.26l-2.88-2.88c.79-2.36 1.83-4.98 2.09-7.59.75-9.74-11.52-11.84-11.52-4.98 0 4.98 7.86 19.38 7.86 27.76 0 10.21-5.76 15.71-13.88 16.5-8.38.79-20.16-10.47-20.16-10.47l4.98-14.4 2.88 2.09c-2.97 17.8 17.68 20.37 13.35 5.24-1.06-4.02-18.75-34.2 2.09-38.23 13.62-2.36 23.04 16.5 23.04 16.5l-7.85 10.46zm35.62-10.21c-11-30.38-60.49-127.53-191.95-129.62-53.42-1.05-94.27 15.45-132.76 37.97l85.63-9.17-91.39 20.69 25.14 19.64-3.93-16.5c7.5-1.71 39.15-8.45 66.77-8.9l-22.26 80.39c13.61-.7 18.97-8.98 19.64-22.78l4.98-1.05.26 26.71c-22.46 3.21-37.3 6.69-49.49 9.95l13.09-43.21-61.54-36.66 2.36 8.12 10.21 4.98c6.28 18.59 19.38 56.56 20.43 58.66 1.95 4.28 3.16 5.78 12.05 4.45l1.05 4.98c-16.08 4.86-23.66 7.61-39.02 14.4l-2.36-4.71c4.4-2.94 8.73-3.94 5.5-12.83-23.7-62.5-21.48-58.14-22.78-59.44l2.36-4.45 33.52 67.3c-3.84-11.87 1.68 1.69-32.99-78.82l-41.9 88.51 4.71-13.88-35.88-42.16 27.76 93.48-11.78 8.38C95 228.58 101.05 231.87 93.23 231.52c-5.5-.26-13.62 5.5-13.62 5.5L74.63 231c30.56-23.53 31.62-24.33 58.4-42.68l4.19 7.07s-5.76 4.19-7.86 7.07c-5.9 9.28 1.67 13.28 61.8 75.68l-18.85-58.92 39.8-10.21 25.66 30.64 4.45-12.31-4.98-24.62 13.09-3.4.52 3.14 3.67-10.47-94.27 29.33 11.26-4.98-13.62-42.42 17.28-9.17 30.11 36.14 28.54-13.09c-1.41-7.47-2.47-14.5-4.71-19.64l17.28 13.88 4.71-2.09-59.18-42.68 23.08 11.5c18.98-6.07 25.23-7.47 32.21-9.69l2.62 11c-12.55 12.55 1.43 16.82 6.55 19.38l-13.62-61.01 12.05 28.28c4.19-1.31 7.33-2.09 7.33-2.09l2.62 8.64s-3.14 1.05-6.28 2.09l8.9 20.95 33.78-65.73-20.69 61.01c42.42-24.09 81.44-36.66 131.98-35.88 67.04 1.05 167.33 40.85 199.8 139.83.78 2.1-.01 2.63-.79.27zM203.48 152.43s1.83-.52 4.19-1.31l9.43 7.59c-.4 0-3.44-.25-11.26 2.36l-2.36-8.64zm143.76 38.5c-1.57-.6-26.46-4.81-33.26 20.69l21.73 17.02 11.53-37.71zM318.43 67.07c-58.4 0-106.05 12.05-114.96 14.4v.79c8.38 2.09 14.4 4.19 21.21 11.78l1.57.26c6.55-1.83 48.97-13.88 110.24-13.88 180.16 0 301.67 116.79 301.67 223.37v9.95c0 1.31.79 2.62 1.05.52.52-2.09.79-8.64.79-19.64.26-83.79-96.63-227.55-321.57-227.55zm211.06 169.68c1.31-5.76 0-12.31-7.33-13.09-9.62-1.13-16.14 23.79-17.02 33.52-.79 5.5-1.31 14.93 6.02 14.93 4.68-.01 9.72-.91 18.33-35.36zm-61.53 42.95c-2.62-.79-9.43-.79-12.57 10.47-1.83 6.81.52 13.35 6.02 14.66 3.67 1.05 8.9.52 11.78-10.74 2.62-9.94-1.83-13.61-5.23-14.39zM491 300.65c1.83.52 3.14 1.05 5.76 1.83 0-1.83.52-8.38.79-12.05-1.05 1.31-5.5 8.12-6.55 9.95v.27z"]
+};
+var faWodu = {
+  prefix: 'fab',
+  iconName: 'wodu',
+  icon: [640, 512, [], "e088", "M178.414 339.706H141.1L112.166 223.475h-.478L83.228 339.706H45.2L0 168.946H37.548L64.574 285.177h.478L94.707 168.946h35.157l29.178 117.667h.479L187.5 168.946h36.831zM271.4 212.713c38.984 0 64.1 25.828 64.1 65.291 0 39.222-25.111 65.05-64.1 65.05-38.743 0-63.855-25.828-63.855-65.05C207.547 238.541 232.659 212.713 271.4 212.713zm0 104.753c23.2 0 30.133-19.852 30.133-39.462 0-19.852-6.934-39.7-30.133-39.7-27.7 0-29.894 19.85-29.894 39.7C241.508 297.614 248.443 317.466 271.4 317.466zM435.084 323.922h-.478c-7.893 13.392-21.765 19.132-37.548 19.132-37.31 0-55.485-32.045-55.485-66.246 0-33.243 18.415-64.095 54.767-64.095 14.589 0 28.938 6.218 36.831 18.416h.24V168.946h33.96v170.76H435.084zM405.428 238.3c-22.24 0-29.894 19.134-29.894 39.463 0 19.371 8.848 39.7 29.894 39.7 22.482 0 29.178-19.613 29.178-39.94C434.606 257.436 427.432 238.3 405.428 238.3zM592.96 339.706H560.673V322.487h-.718c-8.609 13.87-23.436 20.567-37.786 20.567-36.113 0-45.2-20.328-45.2-50.941V216.061h33.959V285.9c0 20.329 5.979 30.372 21.765 30.372 18.415 0 26.306-10.283 26.306-35.393V216.061H592.96zM602.453 302.876H640v36.83H602.453z"]
 };
 var faWolfPackBattalion = {
   prefix: 'fab',
@@ -5261,7 +5498,6 @@ var _iconsCache = {
   faAccusoft: faAccusoft,
   faAcquisitionsIncorporated: faAcquisitionsIncorporated,
   faAdn: faAdn,
-  faAdobe: faAdobe,
   faAdversal: faAdversal,
   faAffiliatetheme: faAffiliatetheme,
   faAirbnb: faAirbnb,
@@ -5322,6 +5558,7 @@ var _iconsCache = {
   faCentos: faCentos,
   faChrome: faChrome,
   faChromecast: faChromecast,
+  faCloudflare: faCloudflare,
   faCloudscale: faCloudscale,
   faCloudsmith: faCloudsmith,
   faCloudversify: faCloudversify,
@@ -5448,12 +5685,14 @@ var _iconsCache = {
   faGrav: faGrav,
   faGripfire: faGripfire,
   faGrunt: faGrunt,
+  faGuilded: faGuilded,
   faGulp: faGulp,
   faHackerNews: faHackerNews,
   faHackerNewsSquare: faHackerNewsSquare,
   faHackerrank: faHackerrank,
   faHips: faHips,
   faHireAHelper: faHireAHelper,
+  faHive: faHive,
   faHooli: faHooli,
   faHornbill: faHornbill,
   faHotjar: faHotjar,
@@ -5462,8 +5701,10 @@ var _iconsCache = {
   faHubspot: faHubspot,
   faIdeal: faIdeal,
   faImdb: faImdb,
+  faInnosoft: faInnosoft,
   faInstagram: faInstagram,
   faInstagramSquare: faInstagramSquare,
+  faInstalod: faInstalod,
   faIntercom: faIntercom,
   faInternetExplorer: faInternetExplorer,
   faInvision: faInvision,
@@ -5527,6 +5768,7 @@ var _iconsCache = {
   faNpm: faNpm,
   faNs8: faNs8,
   faNutritionix: faNutritionix,
+  faOctopusDeploy: faOctopusDeploy,
   faOdnoklassniki: faOdnoklassniki,
   faOdnoklassnikiSquare: faOdnoklassnikiSquare,
   faOldRepublic: faOldRepublic,
@@ -5542,6 +5784,7 @@ var _iconsCache = {
   faPatreon: faPatreon,
   faPaypal: faPaypal,
   faPennyArcade: faPennyArcade,
+  faPerbyte: faPerbyte,
   faPeriscope: faPeriscope,
   faPhabricator: faPhabricator,
   faPhoenixFramework: faPhoenixFramework,
@@ -5653,6 +5896,7 @@ var _iconsCache = {
   faUbuntu: faUbuntu,
   faUikit: faUikit,
   faUmbraco: faUmbraco,
+  faUncharted: faUncharted,
   faUniregistry: faUniregistry,
   faUnity: faUnity,
   faUnsplash: faUnsplash,
@@ -5673,6 +5917,7 @@ var _iconsCache = {
   faVk: faVk,
   faVnv: faVnv,
   faVuejs: faVuejs,
+  faWatchmanMonitoring: faWatchmanMonitoring,
   faWaze: faWaze,
   faWeebly: faWeebly,
   faWeibo: faWeibo,
@@ -5684,6 +5929,7 @@ var _iconsCache = {
   faWindows: faWindows,
   faWix: faWix,
   faWizardsOfTheCoast: faWizardsOfTheCoast,
+  faWodu: faWodu,
   faWolfPackBattalion: faWolfPackBattalion,
   faWordpress: faWordpress,
   faWordpressSimple: faWordpressSimple,
@@ -5875,6 +6121,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWindowMaximize", function() { return faWindowMaximize; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWindowMinimize", function() { return faWindowMinimize; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faWindowRestore", function() { return faWindowRestore; });
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
 var prefix = "far";
 var faAddressBook = {
   prefix: 'far',
@@ -6800,7 +7050,7 @@ var _iconsCache = {
 /*!********************************************************************!*\
   !*** ./node_modules/@fortawesome/free-solid-svg-icons/index.es.js ***!
   \********************************************************************/
-/*! exports provided: fas, prefix, faAd, faAddressBook, faAddressCard, faAdjust, faAirFreshener, faAlignCenter, faAlignJustify, faAlignLeft, faAlignRight, faAllergies, faAmbulance, faAmericanSignLanguageInterpreting, faAnchor, faAngleDoubleDown, faAngleDoubleLeft, faAngleDoubleRight, faAngleDoubleUp, faAngleDown, faAngleLeft, faAngleRight, faAngleUp, faAngry, faAnkh, faAppleAlt, faArchive, faArchway, faArrowAltCircleDown, faArrowAltCircleLeft, faArrowAltCircleRight, faArrowAltCircleUp, faArrowCircleDown, faArrowCircleLeft, faArrowCircleRight, faArrowCircleUp, faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faArrowsAlt, faArrowsAltH, faArrowsAltV, faAssistiveListeningSystems, faAsterisk, faAt, faAtlas, faAtom, faAudioDescription, faAward, faBaby, faBabyCarriage, faBackspace, faBackward, faBacon, faBacteria, faBacterium, faBahai, faBalanceScale, faBalanceScaleLeft, faBalanceScaleRight, faBan, faBandAid, faBarcode, faBars, faBaseballBall, faBasketballBall, faBath, faBatteryEmpty, faBatteryFull, faBatteryHalf, faBatteryQuarter, faBatteryThreeQuarters, faBed, faBeer, faBell, faBellSlash, faBezierCurve, faBible, faBicycle, faBiking, faBinoculars, faBiohazard, faBirthdayCake, faBlender, faBlenderPhone, faBlind, faBlog, faBold, faBolt, faBomb, faBone, faBong, faBook, faBookDead, faBookMedical, faBookOpen, faBookReader, faBookmark, faBorderAll, faBorderNone, faBorderStyle, faBowlingBall, faBox, faBoxOpen, faBoxTissue, faBoxes, faBraille, faBrain, faBreadSlice, faBriefcase, faBriefcaseMedical, faBroadcastTower, faBroom, faBrush, faBug, faBuilding, faBullhorn, faBullseye, faBurn, faBus, faBusAlt, faBusinessTime, faCalculator, faCalendar, faCalendarAlt, faCalendarCheck, faCalendarDay, faCalendarMinus, faCalendarPlus, faCalendarTimes, faCalendarWeek, faCamera, faCameraRetro, faCampground, faCandyCane, faCannabis, faCapsules, faCar, faCarAlt, faCarBattery, faCarCrash, faCarSide, faCaravan, faCaretDown, faCaretLeft, faCaretRight, faCaretSquareDown, faCaretSquareLeft, faCaretSquareRight, faCaretSquareUp, faCaretUp, faCarrot, faCartArrowDown, faCartPlus, faCashRegister, faCat, faCertificate, faChair, faChalkboard, faChalkboardTeacher, faChargingStation, faChartArea, faChartBar, faChartLine, faChartPie, faCheck, faCheckCircle, faCheckDouble, faCheckSquare, faCheese, faChess, faChessBishop, faChessBoard, faChessKing, faChessKnight, faChessPawn, faChessQueen, faChessRook, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faChevronCircleUp, faChevronDown, faChevronLeft, faChevronRight, faChevronUp, faChild, faChurch, faCircle, faCircleNotch, faCity, faClinicMedical, faClipboard, faClipboardCheck, faClipboardList, faClock, faClone, faClosedCaptioning, faCloud, faCloudDownloadAlt, faCloudMeatball, faCloudMoon, faCloudMoonRain, faCloudRain, faCloudShowersHeavy, faCloudSun, faCloudSunRain, faCloudUploadAlt, faCocktail, faCode, faCodeBranch, faCoffee, faCog, faCogs, faCoins, faColumns, faComment, faCommentAlt, faCommentDollar, faCommentDots, faCommentMedical, faCommentSlash, faComments, faCommentsDollar, faCompactDisc, faCompass, faCompress, faCompressAlt, faCompressArrowsAlt, faConciergeBell, faCookie, faCookieBite, faCopy, faCopyright, faCouch, faCreditCard, faCrop, faCropAlt, faCross, faCrosshairs, faCrow, faCrown, faCrutch, faCube, faCubes, faCut, faDatabase, faDeaf, faDemocrat, faDesktop, faDharmachakra, faDiagnoses, faDice, faDiceD20, faDiceD6, faDiceFive, faDiceFour, faDiceOne, faDiceSix, faDiceThree, faDiceTwo, faDigitalTachograph, faDirections, faDisease, faDivide, faDizzy, faDna, faDog, faDollarSign, faDolly, faDollyFlatbed, faDonate, faDoorClosed, faDoorOpen, faDotCircle, faDove, faDownload, faDraftingCompass, faDragon, faDrawPolygon, faDrum, faDrumSteelpan, faDrumstickBite, faDumbbell, faDumpster, faDumpsterFire, faDungeon, faEdit, faEgg, faEject, faEllipsisH, faEllipsisV, faEnvelope, faEnvelopeOpen, faEnvelopeOpenText, faEnvelopeSquare, faEquals, faEraser, faEthernet, faEuroSign, faExchangeAlt, faExclamation, faExclamationCircle, faExclamationTriangle, faExpand, faExpandAlt, faExpandArrowsAlt, faExternalLinkAlt, faExternalLinkSquareAlt, faEye, faEyeDropper, faEyeSlash, faFan, faFastBackward, faFastForward, faFaucet, faFax, faFeather, faFeatherAlt, faFemale, faFighterJet, faFile, faFileAlt, faFileArchive, faFileAudio, faFileCode, faFileContract, faFileCsv, faFileDownload, faFileExcel, faFileExport, faFileImage, faFileImport, faFileInvoice, faFileInvoiceDollar, faFileMedical, faFileMedicalAlt, faFilePdf, faFilePowerpoint, faFilePrescription, faFileSignature, faFileUpload, faFileVideo, faFileWord, faFill, faFillDrip, faFilm, faFilter, faFingerprint, faFire, faFireAlt, faFireExtinguisher, faFirstAid, faFish, faFistRaised, faFlag, faFlagCheckered, faFlagUsa, faFlask, faFlushed, faFolder, faFolderMinus, faFolderOpen, faFolderPlus, faFont, faFontAwesomeLogoFull, faFootballBall, faForward, faFrog, faFrown, faFrownOpen, faFunnelDollar, faFutbol, faGamepad, faGasPump, faGavel, faGem, faGenderless, faGhost, faGift, faGifts, faGlassCheers, faGlassMartini, faGlassMartiniAlt, faGlassWhiskey, faGlasses, faGlobe, faGlobeAfrica, faGlobeAmericas, faGlobeAsia, faGlobeEurope, faGolfBall, faGopuram, faGraduationCap, faGreaterThan, faGreaterThanEqual, faGrimace, faGrin, faGrinAlt, faGrinBeam, faGrinBeamSweat, faGrinHearts, faGrinSquint, faGrinSquintTears, faGrinStars, faGrinTears, faGrinTongue, faGrinTongueSquint, faGrinTongueWink, faGrinWink, faGripHorizontal, faGripLines, faGripLinesVertical, faGripVertical, faGuitar, faHSquare, faHamburger, faHammer, faHamsa, faHandHolding, faHandHoldingHeart, faHandHoldingMedical, faHandHoldingUsd, faHandHoldingWater, faHandLizard, faHandMiddleFinger, faHandPaper, faHandPeace, faHandPointDown, faHandPointLeft, faHandPointRight, faHandPointUp, faHandPointer, faHandRock, faHandScissors, faHandSparkles, faHandSpock, faHands, faHandsHelping, faHandsWash, faHandshake, faHandshakeAltSlash, faHandshakeSlash, faHanukiah, faHardHat, faHashtag, faHatCowboy, faHatCowboySide, faHatWizard, faHdd, faHeadSideCough, faHeadSideCoughSlash, faHeadSideMask, faHeadSideVirus, faHeading, faHeadphones, faHeadphonesAlt, faHeadset, faHeart, faHeartBroken, faHeartbeat, faHelicopter, faHighlighter, faHiking, faHippo, faHistory, faHockeyPuck, faHollyBerry, faHome, faHorse, faHorseHead, faHospital, faHospitalAlt, faHospitalSymbol, faHospitalUser, faHotTub, faHotdog, faHotel, faHourglass, faHourglassEnd, faHourglassHalf, faHourglassStart, faHouseDamage, faHouseUser, faHryvnia, faICursor, faIceCream, faIcicles, faIcons, faIdBadge, faIdCard, faIdCardAlt, faIgloo, faImage, faImages, faInbox, faIndent, faIndustry, faInfinity, faInfo, faInfoCircle, faItalic, faJedi, faJoint, faJournalWhills, faKaaba, faKey, faKeyboard, faKhanda, faKiss, faKissBeam, faKissWinkHeart, faKiwiBird, faLandmark, faLanguage, faLaptop, faLaptopCode, faLaptopHouse, faLaptopMedical, faLaugh, faLaughBeam, faLaughSquint, faLaughWink, faLayerGroup, faLeaf, faLemon, faLessThan, faLessThanEqual, faLevelDownAlt, faLevelUpAlt, faLifeRing, faLightbulb, faLink, faLiraSign, faList, faListAlt, faListOl, faListUl, faLocationArrow, faLock, faLockOpen, faLongArrowAltDown, faLongArrowAltLeft, faLongArrowAltRight, faLongArrowAltUp, faLowVision, faLuggageCart, faLungs, faLungsVirus, faMagic, faMagnet, faMailBulk, faMale, faMap, faMapMarked, faMapMarkedAlt, faMapMarker, faMapMarkerAlt, faMapPin, faMapSigns, faMarker, faMars, faMarsDouble, faMarsStroke, faMarsStrokeH, faMarsStrokeV, faMask, faMedal, faMedkit, faMeh, faMehBlank, faMehRollingEyes, faMemory, faMenorah, faMercury, faMeteor, faMicrochip, faMicrophone, faMicrophoneAlt, faMicrophoneAltSlash, faMicrophoneSlash, faMicroscope, faMinus, faMinusCircle, faMinusSquare, faMitten, faMobile, faMobileAlt, faMoneyBill, faMoneyBillAlt, faMoneyBillWave, faMoneyBillWaveAlt, faMoneyCheck, faMoneyCheckAlt, faMonument, faMoon, faMortarPestle, faMosque, faMotorcycle, faMountain, faMouse, faMousePointer, faMugHot, faMusic, faNetworkWired, faNeuter, faNewspaper, faNotEqual, faNotesMedical, faObjectGroup, faObjectUngroup, faOilCan, faOm, faOtter, faOutdent, faPager, faPaintBrush, faPaintRoller, faPalette, faPallet, faPaperPlane, faPaperclip, faParachuteBox, faParagraph, faParking, faPassport, faPastafarianism, faPaste, faPause, faPauseCircle, faPaw, faPeace, faPen, faPenAlt, faPenFancy, faPenNib, faPenSquare, faPencilAlt, faPencilRuler, faPeopleArrows, faPeopleCarry, faPepperHot, faPercent, faPercentage, faPersonBooth, faPhone, faPhoneAlt, faPhoneSlash, faPhoneSquare, faPhoneSquareAlt, faPhoneVolume, faPhotoVideo, faPiggyBank, faPills, faPizzaSlice, faPlaceOfWorship, faPlane, faPlaneArrival, faPlaneDeparture, faPlaneSlash, faPlay, faPlayCircle, faPlug, faPlus, faPlusCircle, faPlusSquare, faPodcast, faPoll, faPollH, faPoo, faPooStorm, faPoop, faPortrait, faPoundSign, faPowerOff, faPray, faPrayingHands, faPrescription, faPrescriptionBottle, faPrescriptionBottleAlt, faPrint, faProcedures, faProjectDiagram, faPumpMedical, faPumpSoap, faPuzzlePiece, faQrcode, faQuestion, faQuestionCircle, faQuidditch, faQuoteLeft, faQuoteRight, faQuran, faRadiation, faRadiationAlt, faRainbow, faRandom, faReceipt, faRecordVinyl, faRecycle, faRedo, faRedoAlt, faRegistered, faRemoveFormat, faReply, faReplyAll, faRepublican, faRestroom, faRetweet, faRibbon, faRing, faRoad, faRobot, faRocket, faRoute, faRss, faRssSquare, faRubleSign, faRuler, faRulerCombined, faRulerHorizontal, faRulerVertical, faRunning, faRupeeSign, faSadCry, faSadTear, faSatellite, faSatelliteDish, faSave, faSchool, faScrewdriver, faScroll, faSdCard, faSearch, faSearchDollar, faSearchLocation, faSearchMinus, faSearchPlus, faSeedling, faServer, faShapes, faShare, faShareAlt, faShareAltSquare, faShareSquare, faShekelSign, faShieldAlt, faShieldVirus, faShip, faShippingFast, faShoePrints, faShoppingBag, faShoppingBasket, faShoppingCart, faShower, faShuttleVan, faSign, faSignInAlt, faSignLanguage, faSignOutAlt, faSignal, faSignature, faSimCard, faSink, faSitemap, faSkating, faSkiing, faSkiingNordic, faSkull, faSkullCrossbones, faSlash, faSleigh, faSlidersH, faSmile, faSmileBeam, faSmileWink, faSmog, faSmoking, faSmokingBan, faSms, faSnowboarding, faSnowflake, faSnowman, faSnowplow, faSoap, faSocks, faSolarPanel, faSort, faSortAlphaDown, faSortAlphaDownAlt, faSortAlphaUp, faSortAlphaUpAlt, faSortAmountDown, faSortAmountDownAlt, faSortAmountUp, faSortAmountUpAlt, faSortDown, faSortNumericDown, faSortNumericDownAlt, faSortNumericUp, faSortNumericUpAlt, faSortUp, faSpa, faSpaceShuttle, faSpellCheck, faSpider, faSpinner, faSplotch, faSprayCan, faSquare, faSquareFull, faSquareRootAlt, faStamp, faStar, faStarAndCrescent, faStarHalf, faStarHalfAlt, faStarOfDavid, faStarOfLife, faStepBackward, faStepForward, faStethoscope, faStickyNote, faStop, faStopCircle, faStopwatch, faStopwatch20, faStore, faStoreAlt, faStoreAltSlash, faStoreSlash, faStream, faStreetView, faStrikethrough, faStroopwafel, faSubscript, faSubway, faSuitcase, faSuitcaseRolling, faSun, faSuperscript, faSurprise, faSwatchbook, faSwimmer, faSwimmingPool, faSynagogue, faSync, faSyncAlt, faSyringe, faTable, faTableTennis, faTablet, faTabletAlt, faTablets, faTachometerAlt, faTag, faTags, faTape, faTasks, faTaxi, faTeeth, faTeethOpen, faTemperatureHigh, faTemperatureLow, faTenge, faTerminal, faTextHeight, faTextWidth, faTh, faThLarge, faThList, faTheaterMasks, faThermometer, faThermometerEmpty, faThermometerFull, faThermometerHalf, faThermometerQuarter, faThermometerThreeQuarters, faThumbsDown, faThumbsUp, faThumbtack, faTicketAlt, faTimes, faTimesCircle, faTint, faTintSlash, faTired, faToggleOff, faToggleOn, faToilet, faToiletPaper, faToiletPaperSlash, faToolbox, faTools, faTooth, faTorah, faToriiGate, faTractor, faTrademark, faTrafficLight, faTrailer, faTrain, faTram, faTransgender, faTransgenderAlt, faTrash, faTrashAlt, faTrashRestore, faTrashRestoreAlt, faTree, faTrophy, faTruck, faTruckLoading, faTruckMonster, faTruckMoving, faTruckPickup, faTshirt, faTty, faTv, faUmbrella, faUmbrellaBeach, faUnderline, faUndo, faUndoAlt, faUniversalAccess, faUniversity, faUnlink, faUnlock, faUnlockAlt, faUpload, faUser, faUserAlt, faUserAltSlash, faUserAstronaut, faUserCheck, faUserCircle, faUserClock, faUserCog, faUserEdit, faUserFriends, faUserGraduate, faUserInjured, faUserLock, faUserMd, faUserMinus, faUserNinja, faUserNurse, faUserPlus, faUserSecret, faUserShield, faUserSlash, faUserTag, faUserTie, faUserTimes, faUsers, faUsersCog, faUsersSlash, faUtensilSpoon, faUtensils, faVectorSquare, faVenus, faVenusDouble, faVenusMars, faVial, faVials, faVideo, faVideoSlash, faVihara, faVirus, faVirusSlash, faViruses, faVoicemail, faVolleyballBall, faVolumeDown, faVolumeMute, faVolumeOff, faVolumeUp, faVoteYea, faVrCardboard, faWalking, faWallet, faWarehouse, faWater, faWaveSquare, faWeight, faWeightHanging, faWheelchair, faWifi, faWind, faWindowClose, faWindowMaximize, faWindowMinimize, faWindowRestore, faWineBottle, faWineGlass, faWineGlassAlt, faWonSign, faWrench, faXRay, faYenSign, faYinYang */
+/*! exports provided: fas, prefix, faAd, faAddressBook, faAddressCard, faAdjust, faAirFreshener, faAlignCenter, faAlignJustify, faAlignLeft, faAlignRight, faAllergies, faAmbulance, faAmericanSignLanguageInterpreting, faAnchor, faAngleDoubleDown, faAngleDoubleLeft, faAngleDoubleRight, faAngleDoubleUp, faAngleDown, faAngleLeft, faAngleRight, faAngleUp, faAngry, faAnkh, faAppleAlt, faArchive, faArchway, faArrowAltCircleDown, faArrowAltCircleLeft, faArrowAltCircleRight, faArrowAltCircleUp, faArrowCircleDown, faArrowCircleLeft, faArrowCircleRight, faArrowCircleUp, faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faArrowsAlt, faArrowsAltH, faArrowsAltV, faAssistiveListeningSystems, faAsterisk, faAt, faAtlas, faAtom, faAudioDescription, faAward, faBaby, faBabyCarriage, faBackspace, faBackward, faBacon, faBacteria, faBacterium, faBahai, faBalanceScale, faBalanceScaleLeft, faBalanceScaleRight, faBan, faBandAid, faBarcode, faBars, faBaseballBall, faBasketballBall, faBath, faBatteryEmpty, faBatteryFull, faBatteryHalf, faBatteryQuarter, faBatteryThreeQuarters, faBed, faBeer, faBell, faBellSlash, faBezierCurve, faBible, faBicycle, faBiking, faBinoculars, faBiohazard, faBirthdayCake, faBlender, faBlenderPhone, faBlind, faBlog, faBold, faBolt, faBomb, faBone, faBong, faBook, faBookDead, faBookMedical, faBookOpen, faBookReader, faBookmark, faBorderAll, faBorderNone, faBorderStyle, faBowlingBall, faBox, faBoxOpen, faBoxTissue, faBoxes, faBraille, faBrain, faBreadSlice, faBriefcase, faBriefcaseMedical, faBroadcastTower, faBroom, faBrush, faBug, faBuilding, faBullhorn, faBullseye, faBurn, faBus, faBusAlt, faBusinessTime, faCalculator, faCalendar, faCalendarAlt, faCalendarCheck, faCalendarDay, faCalendarMinus, faCalendarPlus, faCalendarTimes, faCalendarWeek, faCamera, faCameraRetro, faCampground, faCandyCane, faCannabis, faCapsules, faCar, faCarAlt, faCarBattery, faCarCrash, faCarSide, faCaravan, faCaretDown, faCaretLeft, faCaretRight, faCaretSquareDown, faCaretSquareLeft, faCaretSquareRight, faCaretSquareUp, faCaretUp, faCarrot, faCartArrowDown, faCartPlus, faCashRegister, faCat, faCertificate, faChair, faChalkboard, faChalkboardTeacher, faChargingStation, faChartArea, faChartBar, faChartLine, faChartPie, faCheck, faCheckCircle, faCheckDouble, faCheckSquare, faCheese, faChess, faChessBishop, faChessBoard, faChessKing, faChessKnight, faChessPawn, faChessQueen, faChessRook, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faChevronCircleUp, faChevronDown, faChevronLeft, faChevronRight, faChevronUp, faChild, faChurch, faCircle, faCircleNotch, faCity, faClinicMedical, faClipboard, faClipboardCheck, faClipboardList, faClock, faClone, faClosedCaptioning, faCloud, faCloudDownloadAlt, faCloudMeatball, faCloudMoon, faCloudMoonRain, faCloudRain, faCloudShowersHeavy, faCloudSun, faCloudSunRain, faCloudUploadAlt, faCocktail, faCode, faCodeBranch, faCoffee, faCog, faCogs, faCoins, faColumns, faComment, faCommentAlt, faCommentDollar, faCommentDots, faCommentMedical, faCommentSlash, faComments, faCommentsDollar, faCompactDisc, faCompass, faCompress, faCompressAlt, faCompressArrowsAlt, faConciergeBell, faCookie, faCookieBite, faCopy, faCopyright, faCouch, faCreditCard, faCrop, faCropAlt, faCross, faCrosshairs, faCrow, faCrown, faCrutch, faCube, faCubes, faCut, faDatabase, faDeaf, faDemocrat, faDesktop, faDharmachakra, faDiagnoses, faDice, faDiceD20, faDiceD6, faDiceFive, faDiceFour, faDiceOne, faDiceSix, faDiceThree, faDiceTwo, faDigitalTachograph, faDirections, faDisease, faDivide, faDizzy, faDna, faDog, faDollarSign, faDolly, faDollyFlatbed, faDonate, faDoorClosed, faDoorOpen, faDotCircle, faDove, faDownload, faDraftingCompass, faDragon, faDrawPolygon, faDrum, faDrumSteelpan, faDrumstickBite, faDumbbell, faDumpster, faDumpsterFire, faDungeon, faEdit, faEgg, faEject, faEllipsisH, faEllipsisV, faEnvelope, faEnvelopeOpen, faEnvelopeOpenText, faEnvelopeSquare, faEquals, faEraser, faEthernet, faEuroSign, faExchangeAlt, faExclamation, faExclamationCircle, faExclamationTriangle, faExpand, faExpandAlt, faExpandArrowsAlt, faExternalLinkAlt, faExternalLinkSquareAlt, faEye, faEyeDropper, faEyeSlash, faFan, faFastBackward, faFastForward, faFaucet, faFax, faFeather, faFeatherAlt, faFemale, faFighterJet, faFile, faFileAlt, faFileArchive, faFileAudio, faFileCode, faFileContract, faFileCsv, faFileDownload, faFileExcel, faFileExport, faFileImage, faFileImport, faFileInvoice, faFileInvoiceDollar, faFileMedical, faFileMedicalAlt, faFilePdf, faFilePowerpoint, faFilePrescription, faFileSignature, faFileUpload, faFileVideo, faFileWord, faFill, faFillDrip, faFilm, faFilter, faFingerprint, faFire, faFireAlt, faFireExtinguisher, faFirstAid, faFish, faFistRaised, faFlag, faFlagCheckered, faFlagUsa, faFlask, faFlushed, faFolder, faFolderMinus, faFolderOpen, faFolderPlus, faFont, faFontAwesomeLogoFull, faFootballBall, faForward, faFrog, faFrown, faFrownOpen, faFunnelDollar, faFutbol, faGamepad, faGasPump, faGavel, faGem, faGenderless, faGhost, faGift, faGifts, faGlassCheers, faGlassMartini, faGlassMartiniAlt, faGlassWhiskey, faGlasses, faGlobe, faGlobeAfrica, faGlobeAmericas, faGlobeAsia, faGlobeEurope, faGolfBall, faGopuram, faGraduationCap, faGreaterThan, faGreaterThanEqual, faGrimace, faGrin, faGrinAlt, faGrinBeam, faGrinBeamSweat, faGrinHearts, faGrinSquint, faGrinSquintTears, faGrinStars, faGrinTears, faGrinTongue, faGrinTongueSquint, faGrinTongueWink, faGrinWink, faGripHorizontal, faGripLines, faGripLinesVertical, faGripVertical, faGuitar, faHSquare, faHamburger, faHammer, faHamsa, faHandHolding, faHandHoldingHeart, faHandHoldingMedical, faHandHoldingUsd, faHandHoldingWater, faHandLizard, faHandMiddleFinger, faHandPaper, faHandPeace, faHandPointDown, faHandPointLeft, faHandPointRight, faHandPointUp, faHandPointer, faHandRock, faHandScissors, faHandSparkles, faHandSpock, faHands, faHandsHelping, faHandsWash, faHandshake, faHandshakeAltSlash, faHandshakeSlash, faHanukiah, faHardHat, faHashtag, faHatCowboy, faHatCowboySide, faHatWizard, faHdd, faHeadSideCough, faHeadSideCoughSlash, faHeadSideMask, faHeadSideVirus, faHeading, faHeadphones, faHeadphonesAlt, faHeadset, faHeart, faHeartBroken, faHeartbeat, faHelicopter, faHighlighter, faHiking, faHippo, faHistory, faHockeyPuck, faHollyBerry, faHome, faHorse, faHorseHead, faHospital, faHospitalAlt, faHospitalSymbol, faHospitalUser, faHotTub, faHotdog, faHotel, faHourglass, faHourglassEnd, faHourglassHalf, faHourglassStart, faHouseDamage, faHouseUser, faHryvnia, faICursor, faIceCream, faIcicles, faIcons, faIdBadge, faIdCard, faIdCardAlt, faIgloo, faImage, faImages, faInbox, faIndent, faIndustry, faInfinity, faInfo, faInfoCircle, faItalic, faJedi, faJoint, faJournalWhills, faKaaba, faKey, faKeyboard, faKhanda, faKiss, faKissBeam, faKissWinkHeart, faKiwiBird, faLandmark, faLanguage, faLaptop, faLaptopCode, faLaptopHouse, faLaptopMedical, faLaugh, faLaughBeam, faLaughSquint, faLaughWink, faLayerGroup, faLeaf, faLemon, faLessThan, faLessThanEqual, faLevelDownAlt, faLevelUpAlt, faLifeRing, faLightbulb, faLink, faLiraSign, faList, faListAlt, faListOl, faListUl, faLocationArrow, faLock, faLockOpen, faLongArrowAltDown, faLongArrowAltLeft, faLongArrowAltRight, faLongArrowAltUp, faLowVision, faLuggageCart, faLungs, faLungsVirus, faMagic, faMagnet, faMailBulk, faMale, faMap, faMapMarked, faMapMarkedAlt, faMapMarker, faMapMarkerAlt, faMapPin, faMapSigns, faMarker, faMars, faMarsDouble, faMarsStroke, faMarsStrokeH, faMarsStrokeV, faMask, faMedal, faMedkit, faMeh, faMehBlank, faMehRollingEyes, faMemory, faMenorah, faMercury, faMeteor, faMicrochip, faMicrophone, faMicrophoneAlt, faMicrophoneAltSlash, faMicrophoneSlash, faMicroscope, faMinus, faMinusCircle, faMinusSquare, faMitten, faMobile, faMobileAlt, faMoneyBill, faMoneyBillAlt, faMoneyBillWave, faMoneyBillWaveAlt, faMoneyCheck, faMoneyCheckAlt, faMonument, faMoon, faMortarPestle, faMosque, faMotorcycle, faMountain, faMouse, faMousePointer, faMugHot, faMusic, faNetworkWired, faNeuter, faNewspaper, faNotEqual, faNotesMedical, faObjectGroup, faObjectUngroup, faOilCan, faOm, faOtter, faOutdent, faPager, faPaintBrush, faPaintRoller, faPalette, faPallet, faPaperPlane, faPaperclip, faParachuteBox, faParagraph, faParking, faPassport, faPastafarianism, faPaste, faPause, faPauseCircle, faPaw, faPeace, faPen, faPenAlt, faPenFancy, faPenNib, faPenSquare, faPencilAlt, faPencilRuler, faPeopleArrows, faPeopleCarry, faPepperHot, faPercent, faPercentage, faPersonBooth, faPhone, faPhoneAlt, faPhoneSlash, faPhoneSquare, faPhoneSquareAlt, faPhoneVolume, faPhotoVideo, faPiggyBank, faPills, faPizzaSlice, faPlaceOfWorship, faPlane, faPlaneArrival, faPlaneDeparture, faPlaneSlash, faPlay, faPlayCircle, faPlug, faPlus, faPlusCircle, faPlusSquare, faPodcast, faPoll, faPollH, faPoo, faPooStorm, faPoop, faPortrait, faPoundSign, faPowerOff, faPray, faPrayingHands, faPrescription, faPrescriptionBottle, faPrescriptionBottleAlt, faPrint, faProcedures, faProjectDiagram, faPumpMedical, faPumpSoap, faPuzzlePiece, faQrcode, faQuestion, faQuestionCircle, faQuidditch, faQuoteLeft, faQuoteRight, faQuran, faRadiation, faRadiationAlt, faRainbow, faRandom, faReceipt, faRecordVinyl, faRecycle, faRedo, faRedoAlt, faRegistered, faRemoveFormat, faReply, faReplyAll, faRepublican, faRestroom, faRetweet, faRibbon, faRing, faRoad, faRobot, faRocket, faRoute, faRss, faRssSquare, faRubleSign, faRuler, faRulerCombined, faRulerHorizontal, faRulerVertical, faRunning, faRupeeSign, faSadCry, faSadTear, faSatellite, faSatelliteDish, faSave, faSchool, faScrewdriver, faScroll, faSdCard, faSearch, faSearchDollar, faSearchLocation, faSearchMinus, faSearchPlus, faSeedling, faServer, faShapes, faShare, faShareAlt, faShareAltSquare, faShareSquare, faShekelSign, faShieldAlt, faShieldVirus, faShip, faShippingFast, faShoePrints, faShoppingBag, faShoppingBasket, faShoppingCart, faShower, faShuttleVan, faSign, faSignInAlt, faSignLanguage, faSignOutAlt, faSignal, faSignature, faSimCard, faSink, faSitemap, faSkating, faSkiing, faSkiingNordic, faSkull, faSkullCrossbones, faSlash, faSleigh, faSlidersH, faSmile, faSmileBeam, faSmileWink, faSmog, faSmoking, faSmokingBan, faSms, faSnowboarding, faSnowflake, faSnowman, faSnowplow, faSoap, faSocks, faSolarPanel, faSort, faSortAlphaDown, faSortAlphaDownAlt, faSortAlphaUp, faSortAlphaUpAlt, faSortAmountDown, faSortAmountDownAlt, faSortAmountUp, faSortAmountUpAlt, faSortDown, faSortNumericDown, faSortNumericDownAlt, faSortNumericUp, faSortNumericUpAlt, faSortUp, faSpa, faSpaceShuttle, faSpellCheck, faSpider, faSpinner, faSplotch, faSprayCan, faSquare, faSquareFull, faSquareRootAlt, faStamp, faStar, faStarAndCrescent, faStarHalf, faStarHalfAlt, faStarOfDavid, faStarOfLife, faStepBackward, faStepForward, faStethoscope, faStickyNote, faStop, faStopCircle, faStopwatch, faStopwatch20, faStore, faStoreAlt, faStoreAltSlash, faStoreSlash, faStream, faStreetView, faStrikethrough, faStroopwafel, faSubscript, faSubway, faSuitcase, faSuitcaseRolling, faSun, faSuperscript, faSurprise, faSwatchbook, faSwimmer, faSwimmingPool, faSynagogue, faSync, faSyncAlt, faSyringe, faTable, faTableTennis, faTablet, faTabletAlt, faTablets, faTachometerAlt, faTag, faTags, faTape, faTasks, faTaxi, faTeeth, faTeethOpen, faTemperatureHigh, faTemperatureLow, faTenge, faTerminal, faTextHeight, faTextWidth, faTh, faThLarge, faThList, faTheaterMasks, faThermometer, faThermometerEmpty, faThermometerFull, faThermometerHalf, faThermometerQuarter, faThermometerThreeQuarters, faThumbsDown, faThumbsUp, faThumbtack, faTicketAlt, faTimes, faTimesCircle, faTint, faTintSlash, faTired, faToggleOff, faToggleOn, faToilet, faToiletPaper, faToiletPaperSlash, faToolbox, faTools, faTooth, faTorah, faToriiGate, faTractor, faTrademark, faTrafficLight, faTrailer, faTrain, faTram, faTransgender, faTransgenderAlt, faTrash, faTrashAlt, faTrashRestore, faTrashRestoreAlt, faTree, faTrophy, faTruck, faTruckLoading, faTruckMonster, faTruckMoving, faTruckPickup, faTshirt, faTty, faTv, faUmbrella, faUmbrellaBeach, faUnderline, faUndo, faUndoAlt, faUniversalAccess, faUniversity, faUnlink, faUnlock, faUnlockAlt, faUpload, faUser, faUserAlt, faUserAltSlash, faUserAstronaut, faUserCheck, faUserCircle, faUserClock, faUserCog, faUserEdit, faUserFriends, faUserGraduate, faUserInjured, faUserLock, faUserMd, faUserMinus, faUserNinja, faUserNurse, faUserPlus, faUserSecret, faUserShield, faUserSlash, faUserTag, faUserTie, faUserTimes, faUsers, faUsersCog, faUsersSlash, faUtensilSpoon, faUtensils, faVectorSquare, faVenus, faVenusDouble, faVenusMars, faVest, faVestPatches, faVial, faVials, faVideo, faVideoSlash, faVihara, faVirus, faVirusSlash, faViruses, faVoicemail, faVolleyballBall, faVolumeDown, faVolumeMute, faVolumeOff, faVolumeUp, faVoteYea, faVrCardboard, faWalking, faWallet, faWarehouse, faWater, faWaveSquare, faWeight, faWeightHanging, faWheelchair, faWifi, faWind, faWindowClose, faWindowMaximize, faWindowMinimize, faWindowRestore, faWineBottle, faWineGlass, faWineGlassAlt, faWonSign, faWrench, faXRay, faYenSign, faYinYang */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7769,6 +8019,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVenus", function() { return faVenus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVenusDouble", function() { return faVenusDouble; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVenusMars", function() { return faVenusMars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVest", function() { return faVest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVestPatches", function() { return faVestPatches; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVial", function() { return faVial; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVials", function() { return faVials; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faVideo", function() { return faVideo; });
@@ -7807,6 +8059,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faXRay", function() { return faXRay; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faYenSign", function() { return faYenSign; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "faYinYang", function() { return faYinYang; });
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
 var prefix = "fas";
 var faAd = {
   prefix: 'fas',
@@ -8076,12 +8332,12 @@ var faBacon = {
 var faBacteria = {
   prefix: 'fas',
   iconName: 'bacteria',
-  icon: [640, 512, [], "f959", "M272.35,226.4A17.71,17.71,0,0,0,281.46,203l-4-9.08a121.29,121.29,0,0,1,12.36-3.08A83.34,83.34,0,0,0,323.57,177l10,9a17.76,17.76,0,1,0,23.92-26.27l-9.72-8.76a83.12,83.12,0,0,0,11.65-48.18l11.85-3.51a17.73,17.73,0,1,0-10.15-34l-11.34,3.36a84,84,0,0,0-36.38-35.57l2.84-10.85a17.8,17.8,0,0,0-34.47-8.93l-2.82,10.78a83.25,83.25,0,0,0-16.74,1.1C250.83,27,240,30.22,229.1,33.39l-3.38-9.46a17.8,17.8,0,0,0-33.56,11.89l3.49,9.8a286.74,286.74,0,0,0-43.94,23.57l-6.32-8.43a17.9,17.9,0,0,0-24.94-3.6A17.69,17.69,0,0,0,116.84,82l6.45,8.61a286.59,286.59,0,0,0-34.95,35.33l-8.82-6.42a17.84,17.84,0,0,0-24.89,3.86,17.66,17.66,0,0,0,3.88,24.77l8.88,6.47a286.6,286.6,0,0,0-23,43.91l-10.48-3.59a17.73,17.73,0,1,0-11.59,33.52L32.67,232c-2.79,10-5.79,19.84-7.52,30.22a83.16,83.16,0,0,0-.82,19l-11.58,3.43a17.73,17.73,0,1,0,10.13,34l11.27-3.33a83.51,83.51,0,0,0,36.39,35.43l-2.88,11.06a17.81,17.81,0,0,0,34.48,8.92l2.87-11c1,0,2.07.26,3.1.26a83.39,83.39,0,0,0,45.65-13.88l8.59,8.8a17.77,17.77,0,0,0,25.56-24.7l-9.14-9.37a83.41,83.41,0,0,0,12.08-31.05,119.08,119.08,0,0,1,3.87-15.53l9,4.22a17.74,17.74,0,1,0,15.15-32.09l-8.8-4.11c.67-1,1.2-2.08,1.9-3.05a119.89,119.89,0,0,1,7.87-9.41,121.73,121.73,0,0,1,11.65-11.4,119.49,119.49,0,0,1,9.94-7.82c1.12-.77,2.32-1.42,3.47-2.15l3.92,8.85a17.86,17.86,0,0,0,16.32,10.58A18.14,18.14,0,0,0,272.35,226.4ZM128,256a32,32,0,1,1,32-32A32,32,0,0,1,128,256Zm80-96a16,16,0,1,1,16-16A16,16,0,0,1,208,160Zm431.26,45.3a17.79,17.79,0,0,0-17.06-12.69,17.55,17.55,0,0,0-5.08.74l-11.27,3.33a83.61,83.61,0,0,0-36.39-35.43l2.88-11.06a17.81,17.81,0,0,0-34.48-8.91l-2.87,11c-1,0-2.07-.26-3.1-.26a83.32,83.32,0,0,0-45.65,13.89l-8.59-8.81a17.77,17.77,0,0,0-25.56,24.7l9.14,9.37a83.28,83.28,0,0,0-12.08,31.06,119.34,119.34,0,0,1-3.87,15.52l-9-4.22a17.74,17.74,0,1,0-15.15,32.09l8.8,4.11c-.67,1-1.2,2.08-1.89,3.05a117.71,117.71,0,0,1-7.94,9.47,119,119,0,0,1-11.57,11.33,121.59,121.59,0,0,1-10,7.83c-1.12.77-2.32,1.42-3.47,2.15l-3.92-8.85a17.86,17.86,0,0,0-16.32-10.58,18.14,18.14,0,0,0-7.18,1.5A17.71,17.71,0,0,0,358.54,309l4,9.08a118.71,118.71,0,0,1-12.36,3.08,83.34,83.34,0,0,0-33.77,13.9l-10-9a17.77,17.77,0,1,0-23.92,26.28l9.72,8.75a83.12,83.12,0,0,0-11.65,48.18l-11.86,3.51a17.73,17.73,0,1,0,10.16,34l11.34-3.36A84,84,0,0,0,326.61,479l-2.84,10.85a17.8,17.8,0,0,0,34.47,8.93L361.06,488a83.3,83.3,0,0,0,16.74-1.1c11.37-1.89,22.24-5.07,33.1-8.24l3.38,9.46a17.8,17.8,0,0,0,33.56-11.89l-3.49-9.79a287.66,287.66,0,0,0,43.94-23.58l6.32,8.43a17.88,17.88,0,0,0,24.93,3.6A17.67,17.67,0,0,0,523.16,430l-6.45-8.61a287.37,287.37,0,0,0,34.95-35.34l8.82,6.42a17.76,17.76,0,1,0,21-28.63l-8.88-6.46a287.17,287.17,0,0,0,23-43.92l10.48,3.59a17.73,17.73,0,1,0,11.59-33.52L607.33,280c2.79-10,5.79-19.84,7.52-30.21a83.27,83.27,0,0,0,.82-19.05l11.58-3.43A17.7,17.7,0,0,0,639.26,205.3ZM416,416a32,32,0,1,1,32-32A32,32,0,0,1,416,416Z"]
+  icon: [640, 512, [], "e059", "M272.35,226.4A17.71,17.71,0,0,0,281.46,203l-4-9.08a121.29,121.29,0,0,1,12.36-3.08A83.34,83.34,0,0,0,323.57,177l10,9a17.76,17.76,0,1,0,23.92-26.27l-9.72-8.76a83.12,83.12,0,0,0,11.65-48.18l11.85-3.51a17.73,17.73,0,1,0-10.15-34l-11.34,3.36a84,84,0,0,0-36.38-35.57l2.84-10.85a17.8,17.8,0,0,0-34.47-8.93l-2.82,10.78a83.25,83.25,0,0,0-16.74,1.1C250.83,27,240,30.22,229.1,33.39l-3.38-9.46a17.8,17.8,0,0,0-33.56,11.89l3.49,9.8a286.74,286.74,0,0,0-43.94,23.57l-6.32-8.43a17.9,17.9,0,0,0-24.94-3.6A17.69,17.69,0,0,0,116.84,82l6.45,8.61a286.59,286.59,0,0,0-34.95,35.33l-8.82-6.42a17.84,17.84,0,0,0-24.89,3.86,17.66,17.66,0,0,0,3.88,24.77l8.88,6.47a286.6,286.6,0,0,0-23,43.91l-10.48-3.59a17.73,17.73,0,1,0-11.59,33.52L32.67,232c-2.79,10-5.79,19.84-7.52,30.22a83.16,83.16,0,0,0-.82,19l-11.58,3.43a17.73,17.73,0,1,0,10.13,34l11.27-3.33a83.51,83.51,0,0,0,36.39,35.43l-2.88,11.06a17.81,17.81,0,0,0,34.48,8.92l2.87-11c1,0,2.07.26,3.1.26a83.39,83.39,0,0,0,45.65-13.88l8.59,8.8a17.77,17.77,0,0,0,25.56-24.7l-9.14-9.37a83.41,83.41,0,0,0,12.08-31.05,119.08,119.08,0,0,1,3.87-15.53l9,4.22a17.74,17.74,0,1,0,15.15-32.09l-8.8-4.11c.67-1,1.2-2.08,1.9-3.05a119.89,119.89,0,0,1,7.87-9.41,121.73,121.73,0,0,1,11.65-11.4,119.49,119.49,0,0,1,9.94-7.82c1.12-.77,2.32-1.42,3.47-2.15l3.92,8.85a17.86,17.86,0,0,0,16.32,10.58A18.14,18.14,0,0,0,272.35,226.4ZM128,256a32,32,0,1,1,32-32A32,32,0,0,1,128,256Zm80-96a16,16,0,1,1,16-16A16,16,0,0,1,208,160Zm431.26,45.3a17.79,17.79,0,0,0-17.06-12.69,17.55,17.55,0,0,0-5.08.74l-11.27,3.33a83.61,83.61,0,0,0-36.39-35.43l2.88-11.06a17.81,17.81,0,0,0-34.48-8.91l-2.87,11c-1,0-2.07-.26-3.1-.26a83.32,83.32,0,0,0-45.65,13.89l-8.59-8.81a17.77,17.77,0,0,0-25.56,24.7l9.14,9.37a83.28,83.28,0,0,0-12.08,31.06,119.34,119.34,0,0,1-3.87,15.52l-9-4.22a17.74,17.74,0,1,0-15.15,32.09l8.8,4.11c-.67,1-1.2,2.08-1.89,3.05a117.71,117.71,0,0,1-7.94,9.47,119,119,0,0,1-11.57,11.33,121.59,121.59,0,0,1-10,7.83c-1.12.77-2.32,1.42-3.47,2.15l-3.92-8.85a17.86,17.86,0,0,0-16.32-10.58,18.14,18.14,0,0,0-7.18,1.5A17.71,17.71,0,0,0,358.54,309l4,9.08a118.71,118.71,0,0,1-12.36,3.08,83.34,83.34,0,0,0-33.77,13.9l-10-9a17.77,17.77,0,1,0-23.92,26.28l9.72,8.75a83.12,83.12,0,0,0-11.65,48.18l-11.86,3.51a17.73,17.73,0,1,0,10.16,34l11.34-3.36A84,84,0,0,0,326.61,479l-2.84,10.85a17.8,17.8,0,0,0,34.47,8.93L361.06,488a83.3,83.3,0,0,0,16.74-1.1c11.37-1.89,22.24-5.07,33.1-8.24l3.38,9.46a17.8,17.8,0,0,0,33.56-11.89l-3.49-9.79a287.66,287.66,0,0,0,43.94-23.58l6.32,8.43a17.88,17.88,0,0,0,24.93,3.6A17.67,17.67,0,0,0,523.16,430l-6.45-8.61a287.37,287.37,0,0,0,34.95-35.34l8.82,6.42a17.76,17.76,0,1,0,21-28.63l-8.88-6.46a287.17,287.17,0,0,0,23-43.92l10.48,3.59a17.73,17.73,0,1,0,11.59-33.52L607.33,280c2.79-10,5.79-19.84,7.52-30.21a83.27,83.27,0,0,0,.82-19.05l11.58-3.43A17.7,17.7,0,0,0,639.26,205.3ZM416,416a32,32,0,1,1,32-32A32,32,0,0,1,416,416Z"]
 };
 var faBacterium = {
   prefix: 'fas',
   iconName: 'bacterium',
-  icon: [512, 512, [], "f95a", "M511,102.93A23.76,23.76,0,0,0,481.47,87l-15.12,4.48a111.85,111.85,0,0,0-48.5-47.42l3.79-14.47a23.74,23.74,0,0,0-46-11.91l-3.76,14.37a111.94,111.94,0,0,0-22.33,1.47,386.74,386.74,0,0,0-44.33,10.41l-4.3-12a23.74,23.74,0,0,0-44.75,15.85l4.3,12.05a383.4,383.4,0,0,0-58.69,31.83l-8-10.63a23.85,23.85,0,0,0-33.24-4.8,23.57,23.57,0,0,0-4.83,33.09l8,10.63a386.14,386.14,0,0,0-46.7,47.44l-11-8a23.68,23.68,0,1,0-28,38.17l11.09,8.06a383.45,383.45,0,0,0-30.92,58.75l-12.93-4.43a23.65,23.65,0,1,0-15.47,44.69l13,4.48a385.81,385.81,0,0,0-9.3,40.53A111.58,111.58,0,0,0,32.44,375L17,379.56a23.64,23.64,0,0,0,13.51,45.31l15-4.44a111.49,111.49,0,0,0,48.53,47.24l-3.85,14.75a23.66,23.66,0,0,0,17,28.83,24.7,24.7,0,0,0,6,.75,23.73,23.73,0,0,0,23-17.7L140,479.67c1.37.05,2.77.35,4.13.35A111.22,111.22,0,0,0,205,461.5l11.45,11.74a23.7,23.7,0,0,0,34.08-32.93l-12.19-12.5a111,111,0,0,0,16.11-41.4,158.69,158.69,0,0,1,5.16-20.71l12,5.64a23.66,23.66,0,1,0,20.19-42.79l-11.72-5.49c.89-1.32,1.59-2.77,2.52-4.06a157.86,157.86,0,0,1,10.46-12.49,159.5,159.5,0,0,1,15.59-15.28,162.18,162.18,0,0,1,13.23-10.4c1.5-1,3.1-1.89,4.63-2.87l5.23,11.8a23.74,23.74,0,0,0,43.48-19.08l-5.36-12.11a158.87,158.87,0,0,1,16.49-4.1,111,111,0,0,0,45-18.54l13.33,12a23.69,23.69,0,1,0,31.88-35l-12.94-11.67A110.83,110.83,0,0,0,479.21,137L495,132.32A23.61,23.61,0,0,0,511,102.93ZM160,368a48,48,0,1,1,48-48A48,48,0,0,1,160,368Zm80-136a24,24,0,1,1,24-24A24,24,0,0,1,240,232Z"]
+  icon: [512, 512, [], "e05a", "M511,102.93A23.76,23.76,0,0,0,481.47,87l-15.12,4.48a111.85,111.85,0,0,0-48.5-47.42l3.79-14.47a23.74,23.74,0,0,0-46-11.91l-3.76,14.37a111.94,111.94,0,0,0-22.33,1.47,386.74,386.74,0,0,0-44.33,10.41l-4.3-12a23.74,23.74,0,0,0-44.75,15.85l4.3,12.05a383.4,383.4,0,0,0-58.69,31.83l-8-10.63a23.85,23.85,0,0,0-33.24-4.8,23.57,23.57,0,0,0-4.83,33.09l8,10.63a386.14,386.14,0,0,0-46.7,47.44l-11-8a23.68,23.68,0,1,0-28,38.17l11.09,8.06a383.45,383.45,0,0,0-30.92,58.75l-12.93-4.43a23.65,23.65,0,1,0-15.47,44.69l13,4.48a385.81,385.81,0,0,0-9.3,40.53A111.58,111.58,0,0,0,32.44,375L17,379.56a23.64,23.64,0,0,0,13.51,45.31l15-4.44a111.49,111.49,0,0,0,48.53,47.24l-3.85,14.75a23.66,23.66,0,0,0,17,28.83,24.7,24.7,0,0,0,6,.75,23.73,23.73,0,0,0,23-17.7L140,479.67c1.37.05,2.77.35,4.13.35A111.22,111.22,0,0,0,205,461.5l11.45,11.74a23.7,23.7,0,0,0,34.08-32.93l-12.19-12.5a111,111,0,0,0,16.11-41.4,158.69,158.69,0,0,1,5.16-20.71l12,5.64a23.66,23.66,0,1,0,20.19-42.79l-11.72-5.49c.89-1.32,1.59-2.77,2.52-4.06a157.86,157.86,0,0,1,10.46-12.49,159.5,159.5,0,0,1,15.59-15.28,162.18,162.18,0,0,1,13.23-10.4c1.5-1,3.1-1.89,4.63-2.87l5.23,11.8a23.74,23.74,0,0,0,43.48-19.08l-5.36-12.11a158.87,158.87,0,0,1,16.49-4.1,111,111,0,0,0,45-18.54l13.33,12a23.69,23.69,0,1,0,31.88-35l-12.94-11.67A110.83,110.83,0,0,0,479.21,137L495,132.32A23.61,23.61,0,0,0,511,102.93ZM160,368a48,48,0,1,1,48-48A48,48,0,0,1,160,368Zm80-136a24,24,0,1,1,24-24A24,24,0,0,1,240,232Z"]
 };
 var faBahai = {
   prefix: 'fas',
@@ -8326,7 +8582,7 @@ var faBoxOpen = {
 var faBoxTissue = {
   prefix: 'fas',
   iconName: 'box-tissue',
-  icon: [512, 512, [], "f95b", "M383.88,287.82l64-192H338.47a70.2,70.2,0,0,1-66.59-48,70.21,70.21,0,0,0-66.6-48H63.88l64,288Zm-384,192a32,32,0,0,0,32,32h448a32,32,0,0,0,32-32v-64H-.12Zm480-256H438.94l-21.33,64h14.27a16,16,0,0,1,0,32h-352a16,16,0,1,1,0-32H95.09l-14.22-64h-49a32,32,0,0,0-32,32v128h512v-128A32,32,0,0,0,479.88,223.82Z"]
+  icon: [512, 512, [], "e05b", "M383.88,287.82l64-192H338.47a70.2,70.2,0,0,1-66.59-48,70.21,70.21,0,0,0-66.6-48H63.88l64,288Zm-384,192a32,32,0,0,0,32,32h448a32,32,0,0,0,32-32v-64H-.12Zm480-256H438.94l-21.33,64h14.27a16,16,0,0,1,0,32h-352a16,16,0,1,1,0-32H95.09l-14.22-64h-49a32,32,0,0,0-32,32v128h512v-128A32,32,0,0,0,479.88,223.82Z"]
 };
 var faBoxes = {
   prefix: 'fas',
@@ -9381,7 +9637,7 @@ var faFastForward = {
 var faFaucet = {
   prefix: 'fas',
   iconName: 'faucet',
-  icon: [512, 512, [], "f905", "M352,256H313.39c-15.71-13.44-35.46-23.07-57.39-28V180.44l-32-3.38-32,3.38V228c-21.93,5-41.68,14.6-57.39,28H16A16,16,0,0,0,0,272v96a16,16,0,0,0,16,16h92.79C129.38,421.73,173,448,224,448s94.62-26.27,115.21-64H352a32,32,0,0,1,32,32,32,32,0,0,0,32,32h64a32,32,0,0,0,32-32A160,160,0,0,0,352,256ZM81.59,159.91l142.41-15,142.41,15c9.42,1,17.59-6.81,17.59-16.8V112.89c0-10-8.17-17.8-17.59-16.81L256,107.74V80a16,16,0,0,0-16-16H208a16,16,0,0,0-16,16v27.74L81.59,96.08C72.17,95.09,64,102.9,64,112.89v30.22C64,153.1,72.17,160.91,81.59,159.91Z"]
+  icon: [512, 512, [], "e005", "M352,256H313.39c-15.71-13.44-35.46-23.07-57.39-28V180.44l-32-3.38-32,3.38V228c-21.93,5-41.68,14.6-57.39,28H16A16,16,0,0,0,0,272v96a16,16,0,0,0,16,16h92.79C129.38,421.73,173,448,224,448s94.62-26.27,115.21-64H352a32,32,0,0,1,32,32,32,32,0,0,0,32,32h64a32,32,0,0,0,32-32A160,160,0,0,0,352,256ZM81.59,159.91l142.41-15,142.41,15c9.42,1,17.59-6.81,17.59-16.8V112.89c0-10-8.17-17.8-17.59-16.81L256,107.74V80a16,16,0,0,0-16-16H208a16,16,0,0,0-16,16v27.74L81.59,96.08C72.17,95.09,64,102.9,64,112.89v30.22C64,153.1,72.17,160.91,81.59,159.91Z"]
 };
 var faFax = {
   prefix: 'fas',
@@ -9911,7 +10167,7 @@ var faHandHoldingHeart = {
 var faHandHoldingMedical = {
   prefix: 'fas',
   iconName: 'hand-holding-medical',
-  icon: [576, 512, [], "f95c", "M159.88,175.82h64v64a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16v-64h64a16,16,0,0,0,16-16v-64a16,16,0,0,0-16-16h-64v-64a16,16,0,0,0-16-16h-64a16,16,0,0,0-16,16v64h-64a16,16,0,0,0-16,16v64A16,16,0,0,0,159.88,175.82ZM568.07,336.13a39.91,39.91,0,0,0-55.93-8.47L392.47,415.84H271.86a16,16,0,0,1,0-32H350.1c16,0,30.75-10.87,33.37-26.61a32.06,32.06,0,0,0-31.62-37.38h-160a117.7,117.7,0,0,0-74.12,26.25l-46.5,37.74H15.87a16.11,16.11,0,0,0-16,16v96a16.11,16.11,0,0,0,16,16h347a104.8,104.8,0,0,0,61.7-20.27L559.6,392A40,40,0,0,0,568.07,336.13Z"]
+  icon: [576, 512, [], "e05c", "M159.88,175.82h64v64a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16v-64h64a16,16,0,0,0,16-16v-64a16,16,0,0,0-16-16h-64v-64a16,16,0,0,0-16-16h-64a16,16,0,0,0-16,16v64h-64a16,16,0,0,0-16,16v64A16,16,0,0,0,159.88,175.82ZM568.07,336.13a39.91,39.91,0,0,0-55.93-8.47L392.47,415.84H271.86a16,16,0,0,1,0-32H350.1c16,0,30.75-10.87,33.37-26.61a32.06,32.06,0,0,0-31.62-37.38h-160a117.7,117.7,0,0,0-74.12,26.25l-46.5,37.74H15.87a16.11,16.11,0,0,0-16,16v96a16.11,16.11,0,0,0,16,16h347a104.8,104.8,0,0,0,61.7-20.27L559.6,392A40,40,0,0,0,568.07,336.13Z"]
 };
 var faHandHoldingUsd = {
   prefix: 'fas',
@@ -9981,7 +10237,7 @@ var faHandScissors = {
 var faHandSparkles = {
   prefix: 'fas',
   iconName: 'hand-sparkles',
-  icon: [640, 512, [], "f95d", "M106.66,170.64l.09,0,49.55-20.65a7.32,7.32,0,0,0,3.68-6h0a7.29,7.29,0,0,0-3.68-6l-49.57-20.67-.07,0L86,67.68a6.66,6.66,0,0,0-11.92,0l-20.7,49.63-.05,0L3.7,138A7.29,7.29,0,0,0,0,144H0a7.32,7.32,0,0,0,3.68,6L53.27,170.6l.07,0L74,220.26a6.65,6.65,0,0,0,11.92,0l20.69-49.62ZM471.38,467.41l-1-.42-1-.5a38.67,38.67,0,0,1,0-69.14l1-.49,1-.43,37.49-15.63,15.63-37.48.41-1,.47-.95c3.85-7.74,10.58-13.63,18.35-17.34,0-1.33.25-2.69.27-4V144a32,32,0,0,0-64,0v72a8,8,0,0,1-8,8H456a8,8,0,0,1-8-8V64a32,32,0,0,0-64,0V216a8,8,0,0,1-8,8H360a8,8,0,0,1-8-8V32a32,32,0,0,0-64,0V216a8,8,0,0,1-8,8H264a8,8,0,0,1-8-8V64a32,32,0,0,0-64,0v241l-23.59-32.49a40,40,0,0,0-64.71,47.09L229.3,492.21A48.07,48.07,0,0,0,268.09,512H465.7c19.24,0,35.65-11.73,43.24-28.79l-.07-.17ZM349.79,339.52,320,351.93l-12.42,29.78a4,4,0,0,1-7.15,0L288,351.93l-29.79-12.41a4,4,0,0,1,0-7.16L288,319.94l12.42-29.78a4,4,0,0,1,7.15,0L320,319.94l29.79,12.42a4,4,0,0,1,0,7.16ZM640,431.91a7.28,7.28,0,0,0-3.68-6l-49.57-20.67-.07,0L566,355.63a6.66,6.66,0,0,0-11.92,0l-20.7,49.63-.05,0L483.7,426a7.28,7.28,0,0,0-3.68,6h0a7.29,7.29,0,0,0,3.68,5.95l49.57,20.67.07,0L554,508.21a6.65,6.65,0,0,0,11.92,0l20.69-49.62h0l.09,0,49.55-20.66a7.29,7.29,0,0,0,3.68-5.95h0Z"]
+  icon: [640, 512, [], "e05d", "M106.66,170.64l.09,0,49.55-20.65a7.32,7.32,0,0,0,3.68-6h0a7.29,7.29,0,0,0-3.68-6l-49.57-20.67-.07,0L86,67.68a6.66,6.66,0,0,0-11.92,0l-20.7,49.63-.05,0L3.7,138A7.29,7.29,0,0,0,0,144H0a7.32,7.32,0,0,0,3.68,6L53.27,170.6l.07,0L74,220.26a6.65,6.65,0,0,0,11.92,0l20.69-49.62ZM471.38,467.41l-1-.42-1-.5a38.67,38.67,0,0,1,0-69.14l1-.49,1-.43,37.49-15.63,15.63-37.48.41-1,.47-.95c3.85-7.74,10.58-13.63,18.35-17.34,0-1.33.25-2.69.27-4V144a32,32,0,0,0-64,0v72a8,8,0,0,1-8,8H456a8,8,0,0,1-8-8V64a32,32,0,0,0-64,0V216a8,8,0,0,1-8,8H360a8,8,0,0,1-8-8V32a32,32,0,0,0-64,0V216a8,8,0,0,1-8,8H264a8,8,0,0,1-8-8V64a32,32,0,0,0-64,0v241l-23.59-32.49a40,40,0,0,0-64.71,47.09L229.3,492.21A48.07,48.07,0,0,0,268.09,512H465.7c19.24,0,35.65-11.73,43.24-28.79l-.07-.17ZM349.79,339.52,320,351.93l-12.42,29.78a4,4,0,0,1-7.15,0L288,351.93l-29.79-12.41a4,4,0,0,1,0-7.16L288,319.94l12.42-29.78a4,4,0,0,1,7.15,0L320,319.94l29.79,12.42a4,4,0,0,1,0,7.16ZM640,431.91a7.28,7.28,0,0,0-3.68-6l-49.57-20.67-.07,0L566,355.63a6.66,6.66,0,0,0-11.92,0l-20.7,49.63-.05,0L483.7,426a7.28,7.28,0,0,0-3.68,6h0a7.29,7.29,0,0,0,3.68,5.95l49.57,20.67.07,0L554,508.21a6.65,6.65,0,0,0,11.92,0l20.69-49.62h0l.09,0,49.55-20.66a7.29,7.29,0,0,0,3.68-5.95h0Z"]
 };
 var faHandSpock = {
   prefix: 'fas',
@@ -10001,7 +10257,7 @@ var faHandsHelping = {
 var faHandsWash = {
   prefix: 'fas',
   iconName: 'hands-wash',
-  icon: [576, 512, [], "f95e", "M496,224a48,48,0,1,0-48-48A48,48,0,0,0,496,224ZM311.47,178.45A56.77,56.77,0,0,1,328,176a56,56,0,0,1,19,3.49l15.35-48.61A24,24,0,0,0,342,99.74c-11.53-1.35-22.21,6.44-25.71,17.51l-20.9,66.17ZM93.65,386.33c.8-.19,1.54-.54,2.35-.71V359.93a156,156,0,0,1,107.06-148l73.7-22.76L310.92,81.05a24,24,0,0,0-20.33-31.11c-11.53-1.34-22.22,6.45-25.72,17.52L231.42,173.88a8,8,0,0,1-15.26-4.83L259.53,31.26A24,24,0,0,0,239.2.15C227.67-1.19,217,6.6,213.49,17.66L165.56,169.37a8,8,0,1,1-15.26-4.82l38.56-122a24,24,0,0,0-20.33-31.11C157,10,146.32,17.83,142.82,28.9l-60,189.85L80.76,168.7A24,24,0,0,0,56.9,144.55c-13.23-.05-24.72,10.54-24.9,23.86V281.14A123.69,123.69,0,0,0,93.65,386.33ZM519.1,336H360a8,8,0,0,1,0-16H488a24,24,0,0,0,23.54-28.76C509.35,279.84,498.71,272,487.1,272H288l47.09-17.06a24,24,0,0,0-14.18-45.88L213.19,242.31A123.88,123.88,0,0,0,128,360v25.65a79.78,79.78,0,0,1,58,108.63A118.9,118.9,0,0,0,248,512H456a24,24,0,0,0,23.54-28.76C477.35,471.84,466.71,464,455.1,464H360a8,8,0,0,1,0-16H488a24,24,0,0,0,23.54-28.76C509.35,407.84,498.71,400,487.1,400H360a8,8,0,0,1,0-16H520a24,24,0,0,0,23.54-28.76C541.35,343.84,530.71,336,519.1,336ZM416,64a32,32,0,1,0-32-32A32,32,0,0,0,416,64ZM112,416a48,48,0,1,0,48,48A48,48,0,0,0,112,416Z"]
+  icon: [576, 512, [], "e05e", "M496,224a48,48,0,1,0-48-48A48,48,0,0,0,496,224ZM311.47,178.45A56.77,56.77,0,0,1,328,176a56,56,0,0,1,19,3.49l15.35-48.61A24,24,0,0,0,342,99.74c-11.53-1.35-22.21,6.44-25.71,17.51l-20.9,66.17ZM93.65,386.33c.8-.19,1.54-.54,2.35-.71V359.93a156,156,0,0,1,107.06-148l73.7-22.76L310.92,81.05a24,24,0,0,0-20.33-31.11c-11.53-1.34-22.22,6.45-25.72,17.52L231.42,173.88a8,8,0,0,1-15.26-4.83L259.53,31.26A24,24,0,0,0,239.2.15C227.67-1.19,217,6.6,213.49,17.66L165.56,169.37a8,8,0,1,1-15.26-4.82l38.56-122a24,24,0,0,0-20.33-31.11C157,10,146.32,17.83,142.82,28.9l-60,189.85L80.76,168.7A24,24,0,0,0,56.9,144.55c-13.23-.05-24.72,10.54-24.9,23.86V281.14A123.69,123.69,0,0,0,93.65,386.33ZM519.1,336H360a8,8,0,0,1,0-16H488a24,24,0,0,0,23.54-28.76C509.35,279.84,498.71,272,487.1,272H288l47.09-17.06a24,24,0,0,0-14.18-45.88L213.19,242.31A123.88,123.88,0,0,0,128,360v25.65a79.78,79.78,0,0,1,58,108.63A118.9,118.9,0,0,0,248,512H456a24,24,0,0,0,23.54-28.76C477.35,471.84,466.71,464,455.1,464H360a8,8,0,0,1,0-16H488a24,24,0,0,0,23.54-28.76C509.35,407.84,498.71,400,487.1,400H360a8,8,0,0,1,0-16H520a24,24,0,0,0,23.54-28.76C541.35,343.84,530.71,336,519.1,336ZM416,64a32,32,0,1,0-32-32A32,32,0,0,0,416,64ZM112,416a48,48,0,1,0,48,48A48,48,0,0,0,112,416Z"]
 };
 var faHandshake = {
   prefix: 'fas',
@@ -10011,12 +10267,12 @@ var faHandshake = {
 var faHandshakeAltSlash = {
   prefix: 'fas',
   iconName: 'handshake-alt-slash',
-  icon: [640, 512, [], "f95f", "M358.59,195.6,504.2,313.8a63.4,63.4,0,0,1,22.21,37.91H624a16.05,16.05,0,0,0,16-16V143.91A16,16,0,0,0,624,128H512L457.41,73.41A32,32,0,0,0,434.8,64H348.91a32,32,0,0,0-21.61,8.41l-88.12,80.68-25.69-19.85L289.09,64H205.3a32,32,0,0,0-22.6,9.41l-20.34,20.3L45.47,3.38A16,16,0,0,0,23,6.19L3.38,31.46A16,16,0,0,0,6.19,53.91L594.54,508.63A16,16,0,0,0,617,505.82l19.64-25.27a16,16,0,0,0-2.81-22.45L303.4,202.72l32.69-29.92,27-24.7a16,16,0,0,1,21.61,23.61ZM16,128A16.05,16.05,0,0,0,0,144V335.91a16,16,0,0,0,16,16H146.3l90.5,81.89a64,64,0,0,0,90-9.3l.2-.2,17.91,15.5a37.16,37.16,0,0,0,52.29-5.39l8.8-10.82L23.56,128Z"]
+  icon: [640, 512, [], "e05f", "M358.59,195.6,504.2,313.8a63.4,63.4,0,0,1,22.21,37.91H624a16.05,16.05,0,0,0,16-16V143.91A16,16,0,0,0,624,128H512L457.41,73.41A32,32,0,0,0,434.8,64H348.91a32,32,0,0,0-21.61,8.41l-88.12,80.68-25.69-19.85L289.09,64H205.3a32,32,0,0,0-22.6,9.41l-20.34,20.3L45.47,3.38A16,16,0,0,0,23,6.19L3.38,31.46A16,16,0,0,0,6.19,53.91L594.54,508.63A16,16,0,0,0,617,505.82l19.64-25.27a16,16,0,0,0-2.81-22.45L303.4,202.72l32.69-29.92,27-24.7a16,16,0,0,1,21.61,23.61ZM16,128A16.05,16.05,0,0,0,0,144V335.91a16,16,0,0,0,16,16H146.3l90.5,81.89a64,64,0,0,0,90-9.3l.2-.2,17.91,15.5a37.16,37.16,0,0,0,52.29-5.39l8.8-10.82L23.56,128Z"]
 };
 var faHandshakeSlash = {
   prefix: 'fas',
   iconName: 'handshake-slash',
-  icon: [640, 512, [], "f960", "M0,128.21V384H64a32,32,0,0,0,32-32V184L23.83,128.21ZM48,320.1a16,16,0,1,1-16,16A16,16,0,0,1,48,320.1Zm80,31.81h18.3l90.5,81.89a64,64,0,0,0,90-9.3l.2-.2,17.91,15.5a37.16,37.16,0,0,0,52.29-5.39l8.8-10.82L128,208.72Zm416-223.7V352.1a32,32,0,0,0,32,32h64V128.21ZM592,352.1a16,16,0,1,1,16-16A16,16,0,0,1,592,352.1ZM303.33,202.67l59.58-54.57a16,16,0,0,1,21.59,23.61L358.41,195.6,504,313.8a73.08,73.08,0,0,1,7.91,7.7V128L457.3,73.41A31.76,31.76,0,0,0,434.7,64H348.8a31.93,31.93,0,0,0-21.6,8.41l-88.07,80.64-25.64-19.81L289.09,64H205.3a32,32,0,0,0-22.6,9.41L162.36,93.72,45.47,3.38A16,16,0,0,0,23,6.19L3.38,31.46A16,16,0,0,0,6.19,53.91L594.53,508.63A16,16,0,0,0,617,505.82l19.65-25.27a16,16,0,0,0-2.82-22.45Z"]
+  icon: [640, 512, [], "e060", "M0,128.21V384H64a32,32,0,0,0,32-32V184L23.83,128.21ZM48,320.1a16,16,0,1,1-16,16A16,16,0,0,1,48,320.1Zm80,31.81h18.3l90.5,81.89a64,64,0,0,0,90-9.3l.2-.2,17.91,15.5a37.16,37.16,0,0,0,52.29-5.39l8.8-10.82L128,208.72Zm416-223.7V352.1a32,32,0,0,0,32,32h64V128.21ZM592,352.1a16,16,0,1,1,16-16A16,16,0,0,1,592,352.1ZM303.33,202.67l59.58-54.57a16,16,0,0,1,21.59,23.61L358.41,195.6,504,313.8a73.08,73.08,0,0,1,7.91,7.7V128L457.3,73.41A31.76,31.76,0,0,0,434.7,64H348.8a31.93,31.93,0,0,0-21.6,8.41l-88.07,80.64-25.64-19.81L289.09,64H205.3a32,32,0,0,0-22.6,9.41L162.36,93.72,45.47,3.38A16,16,0,0,0,23,6.19L3.38,31.46A16,16,0,0,0,6.19,53.91L594.53,508.63A16,16,0,0,0,617,505.82l19.65-25.27a16,16,0,0,0-2.82-22.45Z"]
 };
 var faHanukiah = {
   prefix: 'fas',
@@ -10056,22 +10312,22 @@ var faHdd = {
 var faHeadSideCough = {
   prefix: 'fas',
   iconName: 'head-side-cough',
-  icon: [640, 512, [], "f961", "M616,304a24,24,0,1,0-24-24A24,24,0,0,0,616,304ZM552,416a24,24,0,1,0,24,24A24,24,0,0,0,552,416Zm-64-56a24,24,0,1,0,24,24A24,24,0,0,0,488,360ZM616,464a24,24,0,1,0,24,24A24,24,0,0,0,616,464Zm0-104a24,24,0,1,0,24,24A24,24,0,0,0,616,360Zm-64-40a24,24,0,1,0,24,24A24,24,0,0,0,552,320Zm-74.78-45c-21-47.12-48.5-151.75-73.12-186.75A208.13,208.13,0,0,0,234.1,0H192C86,0,0,86,0,192c0,56.75,24.75,107.62,64,142.88V512H288V480h64a64,64,0,0,0,64-64H320a32,32,0,0,1,0-64h96V320h32A32,32,0,0,0,477.22,275ZM288,224a32,32,0,1,1,32-32A32.07,32.07,0,0,1,288,224Z"]
+  icon: [640, 512, [], "e061", "M616,304a24,24,0,1,0-24-24A24,24,0,0,0,616,304ZM552,416a24,24,0,1,0,24,24A24,24,0,0,0,552,416Zm-64-56a24,24,0,1,0,24,24A24,24,0,0,0,488,360ZM616,464a24,24,0,1,0,24,24A24,24,0,0,0,616,464Zm0-104a24,24,0,1,0,24,24A24,24,0,0,0,616,360Zm-64-40a24,24,0,1,0,24,24A24,24,0,0,0,552,320Zm-74.78-45c-21-47.12-48.5-151.75-73.12-186.75A208.13,208.13,0,0,0,234.1,0H192C86,0,0,86,0,192c0,56.75,24.75,107.62,64,142.88V512H288V480h64a64,64,0,0,0,64-64H320a32,32,0,0,1,0-64h96V320h32A32,32,0,0,0,477.22,275ZM288,224a32,32,0,1,1,32-32A32.07,32.07,0,0,1,288,224Z"]
 };
 var faHeadSideCoughSlash = {
   prefix: 'fas',
   iconName: 'head-side-cough-slash',
-  icon: [640, 512, [], "f962", "M454.11,319.21c19.56-3.81,31.62-25,23.11-44.21-21-47.12-48.5-151.75-73.12-186.75A208.13,208.13,0,0,0,234.1,0H192A190.64,190.64,0,0,0,84.18,33.3L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.46A16,16,0,0,0,6.18,53.91L594.53,508.63A16,16,0,0,0,617,505.82l19.64-25.27a16,16,0,0,0-2.81-22.45ZM313.39,210.45,263.61,172c5.88-7.14,14.43-12,24.36-12a32.06,32.06,0,0,1,32,32C320,199,317.24,205.17,313.39,210.45ZM616,304a24,24,0,1,0-24-24A24,24,0,0,0,616,304Zm-64,64a24,24,0,1,0-24-24A24,24,0,0,0,552,368ZM288,384a32,32,0,0,1,32-32h19.54L20.73,105.59A190.86,190.86,0,0,0,0,192c0,56.75,24.75,107.62,64,142.88V512H288V480h64a64,64,0,0,0,64-64H320A32,32,0,0,1,288,384Zm328-24a24,24,0,1,0,24,24A24,24,0,0,0,616,360Z"]
+  icon: [640, 512, [], "e062", "M454.11,319.21c19.56-3.81,31.62-25,23.11-44.21-21-47.12-48.5-151.75-73.12-186.75A208.13,208.13,0,0,0,234.1,0H192A190.64,190.64,0,0,0,84.18,33.3L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.46A16,16,0,0,0,6.18,53.91L594.53,508.63A16,16,0,0,0,617,505.82l19.64-25.27a16,16,0,0,0-2.81-22.45ZM313.39,210.45,263.61,172c5.88-7.14,14.43-12,24.36-12a32.06,32.06,0,0,1,32,32C320,199,317.24,205.17,313.39,210.45ZM616,304a24,24,0,1,0-24-24A24,24,0,0,0,616,304Zm-64,64a24,24,0,1,0-24-24A24,24,0,0,0,552,368ZM288,384a32,32,0,0,1,32-32h19.54L20.73,105.59A190.86,190.86,0,0,0,0,192c0,56.75,24.75,107.62,64,142.88V512H288V480h64a64,64,0,0,0,64-64H320A32,32,0,0,1,288,384Zm328-24a24,24,0,1,0,24,24A24,24,0,0,0,616,360Z"]
 };
 var faHeadSideMask = {
   prefix: 'fas',
   iconName: 'head-side-mask',
-  icon: [512, 512, [], "f963", "M.15,184.42C-2.17,244.21,23,298.06,64,334.88V512H224V316.51L3.67,156.25A182.28,182.28,0,0,0,.15,184.42ZM509.22,275c-21-47.12-48.5-151.75-73.12-186.75A208.11,208.11,0,0,0,266.11,0H200C117,0,42.48,50.57,13.25,123.65L239.21,288H511.76A31.35,31.35,0,0,0,509.22,275ZM320,224a32,32,0,1,1,32-32A32.07,32.07,0,0,1,320,224Zm16,144H496l16-48H256V512H401.88a64,64,0,0,0,60.71-43.76L464,464H336a16,16,0,0,1,0-32H474.67l10.67-32H336a16,16,0,0,1,0-32Z"]
+  icon: [512, 512, [], "e063", "M.15,184.42C-2.17,244.21,23,298.06,64,334.88V512H224V316.51L3.67,156.25A182.28,182.28,0,0,0,.15,184.42ZM509.22,275c-21-47.12-48.5-151.75-73.12-186.75A208.11,208.11,0,0,0,266.11,0H200C117,0,42.48,50.57,13.25,123.65L239.21,288H511.76A31.35,31.35,0,0,0,509.22,275ZM320,224a32,32,0,1,1,32-32A32.07,32.07,0,0,1,320,224Zm16,144H496l16-48H256V512H401.88a64,64,0,0,0,60.71-43.76L464,464H336a16,16,0,0,1,0-32H474.67l10.67-32H336a16,16,0,0,1,0-32Z"]
 };
 var faHeadSideVirus = {
   prefix: 'fas',
   iconName: 'head-side-virus',
-  icon: [512, 512, [], "f964", "M272,240a16,16,0,1,0,16,16A16,16,0,0,0,272,240Zm-64-64a16,16,0,1,0,16,16A16,16,0,0,0,208,176Zm301.2,99c-20.93-47.12-48.43-151.73-73.07-186.75A207.9,207.9,0,0,0,266.09,0H192C86,0,0,86,0,192A191.23,191.23,0,0,0,64,334.81V512H320V448h64a64,64,0,0,0,64-64V320H480A32,32,0,0,0,509.2,275ZM368,240H355.88c-28.51,0-42.79,34.47-22.63,54.63l8.58,8.57a16,16,0,1,1-22.63,22.63l-8.57-8.58C290.47,297.09,256,311.37,256,339.88V352a16,16,0,0,1-32,0V339.88c0-28.51-34.47-42.79-54.63-22.63l-8.57,8.58a16,16,0,0,1-22.63-22.63l8.58-8.57c20.16-20.16,5.88-54.63-22.63-54.63H112a16,16,0,0,1,0-32h12.12c28.51,0,42.79-34.47,22.63-54.63l-8.58-8.57a16,16,0,0,1,22.63-22.63l8.57,8.58c20.16,20.16,54.63,5.88,54.63-22.63V96a16,16,0,0,1,32,0v12.12c0,28.51,34.47,42.79,54.63,22.63l8.57-8.58a16,16,0,0,1,22.63,22.63l-8.58,8.57C313.09,173.53,327.37,208,355.88,208H368a16,16,0,0,1,0,32Z"]
+  icon: [512, 512, [], "e064", "M272,240a16,16,0,1,0,16,16A16,16,0,0,0,272,240Zm-64-64a16,16,0,1,0,16,16A16,16,0,0,0,208,176Zm301.2,99c-20.93-47.12-48.43-151.73-73.07-186.75A207.9,207.9,0,0,0,266.09,0H192C86,0,0,86,0,192A191.23,191.23,0,0,0,64,334.81V512H320V448h64a64,64,0,0,0,64-64V320H480A32,32,0,0,0,509.2,275ZM368,240H355.88c-28.51,0-42.79,34.47-22.63,54.63l8.58,8.57a16,16,0,1,1-22.63,22.63l-8.57-8.58C290.47,297.09,256,311.37,256,339.88V352a16,16,0,0,1-32,0V339.88c0-28.51-34.47-42.79-54.63-22.63l-8.57,8.58a16,16,0,0,1-22.63-22.63l8.58-8.57c20.16-20.16,5.88-54.63-22.63-54.63H112a16,16,0,0,1,0-32h12.12c28.51,0,42.79-34.47,22.63-54.63l-8.58-8.57a16,16,0,0,1,22.63-22.63l8.57,8.58c20.16,20.16,54.63,5.88,54.63-22.63V96a16,16,0,0,1,32,0v12.12c0,28.51,34.47,42.79,54.63,22.63l8.57-8.58a16,16,0,0,1,22.63,22.63l-8.58,8.57C313.09,173.53,327.37,208,355.88,208H368a16,16,0,0,1,0,32Z"]
 };
 var faHeading = {
   prefix: 'fas',
@@ -10221,7 +10477,7 @@ var faHouseDamage = {
 var faHouseUser = {
   prefix: 'fas',
   iconName: 'house-user',
-  icon: [576, 512, [], "f965", "M570.69,236.27,512,184.44V48a16,16,0,0,0-16-16H432a16,16,0,0,0-16,16V99.67L314.78,10.3C308.5,4.61,296.53,0,288,0s-20.46,4.61-26.74,10.3l-256,226A18.27,18.27,0,0,0,0,248.2a18.64,18.64,0,0,0,4.09,10.71L25.5,282.7a21.14,21.14,0,0,0,12,5.3,21.67,21.67,0,0,0,10.69-4.11l15.9-14V480a32,32,0,0,0,32,32H480a32,32,0,0,0,32-32V269.88l15.91,14A21.94,21.94,0,0,0,538.63,288a20.89,20.89,0,0,0,11.87-5.31l21.41-23.81A21.64,21.64,0,0,0,576,248.19,21,21,0,0,0,570.69,236.27ZM288,176a64,64,0,1,1-64,64A64,64,0,0,1,288,176ZM400,448H176a16,16,0,0,1-16-16,96,96,0,0,1,96-96h64a96,96,0,0,1,96,96A16,16,0,0,1,400,448Z"]
+  icon: [576, 512, [], "e065", "M570.69,236.27,512,184.44V48a16,16,0,0,0-16-16H432a16,16,0,0,0-16,16V99.67L314.78,10.3C308.5,4.61,296.53,0,288,0s-20.46,4.61-26.74,10.3l-256,226A18.27,18.27,0,0,0,0,248.2a18.64,18.64,0,0,0,4.09,10.71L25.5,282.7a21.14,21.14,0,0,0,12,5.3,21.67,21.67,0,0,0,10.69-4.11l15.9-14V480a32,32,0,0,0,32,32H480a32,32,0,0,0,32-32V269.88l15.91,14A21.94,21.94,0,0,0,538.63,288a20.89,20.89,0,0,0,11.87-5.31l21.41-23.81A21.64,21.64,0,0,0,576,248.19,21,21,0,0,0,570.69,236.27ZM288,176a64,64,0,1,1-64,64A64,64,0,0,1,288,176ZM400,448H176a16,16,0,0,1-16-16,96,96,0,0,1,96-96h64a96,96,0,0,1,96,96A16,16,0,0,1,400,448Z"]
 };
 var faHryvnia = {
   prefix: 'fas',
@@ -10391,7 +10647,7 @@ var faLaptopCode = {
 var faLaptopHouse = {
   prefix: 'fas',
   iconName: 'laptop-house',
-  icon: [640, 512, [], "f966", "M272,288H208a16,16,0,0,1-16-16V208a16,16,0,0,1,16-16h64a16,16,0,0,1,16,16v37.12C299.11,232.24,315,224,332.8,224H469.74l6.65-7.53A16.51,16.51,0,0,0,480,207a16.31,16.31,0,0,0-4.75-10.61L416,144V48a16,16,0,0,0-16-16H368a16,16,0,0,0-16,16V87.3L263.5,8.92C258,4,247.45,0,240.05,0s-17.93,4-23.47,8.92L4.78,196.42A16.15,16.15,0,0,0,0,207a16.4,16.4,0,0,0,3.55,9.39L22.34,237.7A16.22,16.22,0,0,0,33,242.48,16.51,16.51,0,0,0,42.34,239L64,219.88V384a32,32,0,0,0,32,32H272ZM629.33,448H592V288c0-17.67-12.89-32-28.8-32H332.8c-15.91,0-28.8,14.33-28.8,32V448H266.67A10.67,10.67,0,0,0,256,458.67v10.66A42.82,42.82,0,0,0,298.6,512H597.4A42.82,42.82,0,0,0,640,469.33V458.67A10.67,10.67,0,0,0,629.33,448ZM544,448H352V304H544Z"]
+  icon: [640, 512, [], "e066", "M272,288H208a16,16,0,0,1-16-16V208a16,16,0,0,1,16-16h64a16,16,0,0,1,16,16v37.12C299.11,232.24,315,224,332.8,224H469.74l6.65-7.53A16.51,16.51,0,0,0,480,207a16.31,16.31,0,0,0-4.75-10.61L416,144V48a16,16,0,0,0-16-16H368a16,16,0,0,0-16,16V87.3L263.5,8.92C258,4,247.45,0,240.05,0s-17.93,4-23.47,8.92L4.78,196.42A16.15,16.15,0,0,0,0,207a16.4,16.4,0,0,0,3.55,9.39L22.34,237.7A16.22,16.22,0,0,0,33,242.48,16.51,16.51,0,0,0,42.34,239L64,219.88V384a32,32,0,0,0,32,32H272ZM629.33,448H592V288c0-17.67-12.89-32-28.8-32H332.8c-15.91,0-28.8,14.33-28.8,32V448H266.67A10.67,10.67,0,0,0,256,458.67v10.66A42.82,42.82,0,0,0,298.6,512H597.4A42.82,42.82,0,0,0,640,469.33V458.67A10.67,10.67,0,0,0,629.33,448ZM544,448H352V304H544Z"]
 };
 var faLaptopMedical = {
   prefix: 'fas',
@@ -10546,7 +10802,7 @@ var faLungs = {
 var faLungsVirus = {
   prefix: 'fas',
   iconName: 'lungs-virus',
-  icon: [640, 512, [], "f967", "M344,150.68V16A16,16,0,0,0,328,0H312a16,16,0,0,0-16,16V150.68a46.45,46.45,0,0,1,48,0ZM195.54,444.46a48.06,48.06,0,0,1,0-67.88l8.58-8.58H192a48,48,0,0,1,0-96h12.12l-8.58-8.57a48,48,0,0,1,60.46-74V161.75C256,125.38,224.62,96,186,96c-44,0-58,28.5-80.12,63.13a819.52,819.52,0,0,0-102,231A113.16,113.16,0,0,0,0,419.75C0,481,62.5,525.26,125.25,508.38l59.5-15.87a98.51,98.51,0,0,0,52.5-34.75,46.49,46.49,0,0,1-41.71-13.3Zm226.29-22.63a16,16,0,0,0,0-22.62l-8.58-8.58C393.09,370.47,407.37,336,435.88,336H448a16,16,0,0,0,0-32H435.88c-28.51,0-42.79-34.47-22.63-54.62l8.58-8.58a16,16,0,0,0-22.63-22.63l-8.57,8.58C370.47,246.91,336,232.63,336,204.12V192a16,16,0,0,0-32,0v12.12c0,28.51-34.47,42.79-54.63,22.63l-8.57-8.58a16,16,0,0,0-22.63,22.63l8.58,8.58c20.16,20.15,5.88,54.62-22.63,54.62H192a16,16,0,0,0,0,32h12.12c28.51,0,42.79,34.47,22.63,54.63l-8.58,8.58a16,16,0,1,0,22.63,22.62l8.57-8.57C269.53,393.1,304,407.38,304,435.88V448a16,16,0,0,0,32,0V435.88c0-28.5,34.47-42.78,54.63-22.62l8.57,8.57a16,16,0,0,0,22.63,0ZM288,304a16,16,0,1,1,16-16A16,16,0,0,1,288,304Zm64,64a16,16,0,1,1,16-16A16,16,0,0,1,352,368Zm284.12,22.13a819.52,819.52,0,0,0-102-231C512,124.5,498,96,454,96c-38.62,0-70,29.38-70,65.75v27.72a48,48,0,0,1,60.46,74L435.88,272H448a48,48,0,0,1,0,96H435.88l8.58,8.58a47.7,47.7,0,0,1-41.71,81.18,98.51,98.51,0,0,0,52.5,34.75l59.5,15.87C577.5,525.26,640,481,640,419.75A113.16,113.16,0,0,0,636.12,390.13Z"]
+  icon: [640, 512, [], "e067", "M344,150.68V16A16,16,0,0,0,328,0H312a16,16,0,0,0-16,16V150.68a46.45,46.45,0,0,1,48,0ZM195.54,444.46a48.06,48.06,0,0,1,0-67.88l8.58-8.58H192a48,48,0,0,1,0-96h12.12l-8.58-8.57a48,48,0,0,1,60.46-74V161.75C256,125.38,224.62,96,186,96c-44,0-58,28.5-80.12,63.13a819.52,819.52,0,0,0-102,231A113.16,113.16,0,0,0,0,419.75C0,481,62.5,525.26,125.25,508.38l59.5-15.87a98.51,98.51,0,0,0,52.5-34.75,46.49,46.49,0,0,1-41.71-13.3Zm226.29-22.63a16,16,0,0,0,0-22.62l-8.58-8.58C393.09,370.47,407.37,336,435.88,336H448a16,16,0,0,0,0-32H435.88c-28.51,0-42.79-34.47-22.63-54.62l8.58-8.58a16,16,0,0,0-22.63-22.63l-8.57,8.58C370.47,246.91,336,232.63,336,204.12V192a16,16,0,0,0-32,0v12.12c0,28.51-34.47,42.79-54.63,22.63l-8.57-8.58a16,16,0,0,0-22.63,22.63l8.58,8.58c20.16,20.15,5.88,54.62-22.63,54.62H192a16,16,0,0,0,0,32h12.12c28.51,0,42.79,34.47,22.63,54.63l-8.58,8.58a16,16,0,1,0,22.63,22.62l8.57-8.57C269.53,393.1,304,407.38,304,435.88V448a16,16,0,0,0,32,0V435.88c0-28.5,34.47-42.78,54.63-22.62l8.57,8.57a16,16,0,0,0,22.63,0ZM288,304a16,16,0,1,1,16-16A16,16,0,0,1,288,304Zm64,64a16,16,0,1,1,16-16A16,16,0,0,1,352,368Zm284.12,22.13a819.52,819.52,0,0,0-102-231C512,124.5,498,96,454,96c-38.62,0-70,29.38-70,65.75v27.72a48,48,0,0,1,60.46,74L435.88,272H448a48,48,0,0,1,0,96H435.88l8.58,8.58a47.7,47.7,0,0,1-41.71,81.18,98.51,98.51,0,0,0,52.5,34.75l59.5,15.87C577.5,525.26,640,481,640,419.75A113.16,113.16,0,0,0,636.12,390.13Z"]
 };
 var faMagic = {
   prefix: 'fas',
@@ -11001,7 +11257,7 @@ var faPencilRuler = {
 var faPeopleArrows = {
   prefix: 'fas',
   iconName: 'people-arrows',
-  icon: [576, 512, [], "f968", "M96,128A64,64,0,1,0,32,64,64,64,0,0,0,96,128Zm0,176.08a44.11,44.11,0,0,1,13.64-32L181.77,204c1.65-1.55,3.77-2.31,5.61-3.57A63.91,63.91,0,0,0,128,160H64A64,64,0,0,0,0,224v96a32,32,0,0,0,32,32V480a32,32,0,0,0,32,32h64a32,32,0,0,0,32-32V383.61l-50.36-47.53A44.08,44.08,0,0,1,96,304.08ZM480,128a64,64,0,1,0-64-64A64,64,0,0,0,480,128Zm32,32H448a63.91,63.91,0,0,0-59.38,40.42c1.84,1.27,4,2,5.62,3.59l72.12,68.06a44.37,44.37,0,0,1,0,64L416,383.62V480a32,32,0,0,0,32,32h64a32,32,0,0,0,32-32V352a32,32,0,0,0,32-32V224A64,64,0,0,0,512,160ZM444.4,295.34l-72.12-68.06A12,12,0,0,0,352,236v36H224V236a12,12,0,0,0-20.28-8.73L131.6,295.34a12.4,12.4,0,0,0,0,17.47l72.12,68.07A12,12,0,0,0,224,372.14V336H352v36.14a12,12,0,0,0,20.28,8.74l72.12-68.07A12.4,12.4,0,0,0,444.4,295.34Z"]
+  icon: [576, 512, [], "e068", "M96,128A64,64,0,1,0,32,64,64,64,0,0,0,96,128Zm0,176.08a44.11,44.11,0,0,1,13.64-32L181.77,204c1.65-1.55,3.77-2.31,5.61-3.57A63.91,63.91,0,0,0,128,160H64A64,64,0,0,0,0,224v96a32,32,0,0,0,32,32V480a32,32,0,0,0,32,32h64a32,32,0,0,0,32-32V383.61l-50.36-47.53A44.08,44.08,0,0,1,96,304.08ZM480,128a64,64,0,1,0-64-64A64,64,0,0,0,480,128Zm32,32H448a63.91,63.91,0,0,0-59.38,40.42c1.84,1.27,4,2,5.62,3.59l72.12,68.06a44.37,44.37,0,0,1,0,64L416,383.62V480a32,32,0,0,0,32,32h64a32,32,0,0,0,32-32V352a32,32,0,0,0,32-32V224A64,64,0,0,0,512,160ZM444.4,295.34l-72.12-68.06A12,12,0,0,0,352,236v36H224V236a12,12,0,0,0-20.28-8.73L131.6,295.34a12.4,12.4,0,0,0,0,17.47l72.12,68.07A12,12,0,0,0,224,372.14V336H352v36.14a12,12,0,0,0,20.28,8.74l72.12-68.07A12.4,12.4,0,0,0,444.4,295.34Z"]
 };
 var faPeopleCarry = {
   prefix: 'fas',
@@ -11101,7 +11357,7 @@ var faPlaneDeparture = {
 var faPlaneSlash = {
   prefix: 'fas',
   iconName: 'plane-slash',
-  icon: [640, 512, [], "f969", "M32.48,147.88,64,256,32.48,364.13A16,16,0,0,0,48,384H88a16,16,0,0,0,12.8-6.41L144,320H246.85l-49,171.59A16,16,0,0,0,213.2,512h65.5a16,16,0,0,0,13.89-8.06l66.6-116.54L34.35,136.34A15.47,15.47,0,0,0,32.48,147.88ZM633.82,458.09,455.14,320H512c35.34,0,96-28.66,96-64s-60.66-64-96-64H397.7L292.61,8.06C290.06,3.61,283.84,0,278.71,0H213.2a16,16,0,0,0-15.38,20.39l36.94,129.29L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.45A16,16,0,0,0,6.18,53.91L594.54,508.63A16,16,0,0,0,617,505.81l19.64-25.26A16,16,0,0,0,633.82,458.09Z"]
+  icon: [640, 512, [], "e069", "M32.48,147.88,64,256,32.48,364.13A16,16,0,0,0,48,384H88a16,16,0,0,0,12.8-6.41L144,320H246.85l-49,171.59A16,16,0,0,0,213.2,512h65.5a16,16,0,0,0,13.89-8.06l66.6-116.54L34.35,136.34A15.47,15.47,0,0,0,32.48,147.88ZM633.82,458.09,455.14,320H512c35.34,0,96-28.66,96-64s-60.66-64-96-64H397.7L292.61,8.06C290.06,3.61,283.84,0,278.71,0H213.2a16,16,0,0,0-15.38,20.39l36.94,129.29L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.45A16,16,0,0,0,6.18,53.91L594.54,508.63A16,16,0,0,0,617,505.81l19.64-25.26A16,16,0,0,0,633.82,458.09Z"]
 };
 var faPlay = {
   prefix: 'fas',
@@ -11221,12 +11477,12 @@ var faProjectDiagram = {
 var faPumpMedical = {
   prefix: 'fas',
   iconName: 'pump-medical',
-  icon: [384, 512, [], "f96a", "M235.51,159.82H84.24A64,64,0,0,0,20.51,218L.14,442a64,64,0,0,0,63.74,69.8h192A64,64,0,0,0,319.61,442L299.24,218A64,64,0,0,0,235.51,159.82Zm4.37,173.33a13.35,13.35,0,0,1-13.34,13.34h-40v40a13.33,13.33,0,0,1-13.33,13.33H146.54a13.33,13.33,0,0,1-13.33-13.33v-40h-40a13.34,13.34,0,0,1-13.33-13.34V306.49a13.33,13.33,0,0,1,13.33-13.34h40v-40a13.33,13.33,0,0,1,13.33-13.33h26.67a13.33,13.33,0,0,1,13.33,13.33v40h40a13.34,13.34,0,0,1,13.34,13.34ZM379.19,93.88,335.87,50.56a64,64,0,0,0-45.24-18.74H223.88a32,32,0,0,0-32-32h-64a32,32,0,0,0-32,32v96h128v-32h66.75l43.31,43.31a16,16,0,0,0,22.63,0l22.62-22.62A16,16,0,0,0,379.19,93.88Z"]
+  icon: [384, 512, [], "e06a", "M235.51,159.82H84.24A64,64,0,0,0,20.51,218L.14,442a64,64,0,0,0,63.74,69.8h192A64,64,0,0,0,319.61,442L299.24,218A64,64,0,0,0,235.51,159.82Zm4.37,173.33a13.35,13.35,0,0,1-13.34,13.34h-40v40a13.33,13.33,0,0,1-13.33,13.33H146.54a13.33,13.33,0,0,1-13.33-13.33v-40h-40a13.34,13.34,0,0,1-13.33-13.34V306.49a13.33,13.33,0,0,1,13.33-13.34h40v-40a13.33,13.33,0,0,1,13.33-13.33h26.67a13.33,13.33,0,0,1,13.33,13.33v40h40a13.34,13.34,0,0,1,13.34,13.34ZM379.19,93.88,335.87,50.56a64,64,0,0,0-45.24-18.74H223.88a32,32,0,0,0-32-32h-64a32,32,0,0,0-32,32v96h128v-32h66.75l43.31,43.31a16,16,0,0,0,22.63,0l22.62-22.62A16,16,0,0,0,379.19,93.88Z"]
 };
 var faPumpSoap = {
   prefix: 'fas',
   iconName: 'pump-soap',
-  icon: [384, 512, [], "f96b", "M235.63,160H84.37a64,64,0,0,0-63.74,58.21L.27,442.21A64,64,0,0,0,64,512H256a64,64,0,0,0,63.74-69.79l-20.36-224A64,64,0,0,0,235.63,160ZM160,416c-33.12,0-60-26.33-60-58.75,0-25,35.7-75.47,52-97.27A10,10,0,0,1,168,260c16.33,21.8,52,72.27,52,97.27C220,389.67,193.12,416,160,416ZM379.31,94.06,336,50.74A64,64,0,0,0,290.75,32H224A32,32,0,0,0,192,0H128A32,32,0,0,0,96,32v96H224V96h66.75l43.31,43.31a16,16,0,0,0,22.63,0l22.62-22.62A16,16,0,0,0,379.31,94.06Z"]
+  icon: [384, 512, [], "e06b", "M235.63,160H84.37a64,64,0,0,0-63.74,58.21L.27,442.21A64,64,0,0,0,64,512H256a64,64,0,0,0,63.74-69.79l-20.36-224A64,64,0,0,0,235.63,160ZM160,416c-33.12,0-60-26.33-60-58.75,0-25,35.7-75.47,52-97.27A10,10,0,0,1,168,260c16.33,21.8,52,72.27,52,97.27C220,389.67,193.12,416,160,416ZM379.31,94.06,336,50.74A64,64,0,0,0,290.75,32H224A32,32,0,0,0,192,0H128A32,32,0,0,0,96,32v96H224V96h66.75l43.31,43.31a16,16,0,0,0,22.63,0l22.62-22.62A16,16,0,0,0,379.31,94.06Z"]
 };
 var faPuzzlePiece = {
   prefix: 'fas',
@@ -11541,7 +11797,7 @@ var faShieldAlt = {
 var faShieldVirus = {
   prefix: 'fas',
   iconName: 'shield-virus',
-  icon: [512, 512, [], "f96c", "M224,192a16,16,0,1,0,16,16A16,16,0,0,0,224,192ZM466.5,83.68l-192-80A57.4,57.4,0,0,0,256.05,0a57.4,57.4,0,0,0-18.46,3.67l-192,80A47.93,47.93,0,0,0,16,128C16,326.5,130.5,463.72,237.5,508.32a48.09,48.09,0,0,0,36.91,0C360.09,472.61,496,349.3,496,128A48,48,0,0,0,466.5,83.68ZM384,256H371.88c-28.51,0-42.79,34.47-22.63,54.63l8.58,8.57a16,16,0,1,1-22.63,22.63l-8.57-8.58C306.47,313.09,272,327.37,272,355.88V368a16,16,0,0,1-32,0V355.88c0-28.51-34.47-42.79-54.63-22.63l-8.57,8.58a16,16,0,0,1-22.63-22.63l8.58-8.57c20.16-20.16,5.88-54.63-22.63-54.63H128a16,16,0,0,1,0-32h12.12c28.51,0,42.79-34.47,22.63-54.63l-8.58-8.57a16,16,0,0,1,22.63-22.63l8.57,8.58c20.16,20.16,54.63,5.88,54.63-22.63V112a16,16,0,0,1,32,0v12.12c0,28.51,34.47,42.79,54.63,22.63l8.57-8.58a16,16,0,0,1,22.63,22.63l-8.58,8.57C329.09,189.53,343.37,224,371.88,224H384a16,16,0,0,1,0,32Zm-96,0a16,16,0,1,0,16,16A16,16,0,0,0,288,256Z"]
+  icon: [512, 512, [], "e06c", "M224,192a16,16,0,1,0,16,16A16,16,0,0,0,224,192ZM466.5,83.68l-192-80A57.4,57.4,0,0,0,256.05,0a57.4,57.4,0,0,0-18.46,3.67l-192,80A47.93,47.93,0,0,0,16,128C16,326.5,130.5,463.72,237.5,508.32a48.09,48.09,0,0,0,36.91,0C360.09,472.61,496,349.3,496,128A48,48,0,0,0,466.5,83.68ZM384,256H371.88c-28.51,0-42.79,34.47-22.63,54.63l8.58,8.57a16,16,0,1,1-22.63,22.63l-8.57-8.58C306.47,313.09,272,327.37,272,355.88V368a16,16,0,0,1-32,0V355.88c0-28.51-34.47-42.79-54.63-22.63l-8.57,8.58a16,16,0,0,1-22.63-22.63l8.58-8.57c20.16-20.16,5.88-54.63-22.63-54.63H128a16,16,0,0,1,0-32h12.12c28.51,0,42.79-34.47,22.63-54.63l-8.58-8.57a16,16,0,0,1,22.63-22.63l8.57,8.58c20.16,20.16,54.63,5.88,54.63-22.63V112a16,16,0,0,1,32,0v12.12c0,28.51,34.47,42.79,54.63,22.63l8.57-8.58a16,16,0,0,1,22.63,22.63l-8.58,8.57C329.09,189.53,343.37,224,371.88,224H384a16,16,0,0,1,0,32Zm-96,0a16,16,0,1,0,16,16A16,16,0,0,0,288,256Z"]
 };
 var faShip = {
   prefix: 'fas',
@@ -11621,7 +11877,7 @@ var faSimCard = {
 var faSink = {
   prefix: 'fas',
   iconName: 'sink',
-  icon: [512, 512, [], "f96d", "M32,416a96,96,0,0,0,96,96H384a96,96,0,0,0,96-96V384H32ZM496,288H400V256h64a16,16,0,0,0,16-16V224a16,16,0,0,0-16-16H384a32,32,0,0,0-32,32v48H288V96a32,32,0,0,1,64,0v16a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V96A96.16,96.16,0,0,0,300.87,1.86C255.29,10.71,224,53.36,224,99.79V288H160V240a32,32,0,0,0-32-32H48a16,16,0,0,0-16,16v16a16,16,0,0,0,16,16h64v32H16A16,16,0,0,0,0,304v32a16,16,0,0,0,16,16H496a16,16,0,0,0,16-16V304A16,16,0,0,0,496,288Z"]
+  icon: [512, 512, [], "e06d", "M32,416a96,96,0,0,0,96,96H384a96,96,0,0,0,96-96V384H32ZM496,288H400V256h64a16,16,0,0,0,16-16V224a16,16,0,0,0-16-16H384a32,32,0,0,0-32,32v48H288V96a32,32,0,0,1,64,0v16a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V96A96.16,96.16,0,0,0,300.87,1.86C255.29,10.71,224,53.36,224,99.79V288H160V240a32,32,0,0,0-32-32H48a16,16,0,0,0-16,16v16a16,16,0,0,0,16,16h64v32H16A16,16,0,0,0,0,304v32a16,16,0,0,0,16,16H496a16,16,0,0,0,16-16V304A16,16,0,0,0,496,288Z"]
 };
 var faSitemap = {
   prefix: 'fas',
@@ -11726,7 +11982,7 @@ var faSnowplow = {
 var faSoap = {
   prefix: 'fas',
   iconName: 'soap',
-  icon: [512, 512, [], "f96e", "M416,192a95.42,95.42,0,0,1-30.94,70.21A95.8,95.8,0,0,1,352,448H160a96,96,0,0,1,0-192h88.91A95.3,95.3,0,0,1,224,192H96A96,96,0,0,0,0,288V416a96,96,0,0,0,96,96H416a96,96,0,0,0,96-96V288A96,96,0,0,0,416,192Zm-96,64a64,64,0,1,0-64-64A64,64,0,0,0,320,256ZM208,96a48,48,0,1,0-48-48A48,48,0,0,0,208,96ZM384,64a32,32,0,1,0-32-32A32,32,0,0,0,384,64ZM160,288a64,64,0,0,0,0,128H352a64,64,0,0,0,0-128Z"]
+  icon: [512, 512, [], "e06e", "M416,192a95.42,95.42,0,0,1-30.94,70.21A95.8,95.8,0,0,1,352,448H160a96,96,0,0,1,0-192h88.91A95.3,95.3,0,0,1,224,192H96A96,96,0,0,0,0,288V416a96,96,0,0,0,96,96H416a96,96,0,0,0,96-96V288A96,96,0,0,0,416,192Zm-96,64a64,64,0,1,0-64-64A64,64,0,0,0,320,256ZM208,96a48,48,0,1,0-48-48A48,48,0,0,0,208,96ZM384,64a32,32,0,1,0-32-32A32,32,0,0,0,384,64ZM160,288a64,64,0,0,0,0,128H352a64,64,0,0,0,0-128Z"]
 };
 var faSocks = {
   prefix: 'fas',
@@ -11936,7 +12192,7 @@ var faStopwatch = {
 var faStopwatch20 = {
   prefix: 'fas',
   iconName: 'stopwatch-20',
-  icon: [448, 512, [], "f96f", "M398.5,190.91l.59-.61,26.59-26.58a16,16,0,0,0,0-22.63L403,118.41a16,16,0,0,0-22.63,0l-24.68,24.68A206.68,206.68,0,0,0,256,98.5V64h32a16,16,0,0,0,16-16V16A16,16,0,0,0,288,0H160a16.05,16.05,0,0,0-16,16V48a16.05,16.05,0,0,0,16,16h32V98.5A207.92,207.92,0,0,0,16.09,297.57C12.64,411.5,106.76,510.22,220.72,512,337.13,513.77,432,420,432,304A206,206,0,0,0,398.5,190.91ZM204.37,377.55a8.2,8.2,0,0,1,8.32,8.07v22.31a8.2,8.2,0,0,1-8.32,8.07H121.52a16.46,16.46,0,0,1-16.61-17.62c2.78-35.22,14.67-57.41,38.45-91.37,20.42-29.19,27.1-37.32,27.1-62.34,0-16.92-1.79-24.27-12.21-24.27-9.39,0-12.69,7.4-12.69,22.68v5.23a8.2,8.2,0,0,1-8.33,8.07h-24.9a8.2,8.2,0,0,1-8.33-8.07v-4.07c0-27.3,8.48-60.24,56.43-60.24,43,0,55.57,25.85,55.57,61,0,35.58-12.44,51.21-34.35,81.31-11.56,15-24.61,35.57-26.41,51.2ZM344,352.32c0,35.16-12.3,63.68-57.23,63.68C243.19,416,232,386.48,232,352.55V247.22c0-40.73,19.58-63.22,56.2-63.22C325,184,344,206.64,344,245.3ZM287.87,221.73c-9.41,0-13.23,7.5-13.23,20V357.68c0,13.11,3.59,20.59,13.23,20.59s13-8,13-21.27V241.06C300.89,229.79,297.88,221.73,287.87,221.73Z"]
+  icon: [448, 512, [], "e06f", "M398.5,190.91l.59-.61,26.59-26.58a16,16,0,0,0,0-22.63L403,118.41a16,16,0,0,0-22.63,0l-24.68,24.68A206.68,206.68,0,0,0,256,98.5V64h32a16,16,0,0,0,16-16V16A16,16,0,0,0,288,0H160a16.05,16.05,0,0,0-16,16V48a16.05,16.05,0,0,0,16,16h32V98.5A207.92,207.92,0,0,0,16.09,297.57C12.64,411.5,106.76,510.22,220.72,512,337.13,513.77,432,420,432,304A206,206,0,0,0,398.5,190.91ZM204.37,377.55a8.2,8.2,0,0,1,8.32,8.07v22.31a8.2,8.2,0,0,1-8.32,8.07H121.52a16.46,16.46,0,0,1-16.61-17.62c2.78-35.22,14.67-57.41,38.45-91.37,20.42-29.19,27.1-37.32,27.1-62.34,0-16.92-1.79-24.27-12.21-24.27-9.39,0-12.69,7.4-12.69,22.68v5.23a8.2,8.2,0,0,1-8.33,8.07h-24.9a8.2,8.2,0,0,1-8.33-8.07v-4.07c0-27.3,8.48-60.24,56.43-60.24,43,0,55.57,25.85,55.57,61,0,35.58-12.44,51.21-34.35,81.31-11.56,15-24.61,35.57-26.41,51.2ZM344,352.32c0,35.16-12.3,63.68-57.23,63.68C243.19,416,232,386.48,232,352.55V247.22c0-40.73,19.58-63.22,56.2-63.22C325,184,344,206.64,344,245.3ZM287.87,221.73c-9.41,0-13.23,7.5-13.23,20V357.68c0,13.11,3.59,20.59,13.23,20.59s13-8,13-21.27V241.06C300.89,229.79,297.88,221.73,287.87,221.73Z"]
 };
 var faStore = {
   prefix: 'fas',
@@ -11951,12 +12207,12 @@ var faStoreAlt = {
 var faStoreAltSlash = {
   prefix: 'fas',
   iconName: 'store-alt-slash',
-  icon: [640, 512, [], "f970", "M17.89,123.62,5.51,142.2c-14.2,21.3,1,49.8,26.59,49.8h74.26ZM576,413.42V224H512V364L384,265V224H330.92l-41.4-32H608c25.5,0,40.7-28.5,26.59-49.8l-85.29-128A32.18,32.18,0,0,0,522.6,0H117.42A31.87,31.87,0,0,0,90.81,14.2l-10.66,16L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.46A16,16,0,0,0,6.18,53.91L594.53,508.63A16,16,0,0,0,617,505.81l19.64-25.26a16,16,0,0,0-2.81-22.45ZM320,384H128V224H64V480a32,32,0,0,0,32,32H352a32,32,0,0,0,32-32V406.59l-64-49.47Z"]
+  icon: [640, 512, [], "e070", "M17.89,123.62,5.51,142.2c-14.2,21.3,1,49.8,26.59,49.8h74.26ZM576,413.42V224H512V364L384,265V224H330.92l-41.4-32H608c25.5,0,40.7-28.5,26.59-49.8l-85.29-128A32.18,32.18,0,0,0,522.6,0H117.42A31.87,31.87,0,0,0,90.81,14.2l-10.66,16L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.46A16,16,0,0,0,6.18,53.91L594.53,508.63A16,16,0,0,0,617,505.81l19.64-25.26a16,16,0,0,0-2.81-22.45ZM320,384H128V224H64V480a32,32,0,0,0,32,32H352a32,32,0,0,0,32-32V406.59l-64-49.47Z"]
 };
 var faStoreSlash = {
   prefix: 'fas',
   iconName: 'store-slash',
-  icon: [640, 512, [], "f971", "M121.51,384V284.2a119.43,119.43,0,0,1-28,3.8,123.46,123.46,0,0,1-17.1-1.2,114.88,114.88,0,0,1-15.58-3.6V480c0,17.7,13.59,32,30.4,32H505.75L348.42,384Zm-28-128.09c25.1,0,47.29-10.72,64-27.24L24,120.05c-30.52,53.39-2.45,126.53,56.49,135A95.68,95.68,0,0,0,93.48,255.91ZM602.13,458.09,547.2,413.41V283.2a93.5,93.5,0,0,1-15.57,3.6,127.31,127.31,0,0,1-17.29,1.2,114.89,114.89,0,0,1-28-3.8v79.68L348.52,251.77a88.06,88.06,0,0,0,25.41,4.14c28.11,0,53-13,70.11-33.11,17.19,20.11,42.08,33.11,70.11,33.11a94.31,94.31,0,0,0,13-.91c59.66-8.41,88-82.8,56.06-136.4L521.55,15A30.1,30.1,0,0,0,495.81,0H112A30.11,30.11,0,0,0,86.27,15L76.88,30.78,43.19,3.38A14.68,14.68,0,0,0,21.86,6.19L3.2,31.45A16.58,16.58,0,0,0,5.87,53.91L564.81,508.63a14.69,14.69,0,0,0,21.33-2.82l18.66-25.26A16.58,16.58,0,0,0,602.13,458.09Z"]
+  icon: [640, 512, [], "e071", "M121.51,384V284.2a119.43,119.43,0,0,1-28,3.8,123.46,123.46,0,0,1-17.1-1.2,114.88,114.88,0,0,1-15.58-3.6V480c0,17.7,13.59,32,30.4,32H505.75L348.42,384Zm-28-128.09c25.1,0,47.29-10.72,64-27.24L24,120.05c-30.52,53.39-2.45,126.53,56.49,135A95.68,95.68,0,0,0,93.48,255.91ZM602.13,458.09,547.2,413.41V283.2a93.5,93.5,0,0,1-15.57,3.6,127.31,127.31,0,0,1-17.29,1.2,114.89,114.89,0,0,1-28-3.8v79.68L348.52,251.77a88.06,88.06,0,0,0,25.41,4.14c28.11,0,53-13,70.11-33.11,17.19,20.11,42.08,33.11,70.11,33.11a94.31,94.31,0,0,0,13-.91c59.66-8.41,88-82.8,56.06-136.4L521.55,15A30.1,30.1,0,0,0,495.81,0H112A30.11,30.11,0,0,0,86.27,15L76.88,30.78,43.19,3.38A14.68,14.68,0,0,0,21.86,6.19L3.2,31.45A16.58,16.58,0,0,0,5.87,53.91L564.81,508.63a14.69,14.69,0,0,0,21.33-2.82l18.66-25.26A16.58,16.58,0,0,0,602.13,458.09Z"]
 };
 var faStream = {
   prefix: 'fas',
@@ -12261,7 +12517,7 @@ var faToiletPaper = {
 var faToiletPaperSlash = {
   prefix: 'fas',
   iconName: 'toilet-paper-slash',
-  icon: [640, 512, [], "f972", "M64,192V364.13c0,41.12-9.75,62.75-31.12,126.87A16,16,0,0,0,48,512H328.86a31.87,31.87,0,0,0,30.38-21.87c9.31-27.83,18-53.35,22.18-85.55l-316-244.25C64.53,170.66,64,181.19,64,192ZM633.82,458.09l-102-78.81C575.28,360.91,608,284.32,608,192,608,86,565,0,512,0s-96,86-96,192c0,42,7,80.4,18.43,112L384,265V192c0-83.62,23.63-153.5,60.5-192H160c-23.33,0-44.63,16.83-61.26,44.53L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.45A16,16,0,0,0,6.18,53.91L594.54,508.63A16,16,0,0,0,617,505.81l19.64-25.26A16,16,0,0,0,633.82,458.09ZM512,256c-17.63,0-32-28.62-32-64s14.37-64,32-64,32,28.63,32,64S529.62,256,512,256Z"]
+  icon: [640, 512, [], "e072", "M64,192V364.13c0,41.12-9.75,62.75-31.12,126.87A16,16,0,0,0,48,512H328.86a31.87,31.87,0,0,0,30.38-21.87c9.31-27.83,18-53.35,22.18-85.55l-316-244.25C64.53,170.66,64,181.19,64,192ZM633.82,458.09l-102-78.81C575.28,360.91,608,284.32,608,192,608,86,565,0,512,0s-96,86-96,192c0,42,7,80.4,18.43,112L384,265V192c0-83.62,23.63-153.5,60.5-192H160c-23.33,0-44.63,16.83-61.26,44.53L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.45A16,16,0,0,0,6.18,53.91L594.54,508.63A16,16,0,0,0,617,505.81l19.64-25.26A16,16,0,0,0,633.82,458.09ZM512,256c-17.63,0-32-28.62-32-64s14.37-64,32-64,32,28.63,32,64S529.62,256,512,256Z"]
 };
 var faToolbox = {
   prefix: 'fas',
@@ -12306,7 +12562,7 @@ var faTrafficLight = {
 var faTrailer = {
   prefix: 'fas',
   iconName: 'trailer',
-  icon: [640, 512, [], "f941", "M624,320H544V80a16,16,0,0,0-16-16H16A16,16,0,0,0,0,80V368a16,16,0,0,0,16,16H65.61c7.83-54.21,54-96,110.39-96s102.56,41.79,110.39,96H624a16,16,0,0,0,16-16V336A16,16,0,0,0,624,320ZM96,243.68a176.29,176.29,0,0,0-32,20.71V136a8,8,0,0,1,8-8H88a8,8,0,0,1,8,8Zm96-18.54c-5.31-.49-10.57-1.14-16-1.14s-10.69.65-16,1.14V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8Zm96,39.25a176.29,176.29,0,0,0-32-20.71V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8ZM384,320H352V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8Zm96,0H448V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8Zm-304,0a80,80,0,1,0,80,80A80,80,0,0,0,176,320Zm0,112a32,32,0,1,1,32-32A32,32,0,0,1,176,432Z"]
+  icon: [640, 512, [], "e041", "M624,320H544V80a16,16,0,0,0-16-16H16A16,16,0,0,0,0,80V368a16,16,0,0,0,16,16H65.61c7.83-54.21,54-96,110.39-96s102.56,41.79,110.39,96H624a16,16,0,0,0,16-16V336A16,16,0,0,0,624,320ZM96,243.68a176.29,176.29,0,0,0-32,20.71V136a8,8,0,0,1,8-8H88a8,8,0,0,1,8,8Zm96-18.54c-5.31-.49-10.57-1.14-16-1.14s-10.69.65-16,1.14V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8Zm96,39.25a176.29,176.29,0,0,0-32-20.71V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8ZM384,320H352V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8Zm96,0H448V136a8,8,0,0,1,8-8h16a8,8,0,0,1,8,8Zm-304,0a80,80,0,1,0,80,80A80,80,0,0,0,176,320Zm0,112a32,32,0,1,1,32-32A32,32,0,0,1,176,432Z"]
 };
 var faTrain = {
   prefix: 'fas',
@@ -12586,7 +12842,7 @@ var faUsersCog = {
 var faUsersSlash = {
   prefix: 'fas',
   iconName: 'users-slash',
-  icon: [640, 512, [], "f973", "M132.65,212.32,36.21,137.78A63.4,63.4,0,0,0,32,160a63.84,63.84,0,0,0,100.65,52.32Zm40.44,62.28A63.79,63.79,0,0,0,128,256H64A64.06,64.06,0,0,0,0,320v32a32,32,0,0,0,32,32H97.91A146.62,146.62,0,0,1,173.09,274.6ZM544,224a64,64,0,1,0-64-64A64.06,64.06,0,0,0,544,224ZM500.56,355.11a114.24,114.24,0,0,0-84.47-65.28L361,247.23c41.46-16.3,71-55.92,71-103.23A111.93,111.93,0,0,0,320,32c-57.14,0-103.69,42.83-110.6,98.08L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.46A16,16,0,0,0,6.18,53.91L594.53,508.63A16,16,0,0,0,617,505.82l19.64-25.27a16,16,0,0,0-2.81-22.45ZM128,403.21V432a48,48,0,0,0,48,48H464a47.45,47.45,0,0,0,12.57-1.87L232,289.13C173.74,294.83,128,343.42,128,403.21ZM576,256H512a63.79,63.79,0,0,0-45.09,18.6A146.29,146.29,0,0,1,542,384h66a32,32,0,0,0,32-32V320A64.06,64.06,0,0,0,576,256Z"]
+  icon: [640, 512, [], "e073", "M132.65,212.32,36.21,137.78A63.4,63.4,0,0,0,32,160a63.84,63.84,0,0,0,100.65,52.32Zm40.44,62.28A63.79,63.79,0,0,0,128,256H64A64.06,64.06,0,0,0,0,320v32a32,32,0,0,0,32,32H97.91A146.62,146.62,0,0,1,173.09,274.6ZM544,224a64,64,0,1,0-64-64A64.06,64.06,0,0,0,544,224ZM500.56,355.11a114.24,114.24,0,0,0-84.47-65.28L361,247.23c41.46-16.3,71-55.92,71-103.23A111.93,111.93,0,0,0,320,32c-57.14,0-103.69,42.83-110.6,98.08L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.46A16,16,0,0,0,6.18,53.91L594.53,508.63A16,16,0,0,0,617,505.82l19.64-25.27a16,16,0,0,0-2.81-22.45ZM128,403.21V432a48,48,0,0,0,48,48H464a47.45,47.45,0,0,0,12.57-1.87L232,289.13C173.74,294.83,128,343.42,128,403.21ZM576,256H512a63.79,63.79,0,0,0-45.09,18.6A146.29,146.29,0,0,1,542,384h66a32,32,0,0,0,32-32V320A64.06,64.06,0,0,0,576,256Z"]
 };
 var faUtensilSpoon = {
   prefix: 'fas',
@@ -12618,6 +12874,16 @@ var faVenusMars = {
   iconName: 'venus-mars',
   icon: [576, 512, [], "f228", "M564 0h-79c-10.7 0-16 12.9-8.5 20.5l16.9 16.9-48.7 48.7C422.5 72.1 396.2 64 368 64c-33.7 0-64.6 11.6-89.2 30.9 14 16.7 25 36 32.1 57.1 14.5-14.8 34.7-24 57.1-24 44.1 0 80 35.9 80 80s-35.9 80-80 80c-22.3 0-42.6-9.2-57.1-24-7.1 21.1-18 40.4-32.1 57.1 24.5 19.4 55.5 30.9 89.2 30.9 79.5 0 144-64.5 144-144 0-28.2-8.1-54.5-22.1-76.7l48.7-48.7 16.9 16.9c2.4 2.4 5.4 3.5 8.4 3.5 6.2 0 12.1-4.8 12.1-12V12c0-6.6-5.4-12-12-12zM144 64C64.5 64 0 128.5 0 208c0 68.5 47.9 125.9 112 140.4V400H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h36v36c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-36h36c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-36v-51.6c64.1-14.6 112-71.9 112-140.4 0-79.5-64.5-144-144-144zm0 224c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"]
 };
+var faVest = {
+  prefix: 'fas',
+  iconName: 'vest',
+  icon: [448, 512, [], "e085", "M437.252,239.877,384,160V32A32,32,0,0,0,352,0H320a24.021,24.021,0,0,0-13.312,4.031l-25,16.672a103.794,103.794,0,0,1-115.376,0l-25-16.672A24.021,24.021,0,0,0,128,0H96A32,32,0,0,0,64,32V160L10.748,239.877A64,64,0,0,0,0,275.377V480a32,32,0,0,0,32,32H192V288a31.987,31.987,0,0,1,1.643-10.119L207.135,237.4,150.188,66.564A151.518,151.518,0,0,0,224,86.234a151.55,151.55,0,0,0,73.812-19.672L224,288V512H416a32,32,0,0,0,32-32V275.377A64,64,0,0,0,437.252,239.877ZM131.312,371.312l-48,48a16,16,0,0,1-22.624-22.624l48-48a16,16,0,0,1,22.624,22.624Zm256,48a15.992,15.992,0,0,1-22.624,0l-48-48a16,16,0,0,1,22.624-22.624l48,48A15.993,15.993,0,0,1,387.312,419.312Z"]
+};
+var faVestPatches = {
+  prefix: 'fas',
+  iconName: 'vest-patches',
+  icon: [448, 512, [], "e086", "M437.252,239.877,384,160V32A32,32,0,0,0,352,0H320a23.982,23.982,0,0,0-13.312,4.031l-25,16.672a103.794,103.794,0,0,1-115.376,0l-25-16.672A23.982,23.982,0,0,0,128,0H96A32,32,0,0,0,64,32V160L10.748,239.877A64,64,0,0,0,0,275.377V480a32,32,0,0,0,32,32H192V288a31.987,31.987,0,0,1,1.643-10.119L207.135,237.4,150.188,66.561A151.579,151.579,0,0,0,224,86.234a151.565,151.565,0,0,0,73.811-19.668L224,288V512H416a32,32,0,0,0,32-32V275.377A64,64,0,0,0,437.252,239.877ZM63.5,272.484a12.01,12.01,0,0,1,17-16.968l15.5,15.5,15.5-15.5a12.01,12.01,0,0,1,17,16.968L112.984,288,128.5,303.516a12.01,12.01,0,0,1-17,16.968L96,304.984l-15.5,15.5a12.01,12.01,0,0,1-17-16.968L79.016,288ZM96,456a40,40,0,1,1,40-40A40,40,0,0,1,96,456ZM359.227,335.785,310.7,336a6.671,6.671,0,0,1-6.7-6.7l.215-48.574A24.987,24.987,0,0,1,331.43,256.1c12.789,1.162,22.129,12.619,22.056,25.419l-.037,5.057,5.051-.037c12.826-.035,24.236,9.275,25.4,22.076A24.948,24.948,0,0,1,359.227,335.785Z"]
+};
 var faVial = {
   prefix: 'fas',
   iconName: 'vial',
@@ -12646,17 +12912,17 @@ var faVihara = {
 var faVirus = {
   prefix: 'fas',
   iconName: 'virus',
-  icon: [512, 512, [], "f974", "M483.55,227.55H462c-50.68,0-76.07-61.27-40.23-97.11L437,115.19A28.44,28.44,0,0,0,396.8,75L381.56,90.22c-35.84,35.83-97.11,10.45-97.11-40.23V28.44a28.45,28.45,0,0,0-56.9,0V50c0,50.68-61.27,76.06-97.11,40.23L115.2,75A28.44,28.44,0,0,0,75,115.19l15.25,15.25c35.84,35.84,10.45,97.11-40.23,97.11H28.45a28.45,28.45,0,1,0,0,56.89H50c50.68,0,76.07,61.28,40.23,97.12L75,396.8A28.45,28.45,0,0,0,115.2,437l15.24-15.25c35.84-35.84,97.11-10.45,97.11,40.23v21.54a28.45,28.45,0,0,0,56.9,0V462c0-50.68,61.27-76.07,97.11-40.23L396.8,437A28.45,28.45,0,0,0,437,396.8l-15.25-15.24c-35.84-35.84-10.45-97.12,40.23-97.12h21.54a28.45,28.45,0,1,0,0-56.89ZM224,272a48,48,0,1,1,48-48A48,48,0,0,1,224,272Zm80,56a24,24,0,1,1,24-24A24,24,0,0,1,304,328Z"]
+  icon: [512, 512, [], "e074", "M483.55,227.55H462c-50.68,0-76.07-61.27-40.23-97.11L437,115.19A28.44,28.44,0,0,0,396.8,75L381.56,90.22c-35.84,35.83-97.11,10.45-97.11-40.23V28.44a28.45,28.45,0,0,0-56.9,0V50c0,50.68-61.27,76.06-97.11,40.23L115.2,75A28.44,28.44,0,0,0,75,115.19l15.25,15.25c35.84,35.84,10.45,97.11-40.23,97.11H28.45a28.45,28.45,0,1,0,0,56.89H50c50.68,0,76.07,61.28,40.23,97.12L75,396.8A28.45,28.45,0,0,0,115.2,437l15.24-15.25c35.84-35.84,97.11-10.45,97.11,40.23v21.54a28.45,28.45,0,0,0,56.9,0V462c0-50.68,61.27-76.07,97.11-40.23L396.8,437A28.45,28.45,0,0,0,437,396.8l-15.25-15.24c-35.84-35.84-10.45-97.12,40.23-97.12h21.54a28.45,28.45,0,1,0,0-56.89ZM224,272a48,48,0,1,1,48-48A48,48,0,0,1,224,272Zm80,56a24,24,0,1,1,24-24A24,24,0,0,1,304,328Z"]
 };
 var faVirusSlash = {
   prefix: 'fas',
   iconName: 'virus-slash',
-  icon: [640, 512, [], "f975", "M114,227.56H92.44a28.44,28.44,0,0,0,0,56.88H114c50.68,0,76.06,61.28,40.23,97.12L139,396.81A28.44,28.44,0,1,0,179.19,437l15.25-15.25c35.84-35.84,97.11-10.45,97.11,40.23v21.54a28.45,28.45,0,0,0,56.9,0V462c0-26.61,17-45.91,38.22-53.37l-244.5-189A55.58,55.58,0,0,1,114,227.56ZM633.82,458.09,470.62,332c4.17-25.39,24.91-47.52,55.39-47.52h21.55a28.44,28.44,0,1,0,0-56.88H526c-50.68,0-76.06-61.28-40.23-97.12L501,115.19A28.44,28.44,0,0,0,460.81,75L445.56,90.22c-35.84,35.84-97.11,10.46-97.11-40.23V28.45a28.45,28.45,0,0,0-56.9,0V50c0,50.69-61.27,76.07-97.11,40.23L179.19,75A28.43,28.43,0,0,0,139,75c-.13.14-.15.32-.28.46L45.46,3.38A16,16,0,0,0,23,6.19L3.37,31.45A16,16,0,0,0,6.18,53.91L594.54,508.63A16,16,0,0,0,617,505.81l19.64-25.26A16,16,0,0,0,633.82,458.09ZM335.43,227.48l-62.87-48.59A46.55,46.55,0,0,1,288,176a48,48,0,0,1,48,48C336,225.22,335.52,226.29,335.43,227.48Z"]
+  icon: [640, 512, [], "e075", "M114,227.6H92.4C76.7,227.6,64,240.3,64,256s12.7,28.4,28.4,28.4H114c50.7,0,76.1,61.3,40.2,97.1L139,396.8 c-11.5,10.7-12.2,28.7-1.6,40.2s28.7,12.2,40.2,1.6c0.5-0.5,1.1-1,1.6-1.6l15.2-15.2c35.8-35.8,97.1-10.5,97.1,40.2v21.5 c0,15.7,12.8,28.4,28.5,28.4c15.7,0,28.4-12.7,28.4-28.4V462c0-26.6,17-45.9,38.2-53.4l-244.5-189 C133.7,224.7,123.9,227.5,114,227.6z M617,505.8l19.6-25.3c5.4-7,4.2-17-2.8-22.5L470.6,332c4.2-25.4,24.9-47.5,55.4-47.5h21.5 c15.7,0,28.4-12.7,28.4-28.4s-12.7-28.4-28.4-28.4H526c-50.7,0-76.1-61.3-40.2-97.1l15.2-15.3c10.7-11.5,10-29.5-1.6-40.2 c-10.9-10.1-27.7-10.1-38.6,0l-15.2,15.2c-35.8,35.8-97.1,10.5-97.1-40.2V28.5C348.4,12.7,335.7,0,320,0 c-15.7,0-28.4,12.7-28.4,28.4V50c0,50.7-61.3,76.1-97.1,40.2L179.2,75c-11.1-11.1-29.4-10.6-40.5,0.5L45.5,3.4 c-7-5.4-17-4.2-22.5,2.8L3.4,31.5c-5.4,7-4.2,17,2.8,22.5l588.4,454.7C601.5,514.1,611.6,512.8,617,505.8z M335.4,227.5l-62.9-48.6 c4.9-1.8,10.2-2.8,15.4-2.9c26.5,0,48,21.5,48,48C336,225.2,335.5,226.3,335.4,227.5z"]
 };
 var faViruses = {
   prefix: 'fas',
   iconName: 'viruses',
-  icon: [640, 512, [], "f976", "M624,352H611.88c-28.51,0-42.79-34.47-22.63-54.63l8.58-8.57a16,16,0,1,0-22.63-22.63l-8.57,8.58C546.47,294.91,512,280.63,512,252.12V240a16,16,0,0,0-32,0v12.12c0,28.51-34.47,42.79-54.63,22.63l-8.57-8.58a16,16,0,0,0-22.63,22.63l8.58,8.57c20.16,20.16,5.88,54.63-22.63,54.63H368a16,16,0,0,0,0,32h12.12c28.51,0,42.79,34.47,22.63,54.63l-8.58,8.57a16,16,0,1,0,22.63,22.63l8.57-8.58c20.16-20.16,54.63-5.88,54.63,22.63V496a16,16,0,0,0,32,0V483.88c0-28.51,34.47-42.79,54.63-22.63l8.57,8.58a16,16,0,1,0,22.63-22.63l-8.58-8.57C569.09,418.47,583.37,384,611.88,384H624a16,16,0,0,0,0-32ZM480,384a32,32,0,1,1,32-32A32,32,0,0,1,480,384ZM346.51,213.33h16.16a21.33,21.33,0,0,0,0-42.66H346.51c-38,0-57.05-46-30.17-72.84l11.43-11.44A21.33,21.33,0,0,0,297.6,56.23L286.17,67.66c-26.88,26.88-72.84,7.85-72.84-30.17V21.33a21.33,21.33,0,0,0-42.66,0V37.49c0,38-46,57.05-72.84,30.17L86.4,56.23A21.33,21.33,0,0,0,56.23,86.39L67.66,97.83c26.88,26.88,7.85,72.84-30.17,72.84H21.33a21.33,21.33,0,0,0,0,42.66H37.49c38,0,57.05,46,30.17,72.84L56.23,297.6A21.33,21.33,0,1,0,86.4,327.77l11.43-11.43c26.88-26.88,72.84-7.85,72.84,30.17v16.16a21.33,21.33,0,0,0,42.66,0V346.51c0-38,46-57.05,72.84-30.17l11.43,11.43a21.33,21.33,0,0,0,30.17-30.17l-11.43-11.43C289.46,259.29,308.49,213.33,346.51,213.33ZM160,192a32,32,0,1,1,32-32A32,32,0,0,1,160,192Zm80,32a16,16,0,1,1,16-16A16,16,0,0,1,240,224Z"]
+  icon: [640, 512, [], "e076", "M624,352H611.88c-28.51,0-42.79-34.47-22.63-54.63l8.58-8.57a16,16,0,1,0-22.63-22.63l-8.57,8.58C546.47,294.91,512,280.63,512,252.12V240a16,16,0,0,0-32,0v12.12c0,28.51-34.47,42.79-54.63,22.63l-8.57-8.58a16,16,0,0,0-22.63,22.63l8.58,8.57c20.16,20.16,5.88,54.63-22.63,54.63H368a16,16,0,0,0,0,32h12.12c28.51,0,42.79,34.47,22.63,54.63l-8.58,8.57a16,16,0,1,0,22.63,22.63l8.57-8.58c20.16-20.16,54.63-5.88,54.63,22.63V496a16,16,0,0,0,32,0V483.88c0-28.51,34.47-42.79,54.63-22.63l8.57,8.58a16,16,0,1,0,22.63-22.63l-8.58-8.57C569.09,418.47,583.37,384,611.88,384H624a16,16,0,0,0,0-32ZM480,384a32,32,0,1,1,32-32A32,32,0,0,1,480,384ZM346.51,213.33h16.16a21.33,21.33,0,0,0,0-42.66H346.51c-38,0-57.05-46-30.17-72.84l11.43-11.44A21.33,21.33,0,0,0,297.6,56.23L286.17,67.66c-26.88,26.88-72.84,7.85-72.84-30.17V21.33a21.33,21.33,0,0,0-42.66,0V37.49c0,38-46,57.05-72.84,30.17L86.4,56.23A21.33,21.33,0,0,0,56.23,86.39L67.66,97.83c26.88,26.88,7.85,72.84-30.17,72.84H21.33a21.33,21.33,0,0,0,0,42.66H37.49c38,0,57.05,46,30.17,72.84L56.23,297.6A21.33,21.33,0,1,0,86.4,327.77l11.43-11.43c26.88-26.88,72.84-7.85,72.84,30.17v16.16a21.33,21.33,0,0,0,42.66,0V346.51c0-38,46-57.05,72.84-30.17l11.43,11.43a21.33,21.33,0,0,0,30.17-30.17l-11.43-11.43C289.46,259.29,308.49,213.33,346.51,213.33ZM160,192a32,32,0,1,1,32-32A32,32,0,0,1,160,192Zm80,32a16,16,0,1,1,16-16A16,16,0,0,1,240,224Z"]
 };
 var faVoicemail = {
   prefix: 'fas',
@@ -13771,6 +14037,8 @@ var _iconsCache = {
   faVenus: faVenus,
   faVenusDouble: faVenusDouble,
   faVenusMars: faVenusMars,
+  faVest: faVest,
+  faVestPatches: faVestPatches,
   faVial: faVial,
   faVials: faVials,
   faVideo: faVideo,
@@ -14389,6 +14657,7 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/li
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 var settle = __webpack_require__(/*! ./../core/settle */ "./node_modules/axios/lib/core/settle.js");
+var cookies = __webpack_require__(/*! ./../helpers/cookies */ "./node_modules/axios/lib/helpers/cookies.js");
 var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./node_modules/axios/lib/helpers/buildURL.js");
 var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ "./node_modules/axios/lib/core/buildFullPath.js");
 var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "./node_modules/axios/lib/helpers/parseHeaders.js");
@@ -14404,12 +14673,19 @@ module.exports = function xhrAdapter(config) {
       delete requestHeaders['Content-Type']; // Let the browser set it
     }
 
+    if (
+      (utils.isBlob(requestData) || utils.isFile(requestData)) &&
+      requestData.type
+    ) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
     var request = new XMLHttpRequest();
 
     // HTTP basic authentication
     if (config.auth) {
       var username = config.auth.username || '';
-      var password = config.auth.password || '';
+      var password = unescape(encodeURIComponent(config.auth.password)) || '';
       requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
     }
 
@@ -14490,8 +14766,6 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(/*! ./../helpers/cookies */ "./node_modules/axios/lib/helpers/cookies.js");
-
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ?
         cookies.read(config.xsrfCookieName) :
@@ -14557,7 +14831,7 @@ module.exports = function xhrAdapter(config) {
       });
     }
 
-    if (requestData === undefined) {
+    if (!requestData) {
       requestData = null;
     }
 
@@ -14834,7 +15108,7 @@ Axios.prototype.getUri = function getUri(config) {
 utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
   /*eslint func-names:0*/
   Axios.prototype[method] = function(url, config) {
-    return this.request(utils.merge(config || {}, {
+    return this.request(mergeConfig(config || {}, {
       method: method,
       url: url
     }));
@@ -14844,7 +15118,7 @@ utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData
 utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
   /*eslint func-names:0*/
   Axios.prototype[method] = function(url, data, config) {
-    return this.request(utils.merge(config || {}, {
+    return this.request(mergeConfig(config || {}, {
       method: method,
       url: url,
       data: data
@@ -15104,7 +15378,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
   error.response = response;
   error.isAxiosError = true;
 
-  error.toJSON = function() {
+  error.toJSON = function toJSON() {
     return {
       // Standard
       message: this.message,
@@ -15153,59 +15427,73 @@ module.exports = function mergeConfig(config1, config2) {
   config2 = config2 || {};
   var config = {};
 
-  var valueFromConfig2Keys = ['url', 'method', 'params', 'data'];
-  var mergeDeepPropertiesKeys = ['headers', 'auth', 'proxy'];
+  var valueFromConfig2Keys = ['url', 'method', 'data'];
+  var mergeDeepPropertiesKeys = ['headers', 'auth', 'proxy', 'params'];
   var defaultToConfig2Keys = [
-    'baseURL', 'url', 'transformRequest', 'transformResponse', 'paramsSerializer',
-    'timeout', 'withCredentials', 'adapter', 'responseType', 'xsrfCookieName',
-    'xsrfHeaderName', 'onUploadProgress', 'onDownloadProgress',
-    'maxContentLength', 'validateStatus', 'maxRedirects', 'httpAgent',
-    'httpsAgent', 'cancelToken', 'socketPath'
+    'baseURL', 'transformRequest', 'transformResponse', 'paramsSerializer',
+    'timeout', 'timeoutMessage', 'withCredentials', 'adapter', 'responseType', 'xsrfCookieName',
+    'xsrfHeaderName', 'onUploadProgress', 'onDownloadProgress', 'decompress',
+    'maxContentLength', 'maxBodyLength', 'maxRedirects', 'transport', 'httpAgent',
+    'httpsAgent', 'cancelToken', 'socketPath', 'responseEncoding'
   ];
+  var directMergeKeys = ['validateStatus'];
+
+  function getMergedValue(target, source) {
+    if (utils.isPlainObject(target) && utils.isPlainObject(source)) {
+      return utils.merge(target, source);
+    } else if (utils.isPlainObject(source)) {
+      return utils.merge({}, source);
+    } else if (utils.isArray(source)) {
+      return source.slice();
+    }
+    return source;
+  }
+
+  function mergeDeepProperties(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      config[prop] = getMergedValue(config1[prop], config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      config[prop] = getMergedValue(undefined, config1[prop]);
+    }
+  }
 
   utils.forEach(valueFromConfig2Keys, function valueFromConfig2(prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
+    if (!utils.isUndefined(config2[prop])) {
+      config[prop] = getMergedValue(undefined, config2[prop]);
     }
   });
 
-  utils.forEach(mergeDeepPropertiesKeys, function mergeDeepProperties(prop) {
-    if (utils.isObject(config2[prop])) {
-      config[prop] = utils.deepMerge(config1[prop], config2[prop]);
-    } else if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    } else if (utils.isObject(config1[prop])) {
-      config[prop] = utils.deepMerge(config1[prop]);
-    } else if (typeof config1[prop] !== 'undefined') {
-      config[prop] = config1[prop];
-    }
-  });
+  utils.forEach(mergeDeepPropertiesKeys, mergeDeepProperties);
 
   utils.forEach(defaultToConfig2Keys, function defaultToConfig2(prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    } else if (typeof config1[prop] !== 'undefined') {
-      config[prop] = config1[prop];
+    if (!utils.isUndefined(config2[prop])) {
+      config[prop] = getMergedValue(undefined, config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      config[prop] = getMergedValue(undefined, config1[prop]);
+    }
+  });
+
+  utils.forEach(directMergeKeys, function merge(prop) {
+    if (prop in config2) {
+      config[prop] = getMergedValue(config1[prop], config2[prop]);
+    } else if (prop in config1) {
+      config[prop] = getMergedValue(undefined, config1[prop]);
     }
   });
 
   var axiosKeys = valueFromConfig2Keys
     .concat(mergeDeepPropertiesKeys)
-    .concat(defaultToConfig2Keys);
+    .concat(defaultToConfig2Keys)
+    .concat(directMergeKeys);
 
   var otherKeys = Object
-    .keys(config2)
+    .keys(config1)
+    .concat(Object.keys(config2))
     .filter(function filterAxiosKeys(key) {
       return axiosKeys.indexOf(key) === -1;
     });
 
-  utils.forEach(otherKeys, function otherKeysDefaultToConfig2(prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    } else if (typeof config1[prop] !== 'undefined') {
-      config[prop] = config1[prop];
-    }
-  });
+  utils.forEach(otherKeys, mergeDeepProperties);
 
   return config;
 };
@@ -15234,7 +15522,7 @@ var createError = __webpack_require__(/*! ./createError */ "./node_modules/axios
  */
 module.exports = function settle(resolve, reject, response) {
   var validateStatus = response.config.validateStatus;
-  if (!validateStatus || validateStatus(response.status)) {
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
     resolve(response);
   } else {
     reject(createError(
@@ -15366,6 +15654,7 @@ var defaults = {
   xsrfHeaderName: 'X-XSRF-TOKEN',
 
   maxContentLength: -1,
+  maxBodyLength: -1,
 
   validateStatus: function validateStatus(status) {
     return status >= 200 && status < 300;
@@ -15429,7 +15718,6 @@ var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/util
 
 function encode(val) {
   return encodeURIComponent(val).
-    replace(/%40/gi, '@').
     replace(/%3A/gi, ':').
     replace(/%24/g, '$').
     replace(/%2C/gi, ',').
@@ -15939,6 +16227,21 @@ function isObject(val) {
 }
 
 /**
+ * Determine if a value is a plain Object
+ *
+ * @param {Object} val The value to test
+ * @return {boolean} True if value is a plain Object, otherwise false
+ */
+function isPlainObject(val) {
+  if (toString.call(val) !== '[object Object]') {
+    return false;
+  }
+
+  var prototype = Object.getPrototypeOf(val);
+  return prototype === null || prototype === Object.prototype;
+}
+
+/**
  * Determine if a value is a Date
  *
  * @param {Object} val The value to test
@@ -16094,34 +16397,12 @@ function forEach(obj, fn) {
 function merge(/* obj1, obj2, obj3, ... */) {
   var result = {};
   function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
+    if (isPlainObject(result[key]) && isPlainObject(val)) {
       result[key] = merge(result[key], val);
-    } else {
-      result[key] = val;
-    }
-  }
-
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    forEach(arguments[i], assignValue);
-  }
-  return result;
-}
-
-/**
- * Function equal to merge with the difference being that no reference
- * to original objects is kept.
- *
- * @see merge
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-function deepMerge(/* obj1, obj2, obj3, ... */) {
-  var result = {};
-  function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
-      result[key] = deepMerge(result[key], val);
-    } else if (typeof val === 'object') {
-      result[key] = deepMerge({}, val);
+    } else if (isPlainObject(val)) {
+      result[key] = merge({}, val);
+    } else if (isArray(val)) {
+      result[key] = val.slice();
     } else {
       result[key] = val;
     }
@@ -16152,6 +16433,19 @@ function extend(a, b, thisArg) {
   return a;
 }
 
+/**
+ * Remove byte order marker. This catches EF BB BF (the UTF-8 BOM)
+ *
+ * @param {string} content with BOM
+ * @return {string} content value without BOM
+ */
+function stripBOM(content) {
+  if (content.charCodeAt(0) === 0xFEFF) {
+    content = content.slice(1);
+  }
+  return content;
+}
+
 module.exports = {
   isArray: isArray,
   isArrayBuffer: isArrayBuffer,
@@ -16161,6 +16455,7 @@ module.exports = {
   isString: isString,
   isNumber: isNumber,
   isObject: isObject,
+  isPlainObject: isPlainObject,
   isUndefined: isUndefined,
   isDate: isDate,
   isFile: isFile,
@@ -16171,9 +16466,9 @@ module.exports = {
   isStandardBrowserEnv: isStandardBrowserEnv,
   forEach: forEach,
   merge: merge,
-  deepMerge: deepMerge,
   extend: extend,
-  trim: trim
+  trim: trim,
+  stripBOM: stripBOM
 };
 
 
@@ -16253,7 +16548,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
 
                   // 500に移動
-                  _this.$router.push("/500");
+                  _this.$router.push({
+                    name: "system-error"
+                  });
 
                   _context.next = 12;
                   break;
@@ -16272,7 +16569,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.$store.commit("auth/setUser", null); // ログイン画面へ移動
 
 
-                  _this.$router.push("/login");
+                  _this.$router.push({
+                    name: "login"
+                  });
 
                   _context.next = 12;
                   break;
@@ -16281,7 +16580,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   // 404
                   if (val === _const__WEBPACK_IMPORTED_MODULE_3__["NOT_FOUND"]) {
                     // 404へ移動
-                    _this.$router.push("/not-found");
+                    _this.$router.push({
+                      name: "not-found"
+                    });
                   }
 
                 case 12:
@@ -16312,6 +16613,219 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         content: message,
         timeout: 6000
       });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CommentForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CommentForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    label: {
+      type: String,
+      "default": function _default() {
+        return this.$i18n.tc("word.comment_content");
+      }
+    },
+    photoId: {
+      type: String,
+      required: true
+    },
+    commentId: {
+      type: Number,
+      "default": null
+    },
+    comentContent: {
+      type: String,
+      "default": ""
+    },
+    buttonName: {
+      type: String,
+      "default": function _default() {
+        return this.$i18n.tc("word.submit_comment");
+      }
+    }
+  },
+  data: function data() {
+    return {
+      commentForm: {
+        content: ""
+      },
+      commentErrors: []
+    };
+  },
+  computed: {
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
+    }
+  },
+  methods: {
+    sendComment: function sendComment() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (_this.commentId === null) {
+                  _this.addComment();
+                } else {
+                  _this.changeComment();
+                }
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    addComment: function addComment() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                // エラーメッセージをクリア
+                _this2.commentErrors = []; // request api
+
+                _context2.next = 3;
+                return axios.post("photos/".concat(_this2.photoId, "/comments"), _this2.commentForm);
+
+              case 3:
+                response = _context2.sent;
+
+                if (!(response.status === _const__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
+                  _context2.next = 7;
+                  break;
+                }
+
+                // set validation error
+                _this2.commentErrors = response.data.errors.content;
+                return _context2.abrupt("return", false);
+
+              case 7:
+                // 成功
+                if (response.status === _const__WEBPACK_IMPORTED_MODULE_1__["CREATED"]) {
+                  // レスポンスで帰ってきたコメントデータをemitで返す
+                  _this2.$emit("created", response.data); // クリア
+
+
+                  _this2.$formulate.reset("comment_form");
+
+                  _this2.commentForm.content = "";
+                } else {
+                  // エラー時はformに表示
+                  _this2.commentErrors = [_this2.$i18n.tc("sentence.send_comment_failed")];
+                }
+
+              case 8:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    changeComment: function changeComment() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                // エラーメッセージをクリア
+                _this3.commentErrors = []; // request api
+
+                _context3.next = 3;
+                return axios.put("photos/comments/".concat(_this3.commentId), _this3.commentForm);
+
+              case 3:
+                response = _context3.sent;
+
+                if (!(response.status === _const__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
+                  _context3.next = 7;
+                  break;
+                }
+
+                // set validation error
+                _this3.commentErrors = response.data.errors.content;
+                return _context3.abrupt("return", false);
+
+              case 7:
+                // 成功
+                if (response.status === _const__WEBPACK_IMPORTED_MODULE_1__["OK"]) {
+                  // レスポンスで帰ってきたコメントデータをemitで返す
+                  _this3.$emit("created", response.data); // クリア
+
+
+                  _this3.commentForm.content = "aaa";
+
+                  _this3.$formulate.reset("comment_form");
+                } else {
+                  // エラー時はformに表示
+                  _this3.commentErrors = [_this3.$i18n.tc("sentence.send_comment_failed")];
+                }
+
+              case 8:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
     }
   }
 });
@@ -16361,25 +16875,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       // 言語選択オプション
-      langList: [{
-        value: "en",
-        text: "english"
-      }, {
-        value: "ja",
-        text: "japanese"
-      }],
+      langList: {
+        en: this.$i18n.tc("word.english"),
+        ja: this.$i18n.tc("word.japanese")
+      },
       // 選択された言語
       selectedLang: "en"
     };
   },
   // 算出プロパティでストアのステートを参照
   computed: {
+    // authストアのapiStatus
+    apiStatus: function apiStatus() {
+      return this.$store.state.auth.apiStatus;
+    },
     // authストアのステートUserを参照
     isLogin: function isLogin() {
       return this.$store.getters["auth/check"];
@@ -16410,9 +16938,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this.$store.dispatch("auth/logout");
 
               case 2:
-                // ログインに移動
+                // ログアウト成功の場合
                 if (_this.apiStatus) {
-                  _this.$router.push("/login");
+                  // 「photo」のページにいる場合ログインに移動
+                  if (["photo"].includes(_this.$route.name)) {
+                    _this.$router.push({
+                      name: "login"
+                    });
+                  }
                 }
 
               case 3:
@@ -16426,11 +16959,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     // 言語切替メソッド
     changeLang: function changeLang() {
       // ローカルストレージに「language」をセット
-      this.$storage.set("language", this.selectedLang); // Apiリクエスト 言語を設定
+      this.$storage.set("language", this.selectedLang); // Apiリクエスト言語を設定
 
-      axios.get("/api/set-lang/".concat(this.selectedLang)); // Vue i18n の言語を設定
+      axios.get("set-lang/".concat(this.selectedLang)); // Vue i18n の言語を設定
 
-      this.$i18n.locale = this.selectedLang;
+      this.$i18n.locale = this.selectedLang; // formulateの言語を設定
+
+      this.$formulate.selectedLocale = this.selectedLang; // ここで入れ直さないとセレクトの中身が変更されない
+
+      this.langList.en = this.$i18n.tc("word.english");
+      this.langList.ja = this.$i18n.tc("word.japanese"); // 現在のルートネームを取得
+
+      var currentRoute = this.$route.name; // ルートネームがログインのときのみクリア
+
+      if (currentRoute === "login") {
+        // formulate formの中身をクリア
+        this.$formulate.reset("login_form");
+        this.$formulate.reset("register_form");
+        this.$formulate.reset("forgot_form");
+      }
     }
   },
   created: function created() {
@@ -16444,10 +16991,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       this.$storage.set("language", defaultLang); // Apiリクエスト 言語を設定
 
-      axios.get("/api/set-lang/".concat(defaultLang));
+      axios.get("set-lang/".concat(defaultLang));
     } // ある場合はサーバ側をクライアント側に合わせる
     else {
-        axios.get("/api/set-lang/".concat(this.selectedLang));
+        axios.get("set-lang/".concat(this.selectedLang));
       }
   }
 });
@@ -16478,6 +17025,343 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Photo.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      isActive: false
+    };
+  },
+  props: {
+    item: {
+      type: Object,
+      required: true
+    },
+    isSquare: {
+      type: Boolean,
+      "default": true
+    }
+  },
+  computed: {
+    isLogin: function isLogin() {
+      return this.$store.getters["auth/check"];
+    },
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
+    }
+  },
+  methods: {
+    /**
+     * on like click
+     */
+    onLike: function onLike() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (_this.isLogin) {
+                  _context.next = 3;
+                  break;
+                }
+
+                // メッセージ
+                _this.$store.commit("message/setContent", {
+                  content: _this.$i18n.tc("sentence.please_login_to_use_like_feature"),
+                  timeout: 6000
+                });
+
+                return _context.abrupt("return", false);
+
+              case 3:
+                if (!_this.loadingStatus) {
+                  _context.next = 5;
+                  break;
+                }
+
+                return _context.abrupt("return");
+
+              case 5:
+                _this.isActive = true;
+                _context.next = 8;
+                return axios.put("photos/like", {
+                  photo_id: _this.item.id,
+                  liked: !_this.item.is_liked
+                });
+
+              case 8:
+                response = _context.sent;
+                _this.isActive = false; // アップデート成功
+
+                if (response.status == _const__WEBPACK_IMPORTED_MODULE_1__["OK"]) {
+                  _this.item.is_liked = response.data.is_liked;
+                  _this.item.total_like = response.data.total_like;
+                }
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
+/* harmony import */ var _components_Photo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Photo */ "./resources/js/components/Photo.vue");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper */ "./resources/js/helper.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Photo: _components_Photo__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      photos: [],
+      currentPage: 0,
+      lastPage: 1,
+      isSquare: true
+    };
+  },
+  computed: {
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
+    }
+  },
+  methods: {
+    /**
+     * fetch photos
+     */
+    fetchPhotos: function fetchPhotos() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var page, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!_this.loadingStatus) {
+                  _context.next = 2;
+                  break;
+                }
+
+                return _context.abrupt("return");
+
+              case 2:
+                page = _this.lastPage > _this.currentPage ? _this.currentPage + 1 : false;
+
+                if (page) {
+                  _context.next = 5;
+                  break;
+                }
+
+                return _context.abrupt("return");
+
+              case 5:
+                _context.next = 7;
+                return axios.get("photos/?page=".concat(page));
+
+              case 7:
+                response = _context.sent;
+
+                if (!(response.status !== _const__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context.next = 11;
+                  break;
+                }
+
+                // commit error store
+                _this.$store.commit("error/setCode", response.status);
+
+                return _context.abrupt("return", false);
+
+              case 11:
+                // set photo datas
+                _this.photos = _this.photos.concat(response.data.data);
+                _this.currentPage = response.data.current_page;
+                _this.lastPage = response.data.last_page;
+                return _context.abrupt("return", _this.lastPage);
+
+              case 15:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    getBottomWraper: function getBottomWraper() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _helper__WEBPACK_IMPORTED_MODULE_3__["default"].getBottom(_this2.fetchPhotos);
+
+              case 1:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
+  },
+  mounted: function mounted() {
+    var _this3 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _helper__WEBPACK_IMPORTED_MODULE_3__["default"].fillHeight(_this3.fetchPhotos);
+              window.addEventListener("scroll", _this3.getBottomWraper);
+
+            case 2:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
+  },
+  destroyed: function destroyed() {
+    window.removeEventListener("scroll", this.getBottomWraper);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Login.vue?vue&type=script&lang=js& ***!
@@ -16495,6 +17379,30 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16656,6 +17564,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     // authストアのforgotErrorMessages
     forgotErrors: function forgotErrors() {
       return this.$store.state.auth.forgotErrorMessages;
+    },
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
     }
   },
   methods: {
@@ -16677,7 +17589,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 // 通信成功
                 if (_this.apiStatus) {
                   // トップページに移動
-                  _this.$router.push("/");
+                  _this.$router.push({
+                    name: 'home'
+                  });
                 }
 
               case 3:
@@ -16775,7 +17689,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       // AUTHストアのすべてのエラーメッセージをクリア
       this.$store.commit("auth/setLoginErrorMessages", null);
       this.$store.commit("auth/setRegisterErrorMessages", null);
-      this.$store.commit("auth/setForgotErrorMessages", null);
+      this.$store.commit("auth/setForgotErrorMessages", null); // ここでformulateもリセットしておく
+
+      this.$formulate.reset("login_form");
+      this.$formulate.reset("register_form");
+      this.$formulate.reset("forgot_form");
     },
 
     /*
@@ -16792,6 +17710,434 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.registerForm.password_confirmation = ""; // forgot form
 
       this.forgot.email = "";
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoDetail.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
+/* harmony import */ var _components_CommentForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/CommentForm */ "./resources/js/components/CommentForm.vue");
+
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    CommentForm: _components_CommentForm__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  props: {
+    // routeで設定された :id の値が入る
+    id: {
+      type: String,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      item: null,
+      isLikeSending: false,
+      activeComment: null
+    };
+  },
+  computed: {
+    // authストアのuser
+    user: function user() {
+      return this.$store.state.auth.user;
+    },
+    isLogin: function isLogin() {
+      return this.$store.getters["auth/check"];
+    },
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
+    }
+  },
+  methods: {
+    getPhoto: function getPhoto() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios.get("photos/".concat(_this.id));
+
+              case 2:
+                response = _context.sent;
+
+                if (!(response.status !== _const__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context.next = 6;
+                  break;
+                }
+
+                // commit errer store
+                _this.$store.commit("error/setCode", response.status);
+
+                return _context.abrupt("return", false);
+
+              case 6:
+                // set photo data
+                _this.item = response.data;
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+
+    /**
+     * on like click
+     */
+    onLike: function onLike() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (_this2.isLogin) {
+                  _context2.next = 3;
+                  break;
+                }
+
+                // メッセージ
+                _this2.$store.commit("message/setContent", {
+                  content: _this2.$i18n.tc("sentence.please_login_to_use_like_feature"),
+                  timeout: 6000
+                });
+
+                return _context2.abrupt("return", false);
+
+              case 3:
+                if (!_this2.loadingStatus) {
+                  _context2.next = 5;
+                  break;
+                }
+
+                return _context2.abrupt("return");
+
+              case 5:
+                _this2.isLikeSending = true;
+                _context2.next = 8;
+                return axios.put("photos/like", {
+                  photo_id: _this2.item.id,
+                  liked: !_this2.item.is_liked
+                });
+
+              case 8:
+                response = _context2.sent;
+                _this2.isLikeSending = false; // アップデート成功
+
+                if (response.status == _const__WEBPACK_IMPORTED_MODULE_1__["OK"]) {
+                  _this2.item.is_liked = response.data.is_liked;
+                  _this2.item.total_like = response.data.total_like;
+                }
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    EditComment: function EditComment(commentId) {
+      this.activeComment = commentId;
+    },
+    createdComment: function createdComment(newComment) {
+      // emitで返ってきたコメントオブジェクトをマージ
+      this.item.comments = [newComment].concat(_toConsumableArray(this.item.comments));
+    },
+    updatedComment: function updatedComment(newComment) {
+      // emitで返ってきたコメントオブジェクトをマージ
+      console.log(newComment); // this.item.comments = [newComment, ...this.item.comments];
+    }
+  },
+  watch: {
+    $route: {
+      handler: function handler() {
+        var _this3 = this;
+
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  _context3.next = 2;
+                  return _this3.getPhoto();
+
+                case 2:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3);
+        }))();
+      },
+      immediate: true
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      photoForm: {
+        photo_files: null,
+        photo_name: "",
+        photo_description: ""
+      },
+      uploadErrors: []
+    };
+  },
+  // 算出プロパティでストアのステートを参照
+  computed: {
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
+    }
+  },
+  methods: {
+    // ダミーアップローダ
+    uploader: function uploader(file, progress) {
+      // ここで処理しないで、uploadPhotoメソッドで処理する
+      // プログレスの進行を100%にするのみ
+      progress(100);
+      return Promise.resolve({});
+    },
+    uploadPhoto: function uploadPhoto() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var formData, c, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                // フォームデータオブジェクトを作成
+                formData = new FormData(); // フォームデータにファイルオブジェクトを追加
+
+                c = 0;
+
+                _this.photoForm.photo_files.files.forEach(function (item) {
+                  formData.append("photo_files[".concat(c++, "]"), item.file);
+                }); // その他の値をセット
+
+
+                formData.append("photo_name", _this.photoForm.photo_name);
+                formData.append("photo_description", _this.photoForm.photo_description); // Api リクエスト
+
+                _context.next = 7;
+                return axios.post("photos", formData);
+
+              case 7:
+                response = _context.sent;
+
+                // アップデート成功
+                if (response.status === _const__WEBPACK_IMPORTED_MODULE_1__["CREATED"]) {
+                  // 成功時はメッセージを出す
+                  _this.$store.commit("message/setContent", {
+                    content: response.data.message,
+                    timeout: 6000
+                  }); // フォームのクリア
+
+
+                  _this.photoForm = {
+                    photo_files: null,
+                    photo_name: "",
+                    photo_description: ""
+                  }; // バリデーションのクリア
+
+                  _this.$formulate.reset("upload_form");
+                } else {
+                  // エラー時はformに表示
+                  _this.uploadErrors = response.data.errors;
+                }
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -16850,6 +18196,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   // vueで使うデータ
@@ -16870,6 +18224,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     // authストアのresetErrorMessages
     resetErrors: function resetErrors() {
       return this.$store.state.auth.resetErrorMessages;
+    },
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
     }
   },
   methods: {
@@ -16903,7 +18261,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.clearForm(); // トップページに移動
 
 
-                  _this.$router.push("/");
+                  _this.$router.push({
+                    name: 'home'
+                  });
                 }
 
               case 3:
@@ -16939,7 +18299,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     if (this.resetForm.token == null) {
       // move to home
-      this.$router.push("/");
+      this.$router.push({
+        name: 'home'
+      });
     } // フォームにリセットトークンをセット
 
 
@@ -16953,10 +18315,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&":
-/*!******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--5-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16965,7 +18327,45 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.tab {\r\n    padding: 0;\r\n    display: flex;\r\n    list-style: none;\n}\n.tab__item {\r\n    border: 1px solid gray;\r\n    padding: 0 0.5rem;\r\n    margin-left: 0.1rem;\r\n    cursor: pointer;\n}\n.tab__item--active {\r\n    background-color: lightgray;\n}\r\n", ""]);
+exports.push([module.i, "\n.photo-card__overlay[data-v-c0696452] {\r\n    display: flex;\r\n    text-decoration: none;\r\n    color: inherit;\r\n    border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n}\n.photo-card__aside[data-v-c0696452] {\r\n    width: 30%;\n}\n.photo-card__main[data-v-c0696452] {\r\n    width: 70%;\r\n    margin: 0 0 0 1rem;\r\n    position: relative;\n}\n.photo-card__controls[data-v-c0696452] {\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\n}\n.photo-card__footer[data-v-c0696452] {\r\n    text-align: right;\n}\n.photo-card__figure[data-v-c0696452] {\r\n    display: block;\r\n    height: 0;\r\n    width: 100%;\r\n    padding-bottom: 100%;\r\n    background-size: cover;\r\n    background-position: center center;\n}\n.photo-card__image[data-v-c0696452] {\r\n    display: none;\n}\n.photo-card__title[data-v-c0696452] {\r\n    display: block;\r\n    margin: 0;\n}\n.button__down-load[data-v-c0696452],\r\n.button__like[data-v-c0696452] {\r\n    color: gray;\r\n    opacity: 1;\r\n    transition: all ease-in-out 0.3s;\n}\r\n\r\n/* grid */\n.squere .photo-card__overlay[data-v-c0696452] {\r\n    border-bottom: none;\r\n    position: relative;\n}\n.squere .photo-card__main[data-v-c0696452] {\r\n    width: inherit;\r\n    position: absolute;\r\n    margin: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, 0.2);\n}\n.squere .photo-card__aside[data-v-c0696452] {\r\n    width: 100%;\n}\n.squere .photo-card__body[data-v-c0696452] {\r\n    position: relative;\n}\n.squere .photo-card__controls[data-v-c0696452] {\r\n    right: 1rem;\r\n    top: 1rem;\n}\n.squere .photo-card__content[data-v-c0696452] {\r\n    position: absolute;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n    padding: 1rem;\r\n    color: white;\n}\n.squere .photo-card__copy[data-v-c0696452] {\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n    overflow: hidden;\n}\n.squere .button__down-load[data-v-c0696452],\r\n.squere .button__like[data-v-c0696452] {\r\n    color: white;\n}\r\n\r\n/* ライクしてある */\n.button__like.\\--liked[data-v-c0696452],\r\n.squere.button__like.\\--liked[data-v-c0696452] {\r\n    color: tomato;\r\n    opacity: 1;\n}\r\n\r\n/* ライク追加中 */\n.button__like.\\--active[data-v-c0696452],\r\n.squere .button__like.\\--active[data-v-c0696452] {\r\n    opacity: 0;\r\n    transform: scale(3);\n}\r\n\r\n/* ライク削除中 */\n.button__like.\\--liked.\\--active[data-v-c0696452],\r\n.squere .button__like.\\--liked.\\--active[data-v-c0696452] {\r\n    opacity: 1;\r\n    transform: scale(1);\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.grid[data-v-b3c5cf30] {\r\n    display: grid;\r\n    grid-template-columns: repeat(\r\n        auto-fit,\r\n        minmax(calc(300px - 4rem - 6px), 1fr)\r\n    );\r\n    grid-gap: 1px;\n}\n.loading[data-v-b3c5cf30] {\r\n    height: 5vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.photo-detail__figure[data-v-c17cd6ac] {\r\n    margin: 0 -2rem;\n}\n.photo-detail__image[data-v-c17cd6ac] {\r\n    width: 100%;\n}\n.photo-detail__caption[data-v-c17cd6ac] {\r\n    display: flex;\r\n    padding: 1rem;\r\n    align-items: center;\n}\n.photo-detail__user[data-v-c17cd6ac] {\r\n    margin-right: auto;\n}\n.button__down-load[data-v-c17cd6ac],\r\n.button__like[data-v-c17cd6ac] {\r\n    color: gray;\r\n    opacity: 1;\r\n    transition: all ease-in-out 0.3s;\n}\r\n\r\n/* ライクしてある */\n.button__like.\\--liked[data-v-c17cd6ac] {\r\n    color: tomato;\r\n    opacity: 1;\n}\r\n\r\n/* ライク追加中 */\n.button__like.\\--active[data-v-c17cd6ac] {\r\n    opacity: 0;\r\n    transform: scale(3);\n}\r\n\r\n/* ライク削除中 */\n.button__like.\\--liked.\\--active[data-v-c17cd6ac] {\r\n    opacity: 1;\r\n    transform: scale(1);\n}\n.photo-detail__comment-list[data-v-c17cd6ac] {\r\n    margin-bottom: 2rem;\n}\n.photo-detail__comment-item[data-v-c17cd6ac] {\r\n    border-bottom: thin solid lightsteelblue;\r\n    margin-bottom: 2rem;\n}\n.photo-detail__comment-info[data-v-c17cd6ac] {\r\n    text-align: right;\r\n    font-size: 0.8em;\n}\r\n", ""]);
 
 // exports
 
@@ -17054,6 +18454,64 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/is-url/index.js":
+/*!**************************************!*\
+  !*** ./node_modules/is-url/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * Expose `isUrl`.
+ */
+
+module.exports = isUrl;
+
+/**
+ * RegExps.
+ * A URL must match #1 and then at least one of #2/#3.
+ * Use two levels of REs to avoid REDOS.
+ */
+
+var protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
+
+var localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/
+var nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
+
+/**
+ * Loosely validate a URL `string`.
+ *
+ * @param {String} string
+ * @return {Boolean}
+ */
+
+function isUrl(string){
+  if (typeof string !== 'string') {
+    return false;
+  }
+
+  var match = string.match(protocolAndDomainRE);
+  if (!match) {
+    return false;
+  }
+
+  var everythingAfterProtocol = match[1];
+  if (!everythingAfterProtocol) {
+    return false;
+  }
+
+  if (localhostDomainRE.test(everythingAfterProtocol) ||
+      nonLocalhostDomainRE.test(everythingAfterProtocol)) {
+    return true;
+  }
+
+  return false;
 }
 
 
@@ -17258,7 +18716,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.15';
+  var VERSION = '4.17.20';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -20965,8 +22423,21 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      * @returns {Array} Returns the new sorted array.
      */
     function baseOrderBy(collection, iteratees, orders) {
+      if (iteratees.length) {
+        iteratees = arrayMap(iteratees, function(iteratee) {
+          if (isArray(iteratee)) {
+            return function(value) {
+              return baseGet(value, iteratee.length === 1 ? iteratee[0] : iteratee);
+            }
+          }
+          return iteratee;
+        });
+      } else {
+        iteratees = [identity];
+      }
+
       var index = -1;
-      iteratees = arrayMap(iteratees.length ? iteratees : [identity], baseUnary(getIteratee()));
+      iteratees = arrayMap(iteratees, baseUnary(getIteratee()));
 
       var result = baseMap(collection, function(value, key, collection) {
         var criteria = arrayMap(iteratees, function(iteratee) {
@@ -21223,6 +22694,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         var key = toKey(path[index]),
             newValue = value;
 
+        if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+          return object;
+        }
+
         if (index != lastIndex) {
           var objValue = nested[key];
           newValue = customizer ? customizer(objValue, key, nested) : undefined;
@@ -21375,11 +22850,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      *  into `array`.
      */
     function baseSortedIndexBy(array, value, iteratee, retHighest) {
-      value = iteratee(value);
-
       var low = 0,
-          high = array == null ? 0 : array.length,
-          valIsNaN = value !== value,
+          high = array == null ? 0 : array.length;
+      if (high === 0) {
+        return 0;
+      }
+
+      value = iteratee(value);
+      var valIsNaN = value !== value,
           valIsNull = value === null,
           valIsSymbol = isSymbol(value),
           valIsUndefined = value === undefined;
@@ -22864,10 +24342,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
       if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
         return false;
       }
-      // Assume cyclic values are equal.
-      var stacked = stack.get(array);
-      if (stacked && stack.get(other)) {
-        return stacked == other;
+      // Check that cyclic values are equal.
+      var arrStacked = stack.get(array);
+      var othStacked = stack.get(other);
+      if (arrStacked && othStacked) {
+        return arrStacked == other && othStacked == array;
       }
       var index = -1,
           result = true,
@@ -23029,10 +24508,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
           return false;
         }
       }
-      // Assume cyclic values are equal.
-      var stacked = stack.get(object);
-      if (stacked && stack.get(other)) {
-        return stacked == other;
+      // Check that cyclic values are equal.
+      var objStacked = stack.get(object);
+      var othStacked = stack.get(other);
+      if (objStacked && othStacked) {
+        return objStacked == other && othStacked == object;
       }
       var result = true;
       stack.set(object, other);
@@ -26413,6 +27893,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      * // The `_.property` iteratee shorthand.
      * _.filter(users, 'active');
      * // => objects for ['barney']
+     *
+     * // Combining several predicates using `_.overEvery` or `_.overSome`.
+     * _.filter(users, _.overSome([{ 'age': 36 }, ['age', 40]]));
+     * // => objects for ['fred', 'barney']
      */
     function filter(collection, predicate) {
       var func = isArray(collection) ? arrayFilter : baseFilter;
@@ -27162,15 +28646,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      * var users = [
      *   { 'user': 'fred',   'age': 48 },
      *   { 'user': 'barney', 'age': 36 },
-     *   { 'user': 'fred',   'age': 40 },
+     *   { 'user': 'fred',   'age': 30 },
      *   { 'user': 'barney', 'age': 34 }
      * ];
      *
      * _.sortBy(users, [function(o) { return o.user; }]);
-     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 30]]
      *
      * _.sortBy(users, ['user', 'age']);
-     * // => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
+     * // => objects for [['barney', 34], ['barney', 36], ['fred', 30], ['fred', 48]]
      */
     var sortBy = baseRest(function(collection, iteratees) {
       if (collection == null) {
@@ -32045,11 +33529,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
       // Use a sourceURL for easier debugging.
       // The sourceURL gets injected into the source that's eval-ed, so be careful
-      // with lookup (in case of e.g. prototype pollution), and strip newlines if any.
-      // A newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
+      // to normalize all kinds of whitespace, so e.g. newlines (and unicode versions of it) can't sneak in
+      // and escape the comment, thus injecting code that gets evaled.
       var sourceURL = '//# sourceURL=' +
         (hasOwnProperty.call(options, 'sourceURL')
-          ? (options.sourceURL + '').replace(/[\r\n]/g, ' ')
+          ? (options.sourceURL + '').replace(/\s/g, ' ')
           : ('lodash.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
@@ -32082,8 +33566,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
       // If `variable` is not specified wrap a with-statement around the generated
       // code to add the data object to the top of the scope chain.
-      // Like with sourceURL, we take care to not check the option's prototype,
-      // as this configuration is a code injection vector.
       var variable = hasOwnProperty.call(options, 'variable') && options.variable;
       if (!variable) {
         source = 'with (obj) {\n' + source + '\n}\n';
@@ -32790,6 +34272,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      * values against any array or object value, respectively. See `_.isEqual`
      * for a list of supported value comparisons.
      *
+     * **Note:** Multiple values can be checked by combining several matchers
+     * using `_.overSome`
+     *
      * @static
      * @memberOf _
      * @since 3.0.0
@@ -32805,6 +34290,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      *
      * _.filter(objects, _.matches({ 'a': 4, 'c': 6 }));
      * // => [{ 'a': 4, 'b': 5, 'c': 6 }]
+     *
+     * // Checking for several possible values
+     * _.filter(objects, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
+     * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matches(source) {
       return baseMatches(baseClone(source, CLONE_DEEP_FLAG));
@@ -32818,6 +34307,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      * **Note:** Partial comparisons will match empty array and empty object
      * `srcValue` values against any array or object value, respectively. See
      * `_.isEqual` for a list of supported value comparisons.
+     *
+     * **Note:** Multiple values can be checked by combining several matchers
+     * using `_.overSome`
      *
      * @static
      * @memberOf _
@@ -32835,6 +34327,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      *
      * _.find(objects, _.matchesProperty('a', 4));
      * // => { 'a': 4, 'b': 5, 'c': 6 }
+     *
+     * // Checking for several possible values
+     * _.filter(objects, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
+     * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matchesProperty(path, srcValue) {
       return baseMatchesProperty(path, baseClone(srcValue, CLONE_DEEP_FLAG));
@@ -33058,6 +34554,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      * Creates a function that checks if **all** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
+     * Following shorthands are possible for providing predicates.
+     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
+     *
      * @static
      * @memberOf _
      * @since 4.0.0
@@ -33084,6 +34584,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      * Creates a function that checks if **any** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
+     * Following shorthands are possible for providing predicates.
+     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
+     *
      * @static
      * @memberOf _
      * @since 4.0.0
@@ -33103,6 +34607,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
      *
      * func(NaN);
      * // => false
+     *
+     * var matchesFunc = _.overSome([{ 'a': 1 }, { 'a': 2 }])
+     * var matchesPropertyFunc = _.overSome([['a', 1], ['a', 2]])
      */
     var overSome = createOver(arraySome);
 
@@ -34353,6 +35860,59 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
+/***/ "./node_modules/nanoid/non-secure/index.js":
+/*!*************************************************!*\
+  !*** ./node_modules/nanoid/non-secure/index.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// This alphabet uses a-z A-Z 0-9 _- symbols.
+// Symbols are generated for smaller size.
+// -_zyxwvutsrqponmlkjihgfedcba9876543210ZYXWVUTSRQPONMLKJIHGFEDCBA
+var url = '-_'
+// Loop from 36 to 0 (from z to a and 9 to 0 in Base36).
+var i = 36
+while (i--) {
+  // 36 is radix. Number.prototype.toString(36) returns number
+  // in Base36 representation. Base36 is like hex, but it uses 0–9 and a-z.
+  url += i.toString(36)
+}
+// Loop from 36 to 10 (from Z to A in Base36).
+i = 36
+while (i-- - 10) {
+  url += i.toString(36).toUpperCase()
+}
+
+/**
+ * Generate URL-friendly unique ID. This method use non-secure predictable
+ * random generator with bigger collision probability.
+ *
+ * @param {number} [size=21] The number of symbols in ID.
+ *
+ * @return {string} Random string.
+ *
+ * @example
+ * const nanoid = require('nanoid/non-secure')
+ * model.id = nanoid() //=> "Uakgb_J5m9g-0JDMbcJqL"
+ *
+ * @name nonSecure
+ * @function
+ */
+module.exports = function (size) {
+  var id = ''
+  i = size || 21
+  // Compact alternative for `for (var i = 0; i < size; i++)`
+  while (i--) {
+    // `| 0` is compact and faster alternative for `Math.floor()`
+    id += url[Math.random() * 64 | 0]
+  }
+  return id
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -34573,6 +36133,24 @@ var runtime = (function (exports) {
   var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
   var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
 
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
   function wrap(innerFn, outerFn, self, tryLocsList) {
     // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
     var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
@@ -34643,16 +36221,19 @@ var runtime = (function (exports) {
     Generator.prototype = Object.create(IteratorPrototype);
   GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
   GeneratorFunctionPrototype.constructor = GeneratorFunction;
-  GeneratorFunctionPrototype[toStringTagSymbol] =
-    GeneratorFunction.displayName = "GeneratorFunction";
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
 
   // Helper for defining the .next, .throw, and .return methods of the
   // Iterator interface in terms of a single ._invoke method.
   function defineIteratorMethods(prototype) {
     ["next", "throw", "return"].forEach(function(method) {
-      prototype[method] = function(arg) {
+      define(prototype, method, function(arg) {
         return this._invoke(method, arg);
-      };
+      });
     });
   }
 
@@ -34671,9 +36252,7 @@ var runtime = (function (exports) {
       Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
     } else {
       genFun.__proto__ = GeneratorFunctionPrototype;
-      if (!(toStringTagSymbol in genFun)) {
-        genFun[toStringTagSymbol] = "GeneratorFunction";
-      }
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
     }
     genFun.prototype = Object.create(Gp);
     return genFun;
@@ -34943,7 +36522,7 @@ var runtime = (function (exports) {
   // unified ._invoke helper method.
   defineIteratorMethods(Gp);
 
-  Gp[toStringTagSymbol] = "Generator";
+  define(Gp, toStringTagSymbol, "Generator");
 
   // A Generator should always return itself as the iterator object when the
   // @@iterator function is called on it. Some browsers' implementations of the
@@ -35486,15 +37065,75 @@ try {
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--5-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--5-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Login.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -36110,7 +37749,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
- * vue-i18n v8.18.2 
+ * vue-i18n v8.22.0 
  * (c) 2020 kazuya kawaguchi
  * Released under the MIT License.
  */
@@ -36183,6 +37822,10 @@ function isNull (val) {
   return val === null || val === undefined
 }
 
+function isFunction (val) {
+  return typeof val === 'function'
+}
+
 function parseArgs () {
   var args = [], len = arguments.length;
   while ( len-- ) args[ len ] = arguments[ len ];
@@ -36190,7 +37833,7 @@ function parseArgs () {
   var locale = null;
   var params = null;
   if (args.length === 1) {
-    if (isObject(args[0]) || Array.isArray(args[0])) {
+    if (isObject(args[0]) || isArray(args[0])) {
       params = args[0];
     } else if (typeof args[0] === 'string') {
       locale = args[0];
@@ -36200,7 +37843,7 @@ function parseArgs () {
       locale = args[0];
     }
     /* istanbul ignore if */
-    if (isObject(args[1]) || Array.isArray(args[1])) {
+    if (isObject(args[1]) || isArray(args[1])) {
       params = args[1];
     }
   }
@@ -36258,8 +37901,8 @@ function looseEqual (a, b) {
   var isObjectB = isObject(b);
   if (isObjectA && isObjectB) {
     try {
-      var isArrayA = Array.isArray(a);
-      var isArrayB = Array.isArray(b);
+      var isArrayA = isArray(a);
+      var isArrayB = isArray(b);
       if (isArrayA && isArrayB) {
         return a.length === b.length && a.every(function (e, i) {
           return looseEqual(e, b[i])
@@ -36283,6 +37926,39 @@ function looseEqual (a, b) {
   } else {
     return false
   }
+}
+
+/**
+ * Sanitizes html special characters from input strings. For mitigating risk of XSS attacks.
+ * @param rawText The raw input from the user that should be escaped.
+ */
+function escapeHtml(rawText) {
+  return rawText
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+}
+
+/**
+ * Escapes html tags and special symbols from all provided params which were returned from parseArgs().params.
+ * This method performs an in-place operation on the params object.
+ *
+ * @param {any} params Parameters as provided from `parseArgs().params`.
+ *                     May be either an array of strings or a string->any map.
+ *
+ * @returns The manipulated `params` object.
+ */
+function escapeParams(params) {
+  if(params != null) {
+    Object.keys(params).forEach(function (key) {
+      if(typeof(params[key]) == 'string') {
+        params[key] = escapeHtml(params[key]);
+      }
+    });
+  }
+  return params
 }
 
 /*  */
@@ -36345,7 +38021,7 @@ var mixin = {
         // init locale messages via custom blocks
         if (options.__i18n) {
           try {
-            var localeMessages = {};
+            var localeMessages = options.i18n && options.i18n.messages ? options.i18n.messages : {};
             options.__i18n.forEach(function (resource) {
               localeMessages = merge(localeMessages, JSON.parse(resource));
             });
@@ -36379,7 +38055,7 @@ var mixin = {
         // init locale messages via custom blocks
         if (options.__i18n) {
           try {
-            var localeMessages$1 = {};
+            var localeMessages$1 = options.i18n && options.i18n.messages ? options.i18n.messages : {};
             options.__i18n.forEach(function (resource) {
               localeMessages$1 = merge(localeMessages$1, JSON.parse(resource));
             });
@@ -36478,7 +38154,7 @@ var interpolationComponent = {
   functional: true,
   props: {
     tag: {
-      type: [String, Boolean],
+      type: [String, Boolean, Object],
       default: 'span'
     },
     path: {
@@ -36585,7 +38261,7 @@ var numberComponent = {
   functional: true,
   props: {
     tag: {
-      type: [String, Boolean],
+      type: [String, Boolean, Object],
       default: 'span'
     },
     value: {
@@ -37274,6 +38950,7 @@ var VueI18n = function VueI18n (options) {
   this.pluralizationRules = options.pluralizationRules || {};
   this._warnHtmlInMessage = options.warnHtmlInMessage || 'off';
   this._postTranslation = options.postTranslation || null;
+  this._escapeParameterHtml = options.escapeParameterHtml || false;
 
   /**
    * @param choice {number} a choice index given by the input to $tc: `$tc('path.to.rule', choiceIndex)`
@@ -37354,7 +39031,7 @@ VueI18n.prototype._checkLocaleMessage = function _checkLocaleMessage (locale, le
           paths.pop();
         }
       });
-    } else if (Array.isArray(message)) {
+    } else if (isArray(message)) {
       message.forEach(function (item, index) {
         if (isPlainObject(item)) {
           paths.push(("[" + index + "]"));
@@ -37544,16 +39221,16 @@ VueI18n.prototype._interpolate = function _interpolate (
   if (!message) { return null }
 
   var pathRet = this._path.getPathValue(message, key);
-  if (Array.isArray(pathRet) || isPlainObject(pathRet)) { return pathRet }
+  if (isArray(pathRet) || isPlainObject(pathRet)) { return pathRet }
 
   var ret;
   if (isNull(pathRet)) {
     /* istanbul ignore else */
     if (isPlainObject(message)) {
       ret = message[key];
-      if (!isString(ret)) {
+      if (!(isString(ret) || isFunction(ret))) {
         if ( true && !this._isSilentTranslationWarn(key) && !this._isSilentFallback(locale, key)) {
-          warn(("Value of key '" + key + "' is not a string!"));
+          warn(("Value of key '" + key + "' is not a string or function !"));
         }
         return null
       }
@@ -37562,18 +39239,18 @@ VueI18n.prototype._interpolate = function _interpolate (
     }
   } else {
     /* istanbul ignore else */
-    if (isString(pathRet)) {
+    if (isString(pathRet) || isFunction(pathRet)) {
       ret = pathRet;
     } else {
       if ( true && !this._isSilentTranslationWarn(key) && !this._isSilentFallback(locale, key)) {
-        warn(("Value of key '" + key + "' is not a string!"));
+        warn(("Value of key '" + key + "' is not a string or function!"));
       }
       return null
     }
   }
 
   // Check for the existence of links within the translated string
-  if (ret.indexOf('@:') >= 0 || ret.indexOf('@.') >= 0) {
+  if (isString(ret) && (ret.indexOf('@:') >= 0 || ret.indexOf('@.') >= 0)) {
     ret = this._link(locale, message, ret, host, 'raw', values, visitedLinkStack);
   }
 
@@ -37639,7 +39316,7 @@ VueI18n.prototype._link = function _link (
     }
     translated = this._warnDefault(
       locale, linkPlaceholder, translated, host,
-      Array.isArray(values) ? values : [values],
+      isArray(values) ? values : [values],
       interpolateMode
     );
 
@@ -37658,7 +39335,22 @@ VueI18n.prototype._link = function _link (
   return ret
 };
 
+VueI18n.prototype._createMessageContext = function _createMessageContext (values) {
+  var _list = isArray(values) ? values : [];
+  var _named = isObject(values) ? values : {};
+  var list = function (index) { return _list[index]; };
+  var named = function (key) { return _named[key]; };
+  return {
+    list: list,
+    named: named
+  }
+};
+
 VueI18n.prototype._render = function _render (message, interpolateMode, values, path) {
+  if (isFunction(message)) {
+    return message(this._createMessageContext(values))
+  }
+
   var ret = this._formatter.interpolate(message, values, path);
 
   // If the custom formatter refuses to work - apply the default one
@@ -37801,6 +39493,10 @@ VueI18n.prototype._t = function _t (key, _locale, messages, host) {
   if (!key) { return '' }
 
   var parsedArgs = parseArgs.apply(void 0, values);
+  if(this._escapeParameterHtml) {
+    parsedArgs.params = escapeParams(parsedArgs.params);
+  }
+
   var locale = parsedArgs.locale || _locale;
 
   var ret = this._translate(
@@ -37881,7 +39577,7 @@ VueI18n.prototype._tc = function _tc (
 
 VueI18n.prototype.fetchChoice = function fetchChoice (message, choice) {
   /* istanbul ignore if */
-  if (!message && !isString(message)) { return null }
+  if (!message || !isString(message)) { return null }
   var choices = message.split('|');
 
   choice = this.getChoiceIndex(choice, choices.length);
@@ -38236,7 +39932,7 @@ Object.defineProperty(VueI18n, 'availabilities', {
 });
 
 VueI18n.install = install;
-VueI18n.version = '8.18.2';
+VueI18n.version = '8.22.0';
 
 /* harmony default export */ __webpack_exports__["default"] = (VueI18n);
 
@@ -38260,6 +39956,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "wrapper" },
     [
       _c("Header"),
       _vm._v(" "),
@@ -38271,6 +39968,78 @@ var render = function() {
           1
         )
       ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CommentForm.vue?vue&type=template&id=72ee8928&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CommentForm.vue?vue&type=template&id=72ee8928& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "FormulateForm",
+    {
+      attrs: { name: "comment_form", "form-errors": _vm.commentErrors },
+      on: { submit: _vm.sendComment },
+      model: {
+        value: _vm.commentForm,
+        callback: function($$v) {
+          _vm.commentForm = $$v
+        },
+        expression: "commentForm"
+      }
+    },
+    [
+      _c("FormulateInput", {
+        staticClass: "photo-detail__comment-input",
+        attrs: {
+          name: "content",
+          type: "textarea",
+          value: _vm.comentContent,
+          label: _vm.label,
+          validation: "required|max:100,length",
+          "validation-name": _vm.$t("word.comment_content"),
+          help: _vm.$t("sentence.keep_it_under_characters", {
+            length: 100 - _vm.commentForm.content.length
+          })
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "FormulateInput",
+        { attrs: { type: "submit", disabled: _vm.loadingStatus } },
+        [
+          _vm._v("\n        " + _vm._s(_vm.buttonName) + "\n        "),
+          _vm.loadingStatus
+            ? _c("FAIcon", {
+                attrs: {
+                  icon: ["fas", "spinner"],
+                  "fixed-width": "",
+                  pulse: ""
+                }
+              })
+            : _vm._e()
+        ],
+        1
+      )
     ],
     1
   )
@@ -38299,66 +40068,83 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "header",
+    { staticClass: "header" },
     [
-      _c("RouterLink", { attrs: { to: "/" } }, [
-        _vm._v(_vm._s(_vm.$t("word.home")))
-      ]),
-      _vm._v(" "),
-      !_vm.isLogin
-        ? _c("RouterLink", { attrs: { to: "/login" } }, [
-            _vm._v(_vm._s(_vm.$t("word.login")))
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.isLogin ? _c("span", [_vm._v(_vm._s(_vm.username))]) : _vm._e(),
-      _vm._v(" "),
-      _vm.isLogin
-        ? _c("span", { on: { click: _vm.logout } }, [_vm._v("logout")])
-        : _vm._e(),
-      _vm._v(" "),
       _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.selectedLang,
-              expression: "selectedLang"
-            }
-          ],
-          on: {
-            change: [
-              function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.selectedLang = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              },
-              _vm.changeLang
-            ]
-          }
-        },
-        _vm._l(_vm.langList, function(lang) {
-          return _c(
-            "option",
-            { key: lang.value, domProps: { value: lang.value } },
-            [_vm._v(_vm._s(_vm.$t("word." + lang.text)))]
-          )
-        }),
-        0
+        "RouterLink",
+        { attrs: { to: { name: "home" } } },
+        [
+          _c("FAIcon", { attrs: { icon: ["fas", "home"], size: "lg" } }),
+          _vm._v("\n        " + _vm._s(_vm.$t("word.home")) + "\n    ")
+        ],
+        1
       ),
       _vm._v(" "),
-      _c("font-awesome-icon", { attrs: { icon: "coffee" } }),
+      _vm.isLogin
+        ? _c(
+            "RouterLink",
+            { attrs: { to: { name: "photo-upload" } } },
+            [
+              _c("FAIcon", {
+                attrs: { icon: ["fas", "camera-retro"], size: "lg" }
+              }),
+              _vm._v("\n        " + _vm._s(_vm.$t("word.photo")) + "\n    ")
+            ],
+            1
+          )
+        : _vm._e(),
       _vm._v(" "),
-      _c("font-awesome-icon", { attrs: { icon: ["fas", "coffee"] } })
+      !_vm.isLogin
+        ? _c(
+            "RouterLink",
+            { attrs: { to: "/login" } },
+            [
+              _c("FAIcon", {
+                attrs: { icon: ["fas", "sign-in-alt"], size: "lg" }
+              }),
+              _vm._v("\n        " + _vm._s(_vm.$t("word.login")) + "\n    ")
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.isLogin
+        ? _c(
+            "span",
+            [
+              _c("FAIcon", { attrs: { icon: ["fas", "child"], size: "lg" } }),
+              _vm._v("\n        " + _vm._s(_vm.username) + "\n    ")
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.isLogin
+        ? _c(
+            "span",
+            { staticClass: "button", on: { click: _vm.logout } },
+            [
+              _c("FAIcon", {
+                attrs: { icon: ["fas", "sign-out-alt"], size: "lg" }
+              }),
+              _vm._v("\n        " + _vm._s(_vm.$t("word.logout")) + "\n    ")
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("FormulateInput", {
+        staticClass: "header-lang",
+        attrs: { options: _vm.langList, type: "select" },
+        on: { input: _vm.changeLang },
+        model: {
+          value: _vm.selectedLang,
+          callback: function($$v) {
+            _vm.selectedLang = $$v
+          },
+          expression: "selectedLang"
+        }
+      })
     ],
     1
   )
@@ -38408,10 +40194,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&":
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30& ***!
-  \**************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=template&id=c0696452&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Photo.vue?vue&type=template&id=c0696452&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38423,8 +40209,197 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v(_vm._s(_vm.$t("word.home")))])
+  return _c(
+    "div",
+    { staticClass: "photo-card", class: { squere: _vm.isSquare } },
+    [
+      _c(
+        "RouterLink",
+        {
+          staticClass: "photo-card__overlay",
+          attrs: { to: { name: "photo-detail", params: { id: _vm.item.id } } }
+        },
+        [
+          _c("aside", { staticClass: "photo-card__aside" }, [
+            _c(
+              "figure",
+              {
+                staticClass: "photo-card__figure",
+                style: "background-image:url(" + _vm.item.url + ")"
+              },
+              [
+                _c("img", {
+                  staticClass: "photo-card__image",
+                  attrs: { src: _vm.item.url, alt: "" + _vm.item.name }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "photo-card__main" }, [
+            _c("div", { staticClass: "photo-card__content" }, [
+              _c("h2", { staticClass: "photo-card__title" }, [
+                _vm._v(_vm._s(_vm.item.name))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "photo-card__copy" }, [
+                _vm._v(_vm._s(_vm.item.description))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "photo-card__footer" }, [
+                _vm._v(
+                  _vm._s(_vm.item.user.name) +
+                    " " +
+                    _vm._s(_vm.$d(new Date(_vm.item.user.updated_at), "full"))
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "photo-card__controls" },
+              [
+                _c("FAIcon", {
+                  staticClass: "fa-fw button__like",
+                  class: {
+                    "--liked": _vm.item.is_liked,
+                    "--active": _vm.isActive
+                  },
+                  attrs: { icon: ["fas", "heart"] },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.onLike($event)
+                    }
+                  }
+                }),
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.item.total_like) +
+                    "\n                "
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button__down-load",
+                    attrs: { href: "/photos/" + _vm.item.id + "/download" },
+                    on: {
+                      click: function($event) {
+                        $event.stopPropagation()
+                      }
+                    }
+                  },
+                  [
+                    _c("FAIcon", {
+                      attrs: {
+                        icon: ["fas", "file-download"],
+                        "fixed-width": ""
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "page" }, [
+    _c("h1", [
+      _vm._v("\n        " + _vm._s(_vm.$t("word.photo")) + "\n        "),
+      _c(
+        "span",
+        { staticClass: "title__button-box" },
+        [
+          _c("FAIcon", {
+            class: { "--active": _vm.isSquare },
+            attrs: {
+              icon: ["fas", "grip-horizontal"],
+              "fixed-width": "",
+              border: ""
+            },
+            on: {
+              click: function($event) {
+                _vm.isSquare = true
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("FAIcon", {
+            class: { "--active": !_vm.isSquare },
+            attrs: {
+              icon: ["fas", "grip-lines"],
+              "fixed-width": "",
+              border: ""
+            },
+            on: {
+              click: function($event) {
+                _vm.isSquare = false
+              }
+            }
+          })
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { class: { grid: _vm.isSquare } },
+      _vm._l(_vm.photos, function(photo) {
+        return _c("Photo", {
+          key: photo.id,
+          staticClass: "grid__item",
+          attrs: { item: photo, "is-square": _vm.isSquare }
+        })
+      }),
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.loadingStatus,
+            expression: "loadingStatus"
+          }
+        ],
+        staticClass: "loading"
+      },
+      [_c("FAIcon", { attrs: { icon: ["fas", "sync"], spin: "" } })],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -38449,7 +40424,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "page" }, [
+    _c("h1", [_vm._v(_vm._s(_vm.$t("word.login")))]),
+    _vm._v(" "),
     _c("ul", { staticClass: "tab" }, [
       _c(
         "li",
@@ -38505,102 +40482,71 @@ var render = function() {
             expression: "tab === 1"
           }
         ],
-        staticClass: "login"
+        staticClass: "login panel"
       },
       [
-        _c("h2", [_vm._v(_vm._s(_vm.$t("word.login")))]),
-        _vm._v(" "),
-        _vm.loginErrors
-          ? _c("div", { staticClass: "errors" }, [
-              _vm.loginErrors.email
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.loginErrors.email, function(msg) {
-                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                    }),
-                    0
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.loginErrors.password
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.loginErrors.password, function(msg) {
-                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                    }),
-                    0
-                  )
-                : _vm._e()
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c(
-          "form",
+          "FormulateForm",
           {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.login($event)
-              }
+            attrs: {
+              name: "login_form",
+              "form-errors": _vm.loginErrors ? _vm.loginErrors.email : []
+            },
+            on: { submit: _vm.login },
+            model: {
+              value: _vm.loginForm,
+              callback: function($$v) {
+                _vm.loginForm = $$v
+              },
+              expression: "loginForm"
             }
           },
           [
-            _c("div", [_vm._v(_vm._s(_vm.$t("word.email")))]),
+            _c("FormulateInput", {
+              attrs: {
+                name: "email",
+                type: "email",
+                label: _vm.$t("word.email"),
+                "validation-name": _vm.$t("word.email"),
+                validation: "required|email",
+                placeholder: "xxx@xxxx.xx"
+              }
+            }),
             _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.loginForm.email,
-                    expression: "loginForm.email"
-                  }
-                ],
-                attrs: { type: "email" },
-                domProps: { value: _vm.loginForm.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.loginForm, "email", $event.target.value)
-                  }
-                }
-              })
-            ]),
+            _c("FormulateInput", {
+              attrs: {
+                name: "password",
+                type: "password",
+                label: _vm.$t("word.password"),
+                "validation-name": _vm.$t("word.password"),
+                validation: "required|min:8",
+                placeholder: "password"
+              }
+            }),
             _vm._v(" "),
-            _c("div", [_vm._v(_vm._s(_vm.$t("word.password")))]),
-            _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.loginForm.password,
-                    expression: "loginForm.password"
-                  }
-                ],
-                attrs: { type: "password" },
-                domProps: { value: _vm.loginForm.password },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.loginForm, "password", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("button", { attrs: { type: "submit" } }, [
-                _vm._v(_vm._s(_vm.$t("word.login")))
-              ])
-            ])
-          ]
+            _c(
+              "FormulateInput",
+              { attrs: { type: "submit", disabled: _vm.loadingStatus } },
+              [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.$t("word.login")) +
+                    "\n                "
+                ),
+                _vm.loadingStatus
+                  ? _c("FAIcon", {
+                      attrs: {
+                        icon: ["fas", "spinner"],
+                        pulse: "",
+                        "fixed-width": ""
+                      }
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          ],
+          1
         ),
         _vm._v(" "),
         _c("h2", [_vm._v(_vm._s(_vm.$t("word.Socialite")))]),
@@ -38611,9 +40557,16 @@ var render = function() {
             staticClass: "button",
             attrs: { href: "/login/twitter", title: "twitter" }
           },
-          [_vm._v("twitter")]
+          [
+            _c("FAIcon", {
+              class: ["faa-tada", "animated-hover"],
+              attrs: { icon: ["fab", "twitter"], size: "2x" }
+            })
+          ],
+          1
         )
-      ]
+      ],
+      1
     ),
     _vm._v(" "),
     _c(
@@ -38627,168 +40580,93 @@ var render = function() {
             expression: "tab === 2"
           }
         ],
-        staticClass: "register"
+        staticClass: "register panel"
       },
       [
-        _c("h2", [_vm._v(_vm._s(_vm.$t("word.register")))]),
-        _vm._v(" "),
-        _vm.registerErrors
-          ? _c("div", { staticClass: "errors" }, [
-              _vm.registerErrors.name
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.registerErrors.name, function(msg) {
-                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                    }),
-                    0
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.registerErrors.email
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.registerErrors.email, function(msg) {
-                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                    }),
-                    0
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.registerErrors.password
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.registerErrors.password, function(msg) {
-                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                    }),
-                    0
-                  )
-                : _vm._e()
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c(
-          "form",
+          "FormulateForm",
           {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.register($event)
-              }
+            attrs: { name: "register_form", errors: _vm.registerErrors },
+            on: { submit: _vm.register },
+            model: {
+              value: _vm.registerForm,
+              callback: function($$v) {
+                _vm.registerForm = $$v
+              },
+              expression: "registerForm"
             }
           },
           [
-            _c("div", [_vm._v(_vm._s(_vm.$t("word.name")))]),
+            _c("FormulateInput", {
+              attrs: {
+                name: "name",
+                type: "text",
+                label: _vm.$t("word.name"),
+                "validation-name": _vm.$t("word.name"),
+                validation: "required|max:50",
+                placeholder: _vm.$t("word.name")
+              }
+            }),
             _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.registerForm.name,
-                    expression: "registerForm.name"
-                  }
-                ],
-                attrs: { type: "text" },
-                domProps: { value: _vm.registerForm.name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.registerForm, "name", $event.target.value)
-                  }
-                }
-              })
-            ]),
+            _c("FormulateInput", {
+              attrs: {
+                name: "email",
+                type: "email",
+                label: _vm.$t("word.email"),
+                "validation-name": _vm.$t("word.email"),
+                validation: "required|email",
+                placeholder: _vm.$t("word.email")
+              }
+            }),
             _vm._v(" "),
-            _c("div", [_vm._v(_vm._s(_vm.$t("word.email")))]),
+            _c("FormulateInput", {
+              attrs: {
+                name: "password",
+                type: "password",
+                label: _vm.$t("word.password"),
+                "validation-name": _vm.$t("word.password"),
+                validation: "required|min:8",
+                placeholder: _vm.$t("word.password")
+              }
+            }),
             _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.registerForm.email,
-                    expression: "registerForm.email"
-                  }
-                ],
-                attrs: { type: "email" },
-                domProps: { value: _vm.registerForm.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.registerForm, "email", $event.target.value)
-                  }
-                }
-              })
-            ]),
+            _c("FormulateInput", {
+              attrs: {
+                name: "password_confirmation",
+                type: "password",
+                label: _vm.$t("word.password_confirmation"),
+                "validation-name": _vm.$t("word.password_confirmation"),
+                validation: "required|confirm:password",
+                placeholder: _vm.$t("word.password_confirmation")
+              }
+            }),
             _vm._v(" "),
-            _c("div", [_vm._v(_vm._s(_vm.$t("word.password")))]),
-            _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.registerForm.password,
-                    expression: "registerForm.password"
-                  }
-                ],
-                attrs: { type: "password" },
-                domProps: { value: _vm.registerForm.password },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.registerForm, "password", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [_vm._v(_vm._s(_vm.$t("word.password_confirmation")))]),
-            _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.registerForm.password_confirmation,
-                    expression: "registerForm.password_confirmation"
-                  }
-                ],
-                attrs: { type: "password" },
-                domProps: { value: _vm.registerForm.password_confirmation },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(
-                      _vm.registerForm,
-                      "password_confirmation",
-                      $event.target.value
-                    )
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("button", { attrs: { type: "submit" } }, [
-                _vm._v(_vm._s(_vm.$t("word.register")))
-              ])
-            ])
-          ]
+            _c(
+              "FormulateInput",
+              { attrs: { type: "submit", disabled: _vm.loadingStatus } },
+              [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.$t("word.register")) +
+                    "\n                "
+                ),
+                _vm.loadingStatus
+                  ? _c("FAIcon", {
+                      attrs: {
+                        icon: ["fas", "spinner"],
+                        pulse: "",
+                        "fixed-width": ""
+                      }
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          ],
+          1
         )
-      ]
+      ],
+      1
     ),
     _vm._v(" "),
     _c(
@@ -38802,71 +40680,395 @@ var render = function() {
             expression: "tab === 3"
           }
         ],
-        staticClass: "forgot"
+        staticClass: "forgot panel"
       },
       [
-        _c("h2", [_vm._v("forgot")]),
-        _vm._v(" "),
-        _vm.forgotErrors
-          ? _c("div", { staticClass: "errors" }, [
-              _vm.forgotErrors.email
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.forgotErrors.email, function(msg) {
-                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                    }),
-                    0
-                  )
-                : _vm._e()
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c(
-          "form",
+          "FormulateForm",
           {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.forgot($event)
-              }
+            attrs: {
+              name: "forgot_form",
+              "form-errors": _vm.forgotErrors ? _vm.forgotErrors.email : []
+            },
+            on: { submit: _vm.forgot },
+            model: {
+              value: _vm.forgotForm,
+              callback: function($$v) {
+                _vm.forgotForm = $$v
+              },
+              expression: "forgotForm"
             }
           },
           [
-            _c("div", [_vm._v(_vm._s(_vm.$t("word.email")))]),
+            _c("FormulateInput", {
+              attrs: {
+                name: "email",
+                type: "email",
+                label: _vm.$t("word.email"),
+                "validation-name": _vm.$t("word.email"),
+                validation: "required|email",
+                placeholder: _vm.$t("word.email")
+              }
+            }),
             _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.forgotForm.email,
-                    expression: "forgotForm.email"
-                  }
-                ],
-                attrs: { type: "email" },
-                domProps: { value: _vm.forgotForm.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.forgotForm, "email", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("button", { attrs: { type: "submit" } }, [
-                _vm._v(_vm._s(_vm.$t("word.send")))
-              ])
-            ])
-          ]
+            _c(
+              "FormulateInput",
+              { attrs: { type: "submit", disabled: _vm.loadingStatus } },
+              [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.$t("word.send")) +
+                    "\n                "
+                ),
+                _vm.loadingStatus
+                  ? _c("FAIcon", {
+                      attrs: {
+                        icon: ["fas", "spinner"],
+                        pulse: "",
+                        "fixed-width": ""
+                      }
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          ],
+          1
         )
-      ]
+      ],
+      1
     )
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.item
+    ? _c("div", [
+        _vm._v("\n    " + _vm._s(_vm.user.id) + "\n    "),
+        _c("aside", { staticClass: "photo-detail__aside" }, [
+          _c("figure", { staticClass: "photo-detail__figure" }),
+          _vm._v(" "),
+          _c(
+            "figcaption",
+            { staticClass: "photo-detail__caption" },
+            [
+              _c(
+                "span",
+                { staticClass: "photo-detail__user" },
+                [
+                  _c("FAIcon", {
+                    attrs: { icon: ["fas", "image"], "fixed-width": "" }
+                  }),
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(
+                        _vm.$t("sentence.posted_by", {
+                          username: _vm.item.user.name
+                        })
+                      ) +
+                      "\n                "
+                  ),
+                  _c("FAIcon", {
+                    attrs: { icon: ["fas", "clock"], "fixed-width": "" }
+                  }),
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(
+                        _vm.$d(new Date(_vm.item.user.updated_at), "full")
+                      ) +
+                      "\n            "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("FAIcon", {
+                staticClass: "fa-fw button__like",
+                class: {
+                  "--liked": _vm.item.is_liked,
+                  "--active": _vm.isLikeSending
+                },
+                attrs: { icon: ["fas", "heart"] },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.onLike($event)
+                  }
+                }
+              }),
+              _vm._v(
+                "\n            " +
+                  _vm._s(_vm.item.total_like) +
+                  "\n            "
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button__down-load",
+                  attrs: { href: "/photos/" + _vm.item.id + "/download" },
+                  on: {
+                    click: function($event) {
+                      $event.stopPropagation()
+                    }
+                  }
+                },
+                [
+                  _c("FAIcon", {
+                    attrs: { icon: ["fas", "file-download"], "fixed-width": "" }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c("main", [
+          _c("h1", { staticClass: "sub-title" }, [
+            _vm._v(_vm._s(_vm.item.name))
+          ]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.item.description))])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "photo-detail__comments" },
+          [
+            _c(
+              "h2",
+              { staticClass: "photo-detail__comment-title" },
+              [
+                _c("FAIcon", {
+                  attrs: { icon: ["far", "comment-dots"], "fixed-width": "" }
+                }),
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.$t("word.comments")) +
+                    "\n        "
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm.isLogin && _vm.activeComment === null
+              ? _c("CommentForm", {
+                  attrs: { "photo-id": _vm.id },
+                  on: { created: _vm.createdComment }
+                })
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.item.comments.length > 0
+              ? _c(
+                  "ul",
+                  { staticClass: "photo-detail__comment-list" },
+                  _vm._l(_vm.item.comments, function(comment) {
+                    return _c(
+                      "li",
+                      {
+                        key: comment.id,
+                        staticClass: "photo-detail__comment-item"
+                      },
+                      [
+                        _vm.activeComment !== comment.id
+                          ? _c(
+                              "p",
+                              { staticClass: "photo-detail__comment-body" },
+                              [_vm._v(_vm._s(comment.content))]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("CommentForm", {
+                          attrs: {
+                            "photo-id": _vm.id,
+                            "comment-id": comment.id,
+                            "coment-content": comment.content,
+                            "button-name": _vm.$t("word.change")
+                          },
+                          on: { created: _vm.updatedComment }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "photo-detail__comment-info" },
+                          [
+                            _vm.user.id === comment.user.id
+                              ? _c(
+                                  "span",
+                                  [
+                                    _c("FAIcon", {
+                                      attrs: {
+                                        icon: ["far", "edit"],
+                                        "fixed-width": ""
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.EditComment(comment.id)
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("FAIcon", {
+                                      attrs: {
+                                        icon: ["far", "trash-alt"],
+                                        "fixed-width": ""
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(comment.user.id) +
+                                ": " +
+                                _vm._s(comment.user.name) +
+                                " " +
+                                _vm._s(
+                                  _vm.$d(new Date(comment.updated_at), "full")
+                                ) +
+                                "\n                "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  }),
+                  0
+                )
+              : _c("p", [_vm._v(_vm._s(_vm.$t("sentence.no_comments_yet")))])
+          ],
+          1
+        )
+      ])
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "page" },
+    [
+      _c("h1", [_vm._v(_vm._s(_vm.$t("word.upload_photo")))]),
+      _vm._v(" "),
+      _c(
+        "FormulateForm",
+        {
+          attrs: { name: "upload_form", "form-errors": _vm.uploadErrors },
+          on: { submit: _vm.uploadPhoto },
+          model: {
+            value: _vm.photoForm,
+            callback: function($$v) {
+              _vm.photoForm = $$v
+            },
+            expression: "photoForm"
+          }
+        },
+        [
+          _c("FormulateInput", {
+            attrs: {
+              type: "text",
+              name: "photo_name",
+              label: _vm.$t("word.photo_name"),
+              "validation-name": _vm.$t("word.photo_name"),
+              validation: "required|max:255,length"
+            }
+          }),
+          _vm._v(" "),
+          _c("FormulateInput", {
+            attrs: {
+              type: "textarea",
+              name: "photo_description",
+              label: _vm.$t("word.photo_description"),
+              "validation-name": _vm.$t("word.photo_description"),
+              validation: "max:255,length"
+            }
+          }),
+          _vm._v(" "),
+          _c("FormulateInput", {
+            attrs: {
+              name: "photo_files",
+              type: "image",
+              label: _vm.$t("word.photo_files"),
+              "validation-name": _vm.$t("word.photo_files"),
+              validation:
+                "required|mime:image/jpeg,image/png,image/gif|max_photo:3",
+              "upload-behavior": "delayed",
+              uploader: _vm.uploader,
+              multiple: ""
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "FormulateInput",
+            { attrs: { type: "submit", disabled: _vm.loadingStatus } },
+            [
+              _vm._v(
+                "\n            " +
+                  _vm._s(_vm.$t("word.upload")) +
+                  "\n            "
+              ),
+              _vm.loadingStatus
+                ? _c("FAIcon", {
+                    attrs: {
+                      icon: ["fas", "spinner"],
+                      pulse: "",
+                      "fixed-width": ""
+                    }
+                  })
+                : _vm._e()
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38890,104 +41092,99 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container--small" }, [
-    _c("h2", [_vm._v(_vm._s(_vm.$t("word.password_reset")))]),
+  return _c("div", { staticClass: "page" }, [
+    _c("h1", [_vm._v(_vm._s(_vm.$t("word.password_reset")))]),
     _vm._v(" "),
-    _c("div", { staticClass: "panel" }, [
-      _c(
-        "form",
-        {
-          staticClass: "form",
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.reset($event)
-            }
-          }
-        },
-        [
-          _vm.resetErrors
-            ? _c("div", { staticClass: "errors" }, [
-                _vm.resetErrors.password
-                  ? _c(
-                      "ul",
-                      _vm._l(_vm.resetErrors.password, function(msg) {
-                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                      }),
-                      0
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.resetErrors.token
-                  ? _c(
-                      "ul",
-                      _vm._l(_vm.resetErrors.token, function(msg) {
-                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                      }),
-                      0
-                    )
-                  : _vm._e()
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("div", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.resetForm.password,
-                  expression: "resetForm.password"
-                }
-              ],
-              attrs: { type: "password" },
-              domProps: { value: _vm.resetForm.password },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.resetForm, "password", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.resetForm.password_confirmation,
-                  expression: "resetForm.password_confirmation"
-                }
-              ],
-              attrs: { type: "password" },
-              domProps: { value: _vm.resetForm.password_confirmation },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(
-                    _vm.resetForm,
-                    "password_confirmation",
-                    $event.target.value
+    _c(
+      "section",
+      { staticClass: "reset" },
+      [
+        _vm.resetErrors
+          ? _c("div", { staticClass: "errors" }, [
+              _vm.resetErrors.password
+                ? _c(
+                    "ul",
+                    _vm._l(_vm.resetErrors.password, function(msg) {
+                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                    }),
+                    0
                   )
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("button", { attrs: { type: "submit" } }, [
-              _vm._v(_vm._s(_vm.$t("word.reset")))
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.resetErrors.token
+                ? _c(
+                    "ul",
+                    _vm._l(_vm.resetErrors.token, function(msg) {
+                      return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                    }),
+                    0
+                  )
+                : _vm._e()
             ])
-          ])
-        ]
-      )
-    ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "FormulateForm",
+          {
+            on: { submit: _vm.reset },
+            model: {
+              value: _vm.resetForm,
+              callback: function($$v) {
+                _vm.resetForm = $$v
+              },
+              expression: "resetForm"
+            }
+          },
+          [
+            _c("FormulateInput", {
+              attrs: {
+                name: "password",
+                type: "password",
+                label: _vm.$t("word.password"),
+                "validation-name": _vm.$t("word.password"),
+                validation: "required|min:8",
+                placeholder: _vm.$t("word.password")
+              }
+            }),
+            _vm._v(" "),
+            _c("FormulateInput", {
+              attrs: {
+                name: "password_confirmation",
+                type: "password",
+                label: _vm.$t("word.password_confirmation"),
+                "validation-name": _vm.$t("word.password_confirmation"),
+                validation: "required|min:8",
+                placeholder: _vm.$t("word.password_confirmation")
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "FormulateInput",
+              { attrs: { type: "submit", disabled: _vm.loadingStatus } },
+              [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.$t("word.reset")) +
+                    "\n                "
+                ),
+                _vm.loadingStatus
+                  ? _c("FAIcon", {
+                      attrs: {
+                        icon: ["fas", "spinner"],
+                        pulse: "",
+                        "fixed-width": ""
+                      }
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -39483,7 +41680,7 @@ return index;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.3.2
+  * vue-router v3.4.6
   * (c) 2020 Evan You
   * @license MIT
   */
@@ -39501,171 +41698,11 @@ function warn (condition, message) {
   }
 }
 
-function isError (err) {
-  return Object.prototype.toString.call(err).indexOf('Error') > -1
-}
-
-function isRouterError (err, errorType) {
-  return isError(err) && err._isRouter && (errorType == null || err.type === errorType)
-}
-
 function extend (a, b) {
   for (var key in b) {
     a[key] = b[key];
   }
   return a
-}
-
-var View = {
-  name: 'RouterView',
-  functional: true,
-  props: {
-    name: {
-      type: String,
-      default: 'default'
-    }
-  },
-  render: function render (_, ref) {
-    var props = ref.props;
-    var children = ref.children;
-    var parent = ref.parent;
-    var data = ref.data;
-
-    // used by devtools to display a router-view badge
-    data.routerView = true;
-
-    // directly use parent context's createElement() function
-    // so that components rendered by router-view can resolve named slots
-    var h = parent.$createElement;
-    var name = props.name;
-    var route = parent.$route;
-    var cache = parent._routerViewCache || (parent._routerViewCache = {});
-
-    // determine current view depth, also check to see if the tree
-    // has been toggled inactive but kept-alive.
-    var depth = 0;
-    var inactive = false;
-    while (parent && parent._routerRoot !== parent) {
-      var vnodeData = parent.$vnode ? parent.$vnode.data : {};
-      if (vnodeData.routerView) {
-        depth++;
-      }
-      if (vnodeData.keepAlive && parent._directInactive && parent._inactive) {
-        inactive = true;
-      }
-      parent = parent.$parent;
-    }
-    data.routerViewDepth = depth;
-
-    // render previous view if the tree is inactive and kept-alive
-    if (inactive) {
-      var cachedData = cache[name];
-      var cachedComponent = cachedData && cachedData.component;
-      if (cachedComponent) {
-        // #2301
-        // pass props
-        if (cachedData.configProps) {
-          fillPropsinData(cachedComponent, data, cachedData.route, cachedData.configProps);
-        }
-        return h(cachedComponent, data, children)
-      } else {
-        // render previous empty view
-        return h()
-      }
-    }
-
-    var matched = route.matched[depth];
-    var component = matched && matched.components[name];
-
-    // render empty node if no matched route or no config component
-    if (!matched || !component) {
-      cache[name] = null;
-      return h()
-    }
-
-    // cache component
-    cache[name] = { component: component };
-
-    // attach instance registration hook
-    // this will be called in the instance's injected lifecycle hooks
-    data.registerRouteInstance = function (vm, val) {
-      // val could be undefined for unregistration
-      var current = matched.instances[name];
-      if (
-        (val && current !== vm) ||
-        (!val && current === vm)
-      ) {
-        matched.instances[name] = val;
-      }
-    }
-
-    // also register instance in prepatch hook
-    // in case the same component instance is reused across different routes
-    ;(data.hook || (data.hook = {})).prepatch = function (_, vnode) {
-      matched.instances[name] = vnode.componentInstance;
-    };
-
-    // register instance in init hook
-    // in case kept-alive component be actived when routes changed
-    data.hook.init = function (vnode) {
-      if (vnode.data.keepAlive &&
-        vnode.componentInstance &&
-        vnode.componentInstance !== matched.instances[name]
-      ) {
-        matched.instances[name] = vnode.componentInstance;
-      }
-    };
-
-    var configProps = matched.props && matched.props[name];
-    // save route and configProps in cachce
-    if (configProps) {
-      extend(cache[name], {
-        route: route,
-        configProps: configProps
-      });
-      fillPropsinData(component, data, route, configProps);
-    }
-
-    return h(component, data, children)
-  }
-};
-
-function fillPropsinData (component, data, route, configProps) {
-  // resolve props
-  var propsToPass = data.props = resolveProps(route, configProps);
-  if (propsToPass) {
-    // clone to prevent mutation
-    propsToPass = data.props = extend({}, propsToPass);
-    // pass non-declared props as attrs
-    var attrs = data.attrs = data.attrs || {};
-    for (var key in propsToPass) {
-      if (!component.props || !(key in component.props)) {
-        attrs[key] = propsToPass[key];
-        delete propsToPass[key];
-      }
-    }
-  }
-}
-
-function resolveProps (route, config) {
-  switch (typeof config) {
-    case 'undefined':
-      return
-    case 'object':
-      return config
-    case 'function':
-      return config(route)
-    case 'boolean':
-      return config ? route.params : undefined
-    default:
-      if (true) {
-        warn(
-          false,
-          "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
-          "expecting an object, function or boolean."
-        );
-      }
-  }
 }
 
 /*  */
@@ -39678,10 +41715,19 @@ var commaRE = /%2C/g;
 // - escapes [!'()*]
 // - preserve commas
 var encode = function (str) { return encodeURIComponent(str)
-  .replace(encodeReserveRE, encodeReserveReplacer)
-  .replace(commaRE, ','); };
+    .replace(encodeReserveRE, encodeReserveReplacer)
+    .replace(commaRE, ','); };
 
-var decode = decodeURIComponent;
+function decode (str) {
+  try {
+    return decodeURIComponent(str)
+  } catch (err) {
+    if (true) {
+      warn(false, ("Error decoding \"" + str + "\". Leaving it intact."));
+    }
+  }
+  return str
+}
 
 function resolveQuery (
   query,
@@ -39699,10 +41745,15 @@ function resolveQuery (
     parsedQuery = {};
   }
   for (var key in extraQuery) {
-    parsedQuery[key] = extraQuery[key];
+    var value = extraQuery[key];
+    parsedQuery[key] = Array.isArray(value)
+      ? value.map(castQueryParamValue)
+      : castQueryParamValue(value);
   }
   return parsedQuery
 }
+
+var castQueryParamValue = function (value) { return (value == null || typeof value === 'object' ? value : String(value)); };
 
 function parseQuery (query) {
   var res = {};
@@ -39716,9 +41767,7 @@ function parseQuery (query) {
   query.split('&').forEach(function (param) {
     var parts = param.replace(/\+/g, ' ').split('=');
     var key = decode(parts.shift());
-    var val = parts.length > 0
-      ? decode(parts.join('='))
-      : null;
+    var val = parts.length > 0 ? decode(parts.join('=')) : null;
 
     if (res[key] === undefined) {
       res[key] = val;
@@ -39733,34 +41782,39 @@ function parseQuery (query) {
 }
 
 function stringifyQuery (obj) {
-  var res = obj ? Object.keys(obj).map(function (key) {
-    var val = obj[key];
+  var res = obj
+    ? Object.keys(obj)
+      .map(function (key) {
+        var val = obj[key];
 
-    if (val === undefined) {
-      return ''
-    }
-
-    if (val === null) {
-      return encode(key)
-    }
-
-    if (Array.isArray(val)) {
-      var result = [];
-      val.forEach(function (val2) {
-        if (val2 === undefined) {
-          return
+        if (val === undefined) {
+          return ''
         }
-        if (val2 === null) {
-          result.push(encode(key));
-        } else {
-          result.push(encode(key) + '=' + encode(val2));
-        }
-      });
-      return result.join('&')
-    }
 
-    return encode(key) + '=' + encode(val)
-  }).filter(function (x) { return x.length > 0; }).join('&') : null;
+        if (val === null) {
+          return encode(key)
+        }
+
+        if (Array.isArray(val)) {
+          var result = [];
+          val.forEach(function (val2) {
+            if (val2 === undefined) {
+              return
+            }
+            if (val2 === null) {
+              result.push(encode(key));
+            } else {
+              result.push(encode(key) + '=' + encode(val2));
+            }
+          });
+          return result.join('&')
+        }
+
+        return encode(key) + '=' + encode(val)
+      })
+      .filter(function (x) { return x.length > 0; })
+      .join('&')
+    : null;
   return res ? ("?" + res) : ''
 }
 
@@ -39874,6 +41928,8 @@ function isObjectEqual (a, b) {
   return aKeys.every(function (key) {
     var aVal = a[key];
     var bVal = b[key];
+    // query values can be null and undefined
+    if (aVal == null || bVal == null) { return aVal === bVal }
     // check nested equality
     if (typeof aVal === 'object' && typeof bVal === 'object') {
       return isObjectEqual(aVal, bVal)
@@ -39899,6 +41955,178 @@ function queryIncludes (current, target) {
     }
   }
   return true
+}
+
+function handleRouteEntered (route) {
+  for (var i = 0; i < route.matched.length; i++) {
+    var record = route.matched[i];
+    for (var name in record.instances) {
+      var instance = record.instances[name];
+      var cbs = record.enteredCbs[name];
+      if (!instance || !cbs) { continue }
+      delete record.enteredCbs[name];
+      for (var i$1 = 0; i$1 < cbs.length; i$1++) {
+        if (!instance._isBeingDestroyed) { cbs[i$1](instance); }
+      }
+    }
+  }
+}
+
+var View = {
+  name: 'RouterView',
+  functional: true,
+  props: {
+    name: {
+      type: String,
+      default: 'default'
+    }
+  },
+  render: function render (_, ref) {
+    var props = ref.props;
+    var children = ref.children;
+    var parent = ref.parent;
+    var data = ref.data;
+
+    // used by devtools to display a router-view badge
+    data.routerView = true;
+
+    // directly use parent context's createElement() function
+    // so that components rendered by router-view can resolve named slots
+    var h = parent.$createElement;
+    var name = props.name;
+    var route = parent.$route;
+    var cache = parent._routerViewCache || (parent._routerViewCache = {});
+
+    // determine current view depth, also check to see if the tree
+    // has been toggled inactive but kept-alive.
+    var depth = 0;
+    var inactive = false;
+    while (parent && parent._routerRoot !== parent) {
+      var vnodeData = parent.$vnode ? parent.$vnode.data : {};
+      if (vnodeData.routerView) {
+        depth++;
+      }
+      if (vnodeData.keepAlive && parent._directInactive && parent._inactive) {
+        inactive = true;
+      }
+      parent = parent.$parent;
+    }
+    data.routerViewDepth = depth;
+
+    // render previous view if the tree is inactive and kept-alive
+    if (inactive) {
+      var cachedData = cache[name];
+      var cachedComponent = cachedData && cachedData.component;
+      if (cachedComponent) {
+        // #2301
+        // pass props
+        if (cachedData.configProps) {
+          fillPropsinData(cachedComponent, data, cachedData.route, cachedData.configProps);
+        }
+        return h(cachedComponent, data, children)
+      } else {
+        // render previous empty view
+        return h()
+      }
+    }
+
+    var matched = route.matched[depth];
+    var component = matched && matched.components[name];
+
+    // render empty node if no matched route or no config component
+    if (!matched || !component) {
+      cache[name] = null;
+      return h()
+    }
+
+    // cache component
+    cache[name] = { component: component };
+
+    // attach instance registration hook
+    // this will be called in the instance's injected lifecycle hooks
+    data.registerRouteInstance = function (vm, val) {
+      // val could be undefined for unregistration
+      var current = matched.instances[name];
+      if (
+        (val && current !== vm) ||
+        (!val && current === vm)
+      ) {
+        matched.instances[name] = val;
+      }
+    }
+
+    // also register instance in prepatch hook
+    // in case the same component instance is reused across different routes
+    ;(data.hook || (data.hook = {})).prepatch = function (_, vnode) {
+      matched.instances[name] = vnode.componentInstance;
+    };
+
+    // register instance in init hook
+    // in case kept-alive component be actived when routes changed
+    data.hook.init = function (vnode) {
+      if (vnode.data.keepAlive &&
+        vnode.componentInstance &&
+        vnode.componentInstance !== matched.instances[name]
+      ) {
+        matched.instances[name] = vnode.componentInstance;
+      }
+
+      // if the route transition has already been confirmed then we weren't
+      // able to call the cbs during confirmation as the component was not
+      // registered yet, so we call it here.
+      handleRouteEntered(route);
+    };
+
+    var configProps = matched.props && matched.props[name];
+    // save route and configProps in cache
+    if (configProps) {
+      extend(cache[name], {
+        route: route,
+        configProps: configProps
+      });
+      fillPropsinData(component, data, route, configProps);
+    }
+
+    return h(component, data, children)
+  }
+};
+
+function fillPropsinData (component, data, route, configProps) {
+  // resolve props
+  var propsToPass = data.props = resolveProps(route, configProps);
+  if (propsToPass) {
+    // clone to prevent mutation
+    propsToPass = data.props = extend({}, propsToPass);
+    // pass non-declared props as attrs
+    var attrs = data.attrs = data.attrs || {};
+    for (var key in propsToPass) {
+      if (!component.props || !(key in component.props)) {
+        attrs[key] = propsToPass[key];
+        delete propsToPass[key];
+      }
+    }
+  }
+}
+
+function resolveProps (route, config) {
+  switch (typeof config) {
+    case 'undefined':
+      return
+    case 'object':
+      return config
+    case 'function':
+      return config(route)
+    case 'boolean':
+      return config ? route.params : undefined
+    default:
+      if (true) {
+        warn(
+          false,
+          "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
+          "expecting an object, function or boolean."
+        );
+      }
+  }
 }
 
 /*  */
@@ -40831,6 +43059,7 @@ function addRouteRecord (
     regex: compileRouteRegex(normalizedPath, pathToRegexpOptions),
     components: route.components || { default: route.component },
     instances: {},
+    enteredCbs: {},
     name: name,
     parent: parent,
     matchAs: matchAs,
@@ -41120,7 +43349,14 @@ function matchRoute (
   path,
   params
 ) {
-  var m = path.match(regex);
+  var m;
+  try {
+    m = decodeURI(path).match(regex);
+  } catch (err) {
+    if (true) {
+      warn(false, ("Error decoding \"" + path + "\". Leaving it intact."));
+    }
+  }
 
   if (!m) {
     return false
@@ -41130,10 +43366,9 @@ function matchRoute (
 
   for (var i = 1, len = m.length; i < len; ++i) {
     var key = regex.keys[i - 1];
-    var val = typeof m[i] === 'string' ? decodeURIComponent(m[i]) : m[i];
     if (key) {
       // Fix #1994: using * with props: true generates a param named 0
-      params[key.name || 'pathMatch'] = val;
+      params[key.name || 'pathMatch'] = m[i];
     }
   }
 
@@ -41388,6 +43623,89 @@ function runQueue (queue, fn, cb) {
   step(0);
 }
 
+// When changing thing, also edit router.d.ts
+var NavigationFailureType = {
+  redirected: 2,
+  aborted: 4,
+  cancelled: 8,
+  duplicated: 16
+};
+
+function createNavigationRedirectedError (from, to) {
+  return createRouterError(
+    from,
+    to,
+    NavigationFailureType.redirected,
+    ("Redirected when going from \"" + (from.fullPath) + "\" to \"" + (stringifyRoute(
+      to
+    )) + "\" via a navigation guard.")
+  )
+}
+
+function createNavigationDuplicatedError (from, to) {
+  var error = createRouterError(
+    from,
+    to,
+    NavigationFailureType.duplicated,
+    ("Avoided redundant navigation to current location: \"" + (from.fullPath) + "\".")
+  );
+  // backwards compatible with the first introduction of Errors
+  error.name = 'NavigationDuplicated';
+  return error
+}
+
+function createNavigationCancelledError (from, to) {
+  return createRouterError(
+    from,
+    to,
+    NavigationFailureType.cancelled,
+    ("Navigation cancelled from \"" + (from.fullPath) + "\" to \"" + (to.fullPath) + "\" with a new navigation.")
+  )
+}
+
+function createNavigationAbortedError (from, to) {
+  return createRouterError(
+    from,
+    to,
+    NavigationFailureType.aborted,
+    ("Navigation aborted from \"" + (from.fullPath) + "\" to \"" + (to.fullPath) + "\" via a navigation guard.")
+  )
+}
+
+function createRouterError (from, to, type, message) {
+  var error = new Error(message);
+  error._isRouter = true;
+  error.from = from;
+  error.to = to;
+  error.type = type;
+
+  return error
+}
+
+var propertiesToLog = ['params', 'query', 'hash'];
+
+function stringifyRoute (to) {
+  if (typeof to === 'string') { return to }
+  if ('path' in to) { return to.path }
+  var location = {};
+  propertiesToLog.forEach(function (key) {
+    if (key in to) { location[key] = to[key]; }
+  });
+  return JSON.stringify(location, null, 2)
+}
+
+function isError (err) {
+  return Object.prototype.toString.call(err).indexOf('Error') > -1
+}
+
+function isNavigationFailure (err, errorType) {
+  return (
+    isError(err) &&
+    err._isRouter &&
+    (errorType == null || err.type === errorType)
+  )
+}
+
 /*  */
 
 function resolveAsyncComponents (matched) {
@@ -41497,71 +43815,6 @@ function once (fn) {
   }
 }
 
-var NavigationFailureType = {
-  redirected: 1,
-  aborted: 2,
-  cancelled: 3,
-  duplicated: 4
-};
-
-function createNavigationRedirectedError (from, to) {
-  return createRouterError(
-    from,
-    to,
-    NavigationFailureType.redirected,
-    ("Redirected from \"" + (from.fullPath) + "\" to \"" + (stringifyRoute(to)) + "\" via a navigation guard.")
-  )
-}
-
-function createNavigationDuplicatedError (from, to) {
-  return createRouterError(
-    from,
-    to,
-    NavigationFailureType.duplicated,
-    ("Avoided redundant navigation to current location: \"" + (from.fullPath) + "\".")
-  )
-}
-
-function createNavigationCancelledError (from, to) {
-  return createRouterError(
-    from,
-    to,
-    NavigationFailureType.cancelled,
-    ("Navigation cancelled from \"" + (from.fullPath) + "\" to \"" + (to.fullPath) + "\" with a new navigation.")
-  )
-}
-
-function createNavigationAbortedError (from, to) {
-  return createRouterError(
-    from,
-    to,
-    NavigationFailureType.aborted,
-    ("Navigation aborted from \"" + (from.fullPath) + "\" to \"" + (to.fullPath) + "\" via a navigation guard.")
-  )
-}
-
-function createRouterError (from, to, type, message) {
-  var error = new Error(message);
-  error._isRouter = true;
-  error.from = from;
-  error.to = to;
-  error.type = type;
-
-  return error
-}
-
-var propertiesToLog = ['params', 'query', 'hash'];
-
-function stringifyRoute (to) {
-  if (typeof to === 'string') { return to }
-  if ('path' in to) { return to.path }
-  var location = {};
-  propertiesToLog.forEach(function (key) {
-    if (key in to) { location[key] = to[key]; }
-  });
-  return JSON.stringify(location, null, 2)
-}
-
 /*  */
 
 var History = function History (router, base) {
@@ -41603,11 +43856,21 @@ History.prototype.transitionTo = function transitionTo (
 ) {
     var this$1 = this;
 
-  var route = this.router.match(location, this.current);
+  var route;
+  // catch redirect option https://github.com/vuejs/vue-router/issues/3201
+  try {
+    route = this.router.match(location, this.current);
+  } catch (e) {
+    this.errorCbs.forEach(function (cb) {
+      cb(e);
+    });
+    // Exception should still be thrown
+    throw e
+  }
+  var prev = this.current;
   this.confirmTransition(
     route,
     function () {
-      var prev = this$1.current;
       this$1.updateRoute(route);
       onComplete && onComplete(route);
       this$1.ensureURL();
@@ -41628,10 +43891,16 @@ History.prototype.transitionTo = function transitionTo (
         onAbort(err);
       }
       if (err && !this$1.ready) {
-        this$1.ready = true;
-        this$1.readyErrorCbs.forEach(function (cb) {
-          cb(err);
-        });
+        // Initial redirection should not mark the history as ready yet
+        // because it's triggered by the redirection instead
+        // https://github.com/vuejs/vue-router/issues/3225
+        // https://github.com/vuejs/vue-router/issues/3331
+        if (!isNavigationFailure(err, NavigationFailureType.redirected) || prev !== START) {
+          this$1.ready = true;
+          this$1.readyErrorCbs.forEach(function (cb) {
+            cb(err);
+          });
+        }
       }
     }
   );
@@ -41641,11 +43910,12 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     var this$1 = this;
 
   var current = this.current;
+  this.pending = route;
   var abort = function (err) {
     // changed after adding errors with
     // https://github.com/vuejs/vue-router/pull/3047 before that change,
     // redirect and aborted navigation would produce an err == null
-    if (!isRouterError(err) && isError(err)) {
+    if (!isNavigationFailure(err) && isError(err)) {
       if (this$1.errorCbs.length) {
         this$1.errorCbs.forEach(function (cb) {
           cb(err);
@@ -41657,10 +43927,13 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     }
     onAbort && onAbort(err);
   };
+  var lastRouteIndex = route.matched.length - 1;
+  var lastCurrentIndex = current.matched.length - 1;
   if (
     isSameRoute(route, current) &&
     // in the case the route map has been dynamically appended to
-    route.matched.length === current.matched.length
+    lastRouteIndex === lastCurrentIndex &&
+    route.matched[lastRouteIndex] === current.matched[lastCurrentIndex]
   ) {
     this.ensureURL();
     return abort(createNavigationDuplicatedError(current, route))
@@ -41687,7 +43960,6 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     resolveAsyncComponents(activated)
   );
 
-  this.pending = route;
   var iterator = function (hook, next) {
     if (this$1.pending !== route) {
       return abort(createNavigationCancelledError(current, route))
@@ -41724,11 +43996,9 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
   };
 
   runQueue(queue, iterator, function () {
-    var postEnterCbs = [];
-    var isValid = function () { return this$1.current === route; };
     // wait until async components are resolved before
     // extracting in-component enter guards
-    var enterGuards = extractEnterGuards(activated, postEnterCbs, isValid);
+    var enterGuards = extractEnterGuards(activated);
     var queue = enterGuards.concat(this$1.router.resolveHooks);
     runQueue(queue, iterator, function () {
       if (this$1.pending !== route) {
@@ -41738,9 +44008,7 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
       onComplete(route);
       if (this$1.router.app) {
         this$1.router.app.$nextTick(function () {
-          postEnterCbs.forEach(function (cb) {
-            cb();
-          });
+          handleRouteEntered(route);
         });
       }
     });
@@ -41756,11 +44024,18 @@ History.prototype.setupListeners = function setupListeners () {
   // Default implementation is empty
 };
 
-History.prototype.teardownListeners = function teardownListeners () {
+History.prototype.teardown = function teardown () {
+  // clean up event listeners
+  // https://github.com/vuejs/vue-router/issues/2341
   this.listeners.forEach(function (cleanupListener) {
     cleanupListener();
   });
   this.listeners = [];
+
+  // reset current history route
+  // https://github.com/vuejs/vue-router/issues/3294
+  this.current = START;
+  this.pending = null;
 };
 
 function normalizeBase (base) {
@@ -41846,15 +44121,13 @@ function bindGuard (guard, instance) {
 }
 
 function extractEnterGuards (
-  activated,
-  cbs,
-  isValid
+  activated
 ) {
   return extractGuards(
     activated,
     'beforeRouteEnter',
     function (guard, _, match, key) {
-      return bindEnterGuard(guard, match, key, cbs, isValid)
+      return bindEnterGuard(guard, match, key)
     }
   )
 }
@@ -41862,42 +44135,18 @@ function extractEnterGuards (
 function bindEnterGuard (
   guard,
   match,
-  key,
-  cbs,
-  isValid
+  key
 ) {
   return function routeEnterGuard (to, from, next) {
     return guard(to, from, function (cb) {
       if (typeof cb === 'function') {
-        cbs.push(function () {
-          // #750
-          // if a router-view is wrapped with an out-in transition,
-          // the instance may not have been registered at this time.
-          // we will need to poll for registration until current route
-          // is no longer valid.
-          poll(cb, match.instances, key, isValid);
-        });
+        if (!match.enteredCbs[key]) {
+          match.enteredCbs[key] = [];
+        }
+        match.enteredCbs[key].push(cb);
       }
       next(cb);
     })
-  }
-}
-
-function poll (
-  cb, // somehow flow cannot infer this is a function
-  instances,
-  key,
-  isValid
-) {
-  if (
-    instances[key] &&
-    !instances[key]._isBeingDestroyed // do not reuse being destroyed instance
-  ) {
-    cb(instances[key]);
-  } else if (isValid()) {
-    setTimeout(function () {
-      poll(cb, instances, key, isValid);
-    }, 16);
   }
 }
 
@@ -41994,7 +44243,7 @@ var HTML5History = /*@__PURE__*/(function (History) {
 }(History));
 
 function getLocation (base) {
-  var path = decodeURI(window.location.pathname);
+  var path = window.location.pathname;
   if (base && path.toLowerCase().indexOf(base.toLowerCase()) === 0) {
     path = path.slice(base.length);
   }
@@ -42134,18 +44383,6 @@ function getHash () {
   if (index < 0) { return '' }
 
   href = href.slice(index + 1);
-  // decode the hash but not the search or hash
-  // as search(query) is already decoded
-  // https://github.com/vuejs/vue-router/issues/2708
-  var searchIndex = href.indexOf('?');
-  if (searchIndex < 0) {
-    var hashIndex = href.indexOf('#');
-    if (hashIndex > -1) {
-      href = decodeURI(href.slice(0, hashIndex)) + href.slice(hashIndex);
-    } else { href = decodeURI(href); }
-  } else {
-    href = decodeURI(href.slice(0, searchIndex)) + href.slice(searchIndex);
-  }
 
   return href
 }
@@ -42224,11 +44461,15 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
     this.confirmTransition(
       route,
       function () {
+        var prev = this$1.current;
         this$1.index = targetIndex;
         this$1.updateRoute(route);
+        this$1.router.afterHooks.forEach(function (hook) {
+          hook && hook(route, prev);
+        });
       },
       function (err) {
-        if (isRouterError(err, NavigationFailureType.duplicated)) {
+        if (isNavigationFailure(err, NavigationFailureType.duplicated)) {
           this$1.index = targetIndex;
         }
       }
@@ -42249,8 +44490,6 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
 
 /*  */
 
-
-
 var VueRouter = function VueRouter (options) {
   if ( options === void 0 ) options = {};
 
@@ -42263,7 +44502,8 @@ var VueRouter = function VueRouter (options) {
   this.matcher = createMatcher(options.routes || [], this);
 
   var mode = options.mode || 'hash';
-  this.fallback = mode === 'history' && !supportsPushState && options.fallback !== false;
+  this.fallback =
+    mode === 'history' && !supportsPushState && options.fallback !== false;
   if (this.fallback) {
     mode = 'hash';
   }
@@ -42291,11 +44531,7 @@ var VueRouter = function VueRouter (options) {
 
 var prototypeAccessors = { currentRoute: { configurable: true } };
 
-VueRouter.prototype.match = function match (
-  raw,
-  current,
-  redirectedFrom
-) {
+VueRouter.prototype.match = function match (raw, current, redirectedFrom) {
   return this.matcher.match(raw, current, redirectedFrom)
 };
 
@@ -42306,11 +44542,12 @@ prototypeAccessors.currentRoute.get = function () {
 VueRouter.prototype.init = function init (app /* Vue component instance */) {
     var this$1 = this;
 
-   true && assert(
-    install.installed,
-    "not installed. Make sure to call `Vue.use(VueRouter)` " +
-    "before creating root instance."
-  );
+   true &&
+    assert(
+      install.installed,
+      "not installed. Make sure to call `Vue.use(VueRouter)` " +
+        "before creating root instance."
+    );
 
   this.apps.push(app);
 
@@ -42324,11 +44561,7 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
     // we do not release the router so it can be reused
     if (this$1.app === app) { this$1.app = this$1.apps[0] || null; }
 
-    if (!this$1.app) {
-      // clean up event listeners
-      // https://github.com/vuejs/vue-router/issues/2341
-      this$1.history.teardownListeners();
-    }
+    if (!this$1.app) { this$1.history.teardown(); }
   });
 
   // main app previously initialized
@@ -42342,10 +44575,24 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
   var history = this.history;
 
   if (history instanceof HTML5History || history instanceof HashHistory) {
-    var setupListeners = function () {
-      history.setupListeners();
+    var handleInitialScroll = function (routeOrError) {
+      var from = history.current;
+      var expectScroll = this$1.options.scrollBehavior;
+      var supportsScroll = supportsPushState && expectScroll;
+
+      if (supportsScroll && 'fullPath' in routeOrError) {
+        handleScroll(this$1, routeOrError, from, false);
+      }
     };
-    history.transitionTo(history.getCurrentLocation(), setupListeners, setupListeners);
+    var setupListeners = function (routeOrError) {
+      history.setupListeners();
+      handleInitialScroll(routeOrError);
+    };
+    history.transitionTo(
+      history.getCurrentLocation(),
+      setupListeners,
+      setupListeners
+    );
   }
 
   history.listen(function (route) {
@@ -42422,11 +44669,14 @@ VueRouter.prototype.getMatchedComponents = function getMatchedComponents (to) {
   if (!route) {
     return []
   }
-  return [].concat.apply([], route.matched.map(function (m) {
-    return Object.keys(m.components).map(function (key) {
-      return m.components[key]
+  return [].concat.apply(
+    [],
+    route.matched.map(function (m) {
+      return Object.keys(m.components).map(function (key) {
+        return m.components[key]
+      })
     })
-  }))
+  )
 };
 
 VueRouter.prototype.resolve = function resolve (
@@ -42435,12 +44685,7 @@ VueRouter.prototype.resolve = function resolve (
   append
 ) {
   current = current || this.history.current;
-  var location = normalizeLocation(
-    to,
-    current,
-    append,
-    this
-  );
+  var location = normalizeLocation(to, current, append, this);
   var route = this.match(location, current);
   var fullPath = route.redirectedFrom || route.fullPath;
   var base = this.history.base;
@@ -42478,7 +44723,9 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.3.2';
+VueRouter.version = '3.4.6';
+VueRouter.isNavigationFailure = isNavigationFailure;
+VueRouter.NavigationFailureType = NavigationFailureType;
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter);
@@ -42498,8 +44745,8 @@ if (inBrowser && window.Vue) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.6.11
- * (c) 2014-2019 Evan You
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
  * Released under the MIT License.
  */
 
@@ -47938,7 +50185,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.6.11';
+Vue.version = '2.6.12';
 
 /*  */
 
@@ -50144,7 +52391,7 @@ function updateDOMProps (oldVnode, vnode) {
       // skip the update if old and new VDOM state is the same.
       // `value` is handled separately because the DOM value may be temporarily
       // out of sync with VDOM state due to focus, composition and modifiers.
-      // This  #4521 by skipping the unnecesarry `checked` update.
+      // This  #4521 by skipping the unnecessary `checked` update.
       cur !== oldProps[key]
     ) {
       // some property updates can throw
@@ -52389,7 +54636,7 @@ function parse (
       }
     },
     comment: function comment (text, start, end) {
-      // adding anyting as a sibling to the root node is forbidden
+      // adding anything as a sibling to the root node is forbidden
       // comments should still be allowed, but ignored
       if (currentParent) {
         var child = {
@@ -54479,12 +56726,13 @@ if (false) {} else {
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
   \********************************************/
-/*! exports provided: default, Store, createNamespacedHelpers, install, mapActions, mapGetters, mapMutations, mapState */
+/*! exports provided: default, Store, createLogger, createNamespacedHelpers, install, mapActions, mapGetters, mapMutations, mapState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLogger", function() { return createLogger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
@@ -54492,7 +56740,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
 /*!
- * vuex v3.4.0
+ * vuex v3.5.1
  * (c) 2020 Evan You
  * @license MIT
  */
@@ -54567,6 +56815,47 @@ function devtoolPlugin (store) {
  * @param {Function} f
  * @return {*}
  */
+function find (list, f) {
+  return list.filter(f)[0]
+}
+
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+function deepCopy (obj, cache) {
+  if ( cache === void 0 ) cache = [];
+
+  // just return if obj is immutable value
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+
+  // if obj is hit, it is in circular structure
+  var hit = find(cache, function (c) { return c.original === obj; });
+  if (hit) {
+    return hit.copy
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  // put the copy into cache at first
+  // because we want to refer it in recursive deepCopy
+  cache.push({
+    original: obj,
+    copy: copy
+  });
+
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key], cache);
+  });
+
+  return copy
+}
 
 /**
  * forEach for object
@@ -54715,7 +57004,21 @@ ModuleCollection.prototype.register = function register (path, rawModule, runtim
 ModuleCollection.prototype.unregister = function unregister (path) {
   var parent = this.get(path.slice(0, -1));
   var key = path[path.length - 1];
-  if (!parent.getChild(key).runtime) { return }
+  var child = parent.getChild(key);
+
+  if (!child) {
+    if ((true)) {
+      console.warn(
+        "[vuex] trying to unregister module '" + key + "', which is " +
+        "not registered"
+      );
+    }
+    return
+  }
+
+  if (!child.runtime) {
+    return
+  }
 
   parent.removeChild(key);
 };
@@ -55570,15 +57873,107 @@ function getModuleByNamespace (store, helper, namespace) {
   return module
 }
 
+// Credits: borrowed code from fcomb/redux-logger
+
+function createLogger (ref) {
+  if ( ref === void 0 ) ref = {};
+  var collapsed = ref.collapsed; if ( collapsed === void 0 ) collapsed = true;
+  var filter = ref.filter; if ( filter === void 0 ) filter = function (mutation, stateBefore, stateAfter) { return true; };
+  var transformer = ref.transformer; if ( transformer === void 0 ) transformer = function (state) { return state; };
+  var mutationTransformer = ref.mutationTransformer; if ( mutationTransformer === void 0 ) mutationTransformer = function (mut) { return mut; };
+  var actionFilter = ref.actionFilter; if ( actionFilter === void 0 ) actionFilter = function (action, state) { return true; };
+  var actionTransformer = ref.actionTransformer; if ( actionTransformer === void 0 ) actionTransformer = function (act) { return act; };
+  var logMutations = ref.logMutations; if ( logMutations === void 0 ) logMutations = true;
+  var logActions = ref.logActions; if ( logActions === void 0 ) logActions = true;
+  var logger = ref.logger; if ( logger === void 0 ) logger = console;
+
+  return function (store) {
+    var prevState = deepCopy(store.state);
+
+    if (typeof logger === 'undefined') {
+      return
+    }
+
+    if (logMutations) {
+      store.subscribe(function (mutation, state) {
+        var nextState = deepCopy(state);
+
+        if (filter(mutation, prevState, nextState)) {
+          var formattedTime = getFormattedTime();
+          var formattedMutation = mutationTransformer(mutation);
+          var message = "mutation " + (mutation.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c prev state', 'color: #9E9E9E; font-weight: bold', transformer(prevState));
+          logger.log('%c mutation', 'color: #03A9F4; font-weight: bold', formattedMutation);
+          logger.log('%c next state', 'color: #4CAF50; font-weight: bold', transformer(nextState));
+          endMessage(logger);
+        }
+
+        prevState = nextState;
+      });
+    }
+
+    if (logActions) {
+      store.subscribeAction(function (action, state) {
+        if (actionFilter(action, state)) {
+          var formattedTime = getFormattedTime();
+          var formattedAction = actionTransformer(action);
+          var message = "action " + (action.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c action', 'color: #03A9F4; font-weight: bold', formattedAction);
+          endMessage(logger);
+        }
+      });
+    }
+  }
+}
+
+function startMessage (logger, message, collapsed) {
+  var startMessage = collapsed
+    ? logger.groupCollapsed
+    : logger.group;
+
+  // render
+  try {
+    startMessage.call(logger, message);
+  } catch (e) {
+    logger.log(message);
+  }
+}
+
+function endMessage (logger) {
+  try {
+    logger.groupEnd();
+  } catch (e) {
+    logger.log('—— log end ——');
+  }
+}
+
+function getFormattedTime () {
+  var time = new Date();
+  return (" @ " + (pad(time.getHours(), 2)) + ":" + (pad(time.getMinutes(), 2)) + ":" + (pad(time.getSeconds(), 2)) + "." + (pad(time.getMilliseconds(), 3)))
+}
+
+function repeat (str, times) {
+  return (new Array(times + 1)).join(str)
+}
+
+function pad (num, maxLength) {
+  return repeat('0', maxLength - num.toString().length) + num
+}
+
 var index = {
   Store: Store,
   install: install,
-  version: '3.4.0',
+  version: '3.5.1',
   mapState: mapState,
   mapMutations: mapMutations,
   mapGetters: mapGetters,
   mapActions: mapActions,
-  createNamespacedHelpers: createNamespacedHelpers
+  createNamespacedHelpers: createNamespacedHelpers,
+  createLogger: createLogger
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
@@ -55748,6 +58143,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "./node_modules/@fortawesome/free-regular-svg-icons/index.es.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 /* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
+/* harmony import */ var _braid_vue_formulate__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @braid/vue-formulate */ "./node_modules/@braid/vue-formulate/dist/formulate.esm.js");
+/* harmony import */ var _braid_vue_formulate_i18n__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @braid/vue-formulate-i18n */ "./node_modules/@braid/vue-formulate-i18n/dist/locales.esm.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -55821,7 +58218,46 @@ _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_10__["library"].add(_
 
 vue__WEBPACK_IMPORTED_MODULE_2___default.a.component("FAIcon", _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_14__["FontAwesomeIcon"]);
 vue__WEBPACK_IMPORTED_MODULE_2___default.a.component('FALayers', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_14__["FontAwesomeLayers"]);
-vue__WEBPACK_IMPORTED_MODULE_2___default.a.component('FAText', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_14__["FontAwesomeLayersText"]); // 非同期通信でAUTHストアのcurrentUserアクションを実行するので
+vue__WEBPACK_IMPORTED_MODULE_2___default.a.component('FAText', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_14__["FontAwesomeLayersText"]);
+/*
+ * VueFormulate
+ * https://vueformulate.com/guide/
+ * https://vueformulate.com/guide/internationalization/#registering-a-locale
+ * https://vueformulate.com/guide/custom-inputs/#custom-types
+ */
+// コアをインポート
+
+ // 言語をインポート
+
+ // 宣言
+
+vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(_braid_vue_formulate__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  // 使用するプラグイン
+  plugins: [_braid_vue_formulate_i18n__WEBPACK_IMPORTED_MODULE_16__["en"], _braid_vue_formulate_i18n__WEBPACK_IMPORTED_MODULE_16__["ja"]],
+  // グローバルに使う独自ルール
+  rules: {
+    maxPhoto: function maxPhoto(context, limit) {
+      var value = context.value ? context.value.files.length : 0;
+      return value <= limit;
+    }
+  },
+  locales: {
+    en: {
+      maxPhoto: function maxPhoto(args) {
+        return "Photo is ".concat(args[0], " or less");
+      }
+    },
+    ja: {
+      maxPhoto: function maxPhoto(args) {
+        return "\u5199\u771F\u306F".concat(args[0], "\u30D5\u30A1\u30A4\u30EB\u307E\u3067\u3067\u3059\u3002");
+      }
+    }
+  }
+});
+/**
+ * creat app
+ */
+// 非同期通信でAUTHストアのcurrentUserアクションを実行するので
 // asyncメソッドにして、awaitで通信をまつ
 
 var createApp = /*#__PURE__*/function () {
@@ -55880,7 +58316,9 @@ createApp();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 // クッキーを簡単に扱えるモジュールをインポート
+
 
 /*
  * lodash
@@ -55895,10 +58333,14 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // Ajaxリクエストであることを示すヘッダーを付与する
 
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest"; // requestの設定
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest"; // ベースURLの設定
+
+window.axios.defaults.baseURL = 'api/'; // requestの設定
 
 window.axios.interceptors.request.use(function (config) {
-  // クッキーからトークンを取り出す
+  // ローディングストアのステータスをTRUE
+  _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("loading/setStatus", true); // クッキーからトークンを取り出す
+
   var xsrfToken = js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.get("XSRF-TOKEN"); // ヘッダーに添付する
 
   config.headers["X-XSRF-TOKEN"] = xsrfToken;
@@ -55908,9 +58350,13 @@ window.axios.interceptors.request.use(function (config) {
 
 window.axios.interceptors.response.use( // 成功時の処理
 function (response) {
+  // ローディングストアのステータスをFALSE
+  _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("loading/setStatus", false);
   return response;
 }, // 失敗時の処理
 function (error) {
+  // ローディングストアのステータスをFALSE
+  _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("loading/setStatus", false);
   return error.response || error;
 });
 /**
@@ -55926,6 +58372,75 @@ function (error) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/CommentForm.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/CommentForm.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CommentForm_vue_vue_type_template_id_72ee8928___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CommentForm.vue?vue&type=template&id=72ee8928& */ "./resources/js/components/CommentForm.vue?vue&type=template&id=72ee8928&");
+/* harmony import */ var _CommentForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CommentForm.vue?vue&type=script&lang=js& */ "./resources/js/components/CommentForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CommentForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CommentForm_vue_vue_type_template_id_72ee8928___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CommentForm_vue_vue_type_template_id_72ee8928___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CommentForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CommentForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/CommentForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CommentForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CommentForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CommentForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CommentForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CommentForm.vue?vue&type=template&id=72ee8928&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/CommentForm.vue?vue&type=template&id=72ee8928& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CommentForm_vue_vue_type_template_id_72ee8928___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CommentForm.vue?vue&type=template&id=72ee8928& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CommentForm.vue?vue&type=template&id=72ee8928&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CommentForm_vue_vue_type_template_id_72ee8928___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CommentForm_vue_vue_type_template_id_72ee8928___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -56067,6 +58582,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Photo.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Photo.vue ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Photo_vue_vue_type_template_id_c0696452_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Photo.vue?vue&type=template&id=c0696452&scoped=true& */ "./resources/js/components/Photo.vue?vue&type=template&id=c0696452&scoped=true&");
+/* harmony import */ var _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Photo.vue?vue&type=script&lang=js& */ "./resources/js/components/Photo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Photo_vue_vue_type_style_index_0_id_c0696452_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css& */ "./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Photo_vue_vue_type_template_id_c0696452_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Photo_vue_vue_type_template_id_c0696452_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "c0696452",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Photo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Photo.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/Photo.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css& ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_style_index_0_id_c0696452_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=style&index=0&id=c0696452&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_style_index_0_id_c0696452_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_style_index_0_id_c0696452_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_style_index_0_id_c0696452_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_style_index_0_id_c0696452_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_style_index_0_id_c0696452_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Photo.vue?vue&type=template&id=c0696452&scoped=true&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/Photo.vue?vue&type=template&id=c0696452&scoped=true& ***!
+  \**************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_c0696452_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=template&id=c0696452&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Photo.vue?vue&type=template&id=c0696452&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_c0696452_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_c0696452_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/const.js":
 /*!*******************************!*\
   !*** ./resources/js/const.js ***!
@@ -56113,6 +58715,14 @@ var INTERNAL_SERVER_ERROR = 500;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Helper; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -56141,6 +58751,125 @@ var Helper = /*#__PURE__*/function () {
       var language = window.navigator.languages && window.navigator.languages[0] || window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage;
       return language.slice(0, 2);
     }
+    /**
+     * get bottom
+     *
+     * @param {Function} callback
+     */
+
+  }, {
+    key: "getBottom",
+    value: function () {
+      var _getBottom = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(callback) {
+        var body, html, scrollHeight, scrollPositionY;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                body = document.body;
+                html = document.documentElement;
+                scrollHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+                scrollPositionY = window.innerHeight + window.scrollY;
+
+                if (!(scrollHeight - scrollPositionY <= 0)) {
+                  _context.next = 8;
+                  break;
+                }
+
+                console.log("on bottom!");
+                _context.next = 8;
+                return callback();
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function getBottom(_x) {
+        return _getBottom.apply(this, arguments);
+      }
+
+      return getBottom;
+    }()
+    /**
+     * fill height
+     * 
+     * スクロールバーが表示されるまで繰り返す
+     * @param {Function} callback
+     */
+
+  }, {
+    key: "fillHeight",
+    value: function () {
+      var _fillHeight = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(callback) {
+        var limit, viewHeight, totalHeight, page;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return callback();
+
+              case 2:
+                limit = _context2.sent;
+                viewHeight = document.documentElement.offsetHeight;
+                totalHeight = document.documentElement.scrollHeight;
+
+                if (!(viewHeight < totalHeight)) {
+                  _context2.next = 7;
+                  break;
+                }
+
+                return _context2.abrupt("return");
+
+              case 7:
+                page = 2;
+
+              case 8:
+                if (!(page <= limit)) {
+                  _context2.next = 19;
+                  break;
+                }
+
+                viewHeight = document.documentElement.offsetHeight;
+                totalHeight = document.documentElement.scrollHeight;
+
+                if (!(viewHeight < totalHeight)) {
+                  _context2.next = 13;
+                  break;
+                }
+
+                return _context2.abrupt("break", 19);
+
+              case 13:
+                _context2.next = 15;
+                return callback();
+
+              case 15:
+                limit = _context2.sent;
+
+              case 16:
+                page++;
+                _context2.next = 8;
+                break;
+
+              case 19:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function fillHeight(_x2) {
+        return _fillHeight.apply(this, arguments);
+      }
+
+      return fillHeight;
+    }()
   }]);
 
   return Helper;
@@ -56179,13 +58908,28 @@ var contents = {
       password_confirmation: 'Password Confirmation',
       send: 'Send',
       password_reset: 'Password Reset',
-      reset: 'Reset'
+      reset: 'Reset',
+      photo: 'Photo',
+      upload: 'Upload',
+      upload_photo: 'Upload Photo',
+      photo_name: 'Photo name',
+      photo_description: 'Photo description',
+      photo_files: 'Photo files',
+      comments: 'Comments',
+      comment_content: 'Coment content',
+      submit_comment: 'Submit comment',
+      change: 'Change'
     },
     // メッセージ
     sentence: {
       '{msg} world!': '{msg} world！',
       sent_verification_email: 'Sent verification email.',
-      sent_password_reset_email: 'Sent password reset email.'
+      sent_password_reset_email: 'Sent password reset email.',
+      please_login_to_use_like_feature: 'Please login to use Like feature.',
+      posted_by: 'Posted by {username}',
+      keep_it_under_characters: 'Keep it under 100 characters. {length} left',
+      no_comments_yet: 'No comments yet.',
+      send_comment_failed: 'Send comment failed.'
     }
   },
 
@@ -56265,13 +59009,28 @@ var contents = {
       password_confirmation: 'パスワード確認',
       send: '送信',
       password_reset: 'パスワード リセット',
-      reset: 'リセット'
+      reset: 'リセット',
+      photo: '写真',
+      upload: 'アップロード',
+      upload_photo: '写真をアップロード',
+      photo_name: '写真の名前',
+      photo_description: '写真の説明',
+      photo_files: '写真ファイル',
+      comments: 'コメント',
+      comment_content: 'コメント内容',
+      submit_comment: 'コメントを送信',
+      change: '変更'
     },
     // メッセージ
     sentence: {
       '{msg} world!': '{msg} 世界！',
       sent_verification_email: '確認メールを送信しました。',
-      sent_password_reset_email: 'パスワード再設定メールを送信しました。'
+      sent_password_reset_email: 'パスワード再設定メールを送信しました。',
+      please_login_to_use_like_feature: 'いいね機能を使うにはログインしてください。',
+      posted_by: '{username}によって投稿',
+      keep_it_under_characters: '100文字以下で入力してください。 残り{length}文字',
+      no_comments_yet: 'コメントはまだありません。',
+      send_comment_failed: 'コメントの送信に失敗しました。'
     }
   },
 
@@ -56373,21 +59132,25 @@ var numberFormats = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Home_vue_vue_type_template_id_b3c5cf30___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.vue?vue&type=template&id=b3c5cf30& */ "./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Home_vue_vue_type_template_id_b3c5cf30_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.vue?vue&type=template&id=b3c5cf30&scoped=true& */ "./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true&");
+/* harmony import */ var _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home.vue?vue&type=script&lang=js& */ "./resources/js/pages/Home.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Home_vue_vue_type_style_index_0_id_b3c5cf30_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css& */ "./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _Home_vue_vue_type_template_id_b3c5cf30___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Home_vue_vue_type_template_id_b3c5cf30___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Home_vue_vue_type_template_id_b3c5cf30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Home_vue_vue_type_template_id_b3c5cf30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "b3c5cf30",
   null
   
 )
@@ -56399,19 +59162,49 @@ component.options.__file = "resources/js/pages/Home.vue"
 
 /***/ }),
 
-/***/ "./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&":
-/*!********************************************************************!*\
-  !*** ./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30& ***!
-  \********************************************************************/
+/***/ "./resources/js/pages/Home.vue?vue&type=script&lang=js&":
+/*!**************************************************************!*\
+  !*** ./resources/js/pages/Home.vue?vue&type=script&lang=js& ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css& ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_b3c5cf30_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_b3c5cf30_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_b3c5cf30_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_b3c5cf30_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_b3c5cf30_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_b3c5cf30_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true& ***!
+  \********************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_b3c5cf30___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=template&id=b3c5cf30& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_b3c5cf30___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_b3c5cf30_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=template&id=b3c5cf30&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_b3c5cf30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_b3c5cf30___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_b3c5cf30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -56428,9 +59221,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Login_vue_vue_type_template_id_3b6adb30___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Login.vue?vue&type=template&id=3b6adb30& */ "./resources/js/pages/Login.vue?vue&type=template&id=3b6adb30&");
 /* harmony import */ var _Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login.vue?vue&type=script&lang=js& */ "./resources/js/pages/Login.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Login.vue?vue&type=style&index=0&lang=css& */ "./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -56438,7 +59229,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Login_vue_vue_type_template_id_3b6adb30___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Login_vue_vue_type_template_id_3b6adb30___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -56470,22 +59261,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&":
-/*!***********************************************************************!*\
-  !*** ./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css& ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--5-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--5-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Login.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "./resources/js/pages/Login.vue?vue&type=template&id=3b6adb30&":
 /*!*********************************************************************!*\
   !*** ./resources/js/pages/Login.vue?vue&type=template&id=3b6adb30& ***!
@@ -56499,6 +59274,162 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_3b6adb30___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_3b6adb30___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoDetail.vue":
+/*!********************************************!*\
+  !*** ./resources/js/pages/PhotoDetail.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PhotoDetail_vue_vue_type_template_id_c17cd6ac_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true& */ "./resources/js/pages/PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true&");
+/* harmony import */ var _PhotoDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoDetail.vue?vue&type=script&lang=js& */ "./resources/js/pages/PhotoDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _PhotoDetail_vue_vue_type_style_index_0_id_c17cd6ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css& */ "./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _PhotoDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PhotoDetail_vue_vue_type_template_id_c17cd6ac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PhotoDetail_vue_vue_type_template_id_c17cd6ac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "c17cd6ac",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/PhotoDetail.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoDetail.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/pages/PhotoDetail.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoDetail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css& ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_style_index_0_id_c17cd6ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=style&index=0&id=c17cd6ac&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_style_index_0_id_c17cd6ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_style_index_0_id_c17cd6ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_style_index_0_id_c17cd6ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_style_index_0_id_c17cd6ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_style_index_0_id_c17cd6ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/pages/PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_template_id_c17cd6ac_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoDetail.vue?vue&type=template&id=c17cd6ac&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_template_id_c17cd6ac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoDetail_vue_vue_type_template_id_c17cd6ac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoUpload.vue":
+/*!********************************************!*\
+  !*** ./resources/js/pages/PhotoUpload.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoUpload.vue?vue&type=template&id=62ed9b4c& */ "./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&");
+/* harmony import */ var _PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoUpload.vue?vue&type=script&lang=js& */ "./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/PhotoUpload.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoUpload.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoUpload.vue?vue&type=template&id=62ed9b4c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -56693,15 +59624,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 /* harmony import */ var _pages_Home_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Home.vue */ "./resources/js/pages/Home.vue");
-/* harmony import */ var _pages_Login_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Login.vue */ "./resources/js/pages/Login.vue");
-/* harmony import */ var _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Reset.vue */ "./resources/js/pages/Reset.vue");
-/* harmony import */ var _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/errors/SystemError.vue */ "./resources/js/pages/errors/SystemError.vue");
-/* harmony import */ var _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/errors/NotFound.vue */ "./resources/js/pages/errors/NotFound.vue");
+/* harmony import */ var _pages_PhotoUpload_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PhotoUpload.vue */ "./resources/js/pages/PhotoUpload.vue");
+/* harmony import */ var _pages_PhotoDetail_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/PhotoDetail.vue */ "./resources/js/pages/PhotoDetail.vue");
+/* harmony import */ var _pages_Login_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Login.vue */ "./resources/js/pages/Login.vue");
+/* harmony import */ var _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/Reset.vue */ "./resources/js/pages/Reset.vue");
+/* harmony import */ var _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/errors/SystemError.vue */ "./resources/js/pages/errors/SystemError.vue");
+/* harmony import */ var _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/errors/NotFound.vue */ "./resources/js/pages/errors/NotFound.vue");
  // ルーターをインポート
 
  // ストアをインポート
 
  // ページをインポート
+
+
 
 
 
@@ -56716,14 +59651,54 @@ var routes = [// home
 {
   // urlのパス
   path: "/",
+  // ルートネーム
+  name: 'home',
   // インポートしたページ
   component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, // photo-upload
+{
+  // urlのパス
+  path: "/photo-upload",
+  // ルートネーム
+  name: 'photo-upload',
+  // インポートしたページ
+  component: _pages_PhotoUpload_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  // ページコンポーネントが切り替わる直前に呼び出される関数
+  // to はアクセスされようとしているルートのルートオブジェクト
+  // from はアクセス元のルート
+  // next はページの移動先
+  beforeEnter: function beforeEnter(to, from, next) {
+    if (_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters["auth/check"]) {
+      next();
+    } else {
+      next({
+        name: 'login'
+      });
+    }
+  } // こういうやり方もある
+  // metaをつけて下に書かれている「router.beforeEach」でコントロール
+  // meta: {
+  //     requiresAuth: true
+  // }
+
+}, {
+  // props: true は :id を props として受け取ることを意味
+  // urlのパス
+  path: "/photos/:id",
+  // ルートネーム
+  name: 'photo-detail',
+  // インポートしたページ
+  component: _pages_PhotoDetail_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  // props を true に設定しているので、この :id の値が <PhotoDetail> コンポーネントに props として渡される
+  props: true
 }, // login
 {
   // urlのパス
   path: "/login",
+  // ルートネーム
+  name: 'login',
   // インポートしたページ
-  component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   // ページコンポーネントが切り替わる直前に呼び出される関数
   // to はアクセスされようとしているルートのルートオブジェクト
   // from はアクセス元のルート
@@ -56732,7 +59707,9 @@ var routes = [// home
     // AUTHストアでログインしているかチェック
     if (_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters["auth/check"]) {
       // してる場合はホームへ
-      next("/");
+      next({
+        name: 'home'
+      });
     } else {
       // してない場合はそのまま
       next();
@@ -56742,15 +59719,19 @@ var routes = [// home
 {
   // urlのパス
   path: "/reset",
+  // ルートネーム
+  name: 'reset',
   // インポートしたページ
-  component: _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  component: _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
   // ページコンポーネントが切り替わる直前に呼び出される関数
   // to はアクセスされようとしているルートのルートオブジェクト
   // from はアクセス元のルート
   // next はページの移動先
   beforeEnter: function beforeEnter(to, from, next) {
     if (_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters["auth/check"]) {
-      next("/");
+      next({
+        name: 'home'
+      });
     } else {
       next();
     }
@@ -56758,12 +59739,17 @@ var routes = [// home
 }, // システムエラー
 {
   path: "/500",
-  component: _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  // ルートネーム
+  name: 'system-error',
+  // ルートネーム
+  component: _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
 }, // not found
 {
   // 定義されたルート以外のパスでのアクセスは <NotFound> が表示
   path: "*",
-  component: _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+  // ルートネーム
+  name: 'not-found',
+  component: _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_9__["default"]
 }]; // VueRouterインスタンス
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -56771,7 +59757,21 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
   // 設定したルートオブジェクト
   routes: routes
-}); // VueRouterインスタンスをエクスポート
+}); // こういうやり方もある
+// router.beforeEach((to, from, next) => {
+//     // metaのrequiresAuthがtrueの場合
+//     if (to.matched.some(record => record.meta.requiresAuth)) {
+//         // ログインしてない場合
+//         if (!store.getters["auth/check"]) {
+//             next({name: 'login'})
+//         } else {
+//             next()
+//         }
+//     } else {
+//         next()
+//     }
+// })
+// VueRouterインスタンスをエクスポート
 
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
@@ -56880,7 +59880,7 @@ var actions = {
               context.commit("setApiStatus", null); // Apiリクエスト
 
               _context.next = 3;
-              return axios.post("/api/login", data);
+              return axios.post("login", data);
 
             case 3:
               response = _context.sent;
@@ -56938,7 +59938,7 @@ var actions = {
               context.commit("setApiStatus", null); // Apiリクエスト
 
               _context2.next = 3;
-              return axios.post("/api/register", data);
+              return axios.post("register", data);
 
             case 3:
               response = _context2.sent;
@@ -56994,7 +59994,7 @@ var actions = {
               context.commit("setApiStatus", null); // Apiリクエスト
 
               _context3.next = 3;
-              return axios.post("/api/logout");
+              return axios.post("logout");
 
             case 3:
               response = _context3.sent;
@@ -57044,7 +60044,7 @@ var actions = {
               context.commit("setApiStatus", null); // Apiリクエスト
 
               _context4.next = 3;
-              return axios.post("/api/forgot", data);
+              return axios.post("forgot", data);
 
             case 3:
               response = _context4.sent;
@@ -57099,7 +60099,7 @@ var actions = {
               context.commit("setApiStatus", null); // Apiリクエスト
 
               _context5.next = 3;
-              return axios.post("/api/reset", data);
+              return axios.post("reset", data);
 
             case 3:
               response = _context5.sent;
@@ -57155,7 +60155,7 @@ var actions = {
               context.commit("setApiStatus", null); // Apiリクエスト
 
               _context6.next = 3;
-              return axios.get("/api/user");
+              return axios.get("user");
 
             case 3:
               response = _context6.sent;
@@ -57262,8 +60262,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth */ "./resources/js/store/auth.js");
 /* harmony import */ var _error__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./error */ "./resources/js/store/error.js");
 /* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./message */ "./resources/js/store/message.js");
+/* harmony import */ var _loading__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./loading */ "./resources/js/store/loading.js");
 
  // 各ストアのインポート
+
 
 
 
@@ -57274,10 +60276,47 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     // 各ストアと登録
     auth: _auth__WEBPACK_IMPORTED_MODULE_2__["default"],
     error: _error__WEBPACK_IMPORTED_MODULE_3__["default"],
-    message: _message__WEBPACK_IMPORTED_MODULE_4__["default"]
+    message: _message__WEBPACK_IMPORTED_MODULE_4__["default"],
+    loading: _loading__WEBPACK_IMPORTED_MODULE_5__["default"]
   }
 });
 /* harmony default export */ __webpack_exports__["default"] = (store);
+
+/***/ }),
+
+/***/ "./resources/js/store/loading.js":
+/*!***************************************!*\
+  !*** ./resources/js/store/loading.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*
+ * ステート（データの入れ物）
+ */
+var state = {
+  status: false
+};
+/*
+ * ミューテーション（同期処理）
+ */
+
+var mutations = {
+  setStatus: function setStatus(state, status) {
+    state.status = status;
+  }
+};
+/*
+ * エクスポート
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: state,
+  mutations: mutations
+});
 
 /***/ }),
 
@@ -57330,14 +60369,26 @@ var mutations = {
 
 /***/ }),
 
+/***/ "./resources/sass/main.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/main.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!***********************************!*\
-  !*** multi ./resources/js/app.js ***!
-  \***********************************/
+/*!**************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/main.scss ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/resources/sass/main.scss */"./resources/sass/main.scss");
 
 
 /***/ })

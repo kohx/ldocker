@@ -72,8 +72,10 @@ class Photo extends Model
      */
     protected $visible = [
         'id',
-        'user',
+        'name',
+        'description',
         'url',
+        'user',
         'comments',
         'total_like',
         'is_liked',
@@ -116,7 +118,7 @@ class Photo extends Model
     public function comments()
     {
         return $this->hasMany('App\Models\Comment')
-            ->orderBy('id', 'desc');
+            ->orderBy('id', 'desc');  
     }
 
     /**

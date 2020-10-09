@@ -24,12 +24,21 @@ const contents = {
             photo_name: 'Photo name',
             photo_description: 'Photo description',
             photo_files: 'Photo files',
+            comments: 'Comments',
+            comment_content: 'Coment content',
+            submit_comment: 'Submit comment',
+            change: 'Change',
         },
         // メッセージ
         sentence: {
             '{msg} world!': '{msg} world！',
             sent_verification_email: 'Sent verification email.',
             sent_password_reset_email: 'Sent password reset email.',
+            please_login_to_use_like_feature: 'Please login to use Like feature.',
+            posted_by: 'Posted by {username}',
+            keep_it_under_characters: 'Keep it under 100 characters. {length} left',
+            no_comments_yet: 'No comments yet.',
+            send_comment_failed: 'Send comment failed.',
         }
     },
     /*

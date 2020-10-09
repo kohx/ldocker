@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/test', 'TestController@index');
+
 Route::middleware(['language'])->group(function () {
     // verification callback
     Route::get('/verification/{token}', 'Auth\VerificationController@register')
@@ -16,6 +18,10 @@ Route::middleware(['language'])->group(function () {
 
     // socialite 各プロバイダからのコールバックを受けるルート
     Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+    // 写真ダウンロード
+    Route::get('/photos/{photo}/download', 'PhotoController@download')
+        ->name('photo.download');
 
     // API以外はindexを返すようにして、VueRouterで制御
     Route::get('/{any?}', fn () => view('index'))->where('any', '.+');

@@ -1,5 +1,5 @@
 .formulate-input {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -72,11 +72,6 @@
 }
 
 .formulate-input[data-classification=text] input:-ms-input-placeholder {
-  color: #a8a8a8;
-  line-height: normal;
-}
-
-.formulate-input[data-classification=text] input::-ms-input-placeholder {
   color: #a8a8a8;
   line-height: normal;
 }
@@ -267,11 +262,6 @@
   line-height: normal;
 }
 
-.formulate-input[data-classification=textarea] textarea::-ms-input-placeholder {
-  color: #a8a8a8;
-  line-height: normal;
-}
-
 .formulate-input[data-classification=textarea] textarea::placeholder {
   color: #a8a8a8;
   line-height: normal;
@@ -315,11 +305,6 @@
 }
 
 .formulate-input[data-classification=button] button:-ms-input-placeholder {
-  color: #a8a8a8;
-  line-height: normal;
-}
-
-.formulate-input[data-classification=button] button::-ms-input-placeholder {
   color: #a8a8a8;
   line-height: normal;
 }
@@ -407,11 +392,6 @@
 }
 
 .formulate-input[data-classification=select] select:-ms-input-placeholder {
-  color: #a8a8a8;
-  line-height: normal;
-}
-
-.formulate-input[data-classification=select] select::-ms-input-placeholder {
   color: #a8a8a8;
   line-height: normal;
 }
@@ -842,11 +822,6 @@
 }
 
 .formulate-input[data-classification=file] .formulate-files .formulate-file:-ms-input-placeholder {
-  color: #a8a8a8;
-  line-height: normal;
-}
-
-.formulate-input[data-classification=file] .formulate-files .formulate-file::-ms-input-placeholder {
   color: #a8a8a8;
   line-height: normal;
 }

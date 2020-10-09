@@ -25,11 +25,16 @@ Route::middleware(['language'])->group(function () {
     })->name('refresh-token');
 
     // 写真
-    Route::get('/photos', 'PhotoController@index')->name('photo.store');
-    Route::get('/photos/{id}', 'PhotoController@show')->name('photo.show');
     Route::post('/photos', 'PhotoController@store')->name('photo.store');
+    Route::get('/photos', 'PhotoController@index')->name('photo.list');
+    Route::get('/photos/{id}', 'PhotoController@show')->name('photo.show');
+    Route::put('/photos/like', 'PhotoController@like')->name('photo.like');
     Route::put('/photos/{id}', 'PhotoController@edit')->name('photo.edit');
     Route::delete('/photos/{id}', 'PhotoController@destroy')->name('photo.destroy');
+    // モデルバインディングで取得するので明示的に「{photo}」にしておく
+    Route::post('/photos/{photo}/comments', 'PhotoController@storeComment')->name('photo.store_comment');
+    Route::put('/photos/comments/{comment}', 'PhotoController@editComment')->name('photo.edit_comment');
+
 });
 
 // set lang

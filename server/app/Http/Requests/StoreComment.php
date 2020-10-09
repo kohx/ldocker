@@ -17,6 +17,16 @@ class StoreComment extends FormRequest
     }
 
     /**
+     * Prepare the data for validation.
+     *
+     * @return void
+     */
+    protected function prepareForValidation()
+    {
+        //
+    }
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array

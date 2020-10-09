@@ -1,25 +1,35 @@
-h1 {
+h1, .title {
     margin: 0;
     padding: 0;
     color: dodgerblue;
     border-bottom: solid thin dodgerblue;
     margin: 2rem 0;
     font-weight: bold;
+    display: flex;
 }
 
-h2 {
+h2, .sub-title {
     margin: 0;
     padding: 0;
     color: dodgerblue;
-    margin: 2rem 0 1rem ;
+    margin: 2rem 0 1rem;
     font-weight: bold;
+    border: none;
+}
+
+.title__button-box {
+    color: gray;
+    margin-left: auto;
+}
+
+.title__button-box .--active {
+    border-color: dodgerblue;
 }
 
 .wrapper {
-    width: clamp(600px, 80%, 1000px);
-    margin: 5vh auto;
-    border: solid 3px dodgerblue;
-    min-height: 90vh;
+    width: clamp(300px, 100%, 1000px);
+    margin: 0 auto;
+    min-height: 100vh;
 }
 
 .header {

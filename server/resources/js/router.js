@@ -7,6 +7,7 @@ import store from "./store";
 // ページをインポート
 import Home from "./pages/Home.vue";
 import PhotoUpload from "./pages/PhotoUpload.vue";
+import PhotoDetail from "./pages/PhotoDetail.vue";
 import Login from "./pages/Login.vue";
 import Reset from "./pages/Reset.vue";
 import SystemError from "./pages/errors/SystemError.vue";
@@ -27,12 +28,12 @@ const routes = [
         // インポートしたページ
         component: Home
     },
-    // photo
+    // photo-upload
     {
         // urlのパス
-        path: "/Photo-upload",
+        path: "/photo-upload",
         // ルートネーム
-        name: 'Photo-upload',
+        name: 'photo-upload',
         // インポートしたページ
         component: PhotoUpload,
         // ページコンポーネントが切り替わる直前に呼び出される関数
@@ -53,6 +54,17 @@ const routes = [
         // meta: {
         //     requiresAuth: true
         // }
+    },
+    {
+        // props: true は :id を props として受け取ることを意味
+        // urlのパス
+        path: "/photos/:id",
+        // ルートネーム
+        name: 'photo-detail',
+        // インポートしたページ
+        component: PhotoDetail,
+        // props を true に設定しているので、この :id の値が <PhotoDetail> コンポーネントに props として渡される
+        props: true
     },
     // login
     {
