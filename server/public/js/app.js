@@ -16994,6 +16994,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // vueで使うデータ
   data: function data() {
@@ -17162,16 +17163,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
      * clear form
      */
     clearForm: function clearForm() {
-      // login form
-      this.loginForm.email = "";
-      this.loginForm.password = ""; // register form
-
-      this.registerForm.name = "";
-      this.registerForm.email = "";
-      this.registerForm.password = "";
-      this.registerForm.password_confirmation = ""; // forgot form
-
-      this.forgot.email = "";
+      this.$formulate.reset('login');
+      this.$formulate.reset('register');
+      this.$formulate.reset('forgot');
     }
   }
 });
@@ -39090,6 +39084,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page" }, [
+    _c("h1", [_vm._v(_vm._s(_vm.$t("word.login")))]),
+    _vm._v(" "),
     _c("ul", { staticClass: "tab" }, [
       _c(
         "li",
@@ -39197,6 +39193,7 @@ var render = function() {
         _c(
           "FormulateForm",
           {
+            attrs: { name: "login" },
             on: { submit: _vm.login },
             model: {
               value: _vm.loginForm,
@@ -39225,7 +39222,7 @@ var render = function() {
                 label: _vm.$t("word.password"),
                 "validation-name": _vm.$t("word.password"),
                 validation: "required|min:8",
-                placeholder: "$t('word.password')"
+                placeholder: _vm.$t("word.password")
               }
             }),
             _vm._v(" "),
@@ -39343,6 +39340,7 @@ var render = function() {
         _c(
           "FormulateForm",
           {
+            attrs: { name: "register" },
             on: { submit: _vm.register },
             model: {
               value: _vm.registerForm,
@@ -39356,7 +39354,7 @@ var render = function() {
             _c("FormulateInput", {
               attrs: {
                 name: "name",
-                type: "name",
+                type: "text",
                 label: _vm.$t("word.name"),
                 "validation-name": _vm.$t("word.name"),
                 validation: "required|max:50",
@@ -39462,6 +39460,7 @@ var render = function() {
         _c(
           "FormulateForm",
           {
+            attrs: { name: "forgot" },
             on: { submit: _vm.forgot },
             model: {
               value: _vm.forgotForm,

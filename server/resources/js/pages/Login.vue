@@ -1,5 +1,6 @@
 <template>
     <div class="page">
+        <h1>{{ $t('word.login') }}</h1>
         <!-- tabs -->
         <ul class="tab">
             <li
@@ -44,7 +45,7 @@
             <!--/ errors -->
 
             <!-- @submitで login method を呼び出し -->
-            <FormulateForm v-model="loginForm" @submit="login">
+            <FormulateForm name="login" v-model="loginForm" @submit="login">
                 <FormulateInput
                     name="email"
                     type="email"
@@ -59,7 +60,7 @@
                     :label="$t('word.password')"
                     :validation-name="$t('word.password')"
                     validation="required|min:8"
-                    placeholder="$t('word.password')"
+                    :placeholder="$t('word.password')"
                 />
                 <FormulateInput type="submit" :disabled="loadingStatus">
                     {{ $t("word.login") }}
@@ -104,10 +105,10 @@
                 </ul>
             </div>
             <!--/ errors -->
-            <FormulateForm v-model="registerForm" @submit="register">
+            <FormulateForm name="register" v-model="registerForm" @submit="register">
                 <FormulateInput
                     name="name"
-                    type="name"
+                    type="text"
                     :label="$t('word.name')"
                     :validation-name="$t('word.name')"
                     validation="required|max:50"
@@ -161,7 +162,7 @@
                 </ul>
             </div>
             <!--/ errors -->
-            <FormulateForm v-model="forgotForm" @submit="forgot">
+            <FormulateForm name="forgot" v-model="forgotForm" @submit="forgot">
                 <FormulateInput
                     name="email"
                     type="email"
@@ -297,16 +298,9 @@ export default {
          * clear form
          */
         clearForm() {
-            // login form
-            this.loginForm.email = "";
-            this.loginForm.password = "";
-            // register form
-            this.registerForm.name = "";
-            this.registerForm.email = "";
-            this.registerForm.password = "";
-            this.registerForm.password_confirmation = "";
-            // forgot form
-            this.forgot.email = "";
+            this.$formulate.reset('login')
+            this.$formulate.reset('register')
+            this.$formulate.reset('forgot')
         },
     },
 };
