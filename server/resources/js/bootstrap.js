@@ -1,6 +1,5 @@
 // クッキーを簡単に扱えるモジュールをインポート
 import Cookies from "js-cookie";
-// ストアをインポート
 import store from "./store";
 
 /*
@@ -18,8 +17,13 @@ window.axios = require("axios");
 // Ajaxリクエストであることを示すヘッダーを付与する
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
+// ベースURLを.envから取得
+// MIX_URL="${APP_URL}"を.envに追加
+// このときのプレフィックスは「MIX_」でないと取得できない
+const baseUrl = process.env.MIX_URL;
+
 // ベースURLの設定
-window.axios.defaults.baseURL = 'api/';
+window.axios.defaults.baseURL = `${baseUrl}/api/`;
 
 // requestの設定
 window.axios.interceptors.request.use(config => {
@@ -38,7 +42,6 @@ window.axios.interceptors.request.use(config => {
 // API通信の成功、失敗でresponseの形が変わるので、どちらとも response にレスポンスオブジェクトを代入
 window.axios.interceptors.response.use(
     // 成功時の処理
-
     response => {
         // ローディングストアのステータスをFALSE
         store.commit("loading/setStatus", false);
@@ -46,6 +49,7 @@ window.axios.interceptors.response.use(
     },
     // 失敗時の処理
     error => {
+        // ローディングストアのステータスをFALSE
         store.commit("loading/setStatus", false);
         return error.response || error;
     }

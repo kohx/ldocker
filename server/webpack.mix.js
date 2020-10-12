@@ -10,6 +10,11 @@ mix.js("resources/js/app.js", "public/js")
         'node_modules/font-awesome-animation/dist/font-awesome-animation.min.css'
     ], 'public/css/app.css');
 
+// 本番環境だけバージョンを自動的に付与してキャッシュを自動更新できるようにする
+if (mix.inProduction()) {
+    mix.version();
+}
+
 mix.browserSync({
     // アプリの起動アドレスを「nginx」
     proxy: "nginx",
