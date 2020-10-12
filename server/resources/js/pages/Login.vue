@@ -45,7 +45,7 @@
             <!--/ errors -->
 
             <!-- @submitで login method を呼び出し -->
-            <FormulateForm name="login" v-model="loginForm" @submit="login">
+            <FormulateForm name="login_form" v-model="loginForm" @submit="login">
                 <FormulateInput
                     name="email"
                     type="email"
@@ -105,7 +105,7 @@
                 </ul>
             </div>
             <!--/ errors -->
-            <FormulateForm name="register" v-model="registerForm" @submit="register">
+            <FormulateForm name="register_form" v-model="registerForm" @submit="register">
                 <FormulateInput
                     name="name"
                     type="text"
@@ -162,7 +162,7 @@
                 </ul>
             </div>
             <!--/ errors -->
-            <FormulateForm name="forgot" v-model="forgotForm" @submit="forgot">
+            <FormulateForm name="forgot_form" v-model="forgotForm" @submit="forgot">
                 <FormulateInput
                     name="email"
                     type="email"
@@ -298,9 +298,9 @@ export default {
          * clear form
          */
         clearForm() {
-            this.$formulate.reset('login')
-            this.$formulate.reset('register')
-            this.$formulate.reset('forgot')
+            this.$formulate.reset('login_form')
+            this.$formulate.reset('register_form')
+            this.$formulate.reset('forgot_form')
         },
     },
 };
