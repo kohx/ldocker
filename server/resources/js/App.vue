@@ -43,7 +43,7 @@ export default {
                 // 500
                 if (val === INTERNAL_SERVER_ERROR) {
                     // 500に移動
-                    this.$router.push("/500");
+                    this.$router.push({ name: "system-error" });
                 }
                 // 419
                 else if (val === UNAUTHORIZED) {
@@ -52,12 +52,12 @@ export default {
                     // ストアのuserをクリア
                     this.$store.commit("auth/setUser", null);
                     // ログイン画面へ移動
-                    this.$router.push("/login");
+                    this.$router.push({ name: "login" });
                 }
                 // 404
                 else if (val === NOT_FOUND) {
                     // 404へ移動
-                    this.$router.push("/not-found");
+                    this.$router.push({ name: "not-found" });
                 }
             },
             // createdでも呼び出すときはこれだけでOK

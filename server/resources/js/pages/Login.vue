@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <h1>{{ $t('word.login') }}</h1>
+        <h1>{{ $t("word.login") }}</h1>
         <!-- tabs -->
         <ul class="tab">
             <li
@@ -29,23 +29,14 @@
 
         <!-- login -->
         <section class="login panel" v-show="tab === 1">
-            <!-- errors -->
-            <div v-if="loginErrors" class="errors">
-                <ul v-if="loginErrors.email">
-                    <li v-for="msg in loginErrors.email" :key="msg">
-                        {{ msg }}
-                    </li>
-                </ul>
-                <ul v-if="loginErrors.password">
-                    <li v-for="msg in loginErrors.password" :key="msg">
-                        {{ msg }}
-                    </li>
-                </ul>
-            </div>
-            <!--/ errors -->
-
             <!-- @submitで login method を呼び出し -->
-            <FormulateForm name="login_form" v-model="loginForm" @submit="login">
+            <!-- 「:form-errors="loginErrors ? loginErrors.email : []"」でフォーム全体に出すエラーをセット -->
+            <FormulateForm
+                name="login_form"
+                v-model="loginForm"
+                @submit="login"
+                :form-errors="loginErrors ? loginErrors.email : []"
+            >
                 <FormulateInput
                     name="email"
                     type="email"
@@ -86,26 +77,13 @@
 
         <!-- register -->
         <section class="register panel" v-show="tab === 2">
-            <!-- errors -->
-            <div v-if="registerErrors" class="errors">
-                <ul v-if="registerErrors.name">
-                    <li v-for="msg in registerErrors.name" :key="msg">
-                        {{ msg }}
-                    </li>
-                </ul>
-                <ul v-if="registerErrors.email">
-                    <li v-for="msg in registerErrors.email" :key="msg">
-                        {{ msg }}
-                    </li>
-                </ul>
-                <ul v-if="registerErrors.password">
-                    <li v-for="msg in registerErrors.password" :key="msg">
-                        {{ msg }}
-                    </li>
-                </ul>
-            </div>
-            <!--/ errors -->
-            <FormulateForm name="register_form" v-model="registerForm" @submit="register">
+            <!-- 「:errors="registerErrors」これでサーバから返ってくるエラーをFormulateにセットする -->
+            <FormulateForm
+                name="register_form"
+                v-model="registerForm"
+                @submit="register"
+                :errors="registerErrors"
+            >
                 <FormulateInput
                     name="name"
                     type="text"
@@ -130,12 +108,14 @@
                     validation="required|min:8"
                     :placeholder="$t('word.password')"
                 />
+                <!-- バリデーション「confirm」はsurfix「_confirm」のまえのnameを探す(password_confirm の場合は password) -->
+                <!-- 違うnameで「confirm」する場合は「confirm:password」 のように一致させるフィールドのnameを渡す -->
                 <FormulateInput
                     name="password_confirmation"
                     type="password"
                     :label="$t('word.password_confirmation')"
                     :validation-name="$t('word.password_confirmation')"
-                    validation="required|min:8"
+                    validation="required|confirm:password"
                     :placeholder="$t('word.password_confirmation')"
                 />
                 <FormulateInput type="submit" :disabled="loadingStatus">
@@ -153,16 +133,13 @@
 
         <!-- forgot -->
         <section class="forgot panel" v-show="tab === 3">
-            <!-- errors -->
-            <div v-if="forgotErrors" class="errors">
-                <ul v-if="forgotErrors.email">
-                    <li v-for="msg in forgotErrors.email" :key="msg">
-                        {{ msg }}
-                    </li>
-                </ul>
-            </div>
-            <!--/ errors -->
-            <FormulateForm name="forgot_form" v-model="forgotForm" @submit="forgot">
+            <!-- 「:form-errors="forgotErrors ? forgotErrors.email : []"」でフォーム全体に出すエラーをセット -->
+            <FormulateForm
+                name="forgot_form"
+                v-model="forgotForm"
+                @submit="forgot"
+                :form-errors="forgotErrors ? forgotErrors.email : []"
+            >
                 <FormulateInput
                     name="email"
                     type="email"
@@ -241,7 +218,7 @@ export default {
             // 通信成功
             if (this.apiStatus) {
                 // トップページに移動
-                this.$router.push("/");
+                this.$router.push({ name: "home" });
             }
         },
         /*
@@ -293,14 +270,19 @@ export default {
             this.$store.commit("auth/setLoginErrorMessages", null);
             this.$store.commit("auth/setRegisterErrorMessages", null);
             this.$store.commit("auth/setForgotErrorMessages", null);
+
+            // ここでformulateもリセットしておく
+            this.$formulate.reset("login_form");
+            this.$formulate.reset("register_form");
+            this.$formulate.reset("forgot_form");
         },
         /*
          * clear form
          */
         clearForm() {
-            this.$formulate.reset('login_form')
-            this.$formulate.reset('register_form')
-            this.$formulate.reset('forgot_form')
+            this.$formulate.reset("login_form");
+            this.$formulate.reset("register_form");
+            this.$formulate.reset("forgot_form");
         },
     },
 };

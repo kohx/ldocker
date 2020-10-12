@@ -14,5 +14,6 @@
     "please click this link to verify your email.": "こちらのリンクをクリックして、登録認証してください。",
     "reset password mail": "パスワードリセットメール",
     "password reset": "パスワードリセット",
-    "click this link to go to password reset.": "こちらのリンクをクリックして、パスワードリセットへ移動してください。"
+    "click this link to go to password reset.": "こちらのリンクをクリックして、パスワードリセットへ移動してください。",
+    "upload failed.": "アップロード失敗。 もう一度やり直してください。"
 }

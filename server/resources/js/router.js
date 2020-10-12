@@ -6,6 +6,7 @@ import store from "./store";
 
 // ページをインポート
 import Home from "./pages/Home.vue";
+import PhotoUpload from "./pages/PhotoUpload.vue";
 import Login from "./pages/Login.vue";
 import Reset from "./pages/Reset.vue";
 import SystemError from "./pages/errors/SystemError.vue";
@@ -21,13 +22,39 @@ const routes = [
     {
         // urlのパス
         path: "/",
+        // ルートネーム
+        name: 'home',
         // インポートしたページ
         component: Home
+    },
+    // photo-upload
+    {
+        // urlのパス
+        path: "/photo-upload",
+        // ルートネーム
+        name: 'photo-upload',
+        // インポートしたページ
+        component: PhotoUpload,
+        // ページコンポーネントが切り替わる直前に呼び出される関数
+        // to はアクセスされようとしているルートのルートオブジェクト
+        // from はアクセス元のルート
+        // next はページの移動先
+        beforeEnter(to, from, next) {
+            if (store.getters["auth/check"]) {
+                next();
+            } else {
+                next({
+                    name: 'login'
+                });
+            }
+        }
     },
     // login
     {
         // urlのパス
         path: "/login",
+        // ルートネーム
+        name: 'login',
         // インポートしたページ
         component: Login,
         // ページコンポーネントが切り替わる直前に呼び出される関数
@@ -38,7 +65,9 @@ const routes = [
             // AUTHストアでログインしているかチェック
             if (store.getters["auth/check"]) {
                 // してる場合はホームへ
-                next("/");
+                next({
+                    name: 'home'
+                });
             } else {
                 // してない場合はそのまま
                 next();
@@ -49,6 +78,8 @@ const routes = [
     {
         // urlのパス
         path: "/reset",
+        // ルートネーム
+        name: 'reset',
         // インポートしたページ
         component: Reset,
         // ページコンポーネントが切り替わる直前に呼び出される関数
@@ -57,7 +88,9 @@ const routes = [
         // next はページの移動先
         beforeEnter(to, from, next) {
             if (store.getters["auth/check"]) {
-                next("/");
+                next({
+                    name: 'home'
+                });
             } else {
                 next();
             }
@@ -66,12 +99,16 @@ const routes = [
     // システムエラー
     {
         path: "/500",
+        // ルートネーム
+        name: 'system-error',
         component: SystemError
     },
     // not found
     {
         // 定義されたルート以外のパスでのアクセスは <NotFound> が表示
         path: "*",
+        // ルートネーム
+        name: 'not-found',
         component: NotFound
     }
 ];

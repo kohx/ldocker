@@ -16548,7 +16548,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
 
                   // 500に移動
-                  _this.$router.push("/500");
+                  _this.$router.push({
+                    name: "system-error"
+                  });
 
                   _context.next = 12;
                   break;
@@ -16567,7 +16569,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.$store.commit("auth/setUser", null); // ログイン画面へ移動
 
 
-                  _this.$router.push("/login");
+                  _this.$router.push({
+                    name: "login"
+                  });
 
                   _context.next = 12;
                   break;
@@ -16576,7 +16580,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   // 404
                   if (val === _const__WEBPACK_IMPORTED_MODULE_3__["NOT_FOUND"]) {
                     // 404へ移動
-                    _this.$router.push("/not-found");
+                    _this.$router.push({
+                      name: "not-found"
+                    });
                   }
 
                 case 12:
@@ -16665,6 +16671,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -16684,6 +16693,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   // 算出プロパティでストアのステートを参照
   computed: {
+    // authストアのapiStatus
+    apiStatus: function apiStatus() {
+      return this.$store.state.auth.apiStatus;
+    },
     // authストアのステートUserを参照
     isLogin: function isLogin() {
       return this.$store.getters["auth/check"];
@@ -16714,9 +16727,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this.$store.dispatch("auth/logout");
 
               case 2:
-                // ログインに移動
+                // ログアウト成功の場合
                 if (_this.apiStatus) {
-                  _this.$router.push("/login");
+                  // 「photo」のページにいる場合
+                  if (["photo"].includes(_this.$route.name)) {
+                    // ログインに移動
+                    if (_this.apiStatus) {
+                      _this.$router.push({
+                        name: "login"
+                      });
+                    }
+                  }
                 }
 
               case 3:
@@ -16734,15 +16755,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       axios.get("set-lang/".concat(this.selectedLang)); // Vue i18n の言語を設定
 
-      this.$i18n.locale = this.selectedLang; // セレクトオプションを翻訳
+      this.$i18n.locale = this.selectedLang; // i18nの言語変更だけだと動的に変更しないのでformulateの言語を設定
 
-      this.langList = [{
-        value: "en",
-        label: this.$i18n.tc("word.english")
-      }, {
-        value: "ja",
-        label: this.$i18n.tc("word.japanese")
-      }];
+      this.$formulate.selectedLocale = this.selectedLang; // セレクトオプションを翻訳
+      // ここで入れ直さないとセレクトの中身が変更されない
+
+      this.langList.en = this.$i18n.tc("word.english");
+      this.langList.ja = this.$i18n.tc("word.japanese"); // 現在のルートネームを取得
+
+      var currentRoute = this.$route.name; // ルートネームがログインのときのみクリア
+
+      if (currentRoute === "login") {
+        this.$formulate.reset("login_form");
+        this.$formulate.reset("register_form");
+        this.$formulate.reset("forgot_form");
+      }
     }
   },
   created: function created() {
@@ -16972,29 +16999,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // vueで使うデータ
   data: function data() {
@@ -17058,7 +17062,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 // 通信成功
                 if (_this.apiStatus) {
                   // トップページに移動
-                  _this.$router.push("/");
+                  _this.$router.push({
+                    name: "home"
+                  });
                 }
 
               case 3:
@@ -17156,16 +17162,175 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       // AUTHストアのすべてのエラーメッセージをクリア
       this.$store.commit("auth/setLoginErrorMessages", null);
       this.$store.commit("auth/setRegisterErrorMessages", null);
-      this.$store.commit("auth/setForgotErrorMessages", null);
+      this.$store.commit("auth/setForgotErrorMessages", null); // ここでformulateもリセットしておく
+
+      this.$formulate.reset("login_form");
+      this.$formulate.reset("register_form");
+      this.$formulate.reset("forgot_form");
     },
 
     /*
      * clear form
      */
     clearForm: function clearForm() {
-      this.$formulate.reset('login');
-      this.$formulate.reset('register');
-      this.$formulate.reset('forgot');
+      this.$formulate.reset("login_form");
+      this.$formulate.reset("register_form");
+      this.$formulate.reset("forgot_form");
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      photoForm: {
+        photo_files: null,
+        photo_name: "",
+        photo_description: ""
+      },
+      uploadErrors: []
+    };
+  },
+  // 算出プロパティでストアのステートを参照
+  computed: {
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
+    }
+  },
+  methods: {
+    // ダミーアップローダ
+    uploader: function uploader(file, progress) {
+      // ここで処理しないで、uploadPhotoメソッドで処理する
+      // プログレスの進行を100%にするのみ
+      progress(100);
+      return Promise.resolve({});
+    },
+    uploadPhoto: function uploadPhoto() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var formData, c, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                // フォームデータオブジェクトを作成
+                formData = new FormData(); // フォームデータにファイルオブジェクトを追加
+
+                c = 0;
+
+                _this.photoForm.photo_files.files.forEach(function (item) {
+                  formData.append("photo_files[".concat(c++, "]"), item.file);
+                }); // その他の値をセット
+
+
+                formData.append("photo_name", _this.photoForm.photo_name);
+                formData.append("photo_description", _this.photoForm.photo_description); // Api リクエスト
+
+                _context.next = 7;
+                return axios.post("photos", formData);
+
+              case 7:
+                response = _context.sent;
+                console.log(response); // アップデート成功
+
+                if (response.status === _const__WEBPACK_IMPORTED_MODULE_1__["CREATED"]) {
+                  // 成功時はメッセージを出す
+                  _this.$store.commit("message/setContent", {
+                    content: response.data.message,
+                    timeout: 6000
+                  }); // フォームのクリア
+
+
+                  _this.photoForm = {
+                    photo_files: null,
+                    photo_name: "",
+                    photo_description: ""
+                  }; // バリデーションのクリア
+
+                  _this.$formulate.reset("upload_form");
+                } else {
+                  // エラー時はformに表示
+                  console.log(response.data.errors);
+                  _this.uploadErrors = response.data.errors;
+                }
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -17191,6 +17356,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -17298,7 +17469,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.clearForm(); // トップページに移動
 
 
-                  _this.$router.push("/");
+                  _this.$router.push({
+                    name: "home"
+                  });
                 }
 
               case 3:
@@ -17334,7 +17507,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     if (this.resetForm.token == null) {
       // move to home
-      this.$router.push("/");
+      this.$router.push({
+        name: "home"
+      });
     } // フォームにリセットトークンをセット
 
 
@@ -38934,7 +39109,7 @@ var render = function() {
     [
       _c(
         "RouterLink",
-        { attrs: { to: "/" } },
+        { attrs: { to: { name: "home" } } },
         [
           _c("FAIcon", { attrs: { icon: ["fas", "home"], size: "lg" } }),
           _vm._v("\n        " + _vm._s(_vm.$t("word.home")) + "\n    ")
@@ -38942,10 +39117,24 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _vm.isLogin
+        ? _c(
+            "RouterLink",
+            { attrs: { to: { name: "photo-upload" } } },
+            [
+              _c("FAIcon", {
+                attrs: { icon: ["fas", "camera-retro"], size: "lg" }
+              }),
+              _vm._v("\n        " + _vm._s(_vm.$t("word.photo")) + "\n    ")
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
       !_vm.isLogin
         ? _c(
             "RouterLink",
-            { attrs: { to: "/login" } },
+            { attrs: { to: { name: "login" } } },
             [
               _c("FAIcon", {
                 attrs: { icon: ["fas", "sign-in-alt"], size: "lg" }
@@ -39154,46 +39343,13 @@ var render = function() {
         staticClass: "login panel"
       },
       [
-        _vm.loginErrors
-          ? _c("div", { staticClass: "errors" }, [
-              _vm.loginErrors.email
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.loginErrors.email, function(msg) {
-                      return _c("li", { key: msg }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(msg) +
-                            "\n                "
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.loginErrors.password
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.loginErrors.password, function(msg) {
-                      return _c("li", { key: msg }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(msg) +
-                            "\n                "
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                : _vm._e()
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c(
           "FormulateForm",
           {
-            attrs: { name: "login" },
+            attrs: {
+              name: "login_form",
+              "form-errors": _vm.loginErrors ? _vm.loginErrors.email : []
+            },
             on: { submit: _vm.login },
             model: {
               value: _vm.loginForm,
@@ -39285,62 +39441,10 @@ var render = function() {
         staticClass: "register panel"
       },
       [
-        _vm.registerErrors
-          ? _c("div", { staticClass: "errors" }, [
-              _vm.registerErrors.name
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.registerErrors.name, function(msg) {
-                      return _c("li", { key: msg }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(msg) +
-                            "\n                "
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.registerErrors.email
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.registerErrors.email, function(msg) {
-                      return _c("li", { key: msg }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(msg) +
-                            "\n                "
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.registerErrors.password
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.registerErrors.password, function(msg) {
-                      return _c("li", { key: msg }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(msg) +
-                            "\n                "
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                : _vm._e()
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c(
           "FormulateForm",
           {
-            attrs: { name: "register" },
+            attrs: { name: "register_form", errors: _vm.registerErrors },
             on: { submit: _vm.register },
             model: {
               value: _vm.registerForm,
@@ -39390,7 +39494,7 @@ var render = function() {
                 type: "password",
                 label: _vm.$t("word.password_confirmation"),
                 "validation-name": _vm.$t("word.password_confirmation"),
-                validation: "required|min:8",
+                validation: "required|confirm:password",
                 placeholder: _vm.$t("word.password_confirmation")
               }
             }),
@@ -39437,30 +39541,13 @@ var render = function() {
         staticClass: "forgot panel"
       },
       [
-        _vm.forgotErrors
-          ? _c("div", { staticClass: "errors" }, [
-              _vm.forgotErrors.email
-                ? _c(
-                    "ul",
-                    _vm._l(_vm.forgotErrors.email, function(msg) {
-                      return _c("li", { key: msg }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(msg) +
-                            "\n                "
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                : _vm._e()
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c(
           "FormulateForm",
           {
-            attrs: { name: "forgot" },
+            attrs: {
+              name: "forgot_form",
+              "form-errors": _vm.forgotErrors ? _vm.forgotErrors.email : []
+            },
             on: { submit: _vm.forgot },
             model: {
               value: _vm.forgotForm,
@@ -39510,6 +39597,110 @@ var render = function() {
       1
     )
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "page" },
+    [
+      _c("h1", [_vm._v(_vm._s(_vm.$t("word.upload_photo")))]),
+      _vm._v(" "),
+      _c(
+        "FormulateForm",
+        {
+          attrs: { name: "upload_form", "form-errors": _vm.uploadErrors },
+          on: { submit: _vm.uploadPhoto },
+          model: {
+            value: _vm.photoForm,
+            callback: function($$v) {
+              _vm.photoForm = $$v
+            },
+            expression: "photoForm"
+          }
+        },
+        [
+          _c("FormulateInput", {
+            attrs: {
+              type: "text",
+              name: "photo_name",
+              label: _vm.$t("word.photo_name"),
+              "validation-name": _vm.$t("word.photo_name"),
+              validation: "required|max:255,length"
+            }
+          }),
+          _vm._v(" "),
+          _c("FormulateInput", {
+            attrs: {
+              type: "textarea",
+              name: "photo_description",
+              label: _vm.$t("word.photo_description"),
+              "validation-name": _vm.$t("word.photo_description"),
+              validation: "max:255,length"
+            }
+          }),
+          _vm._v(" "),
+          _c("FormulateInput", {
+            attrs: {
+              name: "photo_files",
+              type: "image",
+              label: _vm.$t("word.photo_files"),
+              "validation-name": _vm.$t("word.photo_files"),
+              validation:
+                "required|mime:image/jpeg,image/png,image/gif|max_photo:3",
+              "upload-behavior": "delayed",
+              uploader: _vm.uploader,
+              multiple: ""
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "FormulateInput",
+            { attrs: { type: "submit", disabled: _vm.loadingStatus } },
+            [
+              _vm._v(
+                "\n            " +
+                  _vm._s(_vm.$t("word.upload")) +
+                  "\n            "
+              ),
+              _vm.loadingStatus
+                ? _c("FAIcon", {
+                    attrs: {
+                      icon: ["fas", "spinner"],
+                      pulse: "",
+                      "fixed-width": ""
+                    }
+                  })
+                : _vm._e()
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -39579,6 +39770,10 @@ var render = function() {
         _c(
           "FormulateForm",
           {
+            attrs: {
+              name: "reset",
+              "form-errors": _vm.resetErrors ? _vm.resetErrors.email : []
+            },
             on: { submit: _vm.reset },
             model: {
               value: _vm.resetForm,
@@ -56689,17 +56884,28 @@ vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(_braid_vue_formulate__WEBPACK_IMP
   plugins: [_braid_vue_formulate_i18n__WEBPACK_IMPORTED_MODULE_16__["en"], _braid_vue_formulate_i18n__WEBPACK_IMPORTED_MODULE_16__["ja"]],
   // グローバルに使う独自ルール
   rules: {
-    // ex
-    foobar: function foobar(_ref) {
-      var value = _ref.value;
-      return ["foo", "bar"].includes(value);
+    maxPhoto: function maxPhoto(context, limit) {
+      var value = context.value ? context.value.files.length : 0;
+      return value <= limit;
+    }
+  },
+  locales: {
+    en: {
+      maxPhoto: function maxPhoto(args) {
+        return "Photo is ".concat(args[0], " or less");
+      }
+    },
+    ja: {
+      maxPhoto: function maxPhoto(args) {
+        return "\u5199\u771F\u306F".concat(args[0], "\u30D5\u30A1\u30A4\u30EB\u307E\u3067\u3067\u3059\u3002");
+      }
     }
   }
 }); // 非同期通信でAUTHストアのcurrentUserアクションを実行するので
 // asyncメソッドにして、awaitで通信をまつ
 
 var createApp = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -56734,7 +56940,7 @@ var createApp = /*#__PURE__*/function () {
   }));
 
   return function createApp() {
-    return _ref2.apply(this, arguments);
+    return _ref.apply(this, arguments);
   };
 }(); // createAppを実行
 
@@ -57063,7 +57269,13 @@ var contents = {
       password_confirmation: 'Password Confirmation',
       send: 'Send',
       password_reset: 'Password Reset',
-      reset: 'Reset'
+      reset: 'Reset',
+      photo: 'Photo',
+      upload: 'Upload',
+      upload_photo: 'Upload Photo',
+      photo_name: 'Photo name',
+      photo_description: 'Photo description',
+      photo_files: 'Photo files'
     },
     // メッセージ
     sentence: {
@@ -57075,7 +57287,7 @@ var contents = {
 
   /*
     日付フォーマット
-      以下の定義形式で日時をローカライズ
+     以下の定義形式で日時をローカライズ
     weekday         "narrow", "short", "long"
     era             "narrow", "short", "long"
     year            "2-digit", "numeric"
@@ -57149,7 +57361,13 @@ var contents = {
       password_confirmation: 'パスワード確認',
       send: '送信',
       password_reset: 'パスワード リセット',
-      reset: 'リセット'
+      reset: 'リセット',
+      photo: '写真',
+      upload: 'アップロード',
+      upload_photo: '写真をアップロード',
+      photo_name: '写真の名前',
+      photo_description: '写真の説明',
+      photo_files: '写真ファイル'
     },
     // メッセージ
     sentence: {
@@ -57161,7 +57379,7 @@ var contents = {
 
   /*
     日付フォーマット
-      以下の定義形式で日時をローカライズ
+     以下の定義形式で日時をローカライズ
     weekday         "narrow", "short", "long"
     era             "narrow", "short", "long"
     year            "2-digit", "numeric"
@@ -57388,6 +57606,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/PhotoUpload.vue":
+/*!********************************************!*\
+  !*** ./resources/js/pages/PhotoUpload.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoUpload.vue?vue&type=template&id=62ed9b4c& */ "./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&");
+/* harmony import */ var _PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoUpload.vue?vue&type=script&lang=js& */ "./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/PhotoUpload.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoUpload.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoUpload.vue?vue&type=template&id=62ed9b4c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoUpload.vue?vue&type=template&id=62ed9b4c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoUpload_vue_vue_type_template_id_62ed9b4c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/Reset.vue":
 /*!**************************************!*\
   !*** ./resources/js/pages/Reset.vue ***!
@@ -57577,15 +57864,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 /* harmony import */ var _pages_Home_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Home.vue */ "./resources/js/pages/Home.vue");
-/* harmony import */ var _pages_Login_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Login.vue */ "./resources/js/pages/Login.vue");
-/* harmony import */ var _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Reset.vue */ "./resources/js/pages/Reset.vue");
-/* harmony import */ var _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/errors/SystemError.vue */ "./resources/js/pages/errors/SystemError.vue");
-/* harmony import */ var _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/errors/NotFound.vue */ "./resources/js/pages/errors/NotFound.vue");
+/* harmony import */ var _pages_PhotoUpload_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PhotoUpload.vue */ "./resources/js/pages/PhotoUpload.vue");
+/* harmony import */ var _pages_Login_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Login.vue */ "./resources/js/pages/Login.vue");
+/* harmony import */ var _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Reset.vue */ "./resources/js/pages/Reset.vue");
+/* harmony import */ var _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/errors/SystemError.vue */ "./resources/js/pages/errors/SystemError.vue");
+/* harmony import */ var _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/errors/NotFound.vue */ "./resources/js/pages/errors/NotFound.vue");
  // ルーターをインポート
 
  // ストアをインポート
 
  // ページをインポート
+
 
 
 
@@ -57600,14 +57889,39 @@ var routes = [// home
 {
   // urlのパス
   path: "/",
+  // ルートネーム
+  name: 'home',
   // インポートしたページ
   component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, // photo-upload
+{
+  // urlのパス
+  path: "/photo-upload",
+  // ルートネーム
+  name: 'photo-upload',
+  // インポートしたページ
+  component: _pages_PhotoUpload_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  // ページコンポーネントが切り替わる直前に呼び出される関数
+  // to はアクセスされようとしているルートのルートオブジェクト
+  // from はアクセス元のルート
+  // next はページの移動先
+  beforeEnter: function beforeEnter(to, from, next) {
+    if (_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters["auth/check"]) {
+      next();
+    } else {
+      next({
+        name: 'login'
+      });
+    }
+  }
 }, // login
 {
   // urlのパス
   path: "/login",
+  // ルートネーム
+  name: 'login',
   // インポートしたページ
-  component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
   // ページコンポーネントが切り替わる直前に呼び出される関数
   // to はアクセスされようとしているルートのルートオブジェクト
   // from はアクセス元のルート
@@ -57616,7 +57930,9 @@ var routes = [// home
     // AUTHストアでログインしているかチェック
     if (_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters["auth/check"]) {
       // してる場合はホームへ
-      next("/");
+      next({
+        name: 'home'
+      });
     } else {
       // してない場合はそのまま
       next();
@@ -57626,15 +57942,19 @@ var routes = [// home
 {
   // urlのパス
   path: "/reset",
+  // ルートネーム
+  name: 'reset',
   // インポートしたページ
-  component: _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  component: _pages_Reset_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   // ページコンポーネントが切り替わる直前に呼び出される関数
   // to はアクセスされようとしているルートのルートオブジェクト
   // from はアクセス元のルート
   // next はページの移動先
   beforeEnter: function beforeEnter(to, from, next) {
     if (_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters["auth/check"]) {
-      next("/");
+      next({
+        name: 'home'
+      });
     } else {
       next();
     }
@@ -57642,12 +57962,16 @@ var routes = [// home
 }, // システムエラー
 {
   path: "/500",
-  component: _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  // ルートネーム
+  name: 'system-error',
+  component: _pages_errors_SystemError_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
 }, // not found
 {
   // 定義されたルート以外のパスでのアクセスは <NotFound> が表示
   path: "*",
-  component: _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+  // ルートネーム
+  name: 'not-found',
+  component: _pages_errors_NotFound_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
 }]; // VueRouterインスタンス
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({

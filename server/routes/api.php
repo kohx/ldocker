@@ -24,6 +24,9 @@ Route::middleware(['language'])->group(function () {
         $request->session()->regenerateToken();
         return response()->json();
     })->name('refresh-token');
+
+    // 写真のアップロード
+    Route::post('/photos', 'PhotoController@store')->name('photo.store');
 });
 
 // set lang

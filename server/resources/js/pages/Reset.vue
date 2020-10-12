@@ -17,7 +17,13 @@
                 </ul>
             </div>
             <!--/ errors -->
-            <FormulateForm v-model="resetForm" @submit="reset">
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <FormulateForm
+                name="reset"
+                v-model="resetForm"
+                @submit="reset"
+                :form-errors="resetErrors ? resetErrors.email : []"
+            >
                 <FormulateInput
                     name="password"
                     type="password"
@@ -95,7 +101,7 @@ export default {
                 // フォームをクリア
                 this.clearForm();
                 // トップページに移動
-                this.$router.push("/");
+                this.$router.push({ name: "home" });
             }
         },
 
@@ -124,7 +130,7 @@ export default {
         // リセットトークンがない場合はルートページへ移動させる
         if (this.resetForm.token == null) {
             // move to home
-            this.$router.push("/");
+            this.$router.push({ name: "home" });
         }
 
         // フォームにリセットトークンをセット
