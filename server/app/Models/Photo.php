@@ -16,7 +16,7 @@ class Photo extends Model
      *
      * @var integer
      */
-    protected $perPage = 10;
+    protected $perPage = 2;
 
     /**
      * プライマリキーの型
