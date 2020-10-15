@@ -30,6 +30,8 @@ const contents = {
             '{msg} world!': '{msg} world！',
             sent_verification_email: 'Sent verification email.',
             sent_password_reset_email: 'Sent password reset email.',
+            login_before_like: 'Please log in before you like.',
+            photo_by: 'Photo_by {user}',
         }
     },
     /*

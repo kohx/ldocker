@@ -24,12 +24,19 @@ const contents = {
             photo_name: '写真の名前',
             photo_description: '写真の説明',
             photo_files: '写真ファイル',
+            download: 'ダウンロード',
+            comments: 'コメント',
         },
         // メッセージ
         sentence: {
             '{msg} world!': '{msg} 世界！',
             sent_verification_email: '確認メールを送信しました。',
             sent_password_reset_email: 'パスワード再設定メールを送信しました。',
+            photo_by: '投稿者: {user}',
+            login_before_like: 'ライクする前にログインしてください。',
+            no_comments_yet: 'コメントはまだありません。',
+            submit_comment: 'コメント送信',
+            keep_it_under_100_characters_left: '100文字以下で記入 残り: {length}文字',
         }
     },
     /*

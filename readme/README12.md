@@ -23,10 +23,10 @@
 
 ## サンプル
 - このセクションを始める前  
-[github ldocker 12](https://github.com/kohx/ldocker/tree/11)  
+[github ldocker 12](https://github.com/kohx/ldocker/tree/12)  
   
 - 完成  
-[github ldocker 13](https://github.com/kohx/ldocker/tree/12)
+[github ldocker 13](https://github.com/kohx/ldocker/tree/13)
 
 ------------------------------------------------------------------------------------------
 
@@ -501,7 +501,7 @@ export default {
 
 次は今回作ったものにライクボタンとダウンロードボタンを追加していこうと思います。
 
-<!-- [Laravel mix vue No.12 - Web Application2 - ライクボタンとダウンロードボタンの実装](https://www.aska-ltd.jp/jp/blog/89) -->
+[Laravel mix vue No.13 - Web Application2 - ライクボタンとダウンロードボタンの実装](https://www.aska-ltd.jp/jp/blog/90)
 
 <script src="https://www.aska-ltd.jp/js/blog.js"></script>
 <link href="https://www.aska-ltd.jp/css/blog.css" rel="stylesheet">

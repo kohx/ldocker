@@ -170,7 +170,7 @@ class Photo extends Model
 
     /**
      * アクセサ - is_liked
-     * ログインユーザがその写真にいいねしているかを取得して「liked_by_user」で呼び出せるようにする
+     * ログインユーザがその写真にいいねしているかを取得して「is_liked」で呼び出せるようにする
      *
      * @return boolean
      */

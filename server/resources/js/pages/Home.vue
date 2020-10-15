@@ -4,6 +4,7 @@
 
         <div class="photo-list">
             <div class="grid">
+                <!-- likeイベントを取得 -->
                 <Photo
                     class="grid__item"
                     v-for="photo in photos"

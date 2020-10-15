@@ -16882,6 +16882,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -16908,12 +16917,117 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   // プロップスとして画像オブジェクトをもらう
   props: {
     item: {
       type: Object,
       required: true
+    }
+  },
+  data: function data() {
+    return {
+      is_liked: this.item.is_liked,
+      total_like: this.item.total_like
+    };
+  },
+  methods: {
+    /**
+     * like
+     */
+    like: function like() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var isLogin, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                isLogin = _this.$store.getters["auth/check"];
+
+                if (isLogin) {
+                  _context.next = 4;
+                  break;
+                }
+
+                alert(_this.$i18n.tc("sentence.login_before_like"));
+                return _context.abrupt("return", false);
+
+              case 4:
+                if (!_this.is_liked) {
+                  _context.next = 10;
+                  break;
+                }
+
+                _context.next = 7;
+                return axios["delete"]("photos/".concat(_this.item.id, "/like"));
+
+              case 7:
+                response = _context.sent;
+                _context.next = 13;
+                break;
+
+              case 10:
+                _context.next = 12;
+                return axios.put("photos/".concat(_this.item.id, "/like"));
+
+              case 12:
+                response = _context.sent;
+
+              case 13:
+                if (!(response.status !== _const__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context.next = 16;
+                  break;
+                }
+
+                // set status to error store
+                _this.$store.commit("error/setCode", response.status);
+
+                return _context.abrupt("return", false);
+
+              case 16:
+                _this.is_liked = response.data.is_liked;
+                _this.total_like = response.data.total_like;
+
+              case 18:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -16940,6 +17054,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
 //
 //
 //
@@ -17442,10 +17557,110 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./resources/js/const.js");
 
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -17479,12 +17694,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       loading: false,
       photo: null,
-      fullWidth: false
+      fullWidth: false,
+      commentContent: "",
+      commentErrors: null
     };
   },
   computed: {
     isLogin: function isLogin() {
       return this.$store.getters["auth/check"];
+    },
+    // loadingストアのstatus
+    loadingStatus: function loadingStatus() {
+      return this.$store.state.loading.status;
     }
   },
   methods: {
@@ -17524,28 +17745,148 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    like: function like() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var isLogin, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                isLogin = _this2.$store.getters["auth/check"];
+
+                if (isLogin) {
+                  _context2.next = 4;
+                  break;
+                }
+
+                alert(_this2.$i18n.tc("sentence.login_before_like"));
+                return _context2.abrupt("return", false);
+
+              case 4:
+                if (!_this2.photo.is_liked) {
+                  _context2.next = 10;
+                  break;
+                }
+
+                _context2.next = 7;
+                return axios["delete"]("photos/".concat(_this2.photo.id, "/like"));
+
+              case 7:
+                response = _context2.sent;
+                _context2.next = 13;
+                break;
+
+              case 10:
+                _context2.next = 12;
+                return axios.put("photos/".concat(_this2.photo.id, "/like"));
+
+              case 12:
+                response = _context2.sent;
+
+              case 13:
+                if (!(response.status !== _const__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context2.next = 16;
+                  break;
+                }
+
+                // set status to error store
+                _this2.$store.commit("error/setCode", response.status);
+
+                return _context2.abrupt("return", false);
+
+              case 16:
+                _this2.photo.is_liked = response.data.is_liked;
+                _this2.photo.total_like = response.data.total_like;
+
+              case 18:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    addComment: function addComment() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios.post("photos/".concat(_this3.id, "/comments"), {
+                  content: _this3.commentContent
+                });
+
+              case 2:
+                response = _context3.sent;
+
+                if (!(response.status === _const__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
+                  _context3.next = 6;
+                  break;
+                }
+
+                // set validation error
+                _this3.commentErrors = response.data.errors;
+                return _context3.abrupt("return", false);
+
+              case 6:
+                // clear comment content
+                _this3.commentContent = ""; // エラーメッセージをクリア
+
+                _this3.commentErrors = null;
+                /*
+                 * その他のエラー
+                 */
+
+                if (!(response.status !== _const__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
+                  _context3.next = 11;
+                  break;
+                }
+
+                // set status to error store
+                _this3.$store.commit("error/setCode", response.status);
+
+                return _context3.abrupt("return", false);
+
+              case 11:
+                // 投稿し終わったあとに一覧に投稿したてのコメントを表示
+                _this3.photo.comments = [response.data].concat(_toConsumableArray(_this3.photo.comments));
+
+              case 12:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
     }
   },
   watch: {
     // 詳細ページで使い回すので $route の監視ハンドラ内で fetchPhoto を実行
     $route: {
       handler: function handler() {
-        var _this2 = this;
+        var _this4 = this;
 
-        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
             while (1) {
-              switch (_context2.prev = _context2.next) {
+              switch (_context4.prev = _context4.next) {
                 case 0:
-                  _context2.next = 2;
-                  return _this2.fetchPhoto();
+                  _context4.next = 2;
+                  return _this4.fetchPhoto();
 
                 case 2:
                 case "end":
-                  return _context2.stop();
+                  return _context4.stop();
               }
             }
-          }, _callee2);
+          }, _callee4);
         }))();
       },
       // コンポーネントが生成されたタイミングでも実行
@@ -39682,7 +40023,7 @@ var render = function() {
           staticClass: "photo__overlay",
           attrs: {
             to: { name: "photo", params: { id: _vm.item.id } },
-            title: "View the photo by " + _vm.item.user.name
+            title: _vm.$t("sentence.photo_by", { user: _vm.item.user.name })
           }
         },
         [
@@ -39691,13 +40032,70 @@ var render = function() {
               staticClass: "image-wrap__image",
               attrs: {
                 src: _vm.item.url,
-                alt: "Photo by " + _vm.item.user.name
+                alt: _vm.$t("sentence.photo_by", { user: _vm.item.user.name })
               }
             })
           ]),
           _vm._v(" "),
+          _c("div", { staticClass: "photo__controls" }, [
+            _c(
+              "button",
+              {
+                staticClass: "photo__button photo__button--like",
+                class: { "photo__button--liked": _vm.is_liked },
+                attrs: { title: "Like photo" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.like($event)
+                  }
+                }
+              },
+              [
+                _c("FAIcon", {
+                  staticClass: "like fa-fw",
+                  attrs: { icon: ["fas", "heart"] }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "photo__total-like" }, [
+              _vm._v(_vm._s(_vm.total_like) + " ")
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "photo__button",
+                attrs: {
+                  title: "Download photo",
+                  href: "/photos/" + _vm.item.id + "/download"
+                },
+                on: {
+                  click: function($event) {
+                    $event.stopPropagation()
+                  }
+                }
+              },
+              [
+                _c("FAIcon", {
+                  staticClass: "fa-fw",
+                  attrs: { icon: ["fas", "file-download"] }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "photo__username" }, [
-            _vm._v(_vm._s(_vm.item.user.name))
+            _vm._v(
+              "\n            " +
+                _vm._s(
+                  _vm.$t("sentence.photo_by", { user: _vm.item.user.name })
+                ) +
+                "\n        "
+            )
           ])
         ]
       )
@@ -40144,13 +40542,197 @@ var render = function() {
               }
             },
             [
-              _c("img", { attrs: { src: _vm.photo.url, alt: "" } }),
+              _c("img", {
+                attrs: {
+                  src: _vm.photo.url,
+                  alt: _vm.$t("sentence.photo_by", {
+                    user: _vm.photo.user.name
+                  })
+                }
+              }),
               _vm._v(" "),
               _c("figcaption", [
-                _vm._v("Posted by " + _vm._s(_vm.photo.user.name))
+                _vm._v(
+                  "\n            " +
+                    _vm._s(
+                      _vm.$t("sentence.photo_by", { user: _vm.photo.user.name })
+                    ) +
+                    "\n        "
+                )
               ])
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "photo-detail__pane" }, [
+            _c(
+              "button",
+              {
+                staticClass: "photo__button photo-detail__button--like",
+                class: { "photo-detail__button--liked": _vm.photo.is_liked },
+                attrs: { title: "Like photo" },
+                on: { click: _vm.like }
+              },
+              [
+                _c("FAIcon", {
+                  staticClass: "fa-fw",
+                  attrs: { icon: ["fas", "heart"] }
+                }),
+                _vm._v(
+                  "\n            " + _vm._s(_vm.photo.total_like) + "\n        "
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "button",
+                attrs: {
+                  href: "/photos/" + _vm.photo.id + "/download",
+                  title: "Download photo"
+                }
+              },
+              [
+                _c("FAIcon", {
+                  staticClass: "fa-fw",
+                  attrs: { icon: ["fas", "file-download"] }
+                }),
+                _vm._v(_vm._s(_vm.$t("word.download")) + "\n        ")
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "h2",
+              { staticClass: "photo-detail__title" },
+              [
+                _c("FAIcon", {
+                  staticClass: "fa-fw",
+                  attrs: { icon: ["far", "comment-dots"] }
+                }),
+                _vm._v(_vm._s(_vm.$t("word.comments")) + "\n        ")
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm.photo.comments.length > 0
+              ? _c(
+                  "ul",
+                  { staticClass: "photo-detail__comments" },
+                  _vm._l(_vm.photo.comments, function(comment) {
+                    return _c(
+                      "li",
+                      {
+                        key: comment.content,
+                        staticClass: "photo-detail__comment-item"
+                      },
+                      [
+                        _c("p", { staticClass: "photo-detail__comment-body" }, [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(comment.content) +
+                              "\n                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "photo-detail__comment-info" }, [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(comment.user.name) +
+                              "\n                "
+                          )
+                        ])
+                      ]
+                    )
+                  }),
+                  0
+                )
+              : _c("p", [_vm._v(_vm._s(_vm.$t("sentence.no_comments_yet")))]),
+            _vm._v(" "),
+            _vm.isLogin
+              ? _c(
+                  "form",
+                  {
+                    staticClass: "form",
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.addComment($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm.commentErrors
+                      ? _c("div", { staticClass: "errors" }, [
+                          _vm.commentErrors.content
+                            ? _c(
+                                "ul",
+                                _vm._l(_vm.commentErrors.content, function(
+                                  msg
+                                ) {
+                                  return _c("li", { key: msg }, [
+                                    _vm._v(
+                                      "\n                        " +
+                                        _vm._s(msg) +
+                                        "\n                    "
+                                    )
+                                  ])
+                                }),
+                                0
+                              )
+                            : _vm._e()
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("FormulateInput", {
+                      attrs: {
+                        type: "textarea",
+                        label: "Enter a comment in the box",
+                        validation: "required|max:100,length",
+                        "validation-name": "comment",
+                        "error-behavior": "live",
+                        help: _vm.$t(
+                          "sentence.keep_it_under_100_characters_left",
+                          {
+                            length: 100 - _vm.commentContent.length
+                          }
+                        )
+                      },
+                      model: {
+                        value: _vm.commentContent,
+                        callback: function($$v) {
+                          _vm.commentContent = $$v
+                        },
+                        expression: "commentContent"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "FormulateInput",
+                      {
+                        attrs: { type: "submit", disabled: _vm.loadingStatus }
+                      },
+                      [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.$t("sentence.submit_comment")) +
+                            "\n                "
+                        ),
+                        _vm.loadingStatus
+                          ? _c("FAIcon", {
+                              staticClass: "fa-fw",
+                              attrs: { icon: ["fas", "spinner"], pulse: "" }
+                            })
+                          : _vm._e()
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              : _vm._e()
+          ])
         ]
       )
     : _vm._e()
@@ -57980,13 +58562,15 @@ var contents = {
     sentence: {
       '{msg} world!': '{msg} world！',
       sent_verification_email: 'Sent verification email.',
-      sent_password_reset_email: 'Sent password reset email.'
+      sent_password_reset_email: 'Sent password reset email.',
+      login_before_like: 'Please log in before you like.',
+      photo_by: 'Photo_by {user}'
     }
   },
 
   /*
     日付フォーマット
-      以下の定義形式で日時をローカライズ
+     以下の定義形式で日時をローカライズ
     weekday         "narrow", "short", "long"
     era             "narrow", "short", "long"
     year            "2-digit", "numeric"
@@ -58066,19 +58650,26 @@ var contents = {
       upload_photo: '写真をアップロード',
       photo_name: '写真の名前',
       photo_description: '写真の説明',
-      photo_files: '写真ファイル'
+      photo_files: '写真ファイル',
+      download: 'ダウンロード',
+      comments: 'コメント'
     },
     // メッセージ
     sentence: {
       '{msg} world!': '{msg} 世界！',
       sent_verification_email: '確認メールを送信しました。',
-      sent_password_reset_email: 'パスワード再設定メールを送信しました。'
+      sent_password_reset_email: 'パスワード再設定メールを送信しました。',
+      photo_by: '投稿者: {user}',
+      login_before_like: 'ライクする前にログインしてください。',
+      no_comments_yet: 'コメントはまだありません。',
+      submit_comment: 'コメント送信',
+      keep_it_under_100_characters_left: '100文字以下で記入 残り: {length}文字'
     }
   },
 
   /*
     日付フォーマット
-      以下の定義形式で日時をローカライズ
+     以下の定義形式で日時をローカライズ
     weekday         "narrow", "short", "long"
     era             "narrow", "short", "long"
     year            "2-digit", "numeric"

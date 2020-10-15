@@ -33,6 +33,15 @@ Route::middleware(['language'])->group(function () {
 
     // 写真詳細
     Route::get('/photos/{id}', 'PhotoController@show')->name('photo.show');
+
+    // コメント
+    Route::post('/photos/{photo}/comments', 'PhotoController@storeComment')->name('photo.comment');
+
+    // ライク
+    Route::put('/photos/{id}/like', 'PhotoController@like')->name('photo.like');
+
+    // ライク解除
+    Route::delete('/photos/{id}/like', 'PhotoController@unlike')->name('photo.unlike');
 });
 
 // set lang
